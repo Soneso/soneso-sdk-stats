@@ -1,0 +1,152 @@
+name: Collect SDK Traffic Stats
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: traffic-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Fetch and merge traffic data
+        env:
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: |
+          python3 <<'PYTHON'
+          import json
+          import os
+          import subprocess
+          from datetime import datetime, timedelta, timezone
+
+          REPOS = {
+              "Soneso/stellar-ios-mac-sdk": "stellar-ios-mac-sdk",
+              "Soneso/stellar_flutter_sdk": "stellar_flutter_sdk",
+              "Soneso/stellar-php-sdk": "stellar-php-sdk",
+              "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
+          }
+
+          today = datetime.now(timezone.utc).date()
+          cutoff = today - timedelta(days=13)  # 14-day inclusive window
+
+          for repo, folder in REPOS.items():
+              try:
+                  result = subprocess.run(
+                      ["gh", "api", f"repos/{repo}/traffic/clones"],
+                      capture_output=True, text=True, timeout=30
+                  )
+                  if result.returncode != 0:
+                      print(f"::warning::API call failed for {repo}: {result.stderr}")
+                      continue
+
+                  try:
+                      api_data = json.loads(result.stdout)
+                  except json.JSONDecodeError as e:
+                      print(f"::warning::Invalid JSON from API for {repo}: {e}")
+                      continue
+
+                  if "clones" not in api_data:
+                      print(f"::warning::No 'clones' key in API response for {repo}")
+                      continue
+
+                  api_uniques_14d = api_data.get("uniques", 0)
+
+                  # Load existing data
+                  json_path = os.path.join(folder, "github-clones.json")
+                  existing = {}
+                  if os.path.exists(json_path):
+                      try:
+                          with open(json_path) as f:
+                              old_data = json.load(f)
+                          for entry in old_data.get("daily", []):
+                              existing[entry["date"]] = entry
+                      except (json.JSONDecodeError, KeyError) as e:
+                          print(f"::warning::Corrupt data file for {repo}, starting fresh: {e}")
+                          existing = {}
+
+                  # Merge new daily entries, deduplicating by date
+                  for clone in api_data["clones"]:
+                      date_str = clone["timestamp"][:10]
+                      existing[date_str] = {
+                          "date": date_str,
+                          "count": clone["count"],
+                          "uniques": clone["uniques"],
+                      }
+
+                  # Sort by date ascending
+                  merged = sorted(existing.values(), key=lambda x: x["date"])
+
+                  # Compute summary
+                  count_14d = sum(
+                      e["count"] for e in merged if e["date"] >= str(cutoff)
+                  )
+                  # uniques: taken from the API's deduplicated 14-day value.
+                  # Daily uniques are NOT additive (a user cloning on multiple days
+                  # counts as 1 unique). This value reflects the API's current rolling
+                  # 14-day window at call time, which may not exactly match the stored
+                  # daily entries window (e.g. on the first run or after gaps).
+                  uniques_14d = api_uniques_14d
+
+                  result_data = {
+                      "schema_version": 1,
+                      "summary": {
+                          "last_14_days": {
+                              "count": count_14d,
+                              "uniques": uniques_14d,
+                          }
+                      },
+                      "daily": merged,
+                  }
+
+                  os.makedirs(folder, exist_ok=True)
+                  tmp_path = os.path.join(folder, ".github-clones.tmp")
+                  with open(tmp_path, "w") as f:
+                      json.dump(result_data, f, indent=2)
+                      f.write("\n")
+                  os.replace(tmp_path, json_path)
+
+                  days_tracked = len(merged)
+                  print(f"{folder}: {count_14d} clones, {uniques_14d} unique cloners (14d) | {days_tracked} days tracked")
+
+              except Exception as e:
+                  print(f"::warning::Failed to process {repo}: {e}")
+                  continue
+          PYTHON
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add */github-clones.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          today=$(date -u +%Y-%m-%d)
+          git commit -m "Update traffic data ${today}"
+          for i in 1 2 3; do
+            if git pull --rebase; then
+              git push && exit 0
+            else
+              echo "::warning::Rebase failed (possible conflict), aborting rebase"
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::Failed to push after 3 attempts"
+          exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::warning::Traffic collection failed. Check the workflow logs."
