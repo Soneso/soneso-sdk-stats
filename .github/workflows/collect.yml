@@ -86,8 +86,8 @@ jobs:
                           "uniques": clone["uniques"],
                       }
 
-                  # Sort by date ascending
-                  merged = sorted(existing.values(), key=lambda x: x["date"])
+                  # Sort by date descending (most recent first)
+                  merged = sorted(existing.values(), key=lambda x: x["date"], reverse=True)
 
                   # Compute summary
                   count_14d = sum(
