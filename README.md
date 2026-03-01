@@ -15,18 +15,8 @@ Automated daily statistics for Soneso Stellar SDKs.
 
 ## Workflows
 
-| Workflow | Schedule (UTC) | Auth required |
-|----------|---------------|---------------|
-| Collect SDK Traffic Stats | 6:00 | Yes (`TRAFFIC_TOKEN`) |
-| Collect Packagist Stats | 6:05 | No |
-| Collect pub.dev Stats | 6:10 | No |
-
-All workflows can also be triggered manually from the Actions tab.
-
-## Setup
-
-The GitHub clones workflow requires a repository secret named `TRAFFIC_TOKEN` containing a Fine-grained Personal Access Token with `administration:read` permission on all 4 SDK repositories. The Packagist and pub.dev workflows use public APIs and need no authentication.
-
-## Future plans
-
-CocoaPods stats for the iOS SDK and Maven Central stats for the KMP SDK could be added once those APIs are available.
+| Workflow | Schedule (UTC) |
+|----------|---------------|
+| Collect SDK Traffic Stats | 6:00 |
+| Collect Packagist Stats | 6:05 |
+| Collect pub.dev Stats | 6:10 |
