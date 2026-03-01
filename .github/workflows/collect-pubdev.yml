@@ -1,14 +1,14 @@
-name: Collect Packagist Stats
+name: Collect pub.dev Stats
 
 on:
   schedule:
-    - cron: '5 6 * * *'
+    - cron: '10 6 * * *'
   workflow_dispatch:
 
 permissions: {}
 
 concurrency:
-  group: packagist-collection
+  group: pubdev-collection
   cancel-in-progress: false
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - name: Fetch and merge Packagist data
+      - name: Fetch and merge pub.dev data
         run: |
           python3 <<'PYTHON'
           import json
@@ -31,14 +31,14 @@ jobs:
           from datetime import datetime, timezone
 
           PACKAGES = {
-              "soneso/stellar-php-sdk": "stellar-php-sdk",
+              "stellar_flutter_sdk": "stellar_flutter_sdk",
           }
 
           today = datetime.now(timezone.utc).date().isoformat()
 
           for package, folder in PACKAGES.items():
               try:
-                  url = f"https://packagist.org/packages/{package}/downloads.json"
+                  url = f"https://pub.dev/api/packages/{package}/score"
                   req = urllib.request.Request(url, headers={"User-Agent": "soneso-sdk-stats/1.0"})
                   with urllib.request.urlopen(req, timeout=30) as resp:
                       raw = resp.read().decode()
@@ -46,25 +46,17 @@ jobs:
                   try:
                       api_data = json.loads(raw)
                   except json.JSONDecodeError as e:
-                      print(f"::warning::Invalid JSON from Packagist API for {package}: {e}")
+                      print(f"::warning::Invalid JSON from pub.dev API for {package}: {e}")
                       continue
 
-                  if "package" not in api_data or "downloads" not in api_data.get("package", {}):
+                  if "downloadCount30Days" not in api_data:
                       print(f"::warning::Unexpected API response structure for {package}")
                       continue
 
-                  downloads = api_data["package"]["downloads"].get("total")
-                  if not downloads:
-                      print(f"::warning::No download totals in API response for {package}")
-                      continue
-                  favers = api_data["package"].get("favers", 0)
-
-                  total = downloads["total"]
-                  monthly = downloads["monthly"]
-                  daily = downloads["daily"]
+                  download_count_30d = api_data["downloadCount30Days"]
 
                   # Load existing data
-                  json_path = os.path.join(folder, "packagist.json")
+                  json_path = os.path.join(folder, "pub-dev.json")
                   existing = {}
                   if os.path.exists(json_path):
                       try:
@@ -79,10 +71,7 @@ jobs:
                   # Add today's snapshot
                   existing[today] = {
                       "date": today,
-                      "total": total,
-                      "monthly": monthly,
-                      "daily": daily,
-                      "favers": favers,
+                      "download_count_30d": download_count_30d,
                   }
 
                   # Sort by date descending (most recent first)
@@ -91,23 +80,20 @@ jobs:
                   result_data = {
                       "schema_version": 1,
                       "latest": {
-                          "total": total,
-                          "monthly": monthly,
-                          "daily": daily,
-                          "favers": favers,
+                          "download_count_30d": download_count_30d,
                       },
                       "daily": merged,
                   }
 
                   os.makedirs(folder, exist_ok=True)
-                  tmp_path = os.path.join(folder, ".packagist.tmp")
+                  tmp_path = os.path.join(folder, ".pub-dev.tmp")
                   with open(tmp_path, "w") as f:
                       json.dump(result_data, f, indent=2)
                       f.write("\n")
                   os.replace(tmp_path, json_path)
 
                   days_tracked = len(merged)
-                  print(f"{folder}: {total} total downloads, {monthly} monthly, {daily} daily, {favers} favers | {days_tracked} days tracked")
+                  print(f"{folder}: {download_count_30d} downloads (30d) | {days_tracked} days tracked")
 
               except Exception as e:
                   print(f"::warning::Failed to process {package}: {e}")
@@ -118,10 +104,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add */packagist.json
+          git add */pub-dev.json
           git diff --staged --quiet && echo "No changes" && exit 0
           today=$(date -u +%Y-%m-%d)
-          git commit -m "Update Packagist data ${today}"
+          git commit -m "Update pub.dev data ${today}"
           for i in 1 2 3; do
             if git pull --rebase; then
               git push && exit 0
@@ -137,4 +123,4 @@ jobs:
 
       - name: Notify on failure
         if: failure()
-        run: echo "::warning::Packagist collection failed. Check the workflow logs."
+        run: echo "::warning::pub.dev collection failed. Check the workflow logs."
