@@ -38,7 +38,8 @@ jobs:
 
           for package, folder in PACKAGES.items():
               try:
-                  url = f"https://pub.dev/api/packages/{package}/score"
+                  # Fetch metrics (includes score + weekly downloads)
+                  url = f"https://pub.dev/api/packages/{package}/metrics"
                   req = urllib.request.Request(url, headers={"User-Agent": "soneso-sdk-stats/1.0"})
                   with urllib.request.urlopen(req, timeout=30) as resp:
                       raw = resp.read().decode()
@@ -49,11 +50,21 @@ jobs:
                       print(f"::warning::Invalid JSON from pub.dev API for {package}: {e}")
                       continue
 
-                  if "downloadCount30Days" not in api_data:
+                  score = api_data.get("score")
+                  if not score or "downloadCount30Days" not in score:
                       print(f"::warning::Unexpected API response structure for {package}")
                       continue
 
-                  download_count_30d = api_data["downloadCount30Days"]
+                  download_count_30d = score["downloadCount30Days"]
+
+                  # Extract weekly downloads if available (top-level key)
+                  weekly_downloads = None
+                  wvd = api_data.get("weeklyVersionDownloads", {})
+                  raw_weekly = wvd.get("totalWeeklyDownloads")
+                  if isinstance(raw_weekly, list) and all(isinstance(x, (int, float)) for x in raw_weekly):
+                      weekly_downloads = raw_weekly
+                  elif raw_weekly is not None:
+                      print(f"::warning::Unexpected type for totalWeeklyDownloads in {package}: {type(raw_weekly)}")
 
                   # Load existing data
                   json_path = os.path.join(folder, "pub-dev.json")
@@ -77,11 +88,18 @@ jobs:
                   # Sort by date descending (most recent first)
                   merged = sorted(existing.values(), key=lambda x: x["date"], reverse=True)
 
+                  latest = {
+                      "download_count_30d": download_count_30d,
+                  }
+                  # weekly_downloads is newest-first (index 0 = most recent week)
+                  if weekly_downloads is not None:
+                      if len(weekly_downloads) >= 12:
+                          latest["download_count_12w"] = sum(weekly_downloads[:12])
+                      latest["weekly_downloads"] = weekly_downloads
+
                   result_data = {
                       "schema_version": 1,
-                      "latest": {
-                          "download_count_30d": download_count_30d,
-                      },
+                      "latest": latest,
                       "daily": merged,
                   }
 
@@ -92,8 +110,9 @@ jobs:
                       f.write("\n")
                   os.replace(tmp_path, json_path)
 
+                  weeks = len(weekly_downloads) if weekly_downloads else 0
                   days_tracked = len(merged)
-                  print(f"{folder}: {download_count_30d} downloads (30d) | {days_tracked} days tracked")
+                  print(f"{folder}: {download_count_30d} downloads (30d), {weeks} weeks of history | {days_tracked} days tracked")
 
               except Exception as e:
                   print(f"::warning::Failed to process {package}: {e}")

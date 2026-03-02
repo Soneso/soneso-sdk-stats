@@ -11,7 +11,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
-- `<sdk-folder>/pub-dev.json` — accumulated pub.dev download snapshots
+- `<sdk-folder>/pub-dev.json` — accumulated pub.dev download snapshots (daily entries + weekly downloads history in `latest`)
 
 ## Key patterns
 
