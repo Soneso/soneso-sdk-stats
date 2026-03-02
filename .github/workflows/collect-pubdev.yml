@@ -28,7 +28,7 @@ jobs:
           import json
           import os
           import urllib.request
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
 
           PACKAGES = {
               "stellar_flutter_sdk": "stellar_flutter_sdk",
@@ -92,15 +92,34 @@ jobs:
                   latest = {
                       "download_count_30d": download_count_30d,
                   }
-                  # weekly_downloads is newest-first (index 0 = most recent week)
+
+                  # Build weekly entries from newest-first download counts
+                  weekly_entries = []
                   if weekly_downloads is not None:
-                      if len(weekly_downloads) >= 12:
-                          latest["download_count_12w"] = sum(weekly_downloads[:12])
-                      latest["weekly_downloads"] = weekly_downloads
+                      newest_date_str = wvd.get("newestDate", "")[:10]
+                      if newest_date_str:
+                          try:
+                              newest_date = datetime.strptime(newest_date_str, "%Y-%m-%d").date()
+                          except ValueError:
+                              print(f"::warning::Invalid newestDate format '{newest_date_str}' for {package}")
+                              newest_date = None
+                          if newest_date:
+                              for i, count in enumerate(weekly_downloads):
+                                  week_date = newest_date - timedelta(weeks=i)
+                                  iso_year, iso_week, _ = week_date.isocalendar()
+                                  weekly_entries.append({
+                                      "week": f"{iso_week:02d} ({iso_year})",
+                                      "download_count": count,
+                                  })
+                              if len(weekly_downloads) >= 4:
+                                  latest["download_count_4w"] = sum(weekly_downloads[:4])
+                              if len(weekly_downloads) >= 12:
+                                  latest["download_count_12w"] = sum(weekly_downloads[:12])
 
                   result_data = {
-                      "schema_version": 1,
+                      "schema_version": 2,
                       "latest": latest,
+                      "weekly": weekly_entries,
                       "daily": merged,
                   }
 
@@ -111,9 +130,9 @@ jobs:
                       f.write("\n")
                   os.replace(tmp_path, json_path)
 
-                  weeks = len(weekly_downloads) if weekly_downloads else 0
                   days_tracked = len(merged)
-                  print(f"{folder}: {download_count_30d} downloads (30d), {weeks} weeks of history | {days_tracked} days tracked")
+                  weeks_tracked = len(weekly_entries)
+                  print(f"{folder}: {download_count_30d} downloads (30d), {weeks_tracked} weeks of history | {days_tracked} days tracked")
 
               except Exception as e:
                   print(f"::warning::Failed to process {package}: {e}")

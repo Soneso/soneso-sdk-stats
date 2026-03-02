@@ -11,12 +11,12 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
-- `<sdk-folder>/pub-dev.json` — accumulated pub.dev download snapshots (daily entries + weekly downloads history in `latest`)
+- `<sdk-folder>/pub-dev.json` — pub.dev stats: `latest` (30d count, 4w/12w totals), `weekly` (52-week history with ISO week labels), `daily` (daily snapshots)
 
 ## Key patterns
 
 - All Python scripts are inline in workflow YAML using single-quoted heredocs (`<<'PYTHON'`)
-- Data files use `schema_version: 1` for future migrations
+- Data files use `schema_version` for future migrations (github-clones/packagist: v1, pub-dev: v2)
 - Daily entries are sorted descending (most recent first)
 - Deduplication is by date string as dictionary key (latest value wins)
 - Atomic writes: write to `.tmp` file then `os.replace()`
