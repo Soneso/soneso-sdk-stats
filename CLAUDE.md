@@ -6,9 +6,9 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 
 ## Repository structure
 
-- `.github/workflows/collect-github.yml` — GitHub clone stats for all 4 SDKs (6:00 UTC)
-- `.github/workflows/collect-packagist.yml` — Packagist download stats for stellar-php-sdk (6:05 UTC)
-- `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (6:10 UTC)
+- `.github/workflows/collect-github.yml` — GitHub clone stats for all 4 SDKs (10:00 UTC)
+- `.github/workflows/collect-packagist.yml` — Packagist download stats for stellar-php-sdk (10:05 UTC)
+- `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
 - `<sdk-folder>/pub-dev.json` — accumulated pub.dev download snapshots

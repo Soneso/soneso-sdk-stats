@@ -17,6 +17,6 @@ Automated daily statistics for Soneso Stellar SDKs.
 
 | Workflow | Schedule (UTC) |
 |----------|---------------|
-| Collect SDK Traffic Stats | 6:00 |
-| Collect Packagist Stats | 6:05 |
-| Collect pub.dev Stats | 6:10 |
+| Collect SDK Traffic Stats | 10:00 |
+| Collect Packagist Stats | 10:05 |
+| Collect pub.dev Stats | 10:10 |
