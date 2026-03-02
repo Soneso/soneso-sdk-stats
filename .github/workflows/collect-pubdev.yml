@@ -57,9 +57,10 @@ jobs:
 
                   download_count_30d = score["downloadCount30Days"]
 
-                  # Extract weekly downloads if available (top-level key)
+                  # Extract weekly downloads if available (inside scorecard)
                   weekly_downloads = None
-                  wvd = api_data.get("weeklyVersionDownloads", {})
+                  scorecard = api_data.get("scorecard", {})
+                  wvd = scorecard.get("weeklyVersionDownloads", {})
                   raw_weekly = wvd.get("totalWeeklyDownloads")
                   if isinstance(raw_weekly, list) and all(isinstance(x, (int, float)) for x in raw_weekly):
                       weekly_downloads = raw_weekly
