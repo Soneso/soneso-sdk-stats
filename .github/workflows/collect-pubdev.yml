@@ -115,6 +115,8 @@ jobs:
                                   latest["download_count_4w"] = sum(weekly_downloads[:4])
                               if len(weekly_downloads) >= 12:
                                   latest["download_count_12w"] = sum(weekly_downloads[:12])
+                              if len(weekly_downloads) >= 52:
+                                  latest["download_count_52w"] = sum(weekly_downloads[:52])
 
                   result_data = {
                       "schema_version": 2,
