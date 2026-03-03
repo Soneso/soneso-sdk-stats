@@ -1,0 +1,258 @@
+name: Collect GitHub Activity Stats
+
+on:
+  schedule:
+    - cron: '30 10 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-activity-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Fetch and merge GitHub activity data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 <<'PYTHON'
+          import json
+          import os
+          import subprocess
+          import time
+          from datetime import datetime, timedelta, timezone
+
+          REPOS = {
+              "Soneso/stellar-ios-mac-sdk": "stellar-ios-mac-sdk",
+              "Soneso/stellar_flutter_sdk": "stellar_flutter_sdk",
+              "Soneso/stellar-php-sdk": "stellar-php-sdk",
+              "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
+          }
+
+          today = datetime.now(timezone.utc).date()
+          today_str = today.isoformat()
+          cutoff_90d = today - timedelta(days=90)
+          cutoff_365d = today - timedelta(days=365)
+
+          for repo, folder in REPOS.items():
+              try:
+                  sections_ok = []
+                  new_weekly = None
+                  new_releases = None
+
+                  # 1. Commit activity (with 202 retry)
+                  try:
+                      commit_data = None
+                      for attempt in range(3):
+                          result = subprocess.run(
+                              ["gh", "api", f"repos/{repo}/stats/commit_activity"],
+                              capture_output=True, text=True, timeout=30
+                          )
+                          if result.returncode != 0:
+                              print(f"::warning::commit_activity API failed for {repo}: {result.stderr}")
+                              break
+
+                          body = result.stdout.strip()
+                          if not body:
+                              if attempt < 2:
+                                  print(f"  Commit activity not ready (empty response), retrying in 5s...")
+                                  time.sleep(5)
+                              continue
+
+                          try:
+                              parsed = json.loads(body)
+                          except json.JSONDecodeError:
+                              if attempt < 2:
+                                  print(f"  Commit activity not ready (invalid JSON), retrying in 5s...")
+                                  time.sleep(5)
+                              continue
+
+                          if isinstance(parsed, list) and len(parsed) > 0:
+                              commit_data = parsed
+                              break
+                          else:
+                              if attempt < 2:
+                                  print(f"  Commit activity not ready (got {type(parsed).__name__}), retrying in 5s...")
+                                  time.sleep(5)
+
+                      if commit_data is None:
+                          print(f"::warning::Commit activity unavailable for {repo} after 3 attempts")
+                      else:
+                          new_weekly = {}
+                          for week in commit_data:
+                              week_start = datetime.fromtimestamp(
+                                  week["week"], tz=timezone.utc
+                              ).strftime("%Y-%m-%d")
+                              new_weekly[week_start] = {
+                                  "week_start": week_start,
+                                  "total": week["total"],
+                                  "days": week["days"],
+                              }
+                          sections_ok.append("commits")
+                  except Exception as e:
+                      print(f"::warning::Commit activity failed for {repo}: {e}")
+
+                  # 2. Releases
+                  try:
+                      result = subprocess.run(
+                          ["gh", "api", f"repos/{repo}/releases", "--paginate"],
+                          capture_output=True, text=True, timeout=60
+                      )
+                      if result.returncode != 0:
+                          print(f"::warning::Releases API failed for {repo}: {result.stderr}")
+                      else:
+                          api_releases = json.loads(result.stdout)
+                          new_releases = []
+                          for r in api_releases:
+                              if r.get("draft") or not r.get("published_at"):
+                                  continue
+                              new_releases.append({
+                                  "tag": r["tag_name"],
+                                  "name": r.get("name") or r["tag_name"],
+                                  "published_at": r["published_at"],
+                                  "prerelease": r["prerelease"],
+                              })
+                          # Sort by published_at descending
+                          new_releases.sort(key=lambda x: x["published_at"], reverse=True)
+                          sections_ok.append("releases")
+                  except Exception as e:
+                      print(f"::warning::Releases failed for {repo}: {e}")
+
+                  if not sections_ok:
+                      print(f"::warning::All API calls failed for {repo}, skipping")
+                      continue
+
+                  # Load existing data
+                  json_path = os.path.join(folder, "github-activity.json")
+                  existing_data = {}
+                  if os.path.exists(json_path):
+                      try:
+                          with open(json_path) as f:
+                              existing_data = json.load(f)
+                      except (json.JSONDecodeError, KeyError) as e:
+                          print(f"::warning::Corrupt data file for {repo}, starting fresh: {e}")
+                          existing_data = {}
+
+                  result_data = {"schema_version": 1}
+
+                  # Commits section
+                  if "commits" in sections_ok:
+                      existing_weekly = {}
+                      for entry in existing_data.get("commits", {}).get("weekly", []):
+                          existing_weekly[entry["week_start"]] = entry
+                      existing_weekly.update(new_weekly)
+                      result_data["commits"] = {
+                          "weekly": sorted(
+                              existing_weekly.values(),
+                              key=lambda x: x["week_start"],
+                              reverse=True,
+                          )
+                      }
+                  elif "commits" in existing_data:
+                      result_data["commits"] = existing_data["commits"]
+
+                  # Releases section
+                  if "releases" in sections_ok:
+                      # Full overwrite — API is the source of truth
+                      total = len(new_releases)
+                      summary = {
+                          "total_releases": total,
+                          "latest_release": None,
+                          "latest_release_date": None,
+                          "releases_last_90d": None,
+                          "releases_last_365d": None,
+                          "avg_days_between_releases": None,
+                      }
+                      if total > 0:
+                          summary["latest_release"] = new_releases[0]["tag"]
+                          summary["latest_release_date"] = new_releases[0]["published_at"][:10]
+                          summary["releases_last_90d"] = sum(
+                              1 for r in new_releases
+                              if r["published_at"][:10] >= str(cutoff_90d)
+                          )
+                          summary["releases_last_365d"] = sum(
+                              1 for r in new_releases
+                              if r["published_at"][:10] >= str(cutoff_365d)
+                          )
+                      if total >= 2:
+                          dates = sorted(
+                              datetime.fromisoformat(r["published_at"].replace("Z", "+00:00"))
+                              for r in new_releases
+                          )
+                          intervals = [
+                              (dates[i + 1] - dates[i]).total_seconds() / 86400
+                              for i in range(len(dates) - 1)
+                          ]
+                          summary["avg_days_between_releases"] = round(
+                              sum(intervals) / len(intervals), 1
+                          )
+
+                      result_data["releases"] = {
+                          "summary": summary,
+                          "all": new_releases,
+                      }
+                  elif "releases" in existing_data:
+                      result_data["releases"] = existing_data["releases"]
+
+                  # Write atomically
+                  os.makedirs(folder, exist_ok=True)
+                  tmp_path = os.path.join(folder, ".github-activity.tmp")
+                  with open(tmp_path, "w") as f:
+                      json.dump(result_data, f, indent=2)
+                      f.write("\n")
+                  os.replace(tmp_path, json_path)
+
+                  # Summary
+                  parts = []
+                  if "commits" in sections_ok:
+                      total_commits = sum(
+                          e["total"] for e in result_data["commits"]["weekly"]
+                      )
+                      parts.append(f"{total_commits} commits (52w)")
+                  if "releases" in sections_ok:
+                      s = result_data["releases"]["summary"]
+                      latest = s["latest_release"] or "none"
+                      parts.append(f"{s['total_releases']} releases, latest {latest}")
+                  status = "/".join(sections_ok)
+                  print(f"{folder}: {', '.join(parts)} | {status} ok")
+
+              except Exception as e:
+                  print(f"::warning::Failed to process {repo}: {e}")
+                  continue
+          PYTHON
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add */github-activity.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          today=$(date -u +%Y-%m-%d)
+          git commit -m "Update github-activity data ${today}"
+          for i in 1 2 3; do
+            if git pull --rebase; then
+              git push && exit 0
+            else
+              echo "::warning::Rebase failed (possible conflict), aborting rebase"
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::Failed to push after 3 attempts"
+          exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::warning::GitHub activity collection failed. Check the workflow logs."
