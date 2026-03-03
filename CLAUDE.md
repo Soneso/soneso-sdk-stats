@@ -10,9 +10,9 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-packagist.yml` — Packagist download stats for stellar-php-sdk (10:05 UTC)
 - `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
 - `.github/workflows/collect-github-meta.yml` — GitHub repo stats, page views, and referrers (10:20 UTC)
-- `.github/workflows/collect-github-activity.yml` — Commit frequency and release history (10:30 UTC)
-- `.github/workflows/collect-github-issues.yml` — Issue/PR response times and closure stats (10:40 UTC)
-- `.github/workflows/collect-github-dependents.yml` — GitHub "Used by" dependents count via HTML scraping (10:50 UTC)
+- `.github/workflows/collect-github-activity.yml` — Commit frequency and release history (10:25 UTC)
+- `.github/workflows/collect-github-issues.yml` — Issue/PR response times and closure stats (10:30 UTC)
+- `.github/workflows/collect-github-dependents.yml` — GitHub "Used by" dependents count via HTML scraping (10:35 UTC)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
 - `<sdk-folder>/pub-dev.json` — pub.dev stats: `latest` (30d count, 4w/12w totals), `weekly` (52-week history with ISO week labels), `daily` (daily snapshots)
@@ -56,6 +56,5 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 
 ## Secrets
 
-- `TRAFFIC_TOKEN` — Fine-grained PAT with `administration:read` on the 4 SDK repos (used by collect-github.yml and collect-github-meta.yml)
-- Workflows accessing only public API endpoints (activity, issues) use the default `GITHUB_TOKEN` — no special PAT needed
+- `TRAFFIC_TOKEN` — Fine-grained PAT with `administration:read` on the 4 SDK repos (used by all `gh api` workflows: collect-github.yml, collect-github-meta.yml, collect-github-activity.yml, collect-github-issues.yml). Required for correct `author_association` on issues (org membership is not visible with the default `GITHUB_TOKEN`).
 - The dependents workflow uses unauthenticated `curl` (HTML scraping, not GitHub API)

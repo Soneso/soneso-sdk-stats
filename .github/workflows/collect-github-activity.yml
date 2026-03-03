@@ -2,7 +2,7 @@ name: Collect GitHub Activity Stats
 
 on:
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '25 10 * * *'
   workflow_dispatch:
 
 permissions: {}
@@ -24,7 +24,7 @@ jobs:
 
       - name: Fetch and merge GitHub activity data
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
         run: |
           python3 <<'PYTHON'
           import json
@@ -67,7 +67,7 @@ jobs:
                           if not body:
                               if attempt < 2:
                                   print(f"  Commit activity not ready (empty response), retrying in 5s...")
-                                  time.sleep(5)
+                                  time.sleep(20)
                               continue
 
                           try:
@@ -75,7 +75,7 @@ jobs:
                           except json.JSONDecodeError:
                               if attempt < 2:
                                   print(f"  Commit activity not ready (invalid JSON), retrying in 5s...")
-                                  time.sleep(5)
+                                  time.sleep(20)
                               continue
 
                           if isinstance(parsed, list) and len(parsed) > 0:
@@ -84,7 +84,7 @@ jobs:
                           else:
                               if attempt < 2:
                                   print(f"  Commit activity not ready (got {type(parsed).__name__}), retrying in 5s...")
-                                  time.sleep(5)
+                                  time.sleep(20)
 
                       if commit_data is None:
                           print(f"::warning::Commit activity unavailable for {repo} after 3 attempts")
@@ -146,22 +146,6 @@ jobs:
 
                   result_data = {"schema_version": 1}
 
-                  # Commits section
-                  if "commits" in sections_ok:
-                      existing_weekly = {}
-                      for entry in existing_data.get("commits", {}).get("weekly", []):
-                          existing_weekly[entry["week_start"]] = entry
-                      existing_weekly.update(new_weekly)
-                      result_data["commits"] = {
-                          "weekly": sorted(
-                              existing_weekly.values(),
-                              key=lambda x: x["week_start"],
-                              reverse=True,
-                          )
-                      }
-                  elif "commits" in existing_data:
-                      result_data["commits"] = existing_data["commits"]
-
                   # Releases section
                   if "releases" in sections_ok:
                       # Full overwrite — API is the source of truth
@@ -204,6 +188,22 @@ jobs:
                       }
                   elif "releases" in existing_data:
                       result_data["releases"] = existing_data["releases"]
+
+                  # Commits section
+                  if "commits" in sections_ok:
+                      existing_weekly = {}
+                      for entry in existing_data.get("commits", {}).get("weekly", []):
+                          existing_weekly[entry["week_start"]] = entry
+                      existing_weekly.update(new_weekly)
+                      result_data["commits"] = {
+                          "weekly": sorted(
+                              existing_weekly.values(),
+                              key=lambda x: x["week_start"],
+                              reverse=True,
+                          )
+                      }
+                  elif "commits" in existing_data:
+                      result_data["commits"] = existing_data["commits"]
 
                   # Write atomically
                   os.makedirs(folder, exist_ok=True)

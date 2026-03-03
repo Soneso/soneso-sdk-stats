@@ -37,6 +37,6 @@ Automated daily statistics for Soneso Stellar SDKs.
 | Collect Packagist Stats | 10:05 |
 | Collect pub.dev Stats | 10:10 |
 | Collect GitHub Meta Stats | 10:20 |
-| Collect GitHub Activity Stats | 10:30 |
-| Collect GitHub Issues Stats | 10:40 |
-| Collect GitHub Dependents Stats | 10:50 |
+| Collect GitHub Activity Stats | 10:25 |
+| Collect GitHub Issues Stats | 10:30 |
+| Collect GitHub Dependents Stats | 10:35 |

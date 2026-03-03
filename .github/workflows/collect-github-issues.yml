@@ -2,7 +2,7 @@ name: Collect GitHub Issues Stats
 
 on:
   schedule:
-    - cron: '40 10 * * *'
+    - cron: '30 10 * * *'
   workflow_dispatch:
 
 permissions: {}
@@ -24,7 +24,7 @@ jobs:
 
       - name: Fetch and merge GitHub issues data
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
         run: |
           python3 <<'PYTHON'
           import json
@@ -202,9 +202,13 @@ jobs:
                       i["first_response_hours"] for i in external
                       if i.get("first_response_hours") is not None
                   ]
+                  # Exclude issues open for more than 5 years from close-time
+                  # metrics — stale PRs/issues skew the averages
+                  MAX_CLOSE_HOURS = 5 * 365 * 24  # 43800h
                   close_hours = [
                       i["time_to_close_hours"] for i in external
                       if i.get("time_to_close_hours") is not None
+                      and i["time_to_close_hours"] <= MAX_CLOSE_HOURS
                   ]
                   external_with_comments = [
                       i for i in external if i.get("first_response_at") is not None
