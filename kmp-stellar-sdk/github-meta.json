@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "repo": {
+    "daily": [
+      {
+        "date": "2026-03-03",
+        "stars": 8,
+        "forks": 2,
+        "open_issues": 0,
+        "watchers": 0,
+        "size_kb": 22727
+      }
+    ]
+  },
+  "views": {
+    "summary": {
+      "last_14_days": {
+        "count": 138,
+        "uniques": 10
+      }
+    },
+    "daily": [
+      {
+        "date": "2026-03-02",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-01",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-28",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-27",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-02-26",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-25",
+        "count": 6,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-24",
+        "count": 9,
+        "uniques": 2
+      },
+      {
+        "date": "2026-02-23",
+        "count": 44,
+        "uniques": 3
+      },
+      {
+        "date": "2026-02-22",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-21",
+        "count": 9,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-20",
+        "count": 23,
+        "uniques": 3
+      },
+      {
+        "date": "2026-02-19",
+        "count": 19,
+        "uniques": 2
+      },
+      {
+        "date": "2026-02-18",
+        "count": 18,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-17",
+        "count": 7,
+        "uniques": 1
+      }
+    ]
+  },
+  "referrers": {
+    "daily": [
+      {
+        "date": "2026-03-03",
+        "referrers": [
+          {
+            "referrer": "github.com",
+            "count": 57,
+            "uniques": 5
+          },
+          {
+            "referrer": "Google",
+            "count": 41,
+            "uniques": 1
+          }
+        ]
+      }
+    ]
+  }
+}
