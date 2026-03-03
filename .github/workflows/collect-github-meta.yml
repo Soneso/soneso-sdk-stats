@@ -65,7 +65,7 @@ jobs:
                               "date": today_str,
                               "stars": api_data["stargazers_count"],
                               "forks": api_data["forks_count"],
-                              "open_issues": api_data["open_issues_count"],
+                              "open_issues_and_prs": api_data["open_issues_count"],
                               "watchers": api_data["subscribers_count"],
                               "size_kb": api_data["size"],
                           }
