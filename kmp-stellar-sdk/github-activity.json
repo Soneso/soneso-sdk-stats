@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "releases": {
+    "summary": {
+      "total_releases": 14,
+      "latest_release": "v1.3.0",
+      "latest_release_date": "2026-02-14",
+      "releases_last_90d": 9,
+      "releases_last_365d": 14,
+      "avg_days_between_releases": 8.7
+    },
+    "all": [
+      {
+        "tag": "v1.3.0",
+        "name": "v1.3.0 - SEP-2, SEP-30, SEP-53 support",
+        "published_at": "2026-02-14T20:02:14Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v1.2.1",
+        "name": "v1.2.1 - SEP-8 Regulated Assets",
+        "published_at": "2026-02-11T17:33:34Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v1.2.0",
+        "name": "v.1.2.0 SEP-5 support",
+        "published_at": "2026-02-04T16:42:53Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v1.1.0",
+        "name": "v1.1.0 - Test infrastructure and cross-platform bug fixes",
+        "published_at": "2026-02-03T14:42:42Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v1.0.0",
+        "name": "v1.0.0 SEP-45 Web Authentication for Contract Accounts",
+        "published_at": "2026-01-15T18:14:23Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.9.0",
+        "name": "v0.9.0 - SEP-6 Deposit and Withdrawal API",
+        "published_at": "2026-01-14T19:19:19Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.8.0",
+        "name": "v0.8.0 - SEP-24 Hosted Deposit and Withdrawal",
+        "published_at": "2026-01-14T16:32:02Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.7.0",
+        "name": "Version 0.7.0 - SEP-38 Anchor RFQ API support",
+        "published_at": "2025-12-17T15:19:56Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.6.0",
+        "name": "Version 0.6.0 - SEP-09 and SEP-12 KYC Support",
+        "published_at": "2025-12-09T12:01:56Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.5.1",
+        "name": "Version 0.5.1 - SEP-10 Web Authentication Support",
+        "published_at": "2025-11-25T20:08:42Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.4.0",
+        "name": "Version 0.4.0 - SEP-1 (Stellar TOML) Implementation",
+        "published_at": "2025-11-14T23:35:57Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.3.0",
+        "name": "Version 0.3.0 - Enhanced API Coverage and Modernized Demo",
+        "published_at": "2025-11-09T13:56:55Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.2.1",
+        "name": "Version 0.2.1 - Maven Metadata and Documentation Fixes",
+        "published_at": "2025-10-25T01:22:57Z",
+        "prerelease": false
+      },
+      {
+        "tag": "v0.2.0",
+        "name": "Version 0.2.0 - ContractClient API Simplification",
+        "published_at": "2025-10-25T00:07:08Z",
+        "prerelease": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "schema_version": 1,
+  "releases": {
+    "summary": {
+      "total_releases": 78,
+      "latest_release": "1.9.3",
+      "latest_release_date": "2026-02-10",
+      "releases_last_90d": 4,
+      "releases_last_365d": 19,
+      "avg_days_between_releases": 19.5
+    },
+    "all": [
+      {
+        "tag": "1.9.3",
+        "name": "v1.9.3 - Maintenance release",
+        "published_at": "2026-02-10T13:25:28Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.2",
+        "name": "v1.9.2 SEP-53 support",
+        "published_at": "2026-02-03T16:01:16Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.1",
+        "name": "v1.9.1 RPC v25.0.0 support",
+        "published_at": "2026-01-06T20:22:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.0",
+        "name": "v1.9.0 - SEP-45 Support",
+        "published_at": "2025-12-18T12:28:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.8",
+        "name": "1.8.8 - Maintenance Release",
+        "published_at": "2025-11-27T12:03:07Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.7",
+        "name": "Documentation Enhancement and Code Modernization",
+        "published_at": "2025-11-14T15:37:55Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.6",
+        "name": "Extend SEP support",
+        "published_at": "2025-10-16T17:05:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.5",
+        "name": "Horizon & RPC API support updates",
+        "published_at": "2025-10-10T00:26:51Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.4",
+        "name": "Update sodium_compat dependency",
+        "published_at": "2025-10-02T08:10:04Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.3",
+        "name": "Improve soroban support",
+        "published_at": "2025-09-29T12:53:55Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.2",
+        "name": "Contract Bindings support",
+        "published_at": "2025-08-30T18:59:54Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.1",
+        "name": "StrKey Fix for P23, Big numbers support for ContractSpec",
+        "published_at": "2025-08-11T19:43:29Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.0",
+        "name": "Protocol 23 support",
+        "published_at": "2025-07-19T17:11:12Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.0beta2",
+        "name": "Protocol 23 release candidate 2",
+        "published_at": "2025-07-14T22:25:35Z",
+        "prerelease": true
+      },
+      {
+        "tag": "1.8.0beta1",
+        "name": "Protocol 23 release candidate 1",
+        "published_at": "2025-07-08T10:04:28Z",
+        "prerelease": true
+      },
+      {
+        "tag": "1.7.2",
+        "name": "Soroban improvements & fixes",
+        "published_at": "2025-05-30T11:02:52Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.1",
+        "name": "RequestBuilder bugfix",
+        "published_at": "2025-04-11T20:08:01Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.0",
+        "name": "Soroban and SEP-10 improvements",
+        "published_at": "2025-03-10T14:48:26Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.2",
+        "name": "SEP-09 extension",
+        "published_at": "2025-03-05T08:51:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.1",
+        "name": "SEP-12 customer files support",
+        "published_at": "2024-12-04T13:27:25Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.0",
+        "name": "Protocol 22",
+        "published_at": "2024-11-25T16:54:33Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.0beta2",
+        "name": "Protocol 22-rc3 support",
+        "published_at": "2024-11-04T13:56:52Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.0beta1",
+        "name": "Protocol 22 support",
+        "published_at": "2024-10-24T12:58:02Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.6",
+        "name": "Soroban Contract Parser",
+        "published_at": "2024-09-05T10:32:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.5",
+        "name": "SEP-6 & SEP-24 improvements",
+        "published_at": "2024-08-24T11:17:25Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.4",
+        "name": "Update for Horizon API historical data changes",
+        "published_at": "2024-08-09T11:06:36Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.3",
+        "name": "Horizon v2.31.0 and RPC v21.4.0 updates",
+        "published_at": "2024-07-25T11:14:53Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.2",
+        "name": "Usability improvements",
+        "published_at": "2024-07-06T18:03:14Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.1",
+        "name": "Soroban & SEP-11 improvements",
+        "published_at": "2024-06-09T20:07:15Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.0",
+        "name": "Protocol 21 Support",
+        "published_at": "2024-05-13T16:09:16Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.2",
+        "name": "SEP-006 Improvements",
+        "published_at": "2024-05-07T21:56:29Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.1",
+        "name": "SEP-008 Support",
+        "published_at": "2024-04-30T13:10:04Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.0",
+        "name": "Upgrade SEP-006 support",
+        "published_at": "2024-03-13T22:45:32Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.9",
+        "name": "SEP-31 support",
+        "published_at": "2024-02-27T14:54:58Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.8",
+        "name": "SEP-038 Support",
+        "published_at": "2024-02-21T22:46:40Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.7",
+        "name": "SEP-24 improvements",
+        "published_at": "2024-02-11T16:46:52Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.6",
+        "name": "transaction meta & optional http clients",
+        "published_at": "2024-01-27T21:24:55Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.5",
+        "name": "Update SEP-009",
+        "published_at": "2024-01-20T12:47:56Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.4",
+        "name": "Soroban & SEP-006 Improvements",
+        "published_at": "2024-01-18T14:00:54Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.3",
+        "name": "Soroban 20.0.2 support",
+        "published_at": "2023-12-18T19:23:22Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.2",
+        "name": "SEP-30 Support",
+        "published_at": "2023-10-27T13:44:31Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.1",
+        "name": "Improved Protocol 20 Support",
+        "published_at": "2023-10-25T13:48:13Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.0",
+        "name": "Protocol 20 support",
+        "published_at": "2023-09-22T15:54:18Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.5",
+        "name": "SEP-24 & soroban prev 11",
+        "published_at": "2023-09-18T16:47:26Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.4",
+        "name": "soroban improvements",
+        "published_at": "2023-09-06T11:08:54Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.3",
+        "name": "Soroban Prev. 10 support",
+        "published_at": "2023-07-22T12:53:44Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.2",
+        "name": "fix AssetsRequesBuilder",
+        "published_at": "2023-07-18T08:39:43Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.1",
+        "name": "fix XdrLedgerKey parsing",
+        "published_at": "2023-07-16T17:42:02Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.0",
+        "name": "fix soroban XdrSCSpec",
+        "published_at": "2023-06-27T15:30:12Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.9",
+        "name": "Soroban improvements",
+        "published_at": "2023-06-22T20:34:07Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.8",
+        "name": "soroban prev 9 improvements",
+        "published_at": "2023-06-01T14:37:54Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.7",
+        "name": "add soroban prev. 9 support",
+        "published_at": "2023-05-30T21:46:21Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.6",
+        "name": "update txrep for soroban prev 8",
+        "published_at": "2023-05-04T21:54:34Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.5",
+        "name": "add soroban prev 8 support",
+        "published_at": "2023-04-09T19:38:23Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.4",
+        "name": "Soroban Auth Support",
+        "published_at": "2023-02-27T00:54:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.3",
+        "name": "fix offers request builder",
+        "published_at": "2023-02-05T14:08:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.2",
+        "name": "Horizon response fixes and improvements",
+        "published_at": "2023-01-30T23:10:50Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.1",
+        "name": "xdr improvements and bugfixes",
+        "published_at": "2023-01-30T10:00:19Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.0",
+        "name": "Soroban support",
+        "published_at": "2023-01-22T16:29:55Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.6",
+        "name": "WebAuth fix",
+        "published_at": "2022-12-15T20:47:02Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.5",
+        "name": "TxRep Bugfix",
+        "published_at": "2022-12-09T18:04:33Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.4",
+        "name": "XdrDecoder bugfix",
+        "published_at": "2022-10-07T14:00:21Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.3",
+        "name": "bugfix set options op",
+        "published_at": "2022-09-30T12:26:23Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.2",
+        "name": "Update SEP-001",
+        "published_at": "2022-09-30T11:53:12Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.1",
+        "name": "fix version nr. in src code",
+        "published_at": "2022-09-10T21:29:35Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.0",
+        "name": "end beta phase",
+        "published_at": "2022-09-10T21:12:14Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.7.4",
+        "name": "txrep support for protocol 19",
+        "published_at": "2022-08-02T22:15:53Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.7.3",
+        "name": "SEP-007 support",
+        "published_at": "2022-07-28T13:12:21Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.7.2",
+        "name": "Improvement and bugfix",
+        "published_at": "2022-05-29T20:09:58Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.7.1",
+        "name": "Bugfixes",
+        "published_at": "2022-05-26T18:47:19Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.7.0",
+        "name": "Protocol 19 support",
+        "published_at": "2022-05-10T16:49:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.6.0",
+        "name": "beta 0.6.0",
+        "published_at": "2022-02-03T20:29:41Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.5.0",
+        "name": "alpha 0.5.0",
+        "published_at": "2022-01-24T12:23:16Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.4.0",
+        "name": "alpha 0.4.0",
+        "published_at": "2022-01-20T18:06:33Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.3.0",
+        "name": "alpha 0.3.0",
+        "published_at": "2022-01-17T17:19:10Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.2.0",
+        "name": "alpha 0.2.0",
+        "published_at": "2022-01-12T21:45:06Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.1.0",
+        "name": "alpha 0.1.0",
+        "published_at": "2022-01-11T21:39:20Z",
+        "prerelease": false
+      },
+      {
+        "tag": "0.0.1",
+        "name": "alpha 0.0.1",
+        "published_at": "2021-12-30T00:04:44Z",
+        "prerelease": false
+      }
+    ]
+  }
+}

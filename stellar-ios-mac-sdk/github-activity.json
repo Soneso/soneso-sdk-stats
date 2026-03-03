@@ -1,0 +1,1523 @@
+{
+  "schema_version": 1,
+  "commits": {
+    "weekly": [
+      {
+        "week_start": "2026-03-01",
+        "total": 2,
+        "days": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-02-22",
+        "total": 1,
+        "days": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-02-15",
+        "total": 6,
+        "days": [
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-02-08",
+        "total": 10,
+        "days": [
+          0,
+          7,
+          3,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-02-01",
+        "total": 4,
+        "days": [
+          0,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-01-25",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-01-18",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-01-11",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2026-01-04",
+        "total": 6,
+        "days": [
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-12-28",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-12-21",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-12-14",
+        "total": 2,
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-12-07",
+        "total": 1,
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-11-30",
+        "total": 3,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      },
+      {
+        "week_start": "2025-11-23",
+        "total": 9,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          5,
+          1,
+          3
+        ]
+      },
+      {
+        "week_start": "2025-11-16",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-11-09",
+        "total": 18,
+        "days": [
+          0,
+          3,
+          4,
+          5,
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "week_start": "2025-11-02",
+        "total": 12,
+        "days": [
+          0,
+          4,
+          8,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-10-26",
+        "total": 2,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-10-19",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-10-12",
+        "total": 3,
+        "days": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-10-05",
+        "total": 10,
+        "days": [
+          0,
+          0,
+          0,
+          5,
+          2,
+          3,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-09-28",
+        "total": 1,
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-09-21",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-09-14",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-09-07",
+        "total": 1,
+        "days": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-08-31",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-08-24",
+        "total": 1,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "week_start": "2025-08-17",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-08-10",
+        "total": 3,
+        "days": [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-08-03",
+        "total": 3,
+        "days": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-07-27",
+        "total": 2,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-07-20",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-07-13",
+        "total": 3,
+        "days": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "week_start": "2025-07-06",
+        "total": 4,
+        "days": [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "week_start": "2025-06-29",
+        "total": 4,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-06-22",
+        "total": 2,
+        "days": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-06-15",
+        "total": 5,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-06-08",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-06-01",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-05-25",
+        "total": 3,
+        "days": [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-05-18",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-05-11",
+        "total": 1,
+        "days": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-05-04",
+        "total": 2,
+        "days": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-04-27",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-04-20",
+        "total": 2,
+        "days": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-04-13",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-04-06",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-03-30",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-03-23",
+        "total": 2,
+        "days": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-03-16",
+        "total": 1,
+        "days": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week_start": "2025-03-09",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "releases": {
+    "summary": {
+      "total_releases": 138,
+      "latest_release": "3.4.4",
+      "latest_release_date": "2026-02-20",
+      "releases_last_90d": 5,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 21.3
+    },
+    "all": [
+      {
+        "tag": "3.4.4",
+        "name": "v3.4.4 - Maintenance release: Sendable conformance, bug fixes, and thread safety",
+        "published_at": "2026-02-20T20:19:26Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.4.3",
+        "name": "v3.4.3 - SEP-53 support, test infrastructure overhaul, bug fixes",
+        "published_at": "2026-02-10T10:32:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.4.2",
+        "name": "v3.4.2 RPC v25.0.0 support",
+        "published_at": "2026-01-07T17:27:31Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.4.1",
+        "name": "v3.4.1 - SEP-45 Support",
+        "published_at": "2025-12-18T14:47:56Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.4.0",
+        "name": "3.4.0 - Swift 6 Modernization",
+        "published_at": "2025-12-06T13:59:28Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.8",
+        "name": "Documentation and Code Quality Improvements",
+        "published_at": "2025-11-14T23:15:33Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.7",
+        "name": "Extend SEP support",
+        "published_at": "2025-10-16T20:05:04Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.6",
+        "name": "Horizon & RPC API support updates",
+        "published_at": "2025-10-08T20:48:03Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.5",
+        "name": "Improve soroban support",
+        "published_at": "2025-09-29T12:43:40Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.4",
+        "name": "Contract Bindings support",
+        "published_at": "2025-08-30T18:02:02Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.3",
+        "name": "StrKey Fix for P23, BigNum support for ContractSpec",
+        "published_at": "2025-08-11T12:10:24Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.2",
+        "name": "Soroban improvements",
+        "published_at": "2025-08-04T20:10:33Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.1",
+        "name": "Sep-6 & Sep-24 History fix",
+        "published_at": "2025-08-01T14:54:18Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.0",
+        "name": "Protocol 23 support",
+        "published_at": "2025-07-19T14:36:50Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.2.0-beta.2",
+        "name": "Protocol 23 release candidate 2",
+        "published_at": "2025-07-14T21:34:08Z",
+        "prerelease": true
+      },
+      {
+        "tag": "3.2.0-beta.1",
+        "name": "Protocol 23 release candidate 1",
+        "published_at": "2025-07-07T13:13:47Z",
+        "prerelease": true
+      },
+      {
+        "tag": "3.1.0",
+        "name": "Soroban usability improvements",
+        "published_at": "2025-05-13T12:18:51Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.9",
+        "name": "fix CreateClaimableBalanceOperationResponse",
+        "published_at": "2025-05-06T12:02:11Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.8",
+        "name": "fix InvokeHostFunctionOperationResponse",
+        "published_at": "2025-04-23T07:45:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.7",
+        "name": "SEP-06 improvements",
+        "published_at": "2025-03-25T12:35:07Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.6",
+        "name": "HashIDPreimageContractXDR parsing fix",
+        "published_at": "2025-02-28T11:07:22Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.5",
+        "name": "SEP-12 & SEP-09 improvements",
+        "published_at": "2025-02-20T11:31:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.4",
+        "name": "SEP parsing improvements",
+        "published_at": "2025-01-14T15:43:38Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.3",
+        "name": "SEP-10 improvements",
+        "published_at": "2024-12-10T18:50:37Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.2",
+        "name": "SEP-12 customer files support",
+        "published_at": "2024-12-04T13:01:51Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.1",
+        "name": "Protocol 22",
+        "published_at": "2024-11-25T16:01:47Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.1-beta.2",
+        "name": "Protocol 22-rc3 support",
+        "published_at": "2024-11-04T13:42:53Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.1-beta.1",
+        "name": "Protocol 22 Support",
+        "published_at": "2024-10-24T13:58:56Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.0",
+        "name": "Async/await support",
+        "published_at": "2024-10-10T13:42:53Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.6",
+        "name": "Soroban Contract Parser & SEP imporvements",
+        "published_at": "2024-09-05T11:31:21Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.5",
+        "name": "Update for Horizon API historical data changes",
+        "published_at": "2024-08-07T05:13:04Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.4",
+        "name": "Horizon v2.31.0 and RPC v21.4.0 updates",
+        "published_at": "2024-07-25T11:55:37Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.3",
+        "name": "Soroban improvements",
+        "published_at": "2024-06-06T19:04:51Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.2",
+        "name": "fix ContractXDR encoding",
+        "published_at": "2024-05-17T20:02:36Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.1",
+        "name": "Protocol 21 Support",
+        "published_at": "2024-05-13T21:29:25Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.6.0",
+        "name": "SEP-08 support",
+        "published_at": "2024-04-29T12:48:42Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.5.5",
+        "name": "Update SEP-06 Support",
+        "published_at": "2024-02-28T16:49:15Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.5.4",
+        "name": "SEP-38 (Anchor RFQ API) Support",
+        "published_at": "2024-02-20T19:07:59Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.5.3",
+        "name": "Optional transaction meta",
+        "published_at": "2024-01-27T17:28:03Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.5.2",
+        "name": "Sep-009 update",
+        "published_at": "2024-01-20T23:32:39Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.5.1",
+        "name": "Soroban & SEP-006 Improvements",
+        "published_at": "2024-01-18T14:23:49Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.5.0",
+        "name": "Soroban 20.0.2 support",
+        "published_at": "2023-12-18T19:30:35Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.9",
+        "name": "SEP-30 Support",
+        "published_at": "2023-10-27T18:01:51Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.8",
+        "name": "improved protocol 20 support",
+        "published_at": "2023-10-25T14:49:29Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.7",
+        "name": "SEP-24 Support",
+        "published_at": "2023-10-09T12:53:06Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.6",
+        "name": "Protocol 20 Support",
+        "published_at": "2023-10-03T15:03:27Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.3",
+        "name": "Soroban prev. 11 support",
+        "published_at": "2023-09-18T17:47:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.2",
+        "name": "SEP 10 improvement",
+        "published_at": "2023-09-14T17:00:22Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.1",
+        "name": "AnchorTransactionStatus extended",
+        "published_at": "2023-08-08T16:47:27Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.4.0",
+        "name": "Optional lastModifiedTime ",
+        "published_at": "2023-07-31T12:48:32Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.9",
+        "name": "soroban prev 10 support",
+        "published_at": "2023-07-25T19:11:12Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.6",
+        "name": "add soroban prev 9 support",
+        "published_at": "2023-06-01T13:50:58Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.5",
+        "name": "update txrep for soroban prev 8",
+        "published_at": "2023-05-05T15:04:16Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.4",
+        "name": "soroban prev 8 support",
+        "published_at": "2023-04-11T10:26:34Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.3",
+        "name": "prepare for soroban 8 support (do not use)",
+        "published_at": "2023-04-11T10:10:02Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.2",
+        "name": "update soroban support",
+        "published_at": "2023-03-01T01:37:24Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.1",
+        "name": "improve transaction response",
+        "published_at": "2023-02-03T17:49:35Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.3.0",
+        "name": "Soroban support",
+        "published_at": "2023-01-22T16:40:32Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.2.5",
+        "name": "extends responses, docs & tests",
+        "published_at": "2022-12-15T11:55:08Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.2.4",
+        "name": "update sep-001",
+        "published_at": "2022-09-30T12:45:01Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.2.3",
+        "name": "txrep support for protocol 19",
+        "published_at": "2022-08-02T09:54:56Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.2.2",
+        "name": "Improvements",
+        "published_at": "2022-07-28T13:44:07Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.2.1",
+        "name": "Protocol 19 support",
+        "published_at": "2022-05-09T19:54:38Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.1.0",
+        "name": "improvement & bugfix",
+        "published_at": "2022-03-25T19:09:48Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.9",
+        "name": "2.0.9",
+        "published_at": "2022-02-07T13:41:47Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.8",
+        "name": "2.0.8",
+        "published_at": "2022-02-03T21:23:46Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.7",
+        "name": "fix transaction result xdr for protocol 18",
+        "published_at": "2021-10-30T18:55:40Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.6",
+        "name": "improvements and bugfixes",
+        "published_at": "2021-10-26T10:47:44Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.5",
+        "name": "muxed accounts & memo support in SEP-10",
+        "published_at": "2021-09-27T11:11:54Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.4",
+        "name": "Protocol 18 support (AMM)",
+        "published_at": "2021-09-15T11:23:05Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.3",
+        "name": "xdr parsing fix",
+        "published_at": "2021-09-09T13:26:47Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.2",
+        "name": "Add support for Swift Package Manager",
+        "published_at": "2021-08-25T19:55:12Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.1",
+        "name": "Update SEP-10, SEP-09, SEP-06 implementations",
+        "published_at": "2021-07-27T18:30:27Z",
+        "prerelease": false
+      },
+      {
+        "tag": "2.0.0",
+        "name": "update horizon 2.5.1 support",
+        "published_at": "2021-06-29T13:37:51Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.9",
+        "name": "horizon related extensions & SEP23 update",
+        "published_at": "2021-06-07T08:40:29Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.8",
+        "name": "sdk improvements",
+        "published_at": "2021-06-02T14:00:15Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.7",
+        "name": "improve protocol 15 and 17 support",
+        "published_at": "2021-05-01T18:03:27Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.6",
+        "name": "protocol 17 support",
+        "published_at": "2021-04-30T16:44:53Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.5",
+        "name": "extend xdr parsing for sponsoring operations",
+        "published_at": "2021-02-11T16:30:14Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.4",
+        "name": "add SEP-10 v. 3.1 support",
+        "published_at": "2021-01-18T23:42:36Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.3",
+        "name": "add SEP-10 v. 3.0 support",
+        "published_at": "2020-11-10T16:01:04Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.2",
+        "name": "fix SEP-10 2.1.0 Support",
+        "published_at": "2020-10-15T01:17:37Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.1",
+        "name": "Add SEP-10 2.1.0 support",
+        "published_at": "2020-10-14T22:48:45Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.9.0",
+        "name": "Support for protocol 14",
+        "published_at": "2020-10-04T18:24:14Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.6",
+        "name": "Update SEP-0010 implementation",
+        "published_at": "2020-09-01T23:44:17Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.5",
+        "name": "Txrep - SEP-0011",
+        "published_at": "2020-08-29T21:39:59Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.4",
+        "name": "Horizon 0.15.0 support",
+        "published_at": "2020-07-09T21:57:33Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.3",
+        "name": "Post protocol 13 release",
+        "published_at": "2020-06-18T18:57:40Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.2",
+        "name": "Fix V0 Transaction signing for protocol 13",
+        "published_at": "2020-06-05T11:28:11Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.1",
+        "name": "revert support for SEP23, support query parameters in horizon url",
+        "published_at": "2020-05-29T06:57:05Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.8.0",
+        "name": "Core protocol 13 support",
+        "published_at": "2020-05-17T15:50:31Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.4",
+        "name": "Add support for SEP0029",
+        "published_at": "2020-04-27T22:26:10Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.3",
+        "name": "fix transaction initialisation from xdr",
+        "published_at": "2020-03-27T10:05:24Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.2",
+        "name": "Improvements & bugfixes",
+        "published_at": "2020-03-02T20:24:34Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.1",
+        "name": "Horizon 1.0 compatibility",
+        "published_at": "2020-02-10T17:21:29Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.7.0",
+        "name": "Support stellar-core protocol 12",
+        "published_at": "2019-10-11T20:01:13Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.8",
+        "name": "transaction fee from xdr fix",
+        "published_at": "2019-10-09T15:09:18Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.7",
+        "name": "Prepared for Horizon v. 0.19.0 and Toml v. 2.0.0",
+        "published_at": "2019-08-13T07:39:58Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.6",
+        "name": "Horizon Update 18",
+        "published_at": "2019-06-03T20:22:16Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.5",
+        "name": "Update version",
+        "published_at": "2019-05-08T07:11:35Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.4",
+        "name": "Horizon-v0.18.0-Compatibility",
+        "published_at": "2019-05-08T06:54:18Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.3",
+        "name": "Update swift_version",
+        "published_at": "2019-04-30T11:37:23Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.2",
+        "name": "Fix swift 5 compilation hanging issue",
+        "published_at": "2019-04-30T11:27:52Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.1",
+        "name": "Horizon Client Request Headers & Swift 5",
+        "published_at": "2019-04-30T09:51:30Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.6.0",
+        "name": "Horizon Update 17",
+        "published_at": "2019-02-28T09:26:21Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.8",
+        "name": "Improvements & bugfixes",
+        "published_at": "2019-02-06T21:44:23Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.7",
+        "name": "Improvements & bugfixes",
+        "published_at": "2018-12-21T08:07:38Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.6",
+        "name": "Bug fixing",
+        "published_at": "2018-12-10T09:16:08Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.5",
+        "name": "Fix issue",
+        "published_at": "2018-12-04T16:14:59Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.4",
+        "name": "Fix federation",
+        "published_at": "2018-12-04T16:05:58Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.3",
+        "name": "Fixes and improvements",
+        "published_at": "2018-12-04T09:18:45Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.2",
+        "name": "Helper methods for transaction to xdr conversion",
+        "published_at": "2018-11-28T07:13:03Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.1",
+        "name": "Sep 10 implementation",
+        "published_at": "2018-11-19T13:59:31Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.5.0",
+        "name": "SEP-001 implementation and various improvements",
+        "published_at": "2018-11-13T13:14:19Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.10",
+        "name": "Fix serialization issues",
+        "published_at": "2018-11-01T08:55:41Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.9",
+        "name": "Fix 32bit overflow",
+        "published_at": "2018-10-29T07:12:16Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.8",
+        "name": "Bug fixes",
+        "published_at": "2018-10-23T06:51:41Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.7",
+        "name": "Close stream and optional trust limit",
+        "published_at": "2018-10-12T08:40:25Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.6",
+        "name": "Update podspec for XCode 10",
+        "published_at": "2018-09-26T05:32:26Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.5",
+        "name": "Fix libs inclusions",
+        "published_at": "2018-09-26T05:30:48Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.4",
+        "name": "Fix CommonCrypto inclusion podspec",
+        "published_at": "2018-09-26T05:23:34Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.3",
+        "name": "Migrate to XCode 10 build tools",
+        "published_at": "2018-09-25T11:05:32Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.2",
+        "name": "Fix amount overflow",
+        "published_at": "2018-09-18T07:52:22Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.1",
+        "name": "Fix transaction parsing",
+        "published_at": "2018-09-17T09:07:34Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.4.0",
+        "name": "sep-7 implementation",
+        "published_at": "2018-09-13T05:35:19Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.3.0",
+        "name": "sep-6 implementation",
+        "published_at": "2018-09-09T12:26:23Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.1",
+        "name": "Update to protocol version 10",
+        "published_at": "2018-08-30T16:09:57Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.2.0",
+        "name": "Implement federation protocol",
+        "published_at": "2018-08-23T08:41:03Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.5",
+        "name": "Bug fixes",
+        "published_at": "2018-07-18T14:38:20Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.4",
+        "name": "Fix offer parsing",
+        "published_at": "2018-06-06T06:10:44Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.3",
+        "name": "fix swift 4.1 warnings",
+        "published_at": "2018-04-13T15:04:43Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.2",
+        "name": "Add swift 4.1 support",
+        "published_at": "2018-04-11T05:53:55Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.1",
+        "name": "Mnemonic and macos",
+        "published_at": "2018-03-09T19:24:04Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.1.0",
+        "name": "Mnemonic and macos",
+        "published_at": "2018-03-09T19:10:31Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.3",
+        "name": "Update cocoapod",
+        "published_at": "2018-03-02T12:53:20Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.2",
+        "name": "Update cocoapods",
+        "published_at": "2018-03-02T12:50:05Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.1",
+        "name": "Remove extra source files",
+        "published_at": "2018-03-02T09:27:05Z",
+        "prerelease": false
+      },
+      {
+        "tag": "1.0.0",
+        "name": "First release",
+        "published_at": "2018-03-02T06:16:39Z",
+        "prerelease": false
+      }
+    ]
+  }
+}
