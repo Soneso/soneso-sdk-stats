@@ -9,9 +9,11 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-github.yml` — GitHub clone stats for all 4 SDKs (10:00 UTC)
 - `.github/workflows/collect-packagist.yml` — Packagist download stats for stellar-php-sdk (10:05 UTC)
 - `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
+- `.github/workflows/collect-github-meta.yml` — GitHub repo stats, page views, and referrers (10:20 UTC)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
 - `<sdk-folder>/pub-dev.json` — pub.dev stats: `latest` (30d count, 4w/12w totals), `weekly` (52-week history with ISO week labels), `daily` (daily snapshots)
+- `<sdk-folder>/github-meta.json` — accumulated GitHub metadata (stars, forks, issues, views, referrers)
 
 ## Key patterns
 
@@ -21,6 +23,8 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - Deduplication is by date string as dictionary key (latest value wins)
 - Atomic writes: write to `.tmp` file then `os.replace()`
 - Per-repo/package try/except so one failure doesn't block others
+- github-meta: per-API-call try/except within each repo (partial data written on partial failure)
+- github-meta schema: v1, combines repo metadata + views + referrers in one file per SDK
 - Push retries: 3 attempts with `git pull --rebase` and 5s backoff
 - Packagist and pub.dev workflows use `User-Agent: soneso-sdk-stats/1.0`
 
@@ -36,4 +40,4 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 
 ## Secrets
 
-- `TRAFFIC_TOKEN` — Fine-grained PAT with `administration:read` on the 4 SDK repos (used only by collect-github.yml)
+- `TRAFFIC_TOKEN` — Fine-grained PAT with `administration:read` on the 4 SDK repos (used by collect-github.yml and collect-github-meta.yml)

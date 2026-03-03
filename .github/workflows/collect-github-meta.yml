@@ -1,0 +1,238 @@
+name: Collect GitHub Meta Stats
+
+on:
+  schedule:
+    - cron: '20 10 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-meta-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Fetch and merge GitHub meta data
+        env:
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: |
+          python3 <<'PYTHON'
+          import json
+          import os
+          import subprocess
+          from datetime import datetime, timedelta, timezone
+
+          REPOS = {
+              "Soneso/stellar-ios-mac-sdk": "stellar-ios-mac-sdk",
+              "Soneso/stellar_flutter_sdk": "stellar_flutter_sdk",
+              "Soneso/stellar-php-sdk": "stellar-php-sdk",
+              "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
+          }
+
+          today = datetime.now(timezone.utc).date()
+          today_str = today.isoformat()
+          cutoff = today - timedelta(days=13)  # 14-day inclusive window
+
+          for repo, folder in REPOS.items():
+              try:
+                  sections_ok = []
+                  new_repo_entry = None
+                  new_views_daily = {}
+                  views_api_uniques = None
+                  new_referrers_entry = None
+
+                  # 1. Repo metadata
+                  try:
+                      result = subprocess.run(
+                          ["gh", "api", f"repos/{repo}"],
+                          capture_output=True, text=True, timeout=30
+                      )
+                      if result.returncode != 0:
+                          print(f"::warning::Repo metadata API failed for {repo}: {result.stderr}")
+                      else:
+                          api_data = json.loads(result.stdout)
+                          new_repo_entry = {
+                              "date": today_str,
+                              "stars": api_data["stargazers_count"],
+                              "forks": api_data["forks_count"],
+                              "open_issues": api_data["open_issues_count"],
+                              "watchers": api_data["subscribers_count"],
+                              "size_kb": api_data["size"],
+                          }
+                          sections_ok.append("repo")
+                  except Exception as e:
+                      print(f"::warning::Repo metadata failed for {repo}: {e}")
+
+                  # 2. Page views
+                  try:
+                      result = subprocess.run(
+                          ["gh", "api", f"repos/{repo}/traffic/views"],
+                          capture_output=True, text=True, timeout=30
+                      )
+                      if result.returncode != 0:
+                          print(f"::warning::Views API failed for {repo}: {result.stderr}")
+                      else:
+                          api_data = json.loads(result.stdout)
+                          views_api_uniques = api_data.get("uniques", 0)
+                          for view in api_data.get("views", []):
+                              date_str = view["timestamp"][:10]
+                              new_views_daily[date_str] = {
+                                  "date": date_str,
+                                  "count": view["count"],
+                                  "uniques": view["uniques"],
+                              }
+                          sections_ok.append("views")
+                  except Exception as e:
+                      print(f"::warning::Views failed for {repo}: {e}")
+
+                  # 3. Referrers
+                  try:
+                      result = subprocess.run(
+                          ["gh", "api", f"repos/{repo}/traffic/popular/referrers"],
+                          capture_output=True, text=True, timeout=30
+                      )
+                      if result.returncode != 0:
+                          print(f"::warning::Referrers API failed for {repo}: {result.stderr}")
+                      else:
+                          api_data = json.loads(result.stdout)
+                          new_referrers_entry = {
+                              "date": today_str,
+                              "referrers": [
+                                  {"referrer": r["referrer"], "count": r["count"], "uniques": r["uniques"]}
+                                  for r in api_data
+                              ],
+                          }
+                          sections_ok.append("referrers")
+                  except Exception as e:
+                      print(f"::warning::Referrers failed for {repo}: {e}")
+
+                  if not sections_ok:
+                      print(f"::warning::All API calls failed for {repo}, skipping")
+                      continue
+
+                  # Load existing data
+                  json_path = os.path.join(folder, "github-meta.json")
+                  existing_data = {}
+                  if os.path.exists(json_path):
+                      try:
+                          with open(json_path) as f:
+                              existing_data = json.load(f)
+                      except (json.JSONDecodeError, KeyError) as e:
+                          print(f"::warning::Corrupt data file for {repo}, starting fresh: {e}")
+                          existing_data = {}
+
+                  # Section-level merge: only update sections that were fetched,
+                  # leave existing data untouched for sections that failed.
+                  result_data = {"schema_version": 1}
+
+                  # Repo section
+                  if "repo" in sections_ok:
+                      existing_repo = {}
+                      for entry in existing_data.get("repo", {}).get("daily", []):
+                          existing_repo[entry["date"]] = entry
+                      existing_repo[today_str] = new_repo_entry
+                      result_data["repo"] = {
+                          "daily": sorted(existing_repo.values(), key=lambda x: x["date"], reverse=True)
+                      }
+                  elif "repo" in existing_data:
+                      result_data["repo"] = existing_data["repo"]
+
+                  # Views section
+                  if "views" in sections_ok:
+                      existing_views = {}
+                      for entry in existing_data.get("views", {}).get("daily", []):
+                          existing_views[entry["date"]] = entry
+                      existing_views.update(new_views_daily)
+                      merged_views = sorted(existing_views.values(), key=lambda x: x["date"], reverse=True)
+
+                      count_14d = sum(
+                          e["count"] for e in merged_views if e["date"] >= str(cutoff)
+                      )
+                      # uniques: taken from the API's deduplicated 14-day value.
+                      # Daily uniques are NOT additive (a user viewing on multiple
+                      # days counts as 1 unique). This value reflects the API's
+                      # current rolling 14-day window at call time, which may not
+                      # exactly match the stored daily entries window (e.g. on the
+                      # first run or after gaps).
+                      uniques_14d = views_api_uniques
+
+                      result_data["views"] = {
+                          "summary": {
+                              "last_14_days": {
+                                  "count": count_14d,
+                                  "uniques": uniques_14d,
+                              }
+                          },
+                          "daily": merged_views,
+                      }
+                  elif "views" in existing_data:
+                      result_data["views"] = existing_data["views"]
+
+                  # Referrers section
+                  if "referrers" in sections_ok:
+                      existing_referrers = {}
+                      for entry in existing_data.get("referrers", {}).get("daily", []):
+                          existing_referrers[entry["date"]] = entry
+                      existing_referrers[today_str] = new_referrers_entry
+                      result_data["referrers"] = {
+                          "daily": sorted(existing_referrers.values(), key=lambda x: x["date"], reverse=True)
+                      }
+                  elif "referrers" in existing_data:
+                      result_data["referrers"] = existing_data["referrers"]
+
+                  # Write atomically
+                  os.makedirs(folder, exist_ok=True)
+                  tmp_path = os.path.join(folder, ".github-meta.tmp")
+                  with open(tmp_path, "w") as f:
+                      json.dump(result_data, f, indent=2)
+                      f.write("\n")
+                  os.replace(tmp_path, json_path)
+
+                  # Summary
+                  parts = []
+                  if new_repo_entry:
+                      parts.append(f"{new_repo_entry['stars']} stars, {new_repo_entry['forks']} forks")
+                  if "views" in sections_ok:
+                      parts.append(f"{count_14d} views (14d)")
+                  status = "/".join(sections_ok)
+                  print(f"{folder}: {', '.join(parts)} | {status} ok")
+
+              except Exception as e:
+                  print(f"::warning::Failed to process {repo}: {e}")
+                  continue
+          PYTHON
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add */github-meta.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          today=$(date -u +%Y-%m-%d)
+          git commit -m "Update github-meta data ${today}"
+          for i in 1 2 3; do
+            if git pull --rebase; then
+              git push && exit 0
+            else
+              echo "::warning::Rebase failed (possible conflict), aborting rebase"
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::Failed to push after 3 attempts"
+          exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::warning::GitHub meta collection failed. Check the workflow logs."
