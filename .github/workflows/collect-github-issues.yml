@@ -198,17 +198,18 @@ jobs:
                       if i.get("author_association") not in SELF_FILED_ROLES
                   ]
 
+                  # Exclude issues open for more than 5 years from
+                  # response/close metrics — stale PRs skew the averages
+                  MAX_HOURS = 5 * 365 * 24  # 43800h
                   response_hours = [
                       i["first_response_hours"] for i in external
                       if i.get("first_response_hours") is not None
+                      and i["first_response_hours"] <= MAX_HOURS
                   ]
-                  # Exclude issues open for more than 5 years from close-time
-                  # metrics — stale PRs/issues skew the averages
-                  MAX_CLOSE_HOURS = 5 * 365 * 24  # 43800h
                   close_hours = [
                       i["time_to_close_hours"] for i in external
                       if i.get("time_to_close_hours") is not None
-                      and i["time_to_close_hours"] <= MAX_CLOSE_HOURS
+                      and i["time_to_close_hours"] <= MAX_HOURS
                   ]
                   external_with_comments = [
                       i for i in external if i.get("first_response_at") is not None
