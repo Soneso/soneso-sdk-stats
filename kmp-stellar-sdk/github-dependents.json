@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "daily": [
+    {
+      "date": "2026-03-03",
+      "dependent_repos": 0,
+      "dependent_packages": 0
+    }
+  ]
+}
