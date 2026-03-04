@@ -23,11 +23,16 @@
   "views": {
     "summary": {
       "last_14_days": {
-        "count": 120,
+        "count": 121,
         "uniques": 10
       }
     },
     "daily": [
+      {
+        "date": "2026-03-03",
+        "count": 1,
+        "uniques": 1
+      },
       {
         "date": "2026-03-02",
         "count": 5,
