@@ -9,7 +9,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 | Data | Description | File |
 |------|-------------|------|
 | GitHub clones | Daily clone counts and unique cloners (14-day rolling window) | [github-clones.json](stellar-ios-mac-sdk/github-clones.json) |
-| GitHub meta | Stars, forks, watchers, page views, and top referrers | [github-meta.json](stellar-ios-mac-sdk/github-meta.json) |
+| GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](stellar-ios-mac-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](stellar-ios-mac-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](stellar-ios-mac-sdk/github-issues.json) |
 
@@ -19,7 +19,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 |------|-------------|------|
 | GitHub clones | Daily clone counts and unique cloners (14-day rolling window) | [github-clones.json](stellar_flutter_sdk/github-clones.json) |
 | pub.dev downloads | 30-day, 4/12/52-week download counts and weekly breakdown | [pub-dev.json](stellar_flutter_sdk/pub-dev.json) |
-| GitHub meta | Stars, forks, watchers, page views, and top referrers | [github-meta.json](stellar_flutter_sdk/github-meta.json) |
+| GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](stellar_flutter_sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](stellar_flutter_sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](stellar_flutter_sdk/github-issues.json) |
 | GitHub dependents | Dependent repos and packages with stars, forks, and daily count history | [github-dependents.json](stellar_flutter_sdk/github-dependents.json) |
@@ -30,7 +30,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 |------|-------------|------|
 | GitHub clones | Daily clone counts and unique cloners (14-day rolling window) | [github-clones.json](stellar-php-sdk/github-clones.json) |
 | Packagist downloads | Total, monthly, and daily download counts plus favers | [packagist.json](stellar-php-sdk/packagist.json) |
-| GitHub meta | Stars, forks, watchers, page views, and top referrers | [github-meta.json](stellar-php-sdk/github-meta.json) |
+| GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](stellar-php-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](stellar-php-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](stellar-php-sdk/github-issues.json) |
 | GitHub dependents | Dependent repos and packages with stars, forks, and daily count history | [github-dependents.json](stellar-php-sdk/github-dependents.json) |
@@ -40,7 +40,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 | Data | Description | File |
 |------|-------------|------|
 | GitHub clones | Daily clone counts and unique cloners (14-day rolling window) | [github-clones.json](kmp-stellar-sdk/github-clones.json) |
-| GitHub meta | Stars, forks, watchers, page views, and top referrers | [github-meta.json](kmp-stellar-sdk/github-meta.json) |
+| GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](kmp-stellar-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](kmp-stellar-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](kmp-stellar-sdk/github-issues.json) |
 | GitHub dependents | Dependent repos and packages with stars, forks, and daily count history | [github-dependents.json](kmp-stellar-sdk/github-dependents.json) |

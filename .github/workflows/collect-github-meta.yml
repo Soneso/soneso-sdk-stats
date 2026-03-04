@@ -49,7 +49,6 @@ jobs:
                   new_repo_entry = None
                   new_views_daily = {}
                   views_api_uniques = None
-                  new_referrers_entry = None
 
                   # 1. Repo metadata
                   try:
@@ -94,27 +93,6 @@ jobs:
                           sections_ok.append("views")
                   except Exception as e:
                       print(f"::warning::Views failed for {repo}: {e}")
-
-                  # 3. Referrers
-                  try:
-                      result = subprocess.run(
-                          ["gh", "api", f"repos/{repo}/traffic/popular/referrers"],
-                          capture_output=True, text=True, timeout=30
-                      )
-                      if result.returncode != 0:
-                          print(f"::warning::Referrers API failed for {repo}: {result.stderr}")
-                      else:
-                          api_data = json.loads(result.stdout)
-                          new_referrers_entry = {
-                              "date": today_str,
-                              "referrers": [
-                                  {"referrer": r["referrer"], "count": r["count"], "uniques": r["uniques"]}
-                                  for r in api_data
-                              ],
-                          }
-                          sections_ok.append("referrers")
-                  except Exception as e:
-                      print(f"::warning::Referrers failed for {repo}: {e}")
 
                   if not sections_ok:
                       print(f"::warning::All API calls failed for {repo}, skipping")
@@ -177,18 +155,6 @@ jobs:
                       }
                   elif "views" in existing_data:
                       result_data["views"] = existing_data["views"]
-
-                  # Referrers section
-                  if "referrers" in sections_ok:
-                      existing_referrers = {}
-                      for entry in existing_data.get("referrers", {}).get("daily", []):
-                          existing_referrers[entry["date"]] = entry
-                      existing_referrers[today_str] = new_referrers_entry
-                      result_data["referrers"] = {
-                          "daily": sorted(existing_referrers.values(), key=lambda x: x["date"], reverse=True)
-                      }
-                  elif "referrers" in existing_data:
-                      result_data["referrers"] = existing_data["referrers"]
 
                   # Write atomically
                   os.makedirs(folder, exist_ok=True)

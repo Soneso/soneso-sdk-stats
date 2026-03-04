@@ -9,7 +9,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-github.yml` — GitHub clone stats for all 4 SDKs (10:00 UTC)
 - `.github/workflows/collect-packagist.yml` — Packagist download stats for stellar-php-sdk (10:05 UTC)
 - `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
-- `.github/workflows/collect-github-meta.yml` — GitHub repo stats, page views, and referrers (10:20 UTC)
+- `.github/workflows/collect-github-meta.yml` — GitHub repo stats and page views (10:20 UTC)
 - `.github/workflows/collect-github-activity.yml` — Commit frequency and release history (10:25 UTC)
 - `.github/workflows/collect-github-issues.yml` — Issue/PR response times and closure stats (10:30 UTC)
 - `.github/workflows/collect-github-dependents.yml` — GitHub "Used by" dependents list and counts via HTML scraping (10:35 UTC, excludes iOS SDK)
@@ -19,7 +19,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
 - `<sdk-folder>/pub-dev.json` — pub.dev stats: `latest` (30d count, 4w/12w totals), `weekly` (52-week history with ISO week labels), `daily` (daily snapshots)
-- `<sdk-folder>/github-meta.json` — accumulated GitHub metadata (stars, forks, issues, views, referrers)
+- `<sdk-folder>/github-meta.json` — accumulated GitHub metadata (stars, forks, issues, views)
 - `<sdk-folder>/github-activity.json` — weekly commit counts (52w+) and full release history with summary
 - `<sdk-folder>/github-issues.json` — issue/PR list with first response times, closure times, and summary stats
 - `<sdk-folder>/github-dependents.json` — dependent repos/packages with metadata (stars, forks) and daily count history (schema v2, not collected for iOS SDK)
@@ -33,7 +33,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - Atomic writes: write to `.tmp` file then `os.replace()`
 - Per-repo/package try/except so one failure doesn't block others
 - github-meta: per-API-call try/except within each repo (partial data written on partial failure)
-- github-meta schema: v1, combines repo metadata + views + referrers in one file per SDK
+- github-meta schema: v1, combines repo metadata + views in one file per SDK
 - github-activity: commit_activity API may return 202 (computing), retry up to 3 times with 5s delay
 - github-activity: release summary edge cases: 0 releases = null fields, 1 release = null avg_days
 - github-activity: draft releases filtered out (they have null published_at)
