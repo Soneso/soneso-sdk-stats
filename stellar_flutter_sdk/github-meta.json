@@ -3,6 +3,14 @@
   "repo": {
     "daily": [
       {
+        "date": "2026-03-04",
+        "stars": 82,
+        "forks": 36,
+        "open_issues_and_prs": 0,
+        "watchers": 4,
+        "size_kb": 345153
+      },
+      {
         "date": "2026-03-03",
         "stars": 82,
         "forks": 36,
@@ -94,6 +102,26 @@
   },
   "referrers": {
     "daily": [
+      {
+        "date": "2026-03-04",
+        "referrers": [
+          {
+            "referrer": "github.com",
+            "count": 68,
+            "uniques": 4
+          },
+          {
+            "referrer": "pub.dev",
+            "count": 8,
+            "uniques": 2
+          },
+          {
+            "referrer": "Google",
+            "count": 6,
+            "uniques": 2
+          }
+        ]
+      },
       {
         "date": "2026-03-03",
         "referrers": [

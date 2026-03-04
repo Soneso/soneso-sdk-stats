@@ -3,6 +3,14 @@
   "repo": {
     "daily": [
       {
+        "date": "2026-03-04",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4340
+      },
+      {
         "date": "2026-03-03",
         "stars": 40,
         "forks": 19,
@@ -15,7 +23,7 @@
   "views": {
     "summary": {
       "last_14_days": {
-        "count": 259,
+        "count": 248,
         "uniques": 29
       }
     },
@@ -94,6 +102,41 @@
   },
   "referrers": {
     "daily": [
+      {
+        "date": "2026-03-04",
+        "referrers": [
+          {
+            "referrer": "github.com",
+            "count": 52,
+            "uniques": 4
+          },
+          {
+            "referrer": "Google",
+            "count": 35,
+            "uniques": 7
+          },
+          {
+            "referrer": "packagist.org",
+            "count": 17,
+            "uniques": 1
+          },
+          {
+            "referrer": "DuckDuckGo",
+            "count": 6,
+            "uniques": 1
+          },
+          {
+            "referrer": "search.brave.com",
+            "count": 5,
+            "uniques": 1
+          },
+          {
+            "referrer": "claude.ai",
+            "count": 2,
+            "uniques": 1
+          }
+        ]
+      },
       {
         "date": "2026-03-03",
         "referrers": [
