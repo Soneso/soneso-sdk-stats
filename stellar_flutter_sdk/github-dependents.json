@@ -1,5 +1,267 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "dependents_list": {
+    "as_of": "2026-03-04",
+    "repos": [
+      {
+        "owner": "cypherstack",
+        "repo": "stack_wallet",
+        "stars": 402,
+        "forks": 98
+      },
+      {
+        "owner": "brij-digital",
+        "repo": "espresso-cash-public",
+        "stars": 303,
+        "forks": 128
+      },
+      {
+        "owner": "wootzapp",
+        "repo": "wootz-browser",
+        "stars": 103,
+        "forks": 50
+      },
+      {
+        "owner": "0xapurv",
+        "repo": "NFT_Store",
+        "stars": 33,
+        "forks": 5
+      },
+      {
+        "owner": "paltalabs",
+        "repo": "defindex",
+        "stars": 13,
+        "forks": 5
+      },
+      {
+        "owner": "threefoldtech",
+        "repo": "threefold_connect",
+        "stars": 9,
+        "forks": 5
+      },
+      {
+        "owner": "Soneso",
+        "repo": "flutter_basic_pay",
+        "stars": 5,
+        "forks": 0
+      },
+      {
+        "owner": "Soneso",
+        "repo": "stellar_wallet_flutter_sdk",
+        "stars": 5,
+        "forks": 2
+      },
+      {
+        "owner": "bantublockchain",
+        "repo": "bantupay-sdk-flutter",
+        "stars": 3,
+        "forks": 1
+      },
+      {
+        "owner": "Inter-Stellar-Wallet",
+        "repo": "InterStellar-Vault",
+        "stars": 2,
+        "forks": 0
+      },
+      {
+        "owner": "Soneso",
+        "repo": "flutter_passkey_kit",
+        "stars": 2,
+        "forks": 0
+      },
+      {
+        "owner": "threefoldtech",
+        "repo": "tfgrid-sdk-dart",
+        "stars": 2,
+        "forks": 0
+      },
+      {
+        "owner": "AKJUS",
+        "repo": "stack_wallet",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "Rooloo-Innovations",
+        "repo": "DWaste-App",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "ashiqu-ali",
+        "repo": "eyX3",
+        "stars": 1,
+        "forks": 1
+      },
+      {
+        "owner": "godilite",
+        "repo": "vote-38",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "jopmiddelkamp",
+        "repo": "flutter_architecture",
+        "stars": 1,
+        "forks": 1
+      },
+      {
+        "owner": "paltalabs",
+        "repo": "defindex-meru-sdk",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "robvanmieghem",
+        "repo": "planet",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "Beans-BV",
+        "repo": "defindex",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Imdavyking",
+        "repo": "econova_wallet",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Inter-Stellar-Wallet",
+        "repo": "InterStellar-Flutter",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Kmann22",
+        "repo": "ecocycle",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "arice77",
+        "repo": "HeritagePay",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "blocktransfer",
+        "repo": "investor-app",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "debrup27",
+        "repo": "CalWatch",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "dgbjkrist",
+        "repo": "flutter-clean-arch",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "dinhbathi2702",
+        "repo": "flutter_stellar_quest_example",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "drkreza",
+        "repo": "resocoder-clean",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "gabikreal1",
+        "repo": "stellar_flutter_frontend",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "hasToDev",
+        "repo": "cowchain-farm-app",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "lambo10",
+        "repo": "greedyGames",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "lucasmagnus",
+        "repo": "tokenai",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "lunkuse",
+        "repo": "appStellar",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "nemorixgroup",
+        "repo": "NemorixPay-Mobile-Code",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "rinat-enikeev",
+        "repo": "sfsdk_web_issue",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "sanjaysamuels",
+        "repo": "supply-blockchain",
+        "stars": 0,
+        "forks": 0
+      }
+    ],
+    "packages": [
+      {
+        "owner": "paltalabs",
+        "repo": "defindex",
+        "stars": 13,
+        "forks": 5,
+        "package": "defindex_sdk"
+      },
+      {
+        "owner": "Soneso",
+        "repo": "stellar_wallet_flutter_sdk",
+        "stars": 5,
+        "forks": 2
+      },
+      {
+        "owner": "Soneso",
+        "repo": "flutter_passkey_kit",
+        "stars": 2,
+        "forks": 0
+      },
+      {
+        "owner": "Kenandarabeh",
+        "repo": "sofizpay-sdk-dart",
+        "stars": 1,
+        "forks": 0,
+        "package": "sofizpay_sdk_dart"
+      },
+      {
+        "owner": "paltalabs",
+        "repo": "defindex-meru-sdk",
+        "stars": 1,
+        "forks": 0,
+        "package": "defindex"
+      }
+    ]
+  },
   "daily": [
     {
       "date": "2026-03-04",

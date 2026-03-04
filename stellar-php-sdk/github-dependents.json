@@ -1,5 +1,128 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "dependents_list": {
+    "as_of": "2026-03-04",
+    "repos": [
+      {
+        "owner": "Argo-Navis-Dev",
+        "repo": "php-anchor-sdk",
+        "stars": 6,
+        "forks": 0
+      },
+      {
+        "owner": "icolomina",
+        "repo": "equillar",
+        "stars": 4,
+        "forks": 0
+      },
+      {
+        "owner": "wrappedcbdc",
+        "repo": "cngn-php-library",
+        "stars": 2,
+        "forks": 1
+      },
+      {
+        "owner": "jerryouma",
+        "repo": "peerpesaback",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "thegivehub",
+        "repo": "app",
+        "stars": 1,
+        "forks": 1
+      },
+      {
+        "owner": "DaanKrug",
+        "repo": "soroban-10",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "JohnGabrielRodi",
+        "repo": "lottery-generators-php-page",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "MiSte-Git",
+        "repo": "Stellar-Konto-Manager",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Montelibero",
+        "repo": "bsn_crawler",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Pipaypw",
+        "repo": "payroll",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "RemittEase-Dev-Team",
+        "repo": "RemittEase",
+        "stars": 0,
+        "forks": 1
+      },
+      {
+        "owner": "cointimes-app",
+        "repo": "xtimes-backend",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "common-repository",
+        "repo": "artemis-payment-gateway",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "emarinuk",
+        "repo": "anchors-prueba",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "sofiz",
+        "repo": "sofizpay-qr-woocommerce-plugin",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "sozidatel",
+        "repo": "MTLA_calc_delegations",
+        "stars": 0,
+        "forks": 1
+      },
+      {
+        "owner": "zainh332",
+        "repo": "tokenglade",
+        "stars": 0,
+        "forks": 0
+      }
+    ],
+    "packages": [
+      {
+        "owner": "Argo-Navis-Dev",
+        "repo": "php-anchor-sdk",
+        "stars": 6,
+        "forks": 0,
+        "package": "argonavis/php-anchor-sdk"
+      },
+      {
+        "owner": "Pipaypw",
+        "repo": "payroll",
+        "stars": 0,
+        "forks": 0,
+        "package": "pipaypw/payroll"
+      }
+    ]
+  },
   "daily": [
     {
       "date": "2026-03-04",

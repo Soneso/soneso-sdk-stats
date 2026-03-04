@@ -1,5 +1,10 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "dependents_list": {
+    "as_of": "2026-03-04",
+    "repos": [],
+    "packages": []
+  },
   "daily": [
     {
       "date": "2026-03-04",
