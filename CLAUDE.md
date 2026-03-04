@@ -13,6 +13,9 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-github-activity.yml` — Commit frequency and release history (10:25 UTC)
 - `.github/workflows/collect-github-issues.yml` — Issue/PR response times and closure stats (10:30 UTC)
 - `.github/workflows/collect-github-dependents.yml` — GitHub "Used by" dependents list and counts via HTML scraping (10:35 UTC, excludes iOS SDK)
+- `.github/workflows/build-dashboard.yml` — Generates `docs/index.html` dashboard from JSON data (11:00 UTC)
+- `dashboard/build.py` — Python build script (stdlib only) that reads all JSON data files and generates the dashboard HTML
+- `docs/index.html` — Generated dashboard page, not hand-edited (Apache ECharts from CDN)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
 - `<sdk-folder>/pub-dev.json` — pub.dev stats: `latest` (30d count, 4w/12w totals), `weekly` (52-week history with ISO week labels), `daily` (daily snapshots)
@@ -45,6 +48,10 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - github-dependents: iOS SDK excluded (GitHub does not track SPM dependencies)
 - github-dependents: schema v2 — adds dependents_list (repos + packages with metadata) before daily
 - github-dependents: staleness check emits error if no successful scrape in 7 days
+- dashboard: `build.py` uses stdlib only (no pip dependencies), atomic write to `docs/index.html`
+- dashboard: ECharts pinned to 6.0.0 from jsDelivr CDN with SRI integrity hash
+- dashboard: time-series data capped at rolling 365-day window to limit file size
+- dashboard: weekly commit data expanded into per-day entries for calendar heatmap
 - Push retries: 3 attempts with `git pull --rebase` and 5s backoff
 - Packagist and pub.dev workflows use `User-Agent: soneso-sdk-stats/1.0`
 
