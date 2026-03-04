@@ -12,14 +12,14 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-github-meta.yml` — GitHub repo stats, page views, and referrers (10:20 UTC)
 - `.github/workflows/collect-github-activity.yml` — Commit frequency and release history (10:25 UTC)
 - `.github/workflows/collect-github-issues.yml` — Issue/PR response times and closure stats (10:30 UTC)
-- `.github/workflows/collect-github-dependents.yml` — GitHub "Used by" dependents count via HTML scraping (10:35 UTC)
+- `.github/workflows/collect-github-dependents.yml` — GitHub "Used by" dependents list and counts via HTML scraping (10:35 UTC, excludes iOS SDK)
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
 - `<sdk-folder>/packagist.json` — accumulated Packagist download snapshots
 - `<sdk-folder>/pub-dev.json` — pub.dev stats: `latest` (30d count, 4w/12w totals), `weekly` (52-week history with ISO week labels), `daily` (daily snapshots)
 - `<sdk-folder>/github-meta.json` — accumulated GitHub metadata (stars, forks, issues, views, referrers)
 - `<sdk-folder>/github-activity.json` — weekly commit counts (52w+) and full release history with summary
 - `<sdk-folder>/github-issues.json` — issue/PR list with first response times, closure times, and summary stats
-- `<sdk-folder>/github-dependents.json` — daily "Used by" dependent repo/package counts
+- `<sdk-folder>/github-dependents.json` — dependent repos/packages with metadata (stars, forks) and daily count history (schema v2, not collected for iOS SDK)
 
 ## Key patterns
 
@@ -40,6 +40,10 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - github-issues: self-filed issues (OWNER/MEMBER) excluded from response time metrics, included in counts
 - github-issues: closed_issues_365d filters on closed_at date, not updated_at
 - github-dependents: HTML scraping (no API available), fragile regex, stores null on parse failure
+- github-dependents: paginates all dependent pages (27 per page), capped at 500 entries
+- github-dependents: dependents_list sorted by stars descending, then owner/repo name
+- github-dependents: iOS SDK excluded (GitHub does not track SPM dependencies)
+- github-dependents: schema v2 — adds dependents_list (repos + packages with metadata) before daily
 - github-dependents: staleness check emits error if no successful scrape in 7 days
 - Push retries: 3 attempts with `git pull --rebase` and 5s backoff
 - Packagist and pub.dev workflows use `User-Agent: soneso-sdk-stats/1.0`

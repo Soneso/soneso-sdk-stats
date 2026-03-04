@@ -14,7 +14,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
@@ -26,22 +26,28 @@ jobs:
         run: |
           python3 <<'PYTHON'
           # This workflow scrapes GitHub's dependents HTML page to extract
-          # "Used by" counts. It is inherently fragile — if GitHub changes
-          # the page layout, the regex will stop matching. The parse_error
-          # flag and 7-day staleness check ensure broken scraping is noticed.
+          # "Used by" counts and per-dependent metadata (owner, repo, stars,
+          # forks). It is inherently fragile — if GitHub changes the page
+          # layout, the regex will stop matching. The parse_error flag and
+          # 7-day staleness check ensure broken scraping is noticed.
+          #
+          # iOS SDK is excluded: GitHub does not track SPM dependencies.
 
           import json
           import os
           import re
           import subprocess
+          import time
           from datetime import datetime, timedelta, timezone
 
           REPOS = {
-              "Soneso/stellar-ios-mac-sdk": "stellar-ios-mac-sdk",
               "Soneso/stellar_flutter_sdk": "stellar_flutter_sdk",
               "Soneso/stellar-php-sdk": "stellar-php-sdk",
               "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
           }
+
+          ENTRY_CAP = 500
+          PAGES_CAP = 20
 
           today = datetime.now(timezone.utc).date()
           today_str = today.isoformat()
@@ -49,31 +55,134 @@ jobs:
 
           stale_repos = []
 
+          def fetch_page(url):
+              """Fetch a single HTML page, return (html, ok)."""
+              result = subprocess.run(
+                  ["curl", "-sL", "-H", "User-Agent: soneso-sdk-stats/1.0", url],
+                  capture_output=True, text=True, timeout=30
+              )
+              if result.returncode != 0:
+                  return None, False
+              return result.stdout, True
+
+          def parse_counts(html):
+              """Extract total repo/package counts from the page header."""
+              repo_match = re.search(
+                  r'href="[^"]*network/dependents\?dependent_type=REPOSITORY"[^>]*>.*?'
+                  r'([\d,]+)\s+Repositories',
+                  html, re.DOTALL
+              )
+              pkg_match = re.search(
+                  r'href="[^"]*network/dependents\?dependent_type=PACKAGE"[^>]*>.*?'
+                  r'([\d,]+)\s+Packages',
+                  html, re.DOTALL
+              )
+              repo_count = int(repo_match.group(1).replace(",", "")) if repo_match else None
+              pkg_count = int(pkg_match.group(1).replace(",", "")) if pkg_match else None
+              return repo_count, pkg_count
+
+          def parse_entries(html, dep_type):
+              """Parse dependent entries from one page of HTML."""
+              entries = []
+              chunks = re.split(r'data-test-id="dg-repo-pkg-dependent"', html)
+              for chunk in chunks[1:]:  # skip before first marker
+                  repo_m = re.search(
+                      r'<a\s+class="text-bold"[^>]*href="/([^"]+)"[^>]*>([^<]+)</a>',
+                      chunk
+                  )
+                  if not repo_m:
+                      continue
+                  full_path = repo_m.group(1).strip()
+                  parts = full_path.split("/")
+                  if len(parts) != 2:
+                      continue
+                  owner, repo_name = parts
+
+                  # Package name (only for PACKAGE type, in <small> tag)
+                  package_name = None
+                  if dep_type == "PACKAGE":
+                      pkg_m = re.search(r'<small>([^<]+)</small>', chunk)
+                      if pkg_m:
+                          package_name = pkg_m.group(1).strip()
+
+                  # Stars and forks (match after </svg> to avoid SVG path data)
+                  stars = 0
+                  forks = 0
+                  star_m = re.search(r'octicon-star.*?</svg>\s*(\d+)', chunk, re.DOTALL)
+                  fork_m = re.search(r'octicon-repo-forked.*?</svg>\s*(\d+)', chunk, re.DOTALL)
+                  if star_m:
+                      stars = int(star_m.group(1))
+                  if fork_m:
+                      forks = int(fork_m.group(1))
+
+                  entry = {
+                      "owner": owner,
+                      "repo": repo_name,
+                      "stars": stars,
+                      "forks": forks,
+                  }
+                  if package_name:
+                      entry["package"] = package_name
+                  entries.append(entry)
+              return entries
+
+          def find_next_cursor(html):
+              """Extract the next-page cursor from the pagination area."""
+              pag_m = re.search(
+                  r'data-test-selector="pagination"(.*?)</div>',
+                  html, re.DOTALL
+              )
+              if not pag_m:
+                  return None
+              pag_html = pag_m.group(1)
+              cursor_m = re.search(
+                  r'dependents_after=([^"&]+).*?>Next',
+                  pag_html, re.DOTALL
+              )
+              if not cursor_m:
+                  return None
+              return cursor_m.group(1)
+
+          def scrape_dependents(repo, dep_type, first_page_html=None):
+              """Scrape all pages of dependents for a given type.
+              If first_page_html is provided, parse it instead of re-fetching."""
+              base_url = f"https://github.com/{repo}/network/dependents?dependent_type={dep_type}"
+              all_entries = []
+              for page in range(PAGES_CAP):
+                  if page == 0 and first_page_html is not None:
+                      html = first_page_html
+                  else:
+                      html, ok = fetch_page(
+                          base_url if page == 0
+                          else base_url + f"&dependents_after={cursor}"
+                      )
+                      if not ok:
+                          print(f"::warning::curl failed for {repo} {dep_type} page {page}")
+                          break
+                  entries = parse_entries(html, dep_type)
+                  if not entries:
+                      break
+                  all_entries.extend(entries)
+                  if len(all_entries) >= ENTRY_CAP:
+                      all_entries = all_entries[:ENTRY_CAP]
+                      print(f"::warning::{repo} {dep_type} capped at {ENTRY_CAP} entries")
+                      break
+                  cursor = find_next_cursor(html)
+                  if not cursor:
+                      break
+                  time.sleep(1)
+              return all_entries
+
           for repo, folder in REPOS.items():
               try:
-                  url = f"https://github.com/{repo}/network/dependents"
-                  result = subprocess.run(
-                      ["curl", "-sL", "-H", "User-Agent: soneso-sdk-stats/1.0", url],
-                      capture_output=True, text=True, timeout=30
-                  )
-                  if result.returncode != 0:
-                      print(f"::warning::curl failed for {repo}: exit {result.returncode}")
+                  # Fetch first page (defaults to REPOSITORY type) for counts
+                  first_url = f"https://github.com/{repo}/network/dependents?dependent_type=REPOSITORY"
+                  html, ok = fetch_page(first_url)
+                  if not ok:
+                      print(f"::warning::curl failed for {repo}: initial page")
                       continue
 
-                  html = result.stdout
-                  repo_match = re.search(
-                      r'href="[^"]*network/dependents\?dependent_type=REPOSITORY"[^>]*>.*?'
-                      r'([\d,]+)\s+Repositories',
-                      html, re.DOTALL
-                  )
-                  pkg_match = re.search(
-                      r'href="[^"]*network/dependents\?dependent_type=PACKAGE"[^>]*>.*?'
-                      r'([\d,]+)\s+Packages',
-                      html, re.DOTALL
-                  )
-
-                  repo_count = int(repo_match.group(1).replace(",", "")) if repo_match else None
-                  pkg_count = int(pkg_match.group(1).replace(",", "")) if pkg_match else None
+                  repo_count, pkg_count = parse_counts(html)
 
                   new_entry = {
                       "date": today_str,
@@ -84,6 +193,19 @@ jobs:
                   if repo_count is None and pkg_count is None:
                       new_entry["parse_error"] = True
                       print(f"::warning::Parse failed for {repo} — HTML structure may have changed")
+
+                  # Scrape full dependent lists
+                  dep_repos = []
+                  dep_packages = []
+                  try:
+                      dep_repos = scrape_dependents(repo, "REPOSITORY", first_page_html=html)
+                      dep_packages = scrape_dependents(repo, "PACKAGE")
+                  except Exception as e:
+                      print(f"::warning::Dependents list scraping failed for {repo}: {e}")
+
+                  # Sort by stars descending, then by owner/repo as tiebreaker
+                  dep_repos.sort(key=lambda x: (-x["stars"], f"{x['owner']}/{x['repo']}"))
+                  dep_packages.sort(key=lambda x: (-x["stars"], f"{x['owner']}/{x['repo']}"))
 
                   # Load existing data
                   json_path = os.path.join(folder, "github-dependents.json")
@@ -96,7 +218,16 @@ jobs:
                           print(f"::warning::Corrupt data file for {repo}, starting fresh: {e}")
                           existing_data = {}
 
-                  # Merge by date
+                  # Preserve existing dependents_list if scrape returned empty
+                  # but the count is non-zero (scraping failure)
+                  if not dep_repos and repo_count and repo_count > 0:
+                      dep_repos = existing_data.get("dependents_list", {}).get("repos", [])
+                      print(f"::warning::Repo dependents scrape empty for {repo}, preserving existing list")
+                  if not dep_packages and pkg_count and pkg_count > 0:
+                      dep_packages = existing_data.get("dependents_list", {}).get("packages", [])
+                      print(f"::warning::Package dependents scrape empty for {repo}, preserving existing list")
+
+                  # Merge daily by date
                   existing_daily = {}
                   for entry in existing_data.get("daily", []):
                       existing_daily[entry["date"]] = entry
@@ -109,7 +240,12 @@ jobs:
                   )
 
                   result_data = {
-                      "schema_version": 1,
+                      "schema_version": 2,
+                      "dependents_list": {
+                          "as_of": today_str,
+                          "repos": dep_repos,
+                          "packages": dep_packages,
+                      },
                       "daily": daily_list,
                   }
 
@@ -132,11 +268,12 @@ jobs:
 
                   repo_str = repo_count if repo_count is not None else "?"
                   pkg_str = pkg_count if pkg_count is not None else "?"
-                  print(f"{folder}: {repo_str} dependent repos, {pkg_str} dependent packages")
+                  print(f"{folder}: {repo_str} repos ({len(dep_repos)} scraped), {pkg_str} packages ({len(dep_packages)} scraped)")
 
               except Exception as e:
                   print(f"::warning::Failed to process {repo}: {e}")
                   continue
+              time.sleep(2)
 
           if stale_repos:
               print(f"::error::Dependents scraping stale (>7 days) for: {', '.join(stale_repos)}")
