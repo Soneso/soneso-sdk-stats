@@ -2,6 +2,8 @@
 
 Automated daily statistics for Soneso Stellar SDKs.
 
+**[View the live dashboard](https://soneso.github.io/soneso-sdk-stats/)**
+
 ## Data collected
 
 ### [stellar-ios-mac-sdk](https://github.com/Soneso/stellar-ios-mac-sdk)
@@ -44,10 +46,6 @@ Automated daily statistics for Soneso Stellar SDKs.
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](kmp-stellar-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](kmp-stellar-sdk/github-issues.json) |
 | GitHub dependents | Dependent open source repos and packages | [github-dependents.json](kmp-stellar-sdk/github-dependents.json) |
-
-## Dashboard
-
-A dark-themed stats dashboard is auto-generated daily at [`docs/index.html`](docs/index.html) using Apache ECharts. Once GitHub Pages is enabled, it will be available at `https://soneso.github.io/soneso-sdk-stats/`.
 
 ## Workflows
 
