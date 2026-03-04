@@ -26,7 +26,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 
 ## Key patterns
 
-- All Python scripts are inline in workflow YAML using single-quoted heredocs (`<<'PYTHON'`)
+- Collection scripts are inline in workflow YAML using single-quoted heredocs (`<<'PYTHON'`); `dashboard/build.py` is a standalone file
 - Data files use `schema_version` for future migrations (github-clones/packagist: v1, pub-dev: v2)
 - Daily entries are sorted descending (most recent first)
 - Deduplication is by date string as dictionary key (latest value wins)

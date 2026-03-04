@@ -45,6 +45,10 @@ Automated daily statistics for Soneso Stellar SDKs.
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](kmp-stellar-sdk/github-issues.json) |
 | GitHub dependents | Dependent repos and packages with stars, forks, and daily count history | [github-dependents.json](kmp-stellar-sdk/github-dependents.json) |
 
+## Dashboard
+
+A dark-themed stats dashboard is auto-generated daily at [`docs/index.html`](docs/index.html) using Apache ECharts. Once GitHub Pages is enabled, it will be available at `https://soneso.github.io/soneso-sdk-stats/`.
+
 ## Workflows
 
 | Workflow | Schedule (UTC) |
@@ -56,3 +60,4 @@ Automated daily statistics for Soneso Stellar SDKs.
 | Collect GitHub Activity Stats | 10:25 |
 | Collect GitHub Issues Stats | 10:30 |
 | Collect GitHub Dependents Stats | 10:35 |
+| Build Dashboard | 11:00 |
