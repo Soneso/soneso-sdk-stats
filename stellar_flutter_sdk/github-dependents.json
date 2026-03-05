@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-03-04",
+    "as_of": "2026-03-05",
     "repos": [
       {
         "owner": "cypherstack",
@@ -12,7 +12,7 @@
       {
         "owner": "brij-digital",
         "repo": "espresso-cash-public",
-        "stars": 303,
+        "stars": 302,
         "forks": 128
       },
       {
@@ -263,6 +263,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-03-05",
+      "dependent_repos": 86,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-03-04",
       "dependent_repos": 86,
