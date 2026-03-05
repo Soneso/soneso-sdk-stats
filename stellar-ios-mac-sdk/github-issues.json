@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-03-04",
+    "as_of": "2026-03-05",
     "open_issues": 0,
-    "open_prs": 1,
+    "open_prs": 0,
     "closed_issues_365d": 11,
-    "closed_prs_365d": 11,
+    "closed_prs_365d": 12,
     "median_first_response_hours": 22.2,
     "avg_first_response_hours": 47.2,
     "median_time_to_close_hours": 22.2,
@@ -17,14 +17,14 @@
       "number": 191,
       "title": "Auto-generate XDR types from canonical .x definitions",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "christian-rogobete",
       "author_association": "MEMBER",
       "created_at": "2026-03-03T01:00:16Z",
-      "closed_at": null,
+      "closed_at": "2026-03-04T11:27:23Z",
       "first_response_at": "2026-03-03T20:36:11Z",
       "first_response_hours": 19.6,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 34.5,
       "labels": []
     },
     {
