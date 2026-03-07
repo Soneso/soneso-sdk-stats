@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
   "latest": {
-    "download_count_30d": 1589,
-    "download_count_4w": 1423,
-    "download_count_12w": 3299,
-    "download_count_52w": 14317
+    "download_count_30d": 1498,
+    "download_count_4w": 1430,
+    "download_count_12w": 3313,
+    "download_count_52w": 14296
   },
   "weekly": [
     {
       "week": "10 (2026)",
-      "download_count": 345
+      "download_count": 357
     },
     {
       "week": "09 (2026)",
-      "download_count": 549
+      "download_count": 560
     },
     {
       "week": "08 (2026)",
@@ -21,187 +21,187 @@
     },
     {
       "week": "07 (2026)",
-      "download_count": 243
+      "download_count": 227
     },
     {
       "week": "06 (2026)",
-      "download_count": 249
+      "download_count": 247
     },
     {
       "week": "05 (2026)",
-      "download_count": 115
+      "download_count": 116
     },
     {
       "week": "04 (2026)",
-      "download_count": 332
+      "download_count": 211
     },
     {
       "week": "03 (2026)",
-      "download_count": 420
+      "download_count": 416
     },
     {
       "week": "02 (2026)",
-      "download_count": 345
+      "download_count": 379
     },
     {
       "week": "01 (2026)",
-      "download_count": 70
+      "download_count": 182
     },
     {
       "week": "52 (2025)",
-      "download_count": 294
-    },
-    {
-      "week": "51 (2025)",
-      "download_count": 51
-    },
-    {
-      "week": "50 (2025)",
-      "download_count": 95
-    },
-    {
-      "week": "49 (2025)",
-      "download_count": 170
-    },
-    {
-      "week": "48 (2025)",
-      "download_count": 399
-    },
-    {
-      "week": "47 (2025)",
-      "download_count": 333
-    },
-    {
-      "week": "46 (2025)",
-      "download_count": 151
-    },
-    {
-      "week": "45 (2025)",
-      "download_count": 123
-    },
-    {
-      "week": "44 (2025)",
-      "download_count": 146
-    },
-    {
-      "week": "43 (2025)",
-      "download_count": 575
-    },
-    {
-      "week": "42 (2025)",
-      "download_count": 367
-    },
-    {
-      "week": "41 (2025)",
-      "download_count": 321
-    },
-    {
-      "week": "40 (2025)",
-      "download_count": 467
-    },
-    {
-      "week": "39 (2025)",
-      "download_count": 152
-    },
-    {
-      "week": "38 (2025)",
-      "download_count": 364
-    },
-    {
-      "week": "37 (2025)",
-      "download_count": 153
-    },
-    {
-      "week": "36 (2025)",
-      "download_count": 350
-    },
-    {
-      "week": "35 (2025)",
-      "download_count": 376
-    },
-    {
-      "week": "34 (2025)",
-      "download_count": 207
-    },
-    {
-      "week": "33 (2025)",
-      "download_count": 515
-    },
-    {
-      "week": "32 (2025)",
-      "download_count": 267
-    },
-    {
-      "week": "31 (2025)",
       "download_count": 174
     },
     {
+      "week": "51 (2025)",
+      "download_count": 158
+    },
+    {
+      "week": "50 (2025)",
+      "download_count": 101
+    },
+    {
+      "week": "49 (2025)",
+      "download_count": 147
+    },
+    {
+      "week": "48 (2025)",
+      "download_count": 404
+    },
+    {
+      "week": "47 (2025)",
+      "download_count": 339
+    },
+    {
+      "week": "46 (2025)",
+      "download_count": 112
+    },
+    {
+      "week": "45 (2025)",
+      "download_count": 171
+    },
+    {
+      "week": "44 (2025)",
+      "download_count": 129
+    },
+    {
+      "week": "43 (2025)",
+      "download_count": 337
+    },
+    {
+      "week": "42 (2025)",
+      "download_count": 578
+    },
+    {
+      "week": "41 (2025)",
+      "download_count": 328
+    },
+    {
+      "week": "40 (2025)",
+      "download_count": 501
+    },
+    {
+      "week": "39 (2025)",
+      "download_count": 164
+    },
+    {
+      "week": "38 (2025)",
+      "download_count": 347
+    },
+    {
+      "week": "37 (2025)",
+      "download_count": 118
+    },
+    {
+      "week": "36 (2025)",
+      "download_count": 386
+    },
+    {
+      "week": "35 (2025)",
+      "download_count": 378
+    },
+    {
+      "week": "34 (2025)",
+      "download_count": 198
+    },
+    {
+      "week": "33 (2025)",
+      "download_count": 458
+    },
+    {
+      "week": "32 (2025)",
+      "download_count": 344
+    },
+    {
+      "week": "31 (2025)",
+      "download_count": 84
+    },
+    {
       "week": "30 (2025)",
-      "download_count": 825
+      "download_count": 813
     },
     {
       "week": "29 (2025)",
-      "download_count": 142
+      "download_count": 210
     },
     {
       "week": "28 (2025)",
-      "download_count": 305
+      "download_count": 332
     },
     {
       "week": "27 (2025)",
-      "download_count": 159
+      "download_count": 125
     },
     {
       "week": "26 (2025)",
-      "download_count": 278
+      "download_count": 298
     },
     {
       "week": "25 (2025)",
-      "download_count": 183
+      "download_count": 175
     },
     {
       "week": "24 (2025)",
-      "download_count": 121
+      "download_count": 131
     },
     {
       "week": "23 (2025)",
-      "download_count": 190
+      "download_count": 169
     },
     {
       "week": "22 (2025)",
-      "download_count": 254
+      "download_count": 239
     },
     {
       "week": "21 (2025)",
-      "download_count": 470
+      "download_count": 371
     },
     {
       "week": "20 (2025)",
-      "download_count": 580
+      "download_count": 637
     },
     {
       "week": "19 (2025)",
-      "download_count": 184
+      "download_count": 259
     },
     {
       "week": "18 (2025)",
-      "download_count": 357
+      "download_count": 348
     },
     {
       "week": "17 (2025)",
-      "download_count": 132
+      "download_count": 165
     },
     {
       "week": "16 (2025)",
-      "download_count": 272
+      "download_count": 177
     },
     {
       "week": "15 (2025)",
-      "download_count": 91
+      "download_count": 175
     },
     {
       "week": "14 (2025)",
-      "download_count": 163
+      "download_count": 159
     },
     {
       "week": "13 (2025)",
@@ -209,14 +209,18 @@
     },
     {
       "week": "12 (2025)",
-      "download_count": 186
+      "download_count": 195
     },
     {
       "week": "11 (2025)",
-      "download_count": 315
+      "download_count": 275
     }
   ],
   "daily": [
+    {
+      "date": "2026-03-07",
+      "download_count_30d": 1498
+    },
     {
       "date": "2026-03-06",
       "download_count_30d": 1589
