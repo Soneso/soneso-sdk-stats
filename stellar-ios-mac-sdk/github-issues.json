@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-03-10",
+    "as_of": "2026-03-11",
     "open_issues": 0,
-    "open_prs": 1,
+    "open_prs": 0,
     "closed_issues_365d": 11,
-    "closed_prs_365d": 12,
+    "closed_prs_365d": 13,
     "median_first_response_hours": 21.3,
     "avg_first_response_hours": 37.8,
-    "median_time_to_close_hours": 22.2,
-    "avg_time_to_close_hours": 119.6,
+    "median_time_to_close_hours": 21.3,
+    "avg_time_to_close_hours": 99.9,
     "issues_with_response_pct": 100.0
   },
   "issues": [
@@ -17,14 +17,14 @@
       "number": 192,
       "title": "New improved documentation with tested code examples",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "lux2983",
-      "author_association": "FIRST_TIME_CONTRIBUTOR",
+      "author_association": "CONTRIBUTOR",
       "created_at": "2026-03-09T14:36:47Z",
-      "closed_at": null,
+      "closed_at": "2026-03-10T11:45:18Z",
       "first_response_at": "2026-03-09T14:49:11Z",
       "first_response_hours": 0.2,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 21.1,
       "labels": []
     },
     {
