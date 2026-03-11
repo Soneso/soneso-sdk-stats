@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 138,
-      "latest_release": "3.4.4",
-      "latest_release_date": "2026-02-20",
-      "releases_last_90d": 4,
-      "releases_last_365d": 20,
-      "avg_days_between_releases": 21.3
+      "total_releases": 139,
+      "latest_release": "3.4.5",
+      "latest_release_date": "2026-03-10",
+      "releases_last_90d": 5,
+      "releases_last_365d": 21,
+      "avg_days_between_releases": 21.2
     },
     "all": [
+      {
+        "tag": "3.4.5",
+        "name": "v3.4.5 \u2014 Documentation Overhaul, Agent Skill & XDR Code Generation",
+        "published_at": "2026-03-10T15:57:20Z",
+        "prerelease": false
+      },
       {
         "tag": "3.4.4",
         "name": "v3.4.4 - Maintenance release: Sendable conformance, bug fixes, and thread safety",

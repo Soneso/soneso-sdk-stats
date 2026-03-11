@@ -2,14 +2,26 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 104,
-      "latest_release": "3.0.2",
-      "latest_release_date": "2026-02-21",
-      "releases_last_90d": 5,
-      "releases_last_365d": 18,
-      "avg_days_between_releases": 20.1
+      "total_releases": 106,
+      "latest_release": "3.0.4",
+      "latest_release_date": "2026-03-10",
+      "releases_last_90d": 7,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 19.9
     },
     "all": [
+      {
+        "tag": "3.0.4",
+        "name": "v3.0.4 Fix published package asset warning ",
+        "published_at": "2026-03-10T18:56:10Z",
+        "prerelease": false
+      },
+      {
+        "tag": "3.0.3",
+        "name": "v3.0.3 Documentation Overhaul, Agent Skill & Auto-generated XDR types",
+        "published_at": "2026-03-10T18:04:24Z",
+        "prerelease": false
+      },
       {
         "tag": "3.0.2",
         "name": "v3.0.2 Maintenance release: bug fixes, compatibility improvements, and documentation corrections",
@@ -640,11 +652,11 @@
     "weekly": [
       {
         "week_start": "2026-03-08",
-        "total": 0,
+        "total": 15,
         "days": [
-          0,
-          0,
-          0,
+          11,
+          2,
+          2,
           0,
           0,
           0,
@@ -653,15 +665,15 @@
       },
       {
         "week_start": "2026-03-01",
-        "total": 4,
+        "total": 23,
         "days": [
-          0,
-          0,
-          1,
           2,
-          1,
           0,
-          0
+          13,
+          3,
+          3,
+          1,
+          1
         ]
       },
       {
