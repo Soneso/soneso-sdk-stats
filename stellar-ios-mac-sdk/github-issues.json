@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-03-12",
-    "open_issues": 1,
-    "open_prs": 1,
-    "closed_issues_365d": 11,
-    "closed_prs_365d": 13,
+    "as_of": "2026-03-13",
+    "open_issues": 0,
+    "open_prs": 0,
+    "closed_issues_365d": 12,
+    "closed_prs_365d": 14,
     "median_first_response_hours": 12.6,
     "avg_first_response_hours": 31.8,
-    "median_time_to_close_hours": 21.3,
-    "avg_time_to_close_hours": 99.9,
+    "median_time_to_close_hours": 21.2,
+    "avg_time_to_close_hours": 86.6,
     "issues_with_response_pct": 100.0
   },
   "issues": [
@@ -17,28 +17,28 @@
       "number": 194,
       "title": "Update XDR definitions from upstream stellar-xdr (P26)",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "christian-rogobete",
       "author_association": "MEMBER",
       "created_at": "2026-03-11T19:30:29Z",
-      "closed_at": null,
+      "closed_at": "2026-03-12T13:41:59Z",
       "first_response_at": "2026-03-11T20:17:33Z",
       "first_response_hours": 0.8,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 18.2,
       "labels": []
     },
     {
       "number": 193,
       "title": "Update XDR definitions from upstream stellar-xdr",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "github-actions[bot]",
       "author_association": "NONE",
       "created_at": "2026-03-11T17:42:26Z",
-      "closed_at": null,
+      "closed_at": "2026-03-12T13:42:01Z",
       "first_response_at": "2026-03-11T19:31:27Z",
       "first_response_hours": 1.8,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 20.0,
       "labels": [
         "xdr-update"
       ]
