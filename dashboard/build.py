@@ -188,7 +188,7 @@ def compute_sdk_summary(sdk_data):
     # Dependents
     dep = sdk_data.get("dependents")
     if dep:
-        summary["dependents"] = dep.get("total_repos", 0) + dep.get("total_packages", 0)
+        summary["dependents"] = (dep.get("total_repos") or 0) + (dep.get("total_packages") or 0)
     else:
         summary["dependents"] = None
 
