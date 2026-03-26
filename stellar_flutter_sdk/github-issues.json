@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-03-25",
-    "open_issues": 0,
+    "as_of": "2026-03-26",
+    "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 11,
     "closed_prs_365d": 13,
@@ -10,9 +10,25 @@
     "avg_first_response_hours": 26.9,
     "median_time_to_close_hours": 8.9,
     "avg_time_to_close_hours": 79.8,
-    "issues_with_response_pct": 100.0
+    "issues_with_response_pct": 85.7
   },
   "issues": [
+    {
+      "number": 135,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-03-25T14:39:19Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
     {
       "number": 134,
       "title": "Rewrite SEP-0011 TxRep to use generated XDR serialization",
