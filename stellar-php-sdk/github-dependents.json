@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-03-27",
+    "as_of": "2026-03-28",
     "repos": [
       {
         "owner": "Argo-Navis-Dev",
         "repo": "php-anchor-sdk",
         "stars": 6,
-        "forks": 0
+        "forks": 1
       },
       {
         "owner": "icolomina",
@@ -105,7 +105,7 @@
         "owner": "Argo-Navis-Dev",
         "repo": "php-anchor-sdk",
         "stars": 6,
-        "forks": 0,
+        "forks": 1,
         "package": "argonavis/php-anchor-sdk"
       },
       {
@@ -118,6 +118,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-03-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
     {
       "date": "2026-03-27",
       "dependent_repos": 32,
