@@ -1,30 +1,47 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-03-28",
-    "open_issues": 1,
+    "as_of": "2026-03-29",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 11,
-    "closed_prs_365d": 13,
-    "median_first_response_hours": 1.1,
-    "avg_first_response_hours": 26.9,
+    "closed_issues_365d": 12,
+    "closed_prs_365d": 14,
+    "median_first_response_hours": 2.0,
+    "avg_first_response_hours": 29.4,
     "median_time_to_close_hours": 8.9,
-    "avg_time_to_close_hours": 79.8,
-    "issues_with_response_pct": 85.7
+    "avg_time_to_close_hours": 69.6,
+    "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 136,
+      "title": "Bump codecov/codecov-action from 3f20e214133d0983f9a10f3d63b0faf9241a3daa to 57e3a136b779b570ffcdbf80b3bdc90e7fab3de2",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-03-28T17:40:38Z",
+      "closed_at": "2026-03-28T20:35:05Z",
+      "first_response_at": "2026-03-28T20:30:08Z",
+      "first_response_hours": 2.8,
+      "time_to_close_hours": 2.9,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
     {
       "number": 135,
       "title": "Update XDR definitions from upstream stellar-xdr",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "github-actions[bot]",
       "author_association": "NONE",
       "created_at": "2026-03-25T14:39:19Z",
-      "closed_at": null,
-      "first_response_at": null,
-      "first_response_hours": null,
-      "time_to_close_hours": null,
+      "closed_at": "2026-03-28T17:24:38Z",
+      "first_response_at": "2026-03-28T13:41:42Z",
+      "first_response_hours": 71.0,
+      "time_to_close_hours": 74.8,
       "labels": [
         "xdr-update"
       ]

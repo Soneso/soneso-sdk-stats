@@ -1,30 +1,44 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-03-28",
-    "open_issues": 1,
+    "as_of": "2026-03-29",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 12,
-    "closed_prs_365d": 14,
-    "median_first_response_hours": 12.6,
-    "avg_first_response_hours": 31.8,
-    "median_time_to_close_hours": 21.2,
-    "avg_time_to_close_hours": 86.6,
-    "issues_with_response_pct": 87.5
+    "closed_issues_365d": 13,
+    "closed_prs_365d": 15,
+    "median_first_response_hours": 21.3,
+    "avg_first_response_hours": 38.2,
+    "median_time_to_close_hours": 21.3,
+    "avg_time_to_close_hours": 86.4,
+    "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 196,
+      "title": "Security hardening and input validation fixes",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-03-28T21:37:22Z",
+      "closed_at": "2026-03-28T21:43:18Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
     {
       "number": 195,
       "title": "Update XDR definitions from upstream stellar-xdr",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "github-actions[bot]",
       "author_association": "NONE",
       "created_at": "2026-03-25T08:56:30Z",
-      "closed_at": null,
-      "first_response_at": null,
-      "first_response_hours": null,
-      "time_to_close_hours": null,
+      "closed_at": "2026-03-28T22:07:49Z",
+      "first_response_at": "2026-03-28T13:41:25Z",
+      "first_response_hours": 76.7,
+      "time_to_close_hours": 85.2,
       "labels": [
         "xdr-update"
       ]
