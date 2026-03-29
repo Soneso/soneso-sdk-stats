@@ -21,6 +21,16 @@ SDKS = [
     {"key": "kmp", "folder": "kmp-stellar-sdk", "label": "KMP", "color": "#B07CFF", "card_label": "KMP (new)", "first_release": "v0.2.0 (2025-10-25)"},
 ]
 
+# Which SDKs to show on the dashboard. Remove a key to hide it.
+ENABLED_SDKS = {"ios", "flutter", "php"}
+
+_valid_keys = {s["key"] for s in SDKS}
+_invalid = ENABLED_SDKS - _valid_keys
+if _invalid:
+    raise ValueError(f"ENABLED_SDKS contains unknown keys: {_invalid}")
+
+ACTIVE_SDKS = [s for s in SDKS if s["key"] in ENABLED_SDKS]
+
 CUTOFF_DAYS = 365
 
 
@@ -217,7 +227,7 @@ def compute_sdk_summary(sdk_data):
 
 def build_data():
     all_data = []
-    for sdk in SDKS:
+    for sdk in ACTIVE_SDKS:
         sdk_data = {
             "sdk": sdk,
             "clones": extract_clones(sdk),
@@ -240,8 +250,8 @@ def build_data():
 
     # Prepare chart data
     chart_data = {
-        "sdks": [s["label"] for s in SDKS],
-        "colors": [s["color"] for s in SDKS],
+        "sdks": [s["label"] for s in ACTIVE_SDKS],
+        "colors": [s["color"] for s in ACTIVE_SDKS],
         "clones": {},
         "packagist_daily": [],
         "pubdev_weekly": [],
@@ -251,7 +261,7 @@ def build_data():
         "dependents": {},
     }
 
-    for i, sdk in enumerate(SDKS):
+    for i, sdk in enumerate(ACTIVE_SDKS):
         sd = all_data[i]
         chart_data["clones"][sdk["label"]] = sd["clones"]
         # Commit heatmap
@@ -271,6 +281,8 @@ def build_data():
         # Dependents
         if sd["dependents"]:
             chart_data["dependents"][sdk["label"]] = sd["dependents"]
+
+    chart_data["release_order"] = [s["label"] for s in reversed(ACTIVE_SDKS)]
 
     # Packagist daily (monthly field trend) — find PHP SDK by key
     php_data = next((sd for sd in all_data if sd["sdk"]["key"] == "php"), None)
@@ -353,7 +365,7 @@ h2{font-size:1.15rem;font-weight:600;color:#e6edf3;margin-bottom:12px}
 <div class="header">
   <div>
     <h1>Soneso Stellar SDK Stats</h1>
-    <div class="subtitle">Daily statistics for iOS, Flutter, PHP and KMP Stellar SDKs</div>
+    <div class="subtitle">$subtitle</div>
   </div>
   <div class="subtitle">Last updated: $last_updated</div>
 </div>
@@ -370,16 +382,7 @@ h2{font-size:1.15rem;font-weight:600;color:#e6edf3;margin-bottom:12px}
 </div>
 
 <!-- Package Downloads -->
-<div class="two-col">
-  <div class="card">
-    <h2>pub.dev Weekly Downloads</h2>
-    <div id="chart-pubdev" class="chart"></div>
-  </div>
-  <div class="card">
-    <h2>Packagist Monthly Downloads</h2>
-    <div id="chart-packagist" class="chart"></div>
-  </div>
-</div>
+$package_downloads
 
 <!-- Commit Heatmaps -->
 <div class="card">
@@ -563,7 +566,7 @@ var allCharts = [];
 // ── Release Timeline ──
 (function() {
   var series = [];
-  var releaseOrder = ['KMP', 'PHP', 'Flutter', 'iOS'];
+  var releaseOrder = DATA.release_order;
   releaseOrder.forEach(function(name) {
     var i = SDK_NAMES.indexOf(name);
     var releases = DATA.releases[name] || [];
@@ -681,7 +684,7 @@ def format_hours(h):
 
 def build_issue_cards(chart_data):
     cards = []
-    for i, sdk in enumerate(SDKS):
+    for i, sdk in enumerate(ACTIVE_SDKS):
         name = sdk["label"]
         color = sdk["color"]
         issues = chart_data["issues"].get(name)
@@ -749,16 +752,59 @@ def build_sdk_summary_cards(all_data):
 
 def build_heatmap_divs():
     divs = []
-    for i, sdk in enumerate(SDKS):
+    for i, sdk in enumerate(ACTIVE_SDKS):
         divs.append(f'<div id="chart-heatmap-{i}" class="chart-heatmap"></div>')
     return "\n  ".join(divs)
 
 
 def build_heatmap_legend():
     items = []
-    for sdk in SDKS:
+    for sdk in ACTIVE_SDKS:
         items.append(f'<span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:{sdk["color"]}"></span>{sdk["label"]}</span>')
     return "".join(items)
+
+
+def build_package_downloads_section():
+    """Build the package downloads HTML section based on which SDKs are active."""
+    has_pubdev = "flutter" in ENABLED_SDKS
+    has_packagist = "php" in ENABLED_SDKS
+
+    pubdev_card = (
+        '<div class="card">\n'
+        '    <h2>pub.dev Weekly Downloads</h2>\n'
+        '    <div id="chart-pubdev" class="chart"></div>\n'
+        '  </div>'
+    )
+    packagist_card = (
+        '<div class="card">\n'
+        '    <h2>Packagist Monthly Downloads</h2>\n'
+        '    <div id="chart-packagist" class="chart"></div>\n'
+        '  </div>'
+    )
+
+    if has_pubdev and has_packagist:
+        return (
+            '<div class="two-col">\n'
+            f'  {pubdev_card}\n'
+            f'  {packagist_card}\n'
+            '</div>'
+        )
+    if has_pubdev:
+        return pubdev_card
+    if has_packagist:
+        return packagist_card
+    return ""
+
+
+def build_subtitle():
+    """Build the dashboard subtitle from ACTIVE_SDKS."""
+    labels = [s["label"] for s in ACTIVE_SDKS]
+    if not labels:
+        return "Soneso Stellar SDK Stats"
+    if len(labels) == 1:
+        return f"Daily statistics for the {labels[0]} Stellar SDK"
+    subtitle_text = ", ".join(labels[:-1]) + " and " + labels[-1]
+    return f"Daily statistics for {subtitle_text} Stellar SDKs"
 
 
 def generate():
@@ -768,7 +814,9 @@ def generate():
 
     html = HTML_TEMPLATE.substitute(
         last_updated=today,
+        subtitle=build_subtitle(),
         sdk_summary_cards=build_sdk_summary_cards(all_data),
+        package_downloads=build_package_downloads_section(),
         heatmap_divs=build_heatmap_divs(),
         heatmap_legend=build_heatmap_legend(),
         issue_cards=build_issue_cards(chart_data),
