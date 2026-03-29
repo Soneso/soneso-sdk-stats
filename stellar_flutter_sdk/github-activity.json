@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 106,
-      "latest_release": "3.0.4",
-      "latest_release_date": "2026-03-10",
-      "releases_last_90d": 6,
-      "releases_last_365d": 20,
-      "avg_days_between_releases": 19.9
+      "total_releases": 107,
+      "latest_release": "3.0.5",
+      "latest_release_date": "2026-03-28",
+      "releases_last_90d": 7,
+      "releases_last_365d": 21,
+      "avg_days_between_releases": 19.8
     },
     "all": [
+      {
+        "tag": "3.0.5",
+        "name": "v3.0.5 Maintenance release: SEP-11 TxRep rewrite, XDR update, CI hardening",
+        "published_at": "2026-03-28T22:58:18Z",
+        "prerelease": false
+      },
       {
         "tag": "3.0.4",
         "name": "v3.0.4 Fix published package asset warning ",

@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 139,
-      "latest_release": "3.4.5",
-      "latest_release_date": "2026-03-10",
-      "releases_last_90d": 4,
-      "releases_last_365d": 20,
+      "total_releases": 140,
+      "latest_release": "3.4.6",
+      "latest_release_date": "2026-03-29",
+      "releases_last_90d": 5,
+      "releases_last_365d": 21,
       "avg_days_between_releases": 21.2
     },
     "all": [
+      {
+        "tag": "3.4.6",
+        "name": "v3.4.6 - Maintenance release",
+        "published_at": "2026-03-29T01:11:47Z",
+        "prerelease": false
+      },
       {
         "tag": "3.4.5",
         "name": "v3.4.5 \u2014 Documentation Overhaul, Agent Skill & XDR Code Generation",
