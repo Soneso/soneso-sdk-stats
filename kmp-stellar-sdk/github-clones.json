@@ -3,10 +3,15 @@
   "summary": {
     "last_14_days": {
       "count": 3279,
-      "uniques": 89
+      "uniques": 87
     }
   },
   "daily": [
+    {
+      "date": "2026-03-30",
+      "count": 0,
+      "uniques": 0
+    },
     {
       "date": "2026-03-29",
       "count": 3,
