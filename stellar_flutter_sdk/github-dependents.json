@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-02",
+    "as_of": "2026-04-03",
     "repos": [
       {
         "owner": "cypherstack",
@@ -24,7 +24,7 @@
       {
         "owner": "0xapurv",
         "repo": "NFT_Store",
-        "stars": 33,
+        "stars": 32,
         "forks": 5
       },
       {
@@ -257,6 +257,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-03",
+      "dependent_repos": 86,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-02",
       "dependent_repos": 86,
