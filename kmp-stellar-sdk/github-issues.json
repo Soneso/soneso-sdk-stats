@@ -1,18 +1,60 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-01",
-    "open_issues": 0,
+    "as_of": "2026-04-03",
+    "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 1,
-    "closed_prs_365d": 10,
+    "closed_prs_365d": 12,
     "median_first_response_hours": 10.8,
     "avg_first_response_hours": 10.8,
     "median_time_to_close_hours": 0.9,
     "avg_time_to_close_hours": 7.3,
-    "issues_with_response_pct": 66.7
+    "issues_with_response_pct": 50.0
   },
   "issues": [
+    {
+      "number": 14,
+      "title": "Stellar Asset Code allows a to z",
+      "type": "issue",
+      "state": "open",
+      "author": "linthedev",
+      "author_association": "NONE",
+      "created_at": "2026-04-03T05:07:57Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": []
+    },
+    {
+      "number": 13,
+      "title": "Migrate smart account SDK to OZ contracts v0.7.0-rc.2",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-04-02T23:48:54Z",
+      "closed_at": "2026-04-03T00:17:06Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.5,
+      "labels": []
+    },
+    {
+      "number": 12,
+      "title": "Add smart account support for OpenZeppelin v0.6.0 contracts",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-04-02T14:08:02Z",
+      "closed_at": "2026-04-02T14:08:31Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.0,
+      "labels": []
+    },
     {
       "number": 11,
       "title": "Add agent skill for AI coding agents",
