@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 79,
-      "latest_release": "1.9.5",
-      "latest_release_date": "2026-03-11",
-      "releases_last_90d": 4,
-      "releases_last_365d": 18,
+      "total_releases": 80,
+      "latest_release": "1.9.6",
+      "latest_release_date": "2026-04-03",
+      "releases_last_90d": 5,
+      "releases_last_365d": 19,
       "avg_days_between_releases": 19.7
     },
     "all": [
+      {
+        "tag": "1.9.6",
+        "name": "v1.9.6 - Maintenance Release",
+        "published_at": "2026-04-03T22:43:22Z",
+        "prerelease": false
+      },
       {
         "tag": "1.9.5",
         "name": "v1.9.5 Agent Skill, Security Hardening & Auto-generated XDR Types",
