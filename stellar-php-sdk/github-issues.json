@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-07",
-    "open_issues": 0,
+    "as_of": "2026-04-08",
+    "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 13,
     "closed_prs_365d": 18,
@@ -10,9 +10,25 @@
     "avg_first_response_hours": 32.9,
     "median_time_to_close_hours": 13.2,
     "avg_time_to_close_hours": 74.1,
-    "issues_with_response_pct": 100.0
+    "issues_with_response_pct": 87.5
   },
   "issues": [
+    {
+      "number": 79,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-04-08T08:57:18Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
     {
       "number": 78,
       "title": "Generate TxRep serialization methods on XDR types",

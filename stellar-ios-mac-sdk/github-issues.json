@@ -1,18 +1,48 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-07",
-    "open_issues": 1,
+    "as_of": "2026-04-08",
+    "open_issues": 3,
     "open_prs": 0,
     "closed_issues_365d": 13,
     "closed_prs_365d": 16,
-    "median_first_response_hours": 14.2,
-    "avg_first_response_hours": 34.3,
+    "median_first_response_hours": 7.0,
+    "avg_first_response_hours": 30.8,
     "median_time_to_close_hours": 21.2,
     "avg_time_to_close_hours": 76.5,
-    "issues_with_response_pct": 90.0
+    "issues_with_response_pct": 83.3
   },
   "issues": [
+    {
+      "number": 200,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-04-08T09:07:07Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
+    {
+      "number": 199,
+      "title": "Documentation Missing for Handling Errors in Transaction Submission",
+      "type": "issue",
+      "state": "open",
+      "author": "orangehorseamend",
+      "author_association": "NONE",
+      "created_at": "2026-04-07T11:52:07Z",
+      "closed_at": null,
+      "first_response_at": "2026-04-07T14:49:53Z",
+      "first_response_hours": 3.0,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 198,
       "title": "Your SKILL.md was picked up by the Invoked registry",
