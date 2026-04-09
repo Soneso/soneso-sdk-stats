@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 15,
-      "latest_release": "v1.3.1",
-      "latest_release_date": "2026-04-03",
-      "releases_last_90d": 8,
-      "releases_last_365d": 15,
-      "avg_days_between_releases": 11.5
+      "total_releases": 16,
+      "latest_release": "v1.4.0",
+      "latest_release_date": "2026-04-08",
+      "releases_last_90d": 9,
+      "releases_last_365d": 16,
+      "avg_days_between_releases": 11.1
     },
     "all": [
+      {
+        "tag": "v1.4.0",
+        "name": "v1.4.0 - OpenZeppelin smart account support",
+        "published_at": "2026-04-08T21:59:52Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.3.1",
         "name": "Version 1.3.1 - Fix asset code validation",
