@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-08",
+    "as_of": "2026-04-09",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 412,
+        "stars": 410,
         "forks": 104
       },
       {
@@ -30,8 +30,8 @@
       {
         "owner": "paltalabs",
         "repo": "defindex",
-        "stars": 14,
-        "forks": 5
+        "stars": 15,
+        "forks": 6
       },
       {
         "owner": "threefoldtech",
@@ -104,6 +104,12 @@
         "repo": "flutter_architecture",
         "stars": 1,
         "forks": 1
+      },
+      {
+        "owner": "nemorixgroup",
+        "repo": "NemorixPay-Mobile-Code",
+        "stars": 1,
+        "forks": 0
       },
       {
         "owner": "paltalabs",
@@ -202,12 +208,6 @@
         "forks": 0
       },
       {
-        "owner": "nemorixgroup",
-        "repo": "NemorixPay-Mobile-Code",
-        "stars": 0,
-        "forks": 0
-      },
-      {
         "owner": "rinat-enikeev",
         "repo": "sfsdk_web_issue",
         "stars": 0,
@@ -224,8 +224,8 @@
       {
         "owner": "paltalabs",
         "repo": "defindex",
-        "stars": 14,
-        "forks": 5,
+        "stars": 15,
+        "forks": 6,
         "package": "defindex_sdk"
       },
       {
@@ -257,6 +257,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-09",
+      "dependent_repos": 86,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-08",
       "dependent_repos": 86,
