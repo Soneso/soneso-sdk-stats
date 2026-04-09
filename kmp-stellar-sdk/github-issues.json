@@ -1,18 +1,48 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-08",
+    "as_of": "2026-04-09",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 2,
-    "closed_prs_365d": 15,
+    "closed_issues_365d": 3,
+    "closed_prs_365d": 16,
     "median_first_response_hours": 9.0,
     "avg_first_response_hours": 10.2,
-    "median_time_to_close_hours": 7.0,
-    "avg_time_to_close_hours": 8.7,
-    "issues_with_response_pct": 75.0
+    "median_time_to_close_hours": 3.5,
+    "avg_time_to_close_hours": 7.7,
+    "issues_with_response_pct": 60.0
   },
   "issues": [
+    {
+      "number": 19,
+      "title": "Smart account layer release preparation",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-04-08T17:44:58Z",
+      "closed_at": "2026-04-08T18:10:30Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": []
+    },
+    {
+      "number": 18,
+      "title": "Update XDR definitions from upstream stellar-xdr (0a56f5b)",
+      "type": "issue",
+      "state": "closed",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-04-08T14:51:13Z",
+      "closed_at": "2026-04-08T18:23:18Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 3.5,
+      "labels": [
+        "xdr-update"
+      ]
+    },
     {
       "number": 17,
       "title": "Restructure compatibility matrix generator",
