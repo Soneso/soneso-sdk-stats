@@ -161,20 +161,21 @@ jobs:
                   merged_issues = dict(existing_issues)
                   merged_issues.update(new_issues)
 
-                  # Reconcile stale open entries: if an issue is marked open in
-                  # our data but was not returned by the API (deleted or
-                  # transferred), mark it as closed so counts stay accurate.
+                  # Reconcile removed entries: issues absent from the API
+                  # (deleted accounts, transferred, etc.) are flagged so they
+                  # are excluded from all metrics.
                   api_numbers = set(new_issues.keys())
                   for num, entry in merged_issues.items():
-                      if entry["state"] == "open" and num not in api_numbers:
-                          entry["state"] = "closed"
+                      if num not in api_numbers:
                           entry["removed"] = True
-                          if not entry.get("closed_at"):
-                              entry["closed_at"] = today_str + "T00:00:00Z"
-                          entry["time_to_close_hours"] = hours_between(
-                              entry["created_at"], entry["closed_at"]
-                          )
-                      elif num in api_numbers and entry.get("removed"):
+                          if entry["state"] == "open":
+                              entry["state"] = "closed"
+                              if not entry.get("closed_at"):
+                                  entry["closed_at"] = today_str + "T00:00:00Z"
+                              entry["time_to_close_hours"] = hours_between(
+                                  entry["created_at"], entry["closed_at"]
+                              )
+                      elif entry.get("removed"):
                           del entry["removed"]
 
                   # Sort by number descending
