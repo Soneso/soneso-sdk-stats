@@ -1,18 +1,32 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-10",
+    "as_of": "2026-04-11",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 14,
+    "closed_issues_365d": 15,
     "closed_prs_365d": 17,
-    "median_first_response_hours": 5.9,
-    "avg_first_response_hours": 29.8,
-    "median_time_to_close_hours": 10.6,
-    "avg_time_to_close_hours": 65.8,
+    "median_first_response_hours": 3.8,
+    "avg_first_response_hours": 26.8,
+    "median_time_to_close_hours": 8.1,
+    "avg_time_to_close_hours": 58.9,
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 80,
+      "title": "SDK Updates for Protocol 26 Compatibility",
+      "type": "issue",
+      "state": "closed",
+      "author": "Ryang-21",
+      "author_association": "NONE",
+      "created_at": "2026-04-10T18:58:17Z",
+      "closed_at": "2026-04-10T22:05:30Z",
+      "first_response_at": "2026-04-10T22:05:24Z",
+      "first_response_hours": 3.1,
+      "time_to_close_hours": 3.1,
+      "labels": []
+    },
     {
       "number": 79,
       "title": "Update XDR definitions from upstream stellar-xdr",
