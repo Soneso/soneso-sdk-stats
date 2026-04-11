@@ -168,11 +168,14 @@ jobs:
                   for num, entry in merged_issues.items():
                       if entry["state"] == "open" and num not in api_numbers:
                           entry["state"] = "closed"
+                          entry["removed"] = True
                           if not entry.get("closed_at"):
                               entry["closed_at"] = today_str + "T00:00:00Z"
                           entry["time_to_close_hours"] = hours_between(
                               entry["created_at"], entry["closed_at"]
                           )
+                      elif num in api_numbers and entry.get("removed"):
+                          del entry["removed"]
 
                   # Sort by number descending
                   issues_list = sorted(
@@ -181,24 +184,27 @@ jobs:
                       reverse=True,
                   )
 
+                  # Exclude removed issues (deleted/transferred) from metrics
+                  active_issues = [i for i in issues_list if not i.get("removed")]
+
                   # Compute summary
                   open_issues = sum(
-                      1 for i in issues_list
+                      1 for i in active_issues
                       if i["type"] == "issue" and i["state"] == "open"
                   )
                   open_prs = sum(
-                      1 for i in issues_list
+                      1 for i in active_issues
                       if i["type"] == "pr" and i["state"] == "open"
                   )
                   closed_issues_365d = sum(
-                      1 for i in issues_list
+                      1 for i in active_issues
                       if i["type"] == "issue"
                       and i["state"] == "closed"
                       and i.get("closed_at")
                       and i["closed_at"][:10] >= cutoff_365d
                   )
                   closed_prs_365d = sum(
-                      1 for i in issues_list
+                      1 for i in active_issues
                       if i["type"] == "pr"
                       and i["state"] == "closed"
                       and i.get("closed_at")
@@ -207,7 +213,7 @@ jobs:
 
                   # Exclude self-filed issues from response time metrics
                   external = [
-                      i for i in issues_list
+                      i for i in active_issues
                       if i.get("author_association") not in SELF_FILED_ROLES
                   ]
 
