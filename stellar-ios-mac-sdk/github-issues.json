@@ -4,13 +4,13 @@
     "as_of": "2026-04-11",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 17,
+    "closed_issues_365d": 15,
     "closed_prs_365d": 16,
-    "median_first_response_hours": 3.9,
-    "avg_first_response_hours": 25.7,
-    "median_time_to_close_hours": 21.2,
-    "avg_time_to_close_hours": 77.1,
-    "issues_with_response_pct": 92.3
+    "median_first_response_hours": 5.5,
+    "avg_first_response_hours": 27.9,
+    "median_time_to_close_hours": 20.6,
+    "avg_time_to_close_hours": 61.7,
+    "issues_with_response_pct": 100.0
   },
   "issues": [
     {
@@ -55,7 +55,8 @@
       "first_response_at": "2026-04-07T14:49:53Z",
       "first_response_hours": 3.0,
       "time_to_close_hours": 84.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 198,
@@ -69,7 +70,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 224.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 197,

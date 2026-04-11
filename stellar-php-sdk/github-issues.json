@@ -6,10 +6,10 @@
     "open_prs": 0,
     "closed_issues_365d": 15,
     "closed_prs_365d": 17,
-    "median_first_response_hours": 3.8,
-    "avg_first_response_hours": 26.8,
-    "median_time_to_close_hours": 8.1,
-    "avg_time_to_close_hours": 58.9,
+    "median_first_response_hours": 3.5,
+    "avg_first_response_hours": 25.6,
+    "median_time_to_close_hours": 7.9,
+    "avg_time_to_close_hours": 61.6,
     "issues_with_response_pct": 100.0
   },
   "issues": [
@@ -503,7 +503,8 @@
       "first_response_at": "2025-04-08T09:12:42Z",
       "first_response_hours": 36.6,
       "time_to_close_hours": 36.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 45,
