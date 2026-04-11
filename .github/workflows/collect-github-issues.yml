@@ -161,6 +161,19 @@ jobs:
                   merged_issues = dict(existing_issues)
                   merged_issues.update(new_issues)
 
+                  # Reconcile stale open entries: if an issue is marked open in
+                  # our data but was not returned by the API (deleted or
+                  # transferred), mark it as closed so counts stay accurate.
+                  api_numbers = set(new_issues.keys())
+                  for num, entry in merged_issues.items():
+                      if entry["state"] == "open" and num not in api_numbers:
+                          entry["state"] = "closed"
+                          if not entry.get("closed_at"):
+                              entry["closed_at"] = today_str + "T00:00:00Z"
+                          entry["time_to_close_hours"] = hours_between(
+                              entry["created_at"], entry["closed_at"]
+                          )
+
                   # Sort by number descending
                   issues_list = sorted(
                       merged_issues.values(),
