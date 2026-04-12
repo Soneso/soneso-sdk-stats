@@ -2,11 +2,16 @@
   "schema_version": 1,
   "summary": {
     "last_14_days": {
-      "count": 155,
-      "uniques": 73
+      "count": 145,
+      "uniques": 66
     }
   },
   "daily": [
+    {
+      "date": "2026-04-11",
+      "count": 10,
+      "uniques": 8
+    },
     {
       "date": "2026-04-10",
       "count": 11,
