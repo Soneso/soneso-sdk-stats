@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-13",
+    "as_of": "2026-04-14",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 14,
-    "closed_prs_365d": 15,
+    "closed_prs_365d": 16,
     "median_first_response_hours": 2.8,
     "avg_first_response_hours": 22.5,
     "median_time_to_close_hours": 3.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 140,
+      "title": "Fix SEP-0011 MEMO_TEXT escaping to use C-style \\xNN UTF-8 byte format",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-04-13T12:39:36Z",
+      "closed_at": "2026-04-13T13:11:59Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.5,
+      "labels": []
+    },
     {
       "number": 139,
       "title": "SDK Updates for Protocol 26 Compatibility",

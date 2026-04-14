@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-13",
+    "as_of": "2026-04-14",
     "open_issues": 0,
-    "open_prs": 1,
+    "open_prs": 0,
     "closed_issues_365d": 15,
-    "closed_prs_365d": 16,
+    "closed_prs_365d": 17,
     "median_first_response_hours": 5.5,
     "avg_first_response_hours": 27.9,
     "median_time_to_close_hours": 20.6,
@@ -17,14 +17,14 @@
       "number": 202,
       "title": "Refactor TxRep to generator-driven encoding",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "christian-rogobete",
       "author_association": "MEMBER",
       "created_at": "2026-04-13T11:44:37Z",
-      "closed_at": null,
+      "closed_at": "2026-04-13T13:12:47Z",
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 1.5,
       "labels": []
     },
     {

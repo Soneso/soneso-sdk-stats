@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-13",
+    "as_of": "2026-04-14",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 3,
-    "closed_prs_365d": 16,
+    "closed_prs_365d": 17,
     "median_first_response_hours": 9.0,
     "avg_first_response_hours": 10.2,
     "median_time_to_close_hours": 3.5,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 60.0
   },
   "issues": [
+    {
+      "number": 20,
+      "title": "Smart accounts: add WebAuthn hybrid transport for cross-device passkey authentication",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-04-13T20:14:42Z",
+      "closed_at": "2026-04-13T21:20:24Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 1.1,
+      "labels": []
+    },
     {
       "number": 19,
       "title": "Smart account layer release preparation",
