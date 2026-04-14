@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 16,
-      "latest_release": "v1.4.0",
-      "latest_release_date": "2026-04-08",
-      "releases_last_90d": 9,
-      "releases_last_365d": 16,
-      "avg_days_between_releases": 11.1
+      "total_releases": 17,
+      "latest_release": "v1.5.0",
+      "latest_release_date": "2026-04-14",
+      "releases_last_90d": 10,
+      "releases_last_365d": 17,
+      "avg_days_between_releases": 10.7
     },
     "all": [
+      {
+        "tag": "v1.5.0",
+        "name": "v1.5.0 - Cross-device passkey authentication",
+        "published_at": "2026-04-14T09:36:42Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.4.0",
         "name": "v1.4.0 - OpenZeppelin smart account support",
