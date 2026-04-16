@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-15",
+    "as_of": "2026-04-16",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 412,
+        "stars": 413,
         "forks": 105
       },
       {
@@ -78,6 +78,12 @@
       {
         "owner": "AKJUS",
         "repo": "stack_wallet",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "HabitaNexus",
+        "repo": "monorepo",
         "stars": 1,
         "forks": 0
       },
@@ -257,6 +263,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-16",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-15",
       "dependent_repos": 86,
