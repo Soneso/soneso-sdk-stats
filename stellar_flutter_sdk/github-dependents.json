@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-19",
+    "as_of": "2026-04-20",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 414,
+        "stars": 412,
         "forks": 105
       },
       {
@@ -263,6 +263,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-20",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-19",
       "dependent_repos": 87,
