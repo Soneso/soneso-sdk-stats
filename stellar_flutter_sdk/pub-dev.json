@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "latest": {
-    "download_count_30d": 747,
+    "download_count_30d": 749,
     "download_count_4w": 731,
     "download_count_12w": 2781,
     "download_count_52w": 14198
@@ -217,6 +217,10 @@
     }
   ],
   "daily": [
+    {
+      "date": "2026-04-22",
+      "download_count_30d": 749
+    },
     {
       "date": "2026-04-21",
       "download_count_30d": 747
