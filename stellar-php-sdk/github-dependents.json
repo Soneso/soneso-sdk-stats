@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-21",
+    "as_of": "2026-04-22",
     "repos": [
       {
         "owner": "Argo-Navis-Dev",
@@ -118,6 +118,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
     {
       "date": "2026-04-21",
       "dependent_repos": 32,

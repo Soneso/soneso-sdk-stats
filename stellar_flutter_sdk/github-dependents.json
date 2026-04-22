@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-21",
+    "as_of": "2026-04-22",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 412,
+        "stars": 413,
         "forks": 105
       },
       {
@@ -132,6 +132,12 @@
       {
         "owner": "Beans-BV",
         "repo": "defindex",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Imdavyking",
+        "repo": "econova_wallet",
         "stars": 0,
         "forks": 0
       },
@@ -263,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-22",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-21",
       "dependent_repos": 87,
