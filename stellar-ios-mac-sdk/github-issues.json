@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-23",
+    "as_of": "2026-04-24",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 15,
+    "closed_issues_365d": 14,
     "closed_prs_365d": 17,
-    "median_first_response_hours": 5.5,
-    "avg_first_response_hours": 27.9,
-    "median_time_to_close_hours": 20.6,
-    "avg_time_to_close_hours": 61.7,
+    "median_first_response_hours": 3.9,
+    "avg_first_response_hours": 28.7,
+    "median_time_to_close_hours": 20.0,
+    "avg_time_to_close_hours": 66.2,
     "issues_with_response_pct": 100.0
   },
   "issues": [
@@ -503,7 +503,8 @@
       "first_response_at": "2025-04-23T07:50:12Z",
       "first_response_hours": 21.3,
       "time_to_close_hours": 21.3,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 165,
