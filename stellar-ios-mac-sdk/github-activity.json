@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 140,
-      "latest_release": "3.4.6",
-      "latest_release_date": "2026-03-29",
-      "releases_last_90d": 4,
+      "total_releases": 141,
+      "latest_release": "3.4.7",
+      "latest_release_date": "2026-04-24",
+      "releases_last_90d": 5,
       "releases_last_365d": 21,
-      "avg_days_between_releases": 21.2
+      "avg_days_between_releases": 21.3
     },
     "all": [
+      {
+        "tag": "3.4.7",
+        "name": "v3.4.7 TxRep generator-driven refactor",
+        "published_at": "2026-04-24T10:10:07Z",
+        "prerelease": false
+      },
       {
         "tag": "3.4.6",
         "name": "v3.4.6 - Maintenance release",
