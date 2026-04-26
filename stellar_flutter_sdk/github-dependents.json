@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-25",
+    "as_of": "2026-04-26",
     "repos": [
       {
         "owner": "cypherstack",
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-26",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-25",
       "dependent_repos": 87,
