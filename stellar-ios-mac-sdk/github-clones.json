@@ -2,7 +2,7 @@
   "schema_version": 1,
   "summary": {
     "last_14_days": {
-      "count": 642,
+      "count": 589,
       "uniques": 182
     }
   },
