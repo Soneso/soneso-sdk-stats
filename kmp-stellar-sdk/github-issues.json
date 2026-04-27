@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-26",
-    "open_issues": 0,
+    "as_of": "2026-04-27",
+    "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 3,
     "closed_prs_365d": 18,
@@ -10,9 +10,23 @@
     "avg_first_response_hours": 10.2,
     "median_time_to_close_hours": 3.5,
     "avg_time_to_close_hours": 7.7,
-    "issues_with_response_pct": 60.0
+    "issues_with_response_pct": 50.0
   },
   "issues": [
+    {
+      "number": 22,
+      "title": "TransactionResultResultXdr does not handle txFAILED correctly",
+      "type": "issue",
+      "state": "open",
+      "author": "rahimklaber",
+      "author_association": "NONE",
+      "created_at": "2026-04-26T17:24:12Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 21,
       "title": "Add external wallet signing to smart account demo",
