@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 17,
-      "latest_release": "v1.5.0",
-      "latest_release_date": "2026-04-14",
-      "releases_last_90d": 7,
-      "releases_last_365d": 17,
-      "avg_days_between_releases": 10.7
+      "total_releases": 18,
+      "latest_release": "v1.5.1",
+      "latest_release_date": "2026-04-28",
+      "releases_last_90d": 8,
+      "releases_last_365d": 18,
+      "avg_days_between_releases": 10.9
     },
     "all": [
+      {
+        "tag": "v1.5.1",
+        "name": "v1.5.1 - Smart-account connect improvements and XDR generator fix",
+        "published_at": "2026-04-28T02:17:46Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.5.0",
         "name": "v1.5.0 - Cross-device passkey authentication",
