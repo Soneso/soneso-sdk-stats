@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-04-28",
+    "as_of": "2026-04-29",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 417,
+        "stars": 416,
         "forks": 106
       },
       {
@@ -88,6 +88,12 @@
         "forks": 0
       },
       {
+        "owner": "Imdavyking",
+        "repo": "econova_wallet",
+        "stars": 1,
+        "forks": 0
+      },
+      {
         "owner": "Rooloo-Innovations",
         "repo": "DWaste-App",
         "stars": 1,
@@ -132,12 +138,6 @@
       {
         "owner": "Beans-BV",
         "repo": "defindex",
-        "stars": 0,
-        "forks": 0
-      },
-      {
-        "owner": "Imdavyking",
-        "repo": "econova_wallet",
         "stars": 0,
         "forks": 0
       },
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-04-29",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-04-28",
       "dependent_repos": 87,
