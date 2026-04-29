@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-28",
+    "as_of": "2026-04-29",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 14,
-    "closed_prs_365d": 14,
+    "closed_prs_365d": 15,
     "median_first_response_hours": 3.9,
     "avg_first_response_hours": 28.7,
     "median_time_to_close_hours": 20.0,
@@ -278,8 +278,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 184,

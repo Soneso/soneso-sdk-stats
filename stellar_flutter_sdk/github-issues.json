@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-04-28",
+    "as_of": "2026-04-29",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 14,
@@ -506,8 +506,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     }
   ]
 }
