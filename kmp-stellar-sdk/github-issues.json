@@ -1,18 +1,103 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-01",
+    "as_of": "2026-05-02",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 4,
-    "closed_prs_365d": 20,
+    "closed_prs_365d": 25,
     "median_first_response_hours": 15.1,
     "avg_first_response_hours": 12.9,
-    "median_time_to_close_hours": 8.2,
-    "avg_time_to_close_hours": 11.9,
-    "issues_with_response_pct": 66.7
+    "median_time_to_close_hours": 0.4,
+    "avg_time_to_close_hours": 6.7,
+    "issues_with_response_pct": 36.4
   },
   "issues": [
+    {
+      "number": 29,
+      "title": "Bump codecov/codecov-action from 5 to 6",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-05-02T07:39:29Z",
+      "closed_at": "2026-05-02T08:04:48Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 28,
+      "title": "Bump actions/upload-pages-artifact from 3 to 5",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-05-02T07:39:28Z",
+      "closed_at": "2026-05-02T08:04:45Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 27,
+      "title": "Bump actions/setup-java from 4 to 5",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-05-02T07:39:23Z",
+      "closed_at": "2026-05-02T08:04:41Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 26,
+      "title": "Bump actions/configure-pages from 4 to 6",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-05-02T07:39:22Z",
+      "closed_at": "2026-05-02T08:04:38Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 25,
+      "title": "Bump actions/deploy-pages from 4 to 5",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-05-02T07:39:20Z",
+      "closed_at": "2026-05-02T08:04:35Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
     {
       "number": 24,
       "title": "Improve smart-account connect cascade order and fix indexer JSON parsing",

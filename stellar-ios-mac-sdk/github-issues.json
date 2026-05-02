@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-01",
+    "as_of": "2026-05-02",
     "open_issues": 0,
-    "open_prs": 2,
+    "open_prs": 0,
     "closed_issues_365d": 14,
-    "closed_prs_365d": 17,
+    "closed_prs_365d": 19,
     "median_first_response_hours": 3.9,
     "avg_first_response_hours": 28.7,
-    "median_time_to_close_hours": 20.0,
-    "avg_time_to_close_hours": 66.2,
+    "median_time_to_close_hours": 21.1,
+    "avg_time_to_close_hours": 58.7,
     "issues_with_response_pct": 83.3
   },
   "issues": [
@@ -17,14 +17,14 @@
       "number": 204,
       "title": "Bump anthropics/claude-code-action from 1.0.105 to 1.0.111",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "dependabot[bot]",
       "author_association": "CONTRIBUTOR",
       "created_at": "2026-05-01T06:40:47Z",
-      "closed_at": null,
+      "closed_at": "2026-05-02T07:26:48Z",
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 24.8,
       "labels": [
         "dependencies",
         "github_actions"
@@ -34,14 +34,14 @@
       "number": 203,
       "title": "Bump SCF-Public-Goods-Maintenance/pg-atlas-sbom-action from f2f44ed8cec916dd412c86ebcab796655656329f to e732fb836ead361371a7a7aad3c992ceb50c757d",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "dependabot[bot]",
       "author_association": "CONTRIBUTOR",
       "created_at": "2026-05-01T06:40:42Z",
-      "closed_at": null,
+      "closed_at": "2026-05-02T07:26:54Z",
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 24.8,
       "labels": [
         "dependencies",
         "github_actions"
