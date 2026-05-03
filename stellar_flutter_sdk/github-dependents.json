@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-05-02",
+    "as_of": "2026-05-03",
     "repos": [
       {
         "owner": "cypherstack",
@@ -70,6 +70,12 @@
         "forks": 0
       },
       {
+        "owner": "nemorixgroup",
+        "repo": "NemorixPay-Mobile-Code",
+        "stars": 2,
+        "forks": 1
+      },
+      {
         "owner": "threefoldtech",
         "repo": "tfgrid-sdk-dart",
         "stars": 2,
@@ -114,12 +120,6 @@
       {
         "owner": "jopmiddelkamp",
         "repo": "flutter_architecture",
-        "stars": 1,
-        "forks": 1
-      },
-      {
-        "owner": "nemorixgroup",
-        "repo": "NemorixPay-Mobile-Code",
         "stars": 1,
         "forks": 1
       },
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-05-03",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-05-02",
       "dependent_repos": 87,
