@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 81,
-      "latest_release": "1.9.6",
-      "latest_release_date": "2026-04-03",
-      "releases_last_90d": 4,
-      "releases_last_365d": 19,
-      "avg_days_between_releases": 19.4
+      "total_releases": 82,
+      "latest_release": "1.9.7",
+      "latest_release_date": "2026-05-06",
+      "releases_last_90d": 5,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 19.6
     },
     "all": [
+      {
+        "tag": "1.9.7",
+        "name": "v1.9.7 SEP-51 (XDR-JSON) support",
+        "published_at": "2026-05-06T19:15:33Z",
+        "prerelease": false
+      },
       {
         "tag": "1.9.6",
         "name": "v1.9.6 - Maintenance Release",
