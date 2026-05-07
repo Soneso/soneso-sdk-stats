@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-06",
+    "as_of": "2026-05-07",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 15,
-    "closed_prs_365d": 21,
+    "closed_prs_365d": 22,
     "median_first_response_hours": 3.5,
     "avg_first_response_hours": 25.6,
     "median_time_to_close_hours": 19.8,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 66.7
   },
   "issues": [
+    {
+      "number": 85,
+      "title": "Add SEP-51 (XDR-JSON) encoding support",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-05-06T13:54:08Z",
+      "closed_at": "2026-05-06T18:31:10Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 4.6,
+      "labels": []
+    },
     {
       "number": 84,
       "title": "build(deps): bump actions/cache from 5.0.4 to 5.0.5",
