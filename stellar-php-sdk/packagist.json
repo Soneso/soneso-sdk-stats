@@ -1,12 +1,19 @@
 {
   "schema_version": 1,
   "latest": {
-    "total": 50306,
-    "monthly": 1597,
-    "daily": 42,
+    "total": 50320,
+    "monthly": 1559,
+    "daily": 16,
     "favers": 41
   },
   "daily": [
+    {
+      "date": "2026-05-10",
+      "total": 50320,
+      "monthly": 1559,
+      "daily": 16,
+      "favers": 41
+    },
     {
       "date": "2026-05-09",
       "total": 50306,
