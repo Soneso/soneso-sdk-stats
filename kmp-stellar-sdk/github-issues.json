@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-19",
+    "as_of": "2026-05-20",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 4,
-    "closed_prs_365d": 25,
+    "closed_prs_365d": 26,
     "median_first_response_hours": 15.1,
     "avg_first_response_hours": 12.9,
     "median_time_to_close_hours": 0.4,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 36.4
   },
   "issues": [
+    {
+      "number": 30,
+      "title": "Add SEP-31 Cross-Border Payments support",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-05-20T08:43:46Z",
+      "closed_at": "2026-05-20T08:55:22Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": []
+    },
     {
       "number": 29,
       "title": "Bump codecov/codecov-action from 5 to 6",
