@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-25",
+    "as_of": "2026-05-26",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 13,
     "closed_prs_365d": 19,
     "median_first_response_hours": 3.3,
-    "avg_first_response_hours": 29.4,
-    "median_time_to_close_hours": 20.6,
-    "avg_time_to_close_hours": 62.2,
-    "issues_with_response_pct": 81.8
+    "avg_first_response_hours": 36.8,
+    "median_time_to_close_hours": 12.5,
+    "avg_time_to_close_hours": 114.4,
+    "issues_with_response_pct": 100.0
   },
   "issues": [
     {
