@@ -212,10 +212,16 @@ jobs:
                       and i["closed_at"][:10] >= cutoff_365d
                   )
 
-                  # Exclude self-filed issues from response time metrics
+                  # Exclude self-filed issues and bot-authored items from response/close metrics.
+                  # Bot detection uses the GitHub `[bot]` login suffix (dependabot[bot],
+                  # github-actions[bot], etc.). Dependabot PRs are merged within minutes
+                  # without human comment, which both deflates response_pct and the
+                  # time-to-close medians. The `(... or "")` guard tolerates legacy cache
+                  # entries where `author` may be missing or stored as None.
                   external = [
                       i for i in active_issues
                       if i.get("author_association") not in SELF_FILED_ROLES
+                      and not (i.get("author") or "").endswith("[bot]")
                   ]
 
                   # Exclude issues open for more than 5 years from

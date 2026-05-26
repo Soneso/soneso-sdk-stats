@@ -40,7 +40,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - github-issues: first_response_at is cached per issue to avoid re-fetching comments
 - github-issues: only fetches issues updated in last 365 days, capped at 500 per repo
 - github-issues: 0.5s sleep between comments API calls (secondary rate limit protection)
-- github-issues: self-filed issues (OWNER/MEMBER) excluded from response time metrics, included in counts
+- github-issues: self-filed issues (OWNER/MEMBER) and bot-authored items (author ending in `[bot]`) excluded from response time metrics, included in counts
 - github-issues: closed_issues_365d filters on closed_at date, not updated_at
 - github-issues: stale open reconciliation — issues marked open in cache but absent from API response are auto-closed with `removed: true` flag (handles deleted/transferred issues); removed issues are excluded from all metrics
 - github-dependents: HTML scraping (no API available), fragile regex, stores null on parse failure
