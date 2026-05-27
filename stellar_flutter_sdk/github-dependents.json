@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-05-26",
+    "as_of": "2026-05-27",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
         "stars": 420,
-        "forks": 108
+        "forks": 109
       },
       {
         "owner": "brij-digital",
@@ -35,7 +35,7 @@
       },
       {
         "owner": "threefoldtech",
-        "repo": "threefold_connect",
+        "repo": "grid_connect",
         "stars": 9,
         "forks": 5
       },
@@ -77,7 +77,7 @@
       },
       {
         "owner": "threefoldtech",
-        "repo": "tfgrid-sdk-dart",
+        "repo": "zos_sdk_dart",
         "stars": 2,
         "forks": 0
       },
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-05-27",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-05-26",
       "dependent_repos": 87,
