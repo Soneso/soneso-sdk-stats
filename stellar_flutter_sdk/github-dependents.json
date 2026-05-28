@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-05-27",
+    "as_of": "2026-05-28",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
         "stars": 420,
-        "forks": 109
+        "forks": 108
       },
       {
         "owner": "brij-digital",
@@ -58,6 +58,12 @@
         "forks": 1
       },
       {
+        "owner": "nemorixgroup",
+        "repo": "NemorixPay-Mobile-Code",
+        "stars": 3,
+        "forks": 1
+      },
+      {
         "owner": "Inter-Stellar-Wallet",
         "repo": "InterStellar-Vault",
         "stars": 2,
@@ -68,12 +74,6 @@
         "repo": "flutter_passkey_kit",
         "stars": 2,
         "forks": 0
-      },
-      {
-        "owner": "nemorixgroup",
-        "repo": "NemorixPay-Mobile-Code",
-        "stars": 2,
-        "forks": 1
       },
       {
         "owner": "threefoldtech",
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-05-28",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-05-27",
       "dependent_repos": 87,
