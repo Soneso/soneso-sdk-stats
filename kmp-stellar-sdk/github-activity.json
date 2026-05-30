@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 19,
-      "latest_release": "v1.6.0",
-      "latest_release_date": "2026-05-20",
-      "releases_last_90d": 5,
-      "releases_last_365d": 19,
-      "avg_days_between_releases": 11.5
+      "total_releases": 20,
+      "latest_release": "v1.6.1",
+      "latest_release_date": "2026-05-29",
+      "releases_last_90d": 6,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 11.4
     },
     "all": [
+      {
+        "tag": "v1.6.1",
+        "name": "v1.6.1 - OZ smart-account Ed25519 signing",
+        "published_at": "2026-05-29T20:40:56Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.6.0",
         "name": "v1.6.0 - SEP-31 Cross-Border Payments support + shared callback verifier",
