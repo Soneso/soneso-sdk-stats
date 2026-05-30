@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-29",
+    "as_of": "2026-05-30",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 4,
-    "closed_prs_365d": 27,
+    "closed_prs_365d": 28,
     "median_first_response_hours": 21.1,
     "avg_first_response_hours": 567.6,
     "median_time_to_close_hours": 13.0,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 32,
+      "title": "External-signer convergence and Ed25519 multi-signer signing",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-05-29T16:53:50Z",
+      "closed_at": "2026-05-29T17:41:24Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.8,
+      "labels": []
+    },
     {
       "number": 31,
       "title": "Add Ed25519 external-signer support to OZ smart-account multi-signer signing",
