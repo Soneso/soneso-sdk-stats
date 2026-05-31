@@ -8,6 +8,11 @@
   },
   "daily": [
     {
+      "date": "2026-05-30",
+      "count": 7,
+      "uniques": 5
+    },
+    {
       "date": "2026-05-29",
       "count": 5,
       "uniques": 5
