@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-31",
+    "as_of": "2026-06-01",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 3,
     "closed_issues_365d": 15,
     "closed_prs_365d": 22,
     "median_first_response_hours": 3.8,
@@ -13,6 +13,57 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 88,
+      "title": "build(deps): bump shivammathur/setup-php from 2.37.0 to 2.37.1",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T10:37:46Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 87,
+      "title": "build(deps): bump anthropics/claude-code-action from 1.0.114 to 1.0.133",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T10:37:40Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 86,
+      "title": "build(deps): bump codecov/codecov-action from 6.0.0 to 6.0.1",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T10:37:36Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
     {
       "number": 85,
       "title": "Add SEP-51 (XDR-JSON) encoding support",

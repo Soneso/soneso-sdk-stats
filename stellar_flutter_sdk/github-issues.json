@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-05-31",
+    "as_of": "2026-06-01",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 2,
     "closed_issues_365d": 13,
     "closed_prs_365d": 20,
     "median_first_response_hours": 3.0,
@@ -13,6 +13,40 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 146,
+      "title": "Bump codecov/codecov-action from 6.0.0 to 6.0.1",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T13:48:47Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 145,
+      "title": "Bump anthropics/claude-code-action from 1.0.111 to 1.0.133",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T13:48:41Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
     {
       "number": 144,
       "title": "Bump actions/upload-pages-artifact from 4.0.0 to 5.0.0",
