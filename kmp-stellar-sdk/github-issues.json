@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-06-01",
-    "open_issues": 0,
-    "open_prs": 0,
+    "as_of": "2026-06-02",
+    "open_issues": 1,
+    "open_prs": 3,
     "closed_issues_365d": 4,
     "closed_prs_365d": 28,
     "median_first_response_hours": 21.1,
@@ -13,6 +13,73 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 36,
+      "title": "Bump actions/upload-artifact from 4.6.2 to 7.0.1",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-02T09:03:54Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Bump SCF-Public-Goods-Maintenance/pg-atlas-sbom-action from f2f44ed8cec916dd412c86ebcab796655656329f to e732fb836ead361371a7a7aad3c992ceb50c757d",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-02T09:03:49Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 34,
+      "title": "Bump codecov/codecov-action from 6.0.0 to 6.0.1",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-02T09:03:43Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 33,
+      "title": "Update XDR definitions from upstream stellar-xdr (0e4b099)",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-06-01T19:01:45Z",
+      "closed_at": null,
+      "first_response_at": "2026-06-01T20:02:46Z",
+      "first_response_hours": 1.0,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
     {
       "number": 32,
       "title": "External-signer convergence and Ed25519 multi-signer signing",

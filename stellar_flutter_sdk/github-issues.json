@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-06-01",
-    "open_issues": 0,
+    "as_of": "2026-06-02",
+    "open_issues": 1,
     "open_prs": 2,
     "closed_issues_365d": 13,
     "closed_prs_365d": 20,
@@ -13,6 +13,22 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 147,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-06-01T19:05:01Z",
+      "closed_at": null,
+      "first_response_at": "2026-06-01T20:03:36Z",
+      "first_response_hours": 1.0,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
     {
       "number": 146,
       "title": "Bump codecov/codecov-action from 6.0.0 to 6.0.1",

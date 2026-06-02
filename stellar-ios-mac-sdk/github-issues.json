@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-06-01",
-    "open_issues": 0,
-    "open_prs": 0,
+    "as_of": "2026-06-02",
+    "open_issues": 1,
+    "open_prs": 2,
     "closed_issues_365d": 13,
     "closed_prs_365d": 19,
     "median_first_response_hours": 3.3,
@@ -13,6 +13,56 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 207,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-06-02T12:07:10Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
+    {
+      "number": 206,
+      "title": "Bump anthropics/claude-code-action from 1.0.111 to 1.0.133",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T19:23:08Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 205,
+      "title": "Bump codecov/codecov-action from 6.0.0 to 6.0.1",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-06-01T19:23:02Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
     {
       "number": 204,
       "title": "Bump anthropics/claude-code-action from 1.0.105 to 1.0.111",
