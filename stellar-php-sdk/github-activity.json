@@ -5,7 +5,7 @@
       "total_releases": 82,
       "latest_release": "1.9.7",
       "latest_release_date": "2026-05-06",
-      "releases_last_90d": 3,
+      "releases_last_90d": 2,
       "releases_last_365d": 19,
       "avg_days_between_releases": 19.6
     },
@@ -508,11 +508,11 @@
     "weekly": [
       {
         "week_start": "2026-06-07",
-        "total": 0,
+        "total": 2,
         "days": [
           0,
           0,
-          0,
+          2,
           0,
           0,
           0,
