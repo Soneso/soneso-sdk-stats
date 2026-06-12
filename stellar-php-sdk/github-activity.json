@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 82,
-      "latest_release": "1.9.7",
-      "latest_release_date": "2026-05-06",
-      "releases_last_90d": 2,
-      "releases_last_365d": 19,
-      "avg_days_between_releases": 19.6
+      "total_releases": 83,
+      "latest_release": "1.9.8",
+      "latest_release_date": "2026-06-11",
+      "releases_last_90d": 3,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 19.8
     },
     "all": [
+      {
+        "tag": "1.9.8",
+        "name": "v1.9.8 - Maintenance Release",
+        "published_at": "2026-06-11T17:38:44Z",
+        "prerelease": false
+      },
       {
         "tag": "1.9.7",
         "name": "v1.9.7 SEP-51 (XDR-JSON) support",
@@ -508,13 +514,13 @@
     "weekly": [
       {
         "week_start": "2026-06-07",
-        "total": 2,
+        "total": 28,
         "days": [
           0,
           0,
-          2,
-          0,
-          0,
+          13,
+          4,
+          11,
           0,
           0
         ]
