@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-06-12",
+    "as_of": "2026-06-13",
     "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 4,
-    "closed_prs_365d": 31,
+    "closed_prs_365d": 32,
     "median_first_response_hours": 21.1,
     "avg_first_response_hours": 567.6,
     "median_time_to_close_hours": 13.0,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 37,
+      "title": "Smart accounts: hardening, token decimals support, and demo alignment",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-06-12T20:40:09Z",
+      "closed_at": "2026-06-12T21:00:58Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.3,
+      "labels": []
+    },
     {
       "number": 36,
       "title": "Bump actions/upload-artifact from 4.6.2 to 7.0.1",
