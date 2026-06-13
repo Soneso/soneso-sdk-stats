@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 20,
-      "latest_release": "v1.6.1",
-      "latest_release_date": "2026-05-29",
-      "releases_last_90d": 6,
-      "releases_last_365d": 20,
-      "avg_days_between_releases": 11.4
+      "total_releases": 21,
+      "latest_release": "v1.7.1",
+      "latest_release_date": "2026-06-13",
+      "releases_last_90d": 7,
+      "releases_last_365d": 21,
+      "avg_days_between_releases": 11.6
     },
     "all": [
+      {
+        "tag": "v1.7.1",
+        "name": "v1.7.1 OZ Smart account token decimals support and hardening",
+        "published_at": "2026-06-13T06:56:13Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.6.1",
         "name": "v1.6.1 - OZ smart-account Ed25519 signing",
@@ -136,15 +142,15 @@
     "weekly": [
       {
         "week_start": "2026-06-07",
-        "total": 0,
+        "total": 18,
         "days": [
           0,
           0,
           0,
           0,
-          0,
-          0,
-          0
+          13,
+          4,
+          1
         ]
       },
       {
