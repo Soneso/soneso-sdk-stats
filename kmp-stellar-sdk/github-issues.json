@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-06-14",
+    "as_of": "2026-06-15",
     "open_issues": 1,
-    "open_prs": 0,
+    "open_prs": 1,
     "closed_issues_365d": 4,
     "closed_prs_365d": 32,
     "median_first_response_hours": 21.1,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 38,
+      "title": "Add Protocol 27 (CAP-71) Soroban authorization support",
+      "type": "pr",
+      "state": "open",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-06-14T21:51:23Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 37,
       "title": "Smart accounts: hardening, token decimals support, and demo alignment",
