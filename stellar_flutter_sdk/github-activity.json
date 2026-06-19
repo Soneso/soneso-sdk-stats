@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 108,
-      "latest_release": "3.1.0",
-      "latest_release_date": "2026-06-10",
-      "releases_last_90d": 2,
-      "releases_last_365d": 20,
-      "avg_days_between_releases": 20.3
+      "total_releases": 109,
+      "latest_release": "3.2.0",
+      "latest_release_date": "2026-06-18",
+      "releases_last_90d": 3,
+      "releases_last_365d": 21,
+      "avg_days_between_releases": 20.2
     },
     "all": [
+      {
+        "tag": "3.2.0",
+        "name": "v3.2.0 Protocol 27 (CAP-71) authorization support",
+        "published_at": "2026-06-18T23:25:35Z",
+        "prerelease": false
+      },
       {
         "tag": "3.1.0",
         "name": "v3.1.0 OZ Smart Account Support",
@@ -664,20 +670,20 @@
     "weekly": [
       {
         "week_start": "2026-06-14",
-        "total": 0,
+        "total": 8,
         "days": [
+          2,
           0,
           0,
           0,
-          0,
-          0,
-          0,
+          1,
+          5,
           0
         ]
       },
       {
         "week_start": "2026-06-07",
-        "total": 2,
+        "total": 3,
         "days": [
           0,
           0,
@@ -685,7 +691,7 @@
           2,
           0,
           0,
-          0
+          1
         ]
       },
       {

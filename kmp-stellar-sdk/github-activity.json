@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 21,
-      "latest_release": "v1.7.1",
-      "latest_release_date": "2026-06-13",
-      "releases_last_90d": 7,
-      "releases_last_365d": 21,
-      "avg_days_between_releases": 11.6
+      "total_releases": 22,
+      "latest_release": "v1.8.0",
+      "latest_release_date": "2026-06-19",
+      "releases_last_90d": 8,
+      "releases_last_365d": 22,
+      "avg_days_between_releases": 11.3
     },
     "all": [
+      {
+        "tag": "v1.8.0",
+        "name": "v1.8.0 - Protocol 27 (CAP-71) Support",
+        "published_at": "2026-06-19T09:46:26Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.7.1",
         "name": "v1.7.1 OZ Smart account token decimals support and hardening",
@@ -142,20 +148,20 @@
     "weekly": [
       {
         "week_start": "2026-06-14",
-        "total": 2,
+        "total": 11,
         "days": [
-          0,
+          2,
           0,
           0,
           1,
+          7,
           1,
-          0,
           0
         ]
       },
       {
         "week_start": "2026-06-07",
-        "total": 19,
+        "total": 20,
         "days": [
           0,
           0,
@@ -163,7 +169,7 @@
           0,
           13,
           4,
-          2
+          3
         ]
       },
       {
