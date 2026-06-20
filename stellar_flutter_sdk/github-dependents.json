@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-06-19",
+    "as_of": "2026-06-20",
     "repos": [
       {
         "owner": "cypherstack",
@@ -31,7 +31,7 @@
         "owner": "paltalabs",
         "repo": "defindex",
         "stars": 15,
-        "forks": 6
+        "forks": 8
       },
       {
         "owner": "threefoldtech",
@@ -237,7 +237,7 @@
         "owner": "paltalabs",
         "repo": "defindex",
         "stars": 15,
-        "forks": 6,
+        "forks": 8,
         "package": "defindex_sdk"
       },
       {
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-06-20",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-06-19",
       "dependent_repos": 87,
