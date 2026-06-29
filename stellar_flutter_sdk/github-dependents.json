@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-06-28",
+    "as_of": "2026-06-29",
     "repos": [
       {
         "owner": "cypherstack",
@@ -247,17 +247,17 @@
         "forks": 2
       },
       {
+        "owner": "Kenandarabeh",
+        "repo": "sofizpay-sdk-dart",
+        "stars": 2,
+        "forks": 0,
+        "package": "sofizpay_sdk_dart"
+      },
+      {
         "owner": "Soneso",
         "repo": "flutter_passkey_kit",
         "stars": 2,
         "forks": 0
-      },
-      {
-        "owner": "Kenandarabeh",
-        "repo": "sofizpay-sdk-dart",
-        "stars": 1,
-        "forks": 0,
-        "package": "sofizpay_sdk_dart"
       },
       {
         "owner": "paltalabs",
@@ -269,6 +269,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-06-29",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-06-28",
       "dependent_repos": 87,
