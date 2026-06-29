@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 143,
-      "latest_release": "3.6.0",
-      "latest_release_date": "2026-06-19",
-      "releases_last_90d": 3,
-      "releases_last_365d": 21,
+      "total_releases": 144,
+      "latest_release": "3.6.1",
+      "latest_release_date": "2026-06-29",
+      "releases_last_90d": 4,
+      "releases_last_365d": 22,
       "avg_days_between_releases": 21.3
     },
     "all": [
+      {
+        "tag": "3.6.1",
+        "name": "v3.6.1 Maintanance: Headless smart-account connect, SEP-10 hardening, SEP-6 improvement",
+        "published_at": "2026-06-29T07:40:27Z",
+        "prerelease": false
+      },
       {
         "tag": "3.6.0",
         "name": "v3.6.0 - Protocol 27 (CAP-71) authorization support",
@@ -874,10 +880,10 @@
     "weekly": [
       {
         "week_start": "2026-06-28",
-        "total": 0,
+        "total": 3,
         "days": [
           0,
-          0,
+          3,
           0,
           0,
           0,
@@ -887,15 +893,15 @@
       },
       {
         "week_start": "2026-06-21",
-        "total": 2,
+        "total": 5,
         "days": [
           0,
           0,
           0,
           0,
           0,
-          2,
-          0
+          4,
+          1
         ]
       },
       {
