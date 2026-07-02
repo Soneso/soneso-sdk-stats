@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-07-01",
+    "as_of": "2026-07-02",
     "repos": [
       {
         "owner": "cypherstack",
@@ -26,12 +26,6 @@
         "repo": "NFT_Store",
         "stars": 31,
         "forks": 5
-      },
-      {
-        "owner": "paltalabs",
-        "repo": "defindex",
-        "stars": 16,
-        "forks": 8
       },
       {
         "owner": "threefoldtech",
@@ -269,6 +263,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-02",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-07-01",
       "dependent_repos": 87,
