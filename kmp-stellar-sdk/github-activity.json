@@ -153,6 +153,19 @@
   "commits": {
     "weekly": [
       {
+        "week_start": "2026-07-05",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
         "week_start": "2026-06-28",
         "total": 7,
         "days": [
