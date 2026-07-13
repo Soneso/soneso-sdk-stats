@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-12",
+    "as_of": "2026-07-13",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 15,
-    "closed_prs_365d": 29,
+    "closed_prs_365d": 30,
     "median_first_response_hours": 2.7,
     "avg_first_response_hours": 29.5,
     "median_time_to_close_hours": 21.1,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 217,
+      "title": "Add contract-binding test fixtures and integration tests",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-07-12T22:20:52Z",
+      "closed_at": "2026-07-13T08:32:34Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 10.2,
+      "labels": []
+    },
     {
       "number": 216,
       "title": "Bump anthropics/claude-code-action from 1.0.159 to 1.0.161",

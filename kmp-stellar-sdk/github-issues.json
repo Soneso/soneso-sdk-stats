@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-12",
+    "as_of": "2026-07-13",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 5,
-    "closed_prs_365d": 38,
+    "closed_prs_365d": 39,
     "median_first_response_hours": 20.6,
     "avg_first_response_hours": 476.3,
     "median_time_to_close_hours": 16.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 44,
+      "title": "Add contract bindings support for the upcoming generator release",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-07-12T22:33:21Z",
+      "closed_at": "2026-07-13T08:35:52Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 10.0,
+      "labels": []
+    },
     {
       "number": 43,
       "title": "chore(deps): bump actions/checkout from 6.0.2 to 7.0.0",
