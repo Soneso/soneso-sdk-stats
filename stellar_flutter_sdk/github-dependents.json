@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-07-12",
+    "as_of": "2026-07-13",
     "repos": [
       {
         "owner": "cypherstack",
@@ -235,17 +235,17 @@
         "package": "defindex_sdk"
       },
       {
+        "owner": "Kenandarabeh",
+        "repo": "sofizpay-sdk-dart",
+        "stars": 6,
+        "forks": 0,
+        "package": "sofizpay_sdk_dart"
+      },
+      {
         "owner": "Soneso",
         "repo": "stellar_wallet_flutter_sdk",
         "stars": 5,
         "forks": 2
-      },
-      {
-        "owner": "Kenandarabeh",
-        "repo": "sofizpay-sdk-dart",
-        "stars": 3,
-        "forks": 0,
-        "package": "sofizpay_sdk_dart"
       },
       {
         "owner": "Soneso",
@@ -263,6 +263,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-13",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-07-12",
       "dependent_repos": 87,
