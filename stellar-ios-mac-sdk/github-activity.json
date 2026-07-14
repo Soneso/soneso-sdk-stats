@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 144,
-      "latest_release": "3.6.1",
-      "latest_release_date": "2026-06-29",
-      "releases_last_90d": 4,
-      "releases_last_365d": 21,
-      "avg_days_between_releases": 21.3
+      "total_releases": 145,
+      "latest_release": "3.7.0",
+      "latest_release_date": "2026-07-13",
+      "releases_last_90d": 5,
+      "releases_last_365d": 22,
+      "avg_days_between_releases": 21.2
     },
     "all": [
+      {
+        "tag": "3.7.0",
+        "name": "v3.7.0 - stellar-rpc v27.1 support",
+        "published_at": "2026-07-13T19:19:23Z",
+        "prerelease": false
+      },
       {
         "tag": "3.6.1",
         "name": "v3.6.1 Maintanance: Headless smart-account connect, SEP-10 hardening, SEP-6 improvement",
@@ -880,10 +886,10 @@
     "weekly": [
       {
         "week_start": "2026-07-12",
-        "total": 0,
+        "total": 2,
         "days": [
           0,
-          0,
+          2,
           0,
           0,
           0,
@@ -919,12 +925,12 @@
       },
       {
         "week_start": "2026-06-21",
-        "total": 5,
+        "total": 6,
         "days": [
           0,
           0,
           0,
-          0,
+          1,
           0,
           4,
           1

@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 23,
-      "latest_release": "v1.8.1",
-      "latest_release_date": "2026-06-29",
+      "total_releases": 24,
+      "latest_release": "v1.9.0",
+      "latest_release_date": "2026-07-14",
       "releases_last_90d": 7,
-      "releases_last_365d": 23,
-      "avg_days_between_releases": 11.3
+      "releases_last_365d": 24,
+      "avg_days_between_releases": 11.4
     },
     "all": [
+      {
+        "tag": "v1.9.0",
+        "name": "Version 1.9.0 - stellar-rpc v27.1 support",
+        "published_at": "2026-07-14T10:30:53Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.8.1",
         "name": "v1.8.1 Maintenance: Headless smart-account connect, RPC-visibility funding, and an agent-signer demo",
@@ -154,11 +160,11 @@
     "weekly": [
       {
         "week_start": "2026-07-12",
-        "total": 0,
+        "total": 3,
         "days": [
           0,
           0,
-          0,
+          3,
           0,
           0,
           0,
@@ -193,12 +199,12 @@
       },
       {
         "week_start": "2026-06-21",
-        "total": 4,
+        "total": 5,
         "days": [
           0,
           0,
           0,
-          0,
+          1,
           0,
           3,
           1

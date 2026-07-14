@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 84,
-      "latest_release": "1.10.0",
-      "latest_release_date": "2026-06-18",
-      "releases_last_90d": 3,
-      "releases_last_365d": 20,
+      "total_releases": 85,
+      "latest_release": "1.11.0",
+      "latest_release_date": "2026-07-13",
+      "releases_last_90d": 4,
+      "releases_last_365d": 21,
       "avg_days_between_releases": 19.7
     },
     "all": [
+      {
+        "tag": "1.11.0",
+        "name": "v1.11.0 stellar-rpc v27.1 support",
+        "published_at": "2026-07-13T17:05:04Z",
+        "prerelease": false
+      },
       {
         "tag": "1.10.0",
         "name": "v1.10.0 Protocol 27 (CAP-71) authorization support",
@@ -520,10 +526,10 @@
     "weekly": [
       {
         "week_start": "2026-07-12",
-        "total": 1,
+        "total": 3,
         "days": [
           1,
-          0,
+          2,
           0,
           0,
           0,
@@ -559,12 +565,12 @@
       },
       {
         "week_start": "2026-06-21",
-        "total": 1,
+        "total": 2,
         "days": [
           0,
           0,
           0,
-          0,
+          1,
           0,
           1,
           0
