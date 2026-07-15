@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-07-14",
+    "as_of": "2026-07-15",
     "repos": [
       {
         "owner": "cypherstack",
@@ -237,7 +237,7 @@
       {
         "owner": "Kenandarabeh",
         "repo": "sofizpay-sdk-dart",
-        "stars": 7,
+        "stars": 8,
         "forks": 0,
         "package": "sofizpay_sdk_dart"
       },
@@ -263,6 +263,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-15",
+      "dependent_repos": 87,
+      "dependent_packages": 5
+    },
     {
       "date": "2026-07-14",
       "dependent_repos": 87,
