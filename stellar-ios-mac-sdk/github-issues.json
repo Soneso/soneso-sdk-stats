@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-16",
-    "open_issues": 0,
+    "as_of": "2026-07-17",
+    "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 15,
     "closed_prs_365d": 31,
@@ -13,6 +13,22 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 219,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "open",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-07-17T10:00:42Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "xdr-update"
+      ]
+    },
     {
       "number": 218,
       "title": "P27: Add the simulateTransaction useUpgradedAuth flag",
