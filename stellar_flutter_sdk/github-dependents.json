@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-07-19",
+    "as_of": "2026-07-20",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
         "stars": 431,
-        "forks": 118
+        "forks": 117
       },
       {
         "owner": "brij-digital",
@@ -121,12 +121,6 @@
         "owner": "robvanmieghem",
         "repo": "planet",
         "stars": 1,
-        "forks": 0
-      },
-      {
-        "owner": "Beans-BV",
-        "repo": "defindex",
-        "stars": 0,
         "forks": 0
       },
       {
@@ -270,6 +264,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "dependent_repos": 87,
+      "dependent_packages": 6
+    },
     {
       "date": "2026-07-19",
       "dependent_repos": 87,
