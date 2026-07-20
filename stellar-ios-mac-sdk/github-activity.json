@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 145,
-      "latest_release": "3.7.0",
-      "latest_release_date": "2026-07-13",
-      "releases_last_90d": 5,
+      "total_releases": 146,
+      "latest_release": "3.8.0",
+      "latest_release_date": "2026-07-20",
+      "releases_last_90d": 6,
       "releases_last_365d": 21,
-      "avg_days_between_releases": 21.2
+      "avg_days_between_releases": 21.1
     },
     "all": [
+      {
+        "tag": "3.8.0",
+        "name": "v3.8.0 - Smart account hardening and constructor-time policies",
+        "published_at": "2026-07-20T12:02:42Z",
+        "prerelease": false
+      },
       {
         "tag": "3.7.0",
         "name": "v3.7.0 - stellar-rpc v27.1 support",
@@ -886,10 +892,10 @@
     "weekly": [
       {
         "week_start": "2026-07-19",
-        "total": 0,
+        "total": 7,
         "days": [
-          0,
-          0,
+          6,
+          1,
           0,
           0,
           0,

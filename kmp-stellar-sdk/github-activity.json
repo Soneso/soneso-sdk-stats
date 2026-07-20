@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 24,
-      "latest_release": "v1.9.0",
-      "latest_release_date": "2026-07-14",
-      "releases_last_90d": 7,
-      "releases_last_365d": 24,
-      "avg_days_between_releases": 11.4
+      "total_releases": 25,
+      "latest_release": "v1.10.0",
+      "latest_release_date": "2026-07-20",
+      "releases_last_90d": 8,
+      "releases_last_365d": 25,
+      "avg_days_between_releases": 11.2
     },
     "all": [
+      {
+        "tag": "v1.10.0",
+        "name": "v1.10.0 - Smart account hardening and web-target network error handling",
+        "published_at": "2026-07-20T11:16:33Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.9.0",
         "name": "Version 1.9.0 - stellar-rpc v27.1 support",
@@ -160,10 +166,10 @@
     "weekly": [
       {
         "week_start": "2026-07-19",
-        "total": 0,
+        "total": 12,
         "days": [
-          0,
-          0,
+          7,
+          5,
           0,
           0,
           0,
@@ -173,15 +179,15 @@
       },
       {
         "week_start": "2026-07-12",
-        "total": 3,
+        "total": 13,
         "days": [
           0,
           0,
           3,
           0,
           0,
-          0,
-          0
+          1,
+          9
         ]
       },
       {
