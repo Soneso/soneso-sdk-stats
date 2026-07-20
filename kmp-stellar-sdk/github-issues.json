@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-19",
-    "open_issues": 1,
+    "as_of": "2026-07-20",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 5,
-    "closed_prs_365d": 40,
+    "closed_issues_365d": 6,
+    "closed_prs_365d": 41,
     "median_first_response_hours": 20.6,
     "avg_first_response_hours": 476.3,
     "median_time_to_close_hours": 16.6,
@@ -14,17 +14,31 @@
   },
   "issues": [
     {
+      "number": 47,
+      "title": "Smart account hardening and web-target network error handling",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-07-19T14:40:08Z",
+      "closed_at": "2026-07-20T08:40:43Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 18.0,
+      "labels": []
+    },
+    {
       "number": 46,
       "title": "Update XDR definitions from upstream stellar-xdr (df0c200)",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "github-actions[bot]",
       "author_association": "NONE",
       "created_at": "2026-07-17T14:54:36Z",
-      "closed_at": null,
+      "closed_at": "2026-07-20T08:46:15Z",
       "first_response_at": "2026-07-17T16:42:10Z",
       "first_response_hours": 1.8,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 65.9,
       "labels": [
         "xdr-update"
       ]

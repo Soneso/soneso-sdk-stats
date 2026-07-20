@@ -1,18 +1,32 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-19",
+    "as_of": "2026-07-20",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 16,
-    "closed_prs_365d": 31,
-    "median_first_response_hours": 2.7,
-    "avg_first_response_hours": 29.5,
-    "median_time_to_close_hours": 21.1,
-    "avg_time_to_close_hours": 126.3,
+    "closed_issues_365d": 15,
+    "closed_prs_365d": 32,
+    "median_first_response_hours": 1.5,
+    "avg_first_response_hours": 1.8,
+    "median_time_to_close_hours": 12.5,
+    "avg_time_to_close_hours": 50.5,
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 220,
+      "title": "Smart account hardening and constructor-time policies",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-07-19T16:04:18Z",
+      "closed_at": "2026-07-20T11:12:38Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 19.1,
+      "labels": []
+    },
     {
       "number": 219,
       "title": "Update XDR definitions from upstream stellar-xdr",
@@ -735,7 +749,8 @@
       "first_response_at": "2025-07-07T13:19:36Z",
       "first_response_hours": 140.3,
       "time_to_close_hours": 429.9,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 170,
