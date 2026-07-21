@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-20",
+    "as_of": "2026-07-21",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 15,
@@ -728,8 +728,8 @@
       "title": "Claimable Balance ID parsing returns incorrect value in SDK",
       "type": "issue",
       "state": "closed",
-      "author": "light-cloud",
-      "author_association": "CONTRIBUTOR",
+      "author": "ghost",
+      "author_association": "NONE",
       "created_at": "2025-08-11T08:19:12Z",
       "closed_at": "2025-08-11T12:15:09Z",
       "first_response_at": "2025-08-11T12:15:09Z",
