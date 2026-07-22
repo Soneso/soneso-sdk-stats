@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-21",
-    "open_issues": 0,
+    "as_of": "2026-07-22",
+    "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 14,
     "closed_prs_365d": 35,
@@ -13,6 +13,22 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 164,
+      "title": "Stellar Community Fund - Public Goods Award",
+      "type": "issue",
+      "state": "open",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-07-21T13:04:33Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "help wanted"
+      ]
+    },
     {
       "number": 162,
       "title": "Smart account hardening and constructor-time policies",
