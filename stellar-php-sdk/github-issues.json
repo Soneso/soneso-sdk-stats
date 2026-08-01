@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-07-31",
-    "open_issues": 2,
+    "as_of": "2026-08-01",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 17,
-    "closed_prs_365d": 34,
+    "closed_issues_365d": 20,
+    "closed_prs_365d": 39,
     "median_first_response_hours": 3.8,
     "avg_first_response_hours": 14.4,
     "median_time_to_close_hours": 28.3,
@@ -14,17 +14,115 @@
   },
   "issues": [
     {
+      "number": 110,
+      "title": "build(deps): bump actions/checkout from 7.0.0 to 7.0.1",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-08-01T04:25:40Z",
+      "closed_at": "2026-08-01T11:08:24Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 6.7,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 109,
+      "title": "build(deps): bump SCF-Public-Goods-Maintenance/pg-atlas-sbom-action from e732fb836ead361371a7a7aad3c992ceb50c757d to b876c74c601e8e6b5fdad7e4b9161be86b35dfcf",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-08-01T04:25:30Z",
+      "closed_at": "2026-08-01T11:08:59Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 6.7,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 108,
+      "title": "build(deps): bump anthropics/claude-code-action from 1.0.171 to 1.0.183",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-08-01T04:25:24Z",
+      "closed_at": "2026-08-01T11:08:07Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 6.7,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 107,
+      "title": "build(deps): bump actions/setup-python from 6.3.0 to 7.0.0",
+      "type": "pr",
+      "state": "closed",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-08-01T04:25:18Z",
+      "closed_at": "2026-08-01T11:08:04Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 6.7,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 106,
+      "title": "Update XDR definitions to stellar-xdr 911c935 (CAP-0083, CAP-0085)",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-07-31T22:32:34Z",
+      "closed_at": "2026-08-01T10:47:36Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 12.3,
+      "labels": []
+    },
+    {
+      "number": 105,
+      "title": "Update XDR definitions from upstream stellar-xdr",
+      "type": "issue",
+      "state": "closed",
+      "author": "github-actions[bot]",
+      "author_association": "NONE",
+      "created_at": "2026-07-31T19:20:44Z",
+      "closed_at": "2026-08-01T10:47:37Z",
+      "first_response_at": "2026-07-31T19:44:33Z",
+      "first_response_hours": 0.4,
+      "time_to_close_hours": 15.4,
+      "labels": [
+        "xdr-update"
+      ]
+    },
+    {
       "number": 104,
       "title": "Update XDR definitions from upstream stellar-xdr",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "github-actions[bot]",
       "author_association": "NONE",
       "created_at": "2026-07-28T10:30:15Z",
-      "closed_at": null,
-      "first_response_at": null,
-      "first_response_hours": null,
-      "time_to_close_hours": null,
+      "closed_at": "2026-07-31T19:19:40Z",
+      "first_response_at": "2026-07-31T18:50:51Z",
+      "first_response_hours": 80.3,
+      "time_to_close_hours": 80.8,
       "labels": [
         "xdr-update"
       ]
@@ -33,14 +131,14 @@
       "number": 103,
       "title": "Stellar Community Fund - Public Goods Award",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "christian-rogobete",
       "author_association": "MEMBER",
       "created_at": "2026-07-21T13:08:55Z",
-      "closed_at": null,
+      "closed_at": "2026-07-31T14:42:45Z",
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 241.6,
       "labels": [
         "help wanted"
       ]
