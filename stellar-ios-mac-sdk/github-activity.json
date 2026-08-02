@@ -6,7 +6,7 @@
       "latest_release": "3.8.0",
       "latest_release_date": "2026-07-20",
       "releases_last_90d": 5,
-      "releases_last_365d": 21,
+      "releases_last_365d": 20,
       "avg_days_between_releases": 21.1
     },
     "all": [
@@ -890,6 +890,19 @@
   },
   "commits": {
     "weekly": [
+      {
+        "week_start": "2026-08-02",
+        "total": 0,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
       {
         "week_start": "2026-07-26",
         "total": 8,
