@@ -3,6 +3,14 @@
   "repo": {
     "daily": [
       {
+        "date": "2026-08-03",
+        "stars": 132,
+        "forks": 56,
+        "open_issues_and_prs": 0,
+        "watchers": 10,
+        "size_kb": 180294
+      },
+      {
         "date": "2026-08-02",
         "stars": 131,
         "forks": 55,
@@ -1231,7 +1239,7 @@
   "views": {
     "summary": {
       "last_14_days": {
-        "count": 642,
+        "count": 634,
         "uniques": 54
       }
     },
