@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-05",
+    "as_of": "2026-08-06",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 1,
     "closed_issues_365d": 20,
     "closed_prs_365d": 39,
     "median_first_response_hours": 3.8,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 111,
+      "title": "Align SEP-51 XDR-JSON emission with the rs-stellar-xdr reference implementation",
+      "type": "pr",
+      "state": "open",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-06T10:52:45Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 110,
       "title": "build(deps): bump actions/checkout from 7.0.0 to 7.0.1",

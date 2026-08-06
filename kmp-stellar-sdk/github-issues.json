@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-05",
+    "as_of": "2026-08-06",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 1,
     "closed_issues_365d": 8,
     "closed_prs_365d": 48,
     "median_first_response_hours": 20.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 57,
+      "title": "Add SEP-51 (XDR-JSON) support",
+      "type": "pr",
+      "state": "open",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-06T09:54:44Z",
+      "closed_at": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 56,
       "title": "Fix versioned API docs publishing and drop generated docs from git",
