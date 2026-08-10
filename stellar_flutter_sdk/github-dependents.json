@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-08-09",
+    "as_of": "2026-08-10",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 436,
+        "stars": 438,
         "forks": 116
       },
       {
@@ -19,7 +19,7 @@
         "owner": "wootzapp",
         "repo": "wootz-browser",
         "stars": 106,
-        "forks": 52
+        "forks": 51
       },
       {
         "owner": "0xapurv",
@@ -258,6 +258,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-08-10",
+      "dependent_repos": 87,
+      "dependent_packages": 6
+    },
     {
       "date": "2026-08-09",
       "dependent_repos": 87,

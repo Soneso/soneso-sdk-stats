@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-08-09",
+    "as_of": "2026-08-10",
     "repos": [
       {
         "owner": "Argo-Navis-Dev",
@@ -54,6 +54,12 @@
       {
         "owner": "Montelibero",
         "repo": "bsn_crawler",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Oluwatos94",
+        "repo": "shopping-complex",
         "stars": 0,
         "forks": 0
       },
@@ -118,6 +124,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-08-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
     {
       "date": "2026-08-09",
       "dependent_repos": 32,
