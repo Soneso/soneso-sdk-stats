@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-10",
+    "as_of": "2026-08-11",
     "open_issues": 0,
-    "open_prs": 1,
+    "open_prs": 0,
     "closed_issues_365d": 18,
-    "closed_prs_365d": 37,
+    "closed_prs_365d": 38,
     "median_first_response_hours": 2.5,
     "avg_first_response_hours": 5.1,
     "median_time_to_close_hours": 12.5,
@@ -17,14 +17,14 @@
       "number": 230,
       "title": "Add SEP-51 (XDR-JSON) support",
       "type": "pr",
-      "state": "open",
+      "state": "closed",
       "author": "christian-rogobete",
       "author_association": "MEMBER",
       "created_at": "2026-08-10T09:18:19Z",
-      "closed_at": null,
+      "closed_at": "2026-08-11T10:20:58Z",
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 25.0,
       "labels": []
     },
     {
