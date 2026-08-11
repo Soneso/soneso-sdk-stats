@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-08-10",
+    "as_of": "2026-08-11",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
         "stars": 438,
-        "forks": 116
+        "forks": 115
       },
       {
         "owner": "brij-digital",
@@ -258,6 +258,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-08-11",
+      "dependent_repos": 87,
+      "dependent_packages": 6
+    },
     {
       "date": "2026-08-10",
       "dependent_repos": 87,
