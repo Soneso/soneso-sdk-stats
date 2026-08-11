@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 85,
-      "latest_release": "1.11.0",
-      "latest_release_date": "2026-07-13",
-      "releases_last_90d": 3,
-      "releases_last_365d": 19,
-      "avg_days_between_releases": 19.7
+      "total_releases": 86,
+      "latest_release": "1.12.0",
+      "latest_release_date": "2026-08-10",
+      "releases_last_90d": 4,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 19.8
     },
     "all": [
+      {
+        "tag": "1.12.0",
+        "name": "v1.12.0 CAP-0083/0085 XDR update and validation hardening",
+        "published_at": "2026-08-10T20:54:20Z",
+        "prerelease": false
+      },
       {
         "tag": "1.11.0",
         "name": "v1.11.0 stellar-rpc v27.1 support",
@@ -526,10 +532,10 @@
     "weekly": [
       {
         "week_start": "2026-08-09",
-        "total": 0,
+        "total": 5,
         "days": [
           0,
-          0,
+          5,
           0,
           0,
           0,
@@ -539,14 +545,14 @@
       },
       {
         "week_start": "2026-08-02",
-        "total": 0,
+        "total": 2,
         "days": [
           0,
           0,
           0,
           0,
-          0,
-          0,
+          1,
+          1,
           0
         ]
       },
