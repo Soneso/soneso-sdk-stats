@@ -1,18 +1,32 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-13",
+    "as_of": "2026-08-14",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 20,
+    "closed_issues_365d": 21,
     "closed_prs_365d": 40,
-    "median_first_response_hours": 3.8,
-    "avg_first_response_hours": 14.4,
-    "median_time_to_close_hours": 28.3,
-    "avg_time_to_close_hours": 50.6,
+    "median_first_response_hours": 3.5,
+    "avg_first_response_hours": 12.2,
+    "median_time_to_close_hours": 20.8,
+    "avg_time_to_close_hours": 42.4,
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 112,
+      "title": "SDK Updates: useUpgradedAuth simulation flag for CAP-71 v2 auth credentials",
+      "type": "issue",
+      "state": "closed",
+      "author": "Ryang-21",
+      "author_association": "NONE",
+      "created_at": "2026-08-13T17:46:46Z",
+      "closed_at": "2026-08-13T19:20:44Z",
+      "first_response_at": "2026-08-13T19:19:13Z",
+      "first_response_hours": 1.5,
+      "time_to_close_hours": 1.6,
+      "labels": []
+    },
     {
       "number": 111,
       "title": "Align SEP-51 XDR-JSON emission with the rs-stellar-xdr reference implementation",

@@ -1,18 +1,32 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-13",
+    "as_of": "2026-08-14",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 17,
+    "closed_issues_365d": 18,
     "closed_prs_365d": 38,
-    "median_first_response_hours": 2.2,
-    "avg_first_response_hours": 5.3,
-    "median_time_to_close_hours": 21.1,
-    "avg_time_to_close_hours": 45.2,
+    "median_first_response_hours": 1.9,
+    "avg_first_response_hours": 4.7,
+    "median_time_to_close_hours": 12.0,
+    "avg_time_to_close_hours": 37.9,
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 231,
+      "title": "SDK Updates: useUpgradedAuth simulation flag for CAP-71 v2 auth credentials",
+      "type": "issue",
+      "state": "closed",
+      "author": "Ryang-21",
+      "author_association": "NONE",
+      "created_at": "2026-08-13T17:46:44Z",
+      "closed_at": "2026-08-13T19:20:15Z",
+      "first_response_at": "2026-08-13T19:19:11Z",
+      "first_response_hours": 1.5,
+      "time_to_close_hours": 1.6,
+      "labels": []
+    },
     {
       "number": 230,
       "title": "Add SEP-51 (XDR-JSON) support",
