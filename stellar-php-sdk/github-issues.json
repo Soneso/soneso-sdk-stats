@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-16",
+    "as_of": "2026-08-17",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 1,
     "closed_issues_365d": 21,
     "closed_prs_365d": 40,
     "median_first_response_hours": 3.5,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 113,
+      "title": "Add SEP-35 operation IDs (TOID)",
+      "type": "pr",
+      "state": "open",
+      "author": "ngybnc",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-17T04:31:02Z",
+      "closed_at": null,
+      "first_response_at": "2026-08-17T10:39:14Z",
+      "first_response_hours": 6.1,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 112,
       "title": "SDK Updates: useUpgradedAuth simulation flag for CAP-71 v2 auth credentials",
