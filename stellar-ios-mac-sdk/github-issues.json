@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-17",
+    "as_of": "2026-08-18",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 18,
-    "closed_prs_365d": 38,
+    "closed_prs_365d": 39,
     "median_first_response_hours": 1.9,
     "avg_first_response_hours": 4.7,
     "median_time_to_close_hours": 12.0,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 232,
+      "title": "Harden strkey and claimable balance id handling per SEP-23",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-17T16:49:23Z",
+      "closed_at": "2026-08-18T10:50:50Z",
+      "first_response_at": "2026-08-17T19:05:46Z",
+      "first_response_hours": 2.3,
+      "time_to_close_hours": 18.0,
+      "labels": []
+    },
     {
       "number": 231,
       "title": "SDK Updates: useUpgradedAuth simulation flag for CAP-71 v2 auth credentials",
