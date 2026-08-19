@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-18",
+    "as_of": "2026-08-19",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 21,
-    "closed_prs_365d": 42,
+    "closed_issues_365d": 23,
+    "closed_prs_365d": 44,
     "median_first_response_hours": 3.5,
     "avg_first_response_hours": 12.2,
     "median_time_to_close_hours": 20.8,
@@ -13,6 +13,62 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 118,
+      "title": "Parse CAP-85 external reference create contract operations and fix constructor salt decoding",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-18T19:38:01Z",
+      "closed_at": "2026-08-18T19:43:35Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
+    {
+      "number": 117,
+      "title": "Resolve CAP-85 external reference executables when loading contracts",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-18T16:09:02Z",
+      "closed_at": "2026-08-18T16:52:26Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.7,
+      "labels": []
+    },
+    {
+      "number": 116,
+      "title": "CreateContractWithConstructorHostFunction::fromXdr() reads the salt from the wrong union arm",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-18T11:42:58Z",
+      "closed_at": "2026-08-18T19:43:36Z",
+      "first_response_at": "2026-08-18T12:53:43Z",
+      "first_response_hours": 1.2,
+      "time_to_close_hours": 8.0,
+      "labels": []
+    },
+    {
+      "number": 115,
+      "title": "Operation parsing rejects CAP-85 external-ref create-contract deploys",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-18T11:42:52Z",
+      "closed_at": "2026-08-18T19:43:37Z",
+      "first_response_at": "2026-08-18T12:54:05Z",
+      "first_response_hours": 1.2,
+      "time_to_close_hours": 8.0,
+      "labels": []
+    },
     {
       "number": 114,
       "title": "Harden strkey handling per SEP-23",

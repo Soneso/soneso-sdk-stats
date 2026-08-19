@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-18",
+    "as_of": "2026-08-19",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 8,
-    "closed_prs_365d": 50,
+    "closed_prs_365d": 51,
     "median_first_response_hours": 20.6,
     "avg_first_response_hours": 476.3,
     "median_time_to_close_hours": 16.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 59,
+      "title": "Resolve CAP-85 external reference executables when loading contracts",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-18T16:12:11Z",
+      "closed_at": "2026-08-18T17:23:20Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 1.2,
+      "labels": []
+    },
     {
       "number": 58,
       "title": "Harden strkey and claimable balance id handling per SEP-23",
