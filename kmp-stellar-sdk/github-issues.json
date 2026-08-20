@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-19",
+    "as_of": "2026-08-20",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 8,
-    "closed_prs_365d": 51,
+    "closed_prs_365d": 52,
     "median_first_response_hours": 20.6,
     "avg_first_response_hours": 476.3,
     "median_time_to_close_hours": 16.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 60,
+      "title": "P28: Add external reference deploy support and contract id derivation",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-19T13:25:35Z",
+      "closed_at": "2026-08-19T16:30:28Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 3.1,
+      "labels": []
+    },
     {
       "number": 59,
       "title": "Resolve CAP-85 external reference executables when loading contracts",
