@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-23",
+    "as_of": "2026-08-24",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 8,
-    "closed_prs_365d": 53,
+    "closed_prs_365d": 54,
     "median_first_response_hours": 20.6,
     "avg_first_response_hours": 476.3,
     "median_time_to_close_hours": 16.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 62,
+      "title": "Protocol 28 preparation: ADDRESS_V2 defaults and deployment hardening",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-23T20:26:11Z",
+      "closed_at": "2026-08-24T09:23:54Z",
+      "first_response_at": "2026-08-23T21:02:19Z",
+      "first_response_hours": 0.6,
+      "time_to_close_hours": 13.0,
+      "labels": []
+    },
     {
       "number": 61,
       "title": "Propagate cancellation in web auth and carry the executable tag as bytes",

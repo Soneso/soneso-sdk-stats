@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-23",
+    "as_of": "2026-08-24",
     "open_issues": 1,
     "open_prs": 0,
     "closed_issues_365d": 18,
-    "closed_prs_365d": 42,
+    "closed_prs_365d": 43,
     "median_first_response_hours": 1.5,
     "avg_first_response_hours": 4.2,
     "median_time_to_close_hours": 12.0,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 237,
+      "title": "Protocol 28 preparation: ADDRESS_V2 defaults, raw byte tags, and external-ref hardening",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-23T20:21:51Z",
+      "closed_at": "2026-08-24T09:23:00Z",
+      "first_response_at": "2026-08-23T21:01:33Z",
+      "first_response_hours": 0.7,
+      "time_to_close_hours": 13.0,
+      "labels": []
+    },
     {
       "number": 236,
       "title": "Fix anchor request field rendering and remove LedgerEntryDataXDR.isBool",
