@@ -1,18 +1,32 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-24",
-    "open_issues": 1,
+    "as_of": "2026-08-25",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 18,
-    "closed_prs_365d": 45,
+    "closed_issues_365d": 19,
+    "closed_prs_365d": 46,
     "median_first_response_hours": 1.4,
     "avg_first_response_hours": 1.3,
-    "median_time_to_close_hours": 3.0,
-    "avg_time_to_close_hours": 42.0,
+    "median_time_to_close_hours": 17.6,
+    "avg_time_to_close_hours": 56.2,
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 179,
+      "title": "Prepare release 3.6.0",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-24T19:27:54Z",
+      "closed_at": "2026-08-24T23:32:59Z",
+      "first_response_at": "2026-08-24T20:15:25Z",
+      "first_response_hours": 0.8,
+      "time_to_close_hours": 4.1,
+      "labels": []
+    },
     {
       "number": 178,
       "title": "Protocol 28 preparation: ADDRESS_V2 defaults, external-ref hardening, and fee amounts",
@@ -45,14 +59,14 @@
       "number": 176,
       "title": "SDK Updates for Protocol 28 Compatibility",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "Ryang-21",
       "author_association": "NONE",
       "created_at": "2026-08-19T16:35:55Z",
-      "closed_at": null,
+      "closed_at": "2026-08-24T23:55:31Z",
       "first_response_at": "2026-08-19T18:06:34Z",
       "first_response_hours": 1.5,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 127.3,
       "labels": []
     },
     {
