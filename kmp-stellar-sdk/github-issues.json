@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-25",
+    "as_of": "2026-08-26",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 1,
     "closed_issues_365d": 8,
     "closed_prs_365d": 54,
     "median_first_response_hours": 20.6,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 63,
+      "title": "Prepare release 1.12.0",
+      "type": "pr",
+      "state": "open",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-26T10:42:52Z",
+      "closed_at": null,
+      "first_response_at": "2026-08-26T10:58:41Z",
+      "first_response_hours": 0.3,
+      "time_to_close_hours": null,
+      "labels": []
+    },
     {
       "number": 62,
       "title": "Protocol 28 preparation: ADDRESS_V2 defaults and deployment hardening",

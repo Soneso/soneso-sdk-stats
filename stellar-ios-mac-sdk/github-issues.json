@@ -1,18 +1,32 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-25",
-    "open_issues": 1,
+    "as_of": "2026-08-26",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 18,
-    "closed_prs_365d": 43,
+    "closed_issues_365d": 19,
+    "closed_prs_365d": 44,
     "median_first_response_hours": 1.5,
     "avg_first_response_hours": 4.2,
-    "median_time_to_close_hours": 12.0,
-    "avg_time_to_close_hours": 37.9,
+    "median_time_to_close_hours": 21.1,
+    "avg_time_to_close_hours": 53.4,
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 238,
+      "title": "Prepare release 3.10.0",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-25T16:50:30Z",
+      "closed_at": "2026-08-25T18:02:38Z",
+      "first_response_at": "2026-08-25T18:00:16Z",
+      "first_response_hours": 1.2,
+      "time_to_close_hours": 1.2,
+      "labels": []
+    },
     {
       "number": 237,
       "title": "Protocol 28 preparation: ADDRESS_V2 defaults, raw byte tags, and external-ref hardening",
@@ -45,14 +59,14 @@
       "number": 235,
       "title": "SDK Updates for Protocol 28 Compatibility",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "Ryang-21",
       "author_association": "NONE",
       "created_at": "2026-08-19T16:35:54Z",
-      "closed_at": null,
+      "closed_at": "2026-08-25T18:56:37Z",
       "first_response_at": "2026-08-19T18:06:51Z",
       "first_response_hours": 1.5,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 146.3,
       "labels": []
     },
     {
