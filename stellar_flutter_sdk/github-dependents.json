@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-08-26",
+    "as_of": "2026-08-27",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 451,
-        "forks": 115
+        "stars": 452,
+        "forks": 116
       },
       {
         "owner": "brij-digital",
@@ -84,12 +84,6 @@
       {
         "owner": "HabitaNexus",
         "repo": "monorepo",
-        "stars": 1,
-        "forks": 0
-      },
-      {
-        "owner": "Rooloo-Innovations",
-        "repo": "DWaste-App",
         "stars": 1,
         "forks": 0
       },
@@ -258,6 +252,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-08-27",
+      "dependent_repos": 87,
+      "dependent_packages": 6
+    },
     {
       "date": "2026-08-26",
       "dependent_repos": 87,
