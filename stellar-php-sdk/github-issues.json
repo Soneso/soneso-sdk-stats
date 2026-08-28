@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-08-27",
+    "as_of": "2026-08-28",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 24,
-    "closed_prs_365d": 48,
+    "closed_prs_365d": 50,
     "median_first_response_hours": 3.1,
     "avg_first_response_hours": 10.7,
     "median_time_to_close_hours": 28.3,
@@ -13,6 +13,34 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 125,
+      "title": "Document XdrSCVal::toNative()",
+      "type": "pr",
+      "state": "closed",
+      "author": "ngybnc",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-28T04:57:14Z",
+      "closed_at": "2026-08-28T17:19:33Z",
+      "first_response_at": "2026-08-28T09:55:23Z",
+      "first_response_hours": 5.0,
+      "time_to_close_hours": 12.4,
+      "labels": []
+    },
+    {
+      "number": 124,
+      "title": "Add XdrSCVal::toNative()",
+      "type": "pr",
+      "state": "closed",
+      "author": "ngybnc",
+      "author_association": "MEMBER",
+      "created_at": "2026-08-28T04:56:56Z",
+      "closed_at": "2026-08-28T17:19:11Z",
+      "first_response_at": "2026-08-28T09:55:40Z",
+      "first_response_hours": 5.0,
+      "time_to_close_hours": 12.4,
+      "labels": []
+    },
     {
       "number": 123,
       "title": "Prepare release 1.13.0",
