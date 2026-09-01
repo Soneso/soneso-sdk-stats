@@ -218,6 +218,10 @@
   ],
   "daily": [
     {
+      "date": "2026-09-01",
+      "download_count_30d": 1994
+    },
+    {
       "date": "2026-08-31",
       "download_count_30d": 1994
     },
