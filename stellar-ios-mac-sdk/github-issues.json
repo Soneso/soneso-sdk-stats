@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-09-02",
+    "as_of": "2026-09-03",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 19,
-    "closed_prs_365d": 45,
+    "closed_prs_365d": 47,
     "median_first_response_hours": 1.5,
     "avg_first_response_hours": 4.2,
     "median_time_to_close_hours": 21.1,
@@ -13,6 +13,34 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 241,
+      "title": "Document SCValXDR.toNative()",
+      "type": "pr",
+      "state": "closed",
+      "author": "ngybnc",
+      "author_association": "MEMBER",
+      "created_at": "2026-09-03T05:42:36Z",
+      "closed_at": "2026-09-03T13:31:38Z",
+      "first_response_at": "2026-09-03T12:52:08Z",
+      "first_response_hours": 7.2,
+      "time_to_close_hours": 7.8,
+      "labels": []
+    },
+    {
+      "number": 240,
+      "title": "Add SCValXDR.toNative()",
+      "type": "pr",
+      "state": "closed",
+      "author": "ngybnc",
+      "author_association": "MEMBER",
+      "created_at": "2026-09-03T05:42:25Z",
+      "closed_at": "2026-09-03T13:31:23Z",
+      "first_response_at": "2026-09-03T12:52:23Z",
+      "first_response_hours": 7.2,
+      "time_to_close_hours": 7.8,
+      "labels": []
+    },
     {
       "number": 239,
       "title": "Bump anthropics/claude-code-action from 1.0.205 to 1.0.210",
