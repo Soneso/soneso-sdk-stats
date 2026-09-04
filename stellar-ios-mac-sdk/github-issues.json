@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-09-03",
+    "as_of": "2026-09-04",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 19,
-    "closed_prs_365d": 47,
+    "closed_prs_365d": 48,
     "median_first_response_hours": 1.5,
     "avg_first_response_hours": 4.2,
     "median_time_to_close_hours": 21.1,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 242,
+      "title": "Regenerate contract binding fixtures with stellar-contract-bindings 0.6.0b0",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-09-04T09:28:33Z",
+      "closed_at": "2026-09-04T09:32:49Z",
+      "first_response_at": "2026-09-04T09:31:17Z",
+      "first_response_hours": 0.0,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
     {
       "number": 241,
       "title": "Document SCValXDR.toNative()",
