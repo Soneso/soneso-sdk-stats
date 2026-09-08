@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-09-07",
+    "as_of": "2026-09-08",
     "repos": [
       {
         "owner": "cypherstack",
@@ -46,6 +46,12 @@
         "forks": 0
       },
       {
+        "owner": "HabitaNexus",
+        "repo": "monorepo",
+        "stars": 3,
+        "forks": 0
+      },
+      {
         "owner": "bantublockchain",
         "repo": "bantupay-sdk-flutter",
         "stars": 3,
@@ -56,12 +62,6 @@
         "repo": "NemorixPay-Mobile-Code",
         "stars": 3,
         "forks": 1
-      },
-      {
-        "owner": "HabitaNexus",
-        "repo": "monorepo",
-        "stars": 2,
-        "forks": 0
       },
       {
         "owner": "Inter-Stellar-Wallet",
@@ -252,6 +252,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-09-08",
+      "dependent_repos": 87,
+      "dependent_packages": 6
+    },
     {
       "date": "2026-09-07",
       "dependent_repos": 87,
