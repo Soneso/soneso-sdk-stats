@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-09-08",
+    "as_of": "2026-09-09",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 19,
-    "closed_prs_365d": 48,
+    "closed_prs_365d": 0,
     "median_first_response_hours": 1.5,
-    "avg_first_response_hours": 4.2,
-    "median_time_to_close_hours": 21.1,
-    "avg_time_to_close_hours": 53.4,
+    "avg_first_response_hours": 5.4,
+    "median_time_to_close_hours": 25.7,
+    "avg_time_to_close_hours": 70.1,
     "issues_with_response_pct": 100.0
   },
   "issues": [
@@ -25,7 +25,8 @@
       "first_response_at": "2026-09-04T09:31:17Z",
       "first_response_hours": 0.0,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 241,
@@ -39,7 +40,8 @@
       "first_response_at": "2026-09-03T12:52:08Z",
       "first_response_hours": 7.2,
       "time_to_close_hours": 7.8,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 240,
@@ -53,7 +55,8 @@
       "first_response_at": "2026-09-03T12:52:23Z",
       "first_response_hours": 7.2,
       "time_to_close_hours": 7.8,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 239,
@@ -70,7 +73,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 238,
@@ -84,7 +88,8 @@
       "first_response_at": "2026-08-25T18:00:16Z",
       "first_response_hours": 1.2,
       "time_to_close_hours": 1.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 237,
@@ -98,7 +103,8 @@
       "first_response_at": "2026-08-23T21:01:33Z",
       "first_response_hours": 0.7,
       "time_to_close_hours": 13.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 236,
@@ -112,7 +118,8 @@
       "first_response_at": "2026-08-21T23:21:49Z",
       "first_response_hours": 1.0,
       "time_to_close_hours": 1.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 235,
@@ -140,7 +147,8 @@
       "first_response_at": "2026-08-19T15:04:19Z",
       "first_response_hours": 1.7,
       "time_to_close_hours": 1.7,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 233,
@@ -154,7 +162,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.7,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 232,
@@ -168,7 +177,8 @@
       "first_response_at": "2026-08-17T19:05:46Z",
       "first_response_hours": 2.3,
       "time_to_close_hours": 18.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 231,
@@ -196,7 +206,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 25.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 229,
@@ -210,7 +221,8 @@
       "first_response_at": "2026-08-03T09:56:04Z",
       "first_response_hours": 2.2,
       "time_to_close_hours": 2.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 228,
@@ -227,7 +239,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 227,
@@ -244,7 +257,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 226,
@@ -261,7 +275,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 225,
@@ -275,7 +290,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 12.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 224,
@@ -337,7 +353,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 19.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 219,
@@ -367,7 +384,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 217,
@@ -381,7 +399,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 10.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 216,
@@ -398,7 +417,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 215,
@@ -415,7 +435,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 214,
@@ -429,7 +450,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 213,
@@ -443,7 +465,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 212,
@@ -457,7 +480,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 211,
@@ -471,7 +495,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 106.9,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 210,
@@ -499,7 +524,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 208,
@@ -513,7 +539,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 71.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 207,
@@ -546,7 +573,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 205,
@@ -563,7 +591,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 204,
@@ -580,7 +609,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 203,
@@ -597,7 +627,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 202,
@@ -611,7 +642,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 1.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 201,
@@ -688,7 +720,8 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ]
+      ],
+      "removed": true
     },
     {
       "number": 196,
@@ -702,7 +735,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 195,
@@ -732,7 +766,8 @@
       "first_response_at": "2026-03-11T20:17:33Z",
       "first_response_hours": 0.8,
       "time_to_close_hours": 18.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 193,
@@ -762,7 +797,8 @@
       "first_response_at": "2026-03-09T14:49:11Z",
       "first_response_hours": 0.2,
       "time_to_close_hours": 21.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 191,
@@ -776,7 +812,8 @@
       "first_response_at": "2026-03-03T20:36:11Z",
       "first_response_hours": 19.6,
       "time_to_close_hours": 34.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 190,
@@ -790,7 +827,8 @@
       "first_response_at": "2026-02-23T04:48:09Z",
       "first_response_hours": 7.7,
       "time_to_close_hours": 14.7,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 189,
@@ -804,7 +842,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 25.9,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 188,
@@ -834,7 +873,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 186,
@@ -864,7 +904,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 184,
@@ -894,7 +935,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 182,
@@ -908,7 +950,8 @@
       "first_response_at": "2025-12-18T05:12:07Z",
       "first_response_hours": 67.9,
       "time_to_close_hours": 76.4,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 181,
@@ -938,7 +981,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 69.7,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 179,
@@ -970,7 +1014,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 177,
@@ -984,7 +1029,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 21.2,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 176,
@@ -1015,7 +1061,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 17.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 174,
@@ -1107,7 +1154,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 164,
@@ -1121,7 +1169,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 155,
@@ -1135,7 +1184,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 126,
@@ -1149,7 +1199,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 89,
@@ -1179,7 +1230,8 @@
       "first_response_at": "2025-12-06T14:20:41Z",
       "first_response_hours": 57523.6,
       "time_to_close_hours": 57523.6,
-      "labels": []
+      "labels": [],
+      "removed": true
     }
   ]
 }
