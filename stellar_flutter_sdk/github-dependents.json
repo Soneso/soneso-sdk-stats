@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-09-09",
+    "as_of": "2026-09-10",
     "repos": [
       {
         "owner": "cypherstack",
@@ -13,7 +13,7 @@
         "owner": "brij-digital",
         "repo": "espresso-cash-public",
         "stars": 300,
-        "forks": 131
+        "forks": 132
       },
       {
         "owner": "wootzapp",
@@ -252,6 +252,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-09-10",
+      "dependent_repos": 87,
+      "dependent_packages": 6
+    },
     {
       "date": "2026-09-09",
       "dependent_repos": 87,
