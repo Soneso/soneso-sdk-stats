@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-09-10",
-    "open_issues": 1,
+    "as_of": "2026-09-11",
+    "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 8,
-    "closed_prs_365d": 60,
+    "closed_issues_365d": 9,
+    "closed_prs_365d": 61,
     "median_first_response_hours": 20.6,
     "avg_first_response_hours": 476.3,
     "median_time_to_close_hours": 16.6,
@@ -14,17 +14,31 @@
   },
   "issues": [
     {
+      "number": 70,
+      "title": "Update XDR definitions to stellar-xdr c40231c",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-09-10T18:29:24Z",
+      "closed_at": "2026-09-11T06:34:20Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 12.1,
+      "labels": []
+    },
+    {
       "number": 69,
       "title": "Update XDR definitions from upstream stellar-xdr (c40231c)",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "github-actions[bot]",
       "author_association": "CONTRIBUTOR",
       "created_at": "2026-09-09T17:11:14Z",
-      "closed_at": null,
+      "closed_at": "2026-09-11T06:34:21Z",
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 37.4,
       "labels": [
         "xdr-update"
       ]
