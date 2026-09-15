@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "summary": {
-    "as_of": "2026-09-14",
+    "as_of": "2026-09-15",
     "open_issues": 0,
     "open_prs": 0,
     "closed_issues_365d": 20,
-    "closed_prs_365d": 49,
+    "closed_prs_365d": 50,
     "median_first_response_hours": 1.5,
     "avg_first_response_hours": 4.2,
     "median_time_to_close_hours": 21.1,
@@ -13,6 +13,20 @@
     "issues_with_response_pct": 100.0
   },
   "issues": [
+    {
+      "number": 245,
+      "title": "Inject the URLSession through the Soroban client layer",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-09-14T17:04:17Z",
+      "closed_at": "2026-09-15T08:04:46Z",
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 15.0,
+      "labels": []
+    },
     {
       "number": 244,
       "title": "Update XDR definitions to stellar-xdr c40231c",
