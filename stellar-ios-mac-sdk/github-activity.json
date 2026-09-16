@@ -2,14 +2,20 @@
   "schema_version": 1,
   "releases": {
     "summary": {
-      "total_releases": 149,
-      "latest_release": "3.10.0",
-      "latest_release_date": "2026-08-25",
-      "releases_last_90d": 7,
-      "releases_last_365d": 20,
+      "total_releases": 150,
+      "latest_release": "3.11.0",
+      "latest_release_date": "2026-09-15",
+      "releases_last_90d": 8,
+      "releases_last_365d": 21,
       "avg_days_between_releases": 20.9
     },
     "all": [
+      {
+        "tag": "3.11.0",
+        "name": "v3.11.0 - Native ScVal Conversion",
+        "published_at": "2026-09-15T16:17:44Z",
+        "prerelease": false
+      },
       {
         "tag": "3.10.0",
         "name": "v3.10.0 - Protocol 28 (CAP-85) support and ADDRESS_V2 defaults",
@@ -910,11 +916,11 @@
     "weekly": [
       {
         "week_start": "2026-09-13",
-        "total": 1,
+        "total": 2,
         "days": [
           0,
           1,
-          0,
+          1,
           0,
           0,
           0,
@@ -936,13 +942,13 @@
       },
       {
         "week_start": "2026-08-30",
-        "total": 3,
+        "total": 4,
         "days": [
           0,
           0,
           1,
           0,
-          1,
+          2,
           1,
           0
         ]
