@@ -2,8 +2,8 @@
   "schema_version": 1,
   "latest": {
     "as_of": "2026-09-21",
-    "downloads_90d": 32507,
-    "unique_sources_90d": 2678,
+    "downloads_90d": 32528,
+    "unique_sources_90d": 2680,
     "window_start": "2026-06-24",
     "window_end": "2026-09-22"
   },
@@ -20,8 +20,8 @@
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 4086,
-      "unique_origins": 432
+      "downloads": 4107,
+      "unique_origins": 433
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
@@ -57,7 +57,7 @@
   "daily": [
     {
       "date": "2026-09-18",
-      "downloads": 30
+      "downloads": 38
     },
     {
       "date": "2026-09-17",
@@ -81,7 +81,7 @@
     },
     {
       "date": "2026-09-11",
-      "downloads": 82
+      "downloads": 95
     },
     {
       "date": "2026-09-10",
