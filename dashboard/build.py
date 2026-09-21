@@ -18,11 +18,11 @@ SDKS = [
     {"key": "ios", "folder": "stellar-ios-mac-sdk", "label": "iOS", "color": "#FF6B4A", "first_release": "1.0.0 (2018-03-02)", "top_dependent": "LOBSTR Wallet"},
     {"key": "flutter", "folder": "stellar_flutter_sdk", "label": "Flutter", "color": "#54C5F8", "first_release": "0.7.8 (2020-06-24)", "top_dependent": "Beans App"},
     {"key": "php", "folder": "stellar-php-sdk", "label": "PHP", "color": "#6B93D6", "first_release": "0.0.1 (2021-12-30)", "top_dependent": "stellarchain.io"},
-    {"key": "kmp", "folder": "kmp-stellar-sdk", "label": "KMP", "color": "#B07CFF", "card_label": "KMP (new)", "first_release": "v0.2.0 (2025-10-25)"},
+    {"key": "kmp", "folder": "kmp-stellar-sdk", "label": "KMP", "color": "#B07CFF", "first_release": "v0.2.0 (2025-10-25)"},
 ]
 
 # Which SDKs to show on the dashboard. Remove a key to hide it.
-ENABLED_SDKS = {"ios", "flutter", "php"}
+ENABLED_SDKS = {"ios", "flutter", "php", "kmp"}
 
 _valid_keys = {s["key"] for s in SDKS}
 _invalid = ENABLED_SDKS - _valid_keys
@@ -137,6 +137,29 @@ def extract_pubdev():
     }
 
 
+def extract_scarf():
+    """Load scarf.json defensively: a shape-corrupt file degrades to empty
+    Scarf data instead of aborting the whole dashboard build."""
+    data = load_json(ROOT / "kmp-stellar-sdk" / "scarf.json")
+    if not isinstance(data, dict):
+        return {"latest": {}, "daily": []}
+    latest = data.get("latest")
+    if not (isinstance(latest, dict)
+            and isinstance(latest.get("downloads_90d"), (int, float))
+            and isinstance(latest.get("unique_sources_90d"), (int, float))):
+        latest = {}
+    daily = data.get("daily")
+    if not isinstance(daily, list):
+        daily = []
+    daily = [
+        e for e in daily
+        if isinstance(e, dict)
+        and isinstance(e.get("date"), str)
+        and isinstance(e.get("downloads"), (int, float))
+    ]
+    return {"latest": latest, "daily": trim_daily(daily)}
+
+
 # ── Commit heatmap expansion ────────────────────────────────────────
 
 def expand_commits_to_days(weekly_commits):
@@ -220,6 +243,15 @@ def compute_sdk_summary(sdk_data):
         summary["pubdev_52w"] = None
         summary["pubdev_30d"] = None
 
+    # Scarf / Maven Central (KMP only)
+    scarf_latest = sdk_data.get("scarf", {}).get("latest", {})
+    if scarf_latest:
+        summary["scarf_90d"] = scarf_latest.get("downloads_90d")
+        summary["scarf_unique_90d"] = scarf_latest.get("unique_sources_90d")
+    else:
+        summary["scarf_90d"] = None
+        summary["scarf_unique_90d"] = None
+
     return summary
 
 
@@ -246,6 +278,11 @@ def build_data():
             sdk_data["pubdev"] = extract_pubdev()
         else:
             sdk_data["pubdev"] = {"latest": {}, "weekly": []}
+        # Only KMP has Scarf (Maven Central download data)
+        if sdk["key"] == "kmp":
+            sdk_data["scarf"] = extract_scarf()
+        else:
+            sdk_data["scarf"] = {"latest": {}, "daily": []}
         all_data.append(sdk_data)
 
     # Prepare chart data
@@ -310,6 +347,14 @@ def build_data():
             date_label = w
         pubdev_weekly.append({"week": date_label, "downloads": e.get("download_count", 0)})
     chart_data["pubdev_weekly"] = pubdev_weekly
+
+    # Scarf daily downloads — find KMP SDK by key
+    kmp_data = next((sd for sd in all_data if sd["sdk"]["key"] == "kmp"), None)
+    scarf = kmp_data["scarf"] if kmp_data else {"daily": []}
+    chart_data["scarf_daily"] = [
+        {"date": e["date"], "downloads": e.get("downloads", 0)}
+        for e in scarf.get("daily", [])
+    ]
 
     return chart_data, all_data
 
@@ -509,6 +554,33 @@ var allCharts = [];
       lineStyle: { color: '#6B93D6' },
       itemStyle: { color: '#6B93D6' },
       areaStyle: { color: 'rgba(107,147,214,0.15)' },
+      smooth: true,
+      symbol: 'none'
+    }]
+  }));
+})();
+
+// ── Scarf Daily (Maven Central) ──
+(function() {
+  var daily = (DATA.scarf_daily || []).slice().reverse();
+  allCharts.push(initChart('chart-scarf', {
+    backgroundColor: 'transparent',
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['KMP'], right: 0, top: -5, textStyle: { color: '#8b949e' } },
+    grid: { left: 50, right: 20, bottom: 60, top: 20 },
+    xAxis: {
+      type: 'category',
+      data: daily.map(function(e) { return e.date; }),
+      axisLabel: { color: '#8b949e', rotate: 45, interval: Math.max(1, Math.floor(daily.length / 12)), formatter: shortDate }
+    },
+    yAxis: { type: 'value', axisLabel: { color: '#8b949e' }, splitLine: { lineStyle: { color: '#21262d' } } },
+    series: [{
+      name: 'KMP',
+      type: 'line',
+      data: daily.map(function(e) { return e.downloads; }),
+      lineStyle: { color: '#B07CFF' },
+      itemStyle: { color: '#B07CFF' },
+      areaStyle: { color: 'rgba(176,124,255,0.15)' },
       smooth: true,
       symbol: 'none'
     }]
@@ -741,6 +813,9 @@ def build_sdk_summary_cards(all_data):
         if s["pubdev_52w"]:
             rows.append(f'<div class="sdk-stat"><span class="sdk-stat-label">pub.dev downloads (52w)</span><span class="sdk-stat-value">{format_number(s["pubdev_52w"])}</span></div>')
             rows.append(f'<div class="sdk-stat"><span class="sdk-stat-label">pub.dev downloads (30d)</span><span class="sdk-stat-value">{format_number(s["pubdev_30d"])}</span></div>')
+        if s["scarf_90d"]:
+            rows.append(f'<div class="sdk-stat"><span class="sdk-stat-label">Maven downloads (90d)</span><span class="sdk-stat-value">{format_number(s["scarf_90d"])}</span></div>')
+            rows.append(f'<div class="sdk-stat"><span class="sdk-stat-label">Unique sources (90d)</span><span class="sdk-stat-value">{format_number(s["scarf_unique_90d"])}</span></div>')
 
         rows_html = "\n    ".join(rows)
         cards.append(f'''<div class="sdk-card">
@@ -766,9 +841,6 @@ def build_heatmap_legend():
 
 def build_package_downloads_section():
     """Build the package downloads HTML section based on which SDKs are active."""
-    has_pubdev = "flutter" in ENABLED_SDKS
-    has_packagist = "php" in ENABLED_SDKS
-
     pubdev_card = (
         '<div class="card">\n'
         '    <h2>pub.dev Weekly Downloads</h2>\n'
@@ -781,18 +853,26 @@ def build_package_downloads_section():
         '    <div id="chart-packagist" class="chart"></div>\n'
         '  </div>'
     )
+    scarf_card = (
+        '<div class="card">\n'
+        '    <h2>Maven Central Daily Downloads (Scarf)</h2>\n'
+        '    <div id="chart-scarf" class="chart"></div>\n'
+        '  </div>'
+    )
 
-    if has_pubdev and has_packagist:
-        return (
-            '<div class="two-col">\n'
-            f'  {pubdev_card}\n'
-            f'  {packagist_card}\n'
-            '</div>'
-        )
-    if has_pubdev:
-        return pubdev_card
-    if has_packagist:
-        return packagist_card
+    cards = []
+    if "flutter" in ENABLED_SDKS:
+        cards.append(pubdev_card)
+    if "php" in ENABLED_SDKS:
+        cards.append(packagist_card)
+    if "kmp" in ENABLED_SDKS:
+        cards.append(scarf_card)
+
+    if len(cards) > 1:
+        inner = "\n  ".join(cards)
+        return f'<div class="two-col">\n  {inner}\n</div>'
+    if cards:
+        return cards[0]
     return ""
 
 

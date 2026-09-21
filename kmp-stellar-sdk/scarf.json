@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "latest": {
+    "as_of": "2026-09-21",
+    "downloads_90d": 32507,
+    "unique_sources_90d": 2678,
+    "window_start": "2026-06-24",
+    "window_end": "2026-09-22"
+  },
+  "packages_90d": [
+    {
+      "name": "com.soneso.stellar/stellar-sdk",
+      "downloads": 4694,
+      "unique_origins": 360
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-js",
+      "downloads": 4170,
+      "unique_origins": 462
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-macosx64",
+      "downloads": 4086,
+      "unique_origins": 432
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-iosarm64",
+      "downloads": 4003,
+      "unique_origins": 553
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-jvm",
+      "downloads": 3918,
+      "unique_origins": 426
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
+      "downloads": 3665,
+      "unique_origins": 556
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-iosx64",
+      "downloads": 3078,
+      "unique_origins": 496
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
+      "downloads": 2969,
+      "unique_origins": 568
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-android",
+      "downloads": 1924,
+      "unique_origins": 306
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-09-18",
+      "downloads": 30
+    },
+    {
+      "date": "2026-09-17",
+      "downloads": 165
+    },
+    {
+      "date": "2026-09-15",
+      "downloads": 2531
+    },
+    {
+      "date": "2026-09-14",
+      "downloads": 54
+    },
+    {
+      "date": "2026-09-13",
+      "downloads": 134
+    },
+    {
+      "date": "2026-09-12",
+      "downloads": 302
+    },
+    {
+      "date": "2026-09-11",
+      "downloads": 82
+    },
+    {
+      "date": "2026-09-10",
+      "downloads": 49
+    },
+    {
+      "date": "2026-09-09",
+      "downloads": 177
+    },
+    {
+      "date": "2026-09-08",
+      "downloads": 102
+    },
+    {
+      "date": "2026-09-07",
+      "downloads": 65
+    },
+    {
+      "date": "2026-09-06",
+      "downloads": 41
+    },
+    {
+      "date": "2026-09-05",
+      "downloads": 53
+    },
+    {
+      "date": "2026-09-04",
+      "downloads": 190
+    },
+    {
+      "date": "2026-09-03",
+      "downloads": 533
+    },
+    {
+      "date": "2026-09-02",
+      "downloads": 67
+    },
+    {
+      "date": "2026-09-01",
+      "downloads": 46
+    },
+    {
+      "date": "2026-08-31",
+      "downloads": 59
+    },
+    {
+      "date": "2026-08-30",
+      "downloads": 46
+    },
+    {
+      "date": "2026-08-29",
+      "downloads": 146
+    },
+    {
+      "date": "2026-08-28",
+      "downloads": 33
+    },
+    {
+      "date": "2026-08-27",
+      "downloads": 4088
+    },
+    {
+      "date": "2026-08-26",
+      "downloads": 466
+    },
+    {
+      "date": "2026-08-25",
+      "downloads": 159
+    },
+    {
+      "date": "2026-08-24",
+      "downloads": 37
+    },
+    {
+      "date": "2026-08-23",
+      "downloads": 36
+    },
+    {
+      "date": "2026-08-22",
+      "downloads": 43
+    },
+    {
+      "date": "2026-08-21",
+      "downloads": 46
+    },
+    {
+      "date": "2026-08-20",
+      "downloads": 120
+    },
+    {
+      "date": "2026-08-19",
+      "downloads": 70
+    },
+    {
+      "date": "2026-08-18",
+      "downloads": 464
+    },
+    {
+      "date": "2026-08-17",
+      "downloads": 327
+    },
+    {
+      "date": "2026-08-16",
+      "downloads": 47
+    },
+    {
+      "date": "2026-08-15",
+      "downloads": 46
+    },
+    {
+      "date": "2026-08-14",
+      "downloads": 137
+    },
+    {
+      "date": "2026-08-13",
+      "downloads": 296
+    },
+    {
+      "date": "2026-08-12",
+      "downloads": 166
+    },
+    {
+      "date": "2026-08-11",
+      "downloads": 1047
+    },
+    {
+      "date": "2026-08-10",
+      "downloads": 150
+    },
+    {
+      "date": "2026-08-09",
+      "downloads": 10
+    },
+    {
+      "date": "2026-08-08",
+      "downloads": 28
+    },
+    {
+      "date": "2026-08-07",
+      "downloads": 10
+    }
+  ]
+}

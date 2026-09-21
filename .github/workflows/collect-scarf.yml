@@ -1,0 +1,261 @@
+name: Collect Scarf Stats
+
+on:
+  schedule:
+    - cron: '15 10 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: scarf-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Fetch and merge Scarf data
+        env:
+          SCARF_API_TOKEN: ${{ secrets.SCARF_API_TOKEN }}
+        run: |
+          python3 <<'PYTHON'
+          import json
+          import os
+          import sys
+          import urllib.request
+          from datetime import date, datetime, timedelta, timezone
+
+          # Maven Central download data for the KMP SDK, served by Scarf
+          # (Sonatype partnership). Downloads reach Scarf with roughly one
+          # week of ingest lag, so every run re-fetches a trailing window
+          # and rewrites those days instead of appending only yesterday.
+          OWNER = "Soneso"
+          FOLDER = "kmp-stellar-sdk"
+          API = "https://api.scarf.sh/v3/insights"
+          DAILY_WINDOW_DAYS = 45
+          SUMMARY_WINDOW_DAYS = 90
+          STALE_DAYS = 7
+          INGEST_LAG_DAYS = 7
+
+          token = os.environ.get("SCARF_API_TOKEN")
+          if not token:
+              print("::error::SCARF_API_TOKEN secret is not configured")
+              sys.exit(1)
+
+          json_path = os.path.join(FOLDER, "scarf.json")
+          today = datetime.now(timezone.utc).date()
+
+          def parse_iso_date(value):
+              """Return a date for a YYYY-MM-DD(-prefixed) string, else None."""
+              if not isinstance(value, str):
+                  return None
+              try:
+                  return date.fromisoformat(value[:10])
+              except ValueError:
+                  return None
+
+          def is_count(value):
+              """True for a plain numeric value (bool is an int, so exclude it)."""
+              return not isinstance(value, bool) and isinstance(value, (int, float))
+
+          def valid_history_entry(entry):
+              return (isinstance(entry, dict)
+                      and parse_iso_date(entry.get("date")) is not None
+                      and is_count(entry.get("downloads")))
+
+          def check_staleness():
+              """Fail the run unless usable data was refreshed within a week.
+
+              Usable means the dashboard can render it: numeric summary
+              values and at least one well-formed history entry. A cache the
+              dashboard would reject entirely must not keep runs green.
+              """
+              as_of = None
+              try:
+                  with open(json_path) as f:
+                      data = json.load(f)
+                  if (isinstance(data, dict)
+                          and isinstance(data.get("latest"), dict)
+                          and isinstance(data.get("daily"), list)
+                          and is_count(data["latest"].get("downloads_90d"))
+                          and is_count(data["latest"].get("unique_sources_90d"))
+                          and any(valid_history_entry(e) for e in data["daily"])):
+                      as_of = parse_iso_date(data["latest"].get("as_of"))
+              except (FileNotFoundError, json.JSONDecodeError):
+                  as_of = None
+              if as_of is None or as_of < today - timedelta(days=STALE_DAYS):
+                  print(f"::error::Scarf data is stale or unusable (last good run: {as_of or 'unknown'})")
+                  sys.exit(1)
+
+          def keep_existing(reason):
+              print(f"::warning::{reason}; keeping existing data")
+              check_staleness()
+              sys.exit(0)
+
+          def fetch_ndjson(params):
+              url = f"{API}/{OWNER}/aggregations/export?{params}"
+              req = urllib.request.Request(url, headers={
+                  "Authorization": f"Bearer {token}",
+                  "User-Agent": "soneso-sdk-stats/1.0",
+              })
+              with urllib.request.urlopen(req, timeout=120) as resp:
+                  return [json.loads(line) for line in resp.read().decode().splitlines() if line.strip()]
+
+          # Windows derive from the exclusive end date so each covers exactly
+          # its advertised number of calendar days, today included.
+          end_day = today + timedelta(days=1)
+          end = end_day.isoformat()
+          daily_start_day = end_day - timedelta(days=DAILY_WINDOW_DAYS)
+          daily_start = daily_start_day.isoformat()
+          window_start = (end_day - timedelta(days=SUMMARY_WINDOW_DAYS)).isoformat()
+
+          try:
+              daily_rows = fetch_ndjson(
+                  f"start_date={daily_start}&end_date={end}&rollup=daily&breakdown=by-total")
+              window_rows = fetch_ndjson(
+                  f"start_date={window_start}&end_date={end}&rollup=total&breakdown=by-total")
+              origin_rows = fetch_ndjson(
+                  f"start_date={window_start}&end_date={end}&rollup=total&breakdown=by-origin")
+          except Exception as e:
+              keep_existing(f"Scarf API fetch failed: {e}")
+
+          # A malformed or empty export (backend incident, entitlement lapse,
+          # schema drift) must not be written over good history, so every row
+          # of every export is validated and any invalid row rejects that
+          # whole export via the same keep-and-check-staleness path as a
+          # failed fetch. Silently filtering bad rows would undercount.
+          def daily_totals(rows):
+              out = {}
+              for r in rows:
+                  if not isinstance(r, dict):
+                      return None
+                  day = parse_iso_date(r.get("date"))
+                  if day is None or not is_count(r.get("total")):
+                      return None
+                  key = day.isoformat()
+                  out[key] = out.get(key, 0) + int(r["total"])
+              return out
+
+          def artifact_totals(rows):
+              out = []
+              for r in rows:
+                  if not isinstance(r, dict):
+                      return None
+                  name = r.get("artifact_name")
+                  if not (isinstance(name, str) and name):
+                      return None
+                  if not (is_count(r.get("total")) and is_count(r.get("unique_origins"))):
+                      return None
+                  out.append({"name": name, "downloads": int(r["total"]),
+                              "unique_origins": int(r["unique_origins"])})
+              return out
+
+          def origin_id_set(rows):
+              out = set()
+              for r in rows:
+                  if not isinstance(r, dict):
+                      return None
+                  oid = r.get("origin_id")
+                  if not (isinstance(oid, str) and oid):
+                      return None
+                  out.add(oid)
+              return out
+
+          fetched_daily = daily_totals(daily_rows)
+          artifacts = artifact_totals(window_rows)
+          origin_ids = origin_id_set(origin_rows)
+
+          if not fetched_daily or not artifacts or not origin_ids:
+              keep_existing("Scarf export was empty or failed validation")
+
+          packages = sorted(artifacts, key=lambda p: -p["downloads"])
+          downloads_90d = sum(p["downloads"] for p in packages)
+          unique_sources_90d = len(origin_ids)
+          if downloads_90d <= 0:
+              keep_existing("Scarf export reported zero downloads over the summary window")
+
+          # Zero-fill days past the ingest-lag horizon, so a day with no
+          # downloads is distinguishable from one Scarf has not ingested yet.
+          # The lag tail stays absent until data arrives.
+          for i in range(DAILY_WINDOW_DAYS - INGEST_LAG_DAYS):
+              fetched_daily.setdefault((daily_start_day + timedelta(days=i)).isoformat(), 0)
+
+          # Merge daily history: fetched window overwrites (late-arriving
+          # data), older days are kept from the existing file. Malformed
+          # history entries are dropped so one bad entry cannot wedge every
+          # future run.
+          existing = {}
+          if os.path.exists(json_path):
+              try:
+                  with open(json_path) as f:
+                      old_data = json.load(f)
+                  for entry in old_data.get("daily", []):
+                      if valid_history_entry(entry):
+                          existing[entry["date"]] = entry
+                      else:
+                          print(f"::warning::Dropping malformed history entry: {entry!r}")
+              except (json.JSONDecodeError, KeyError, AttributeError, TypeError) as e:
+                  print(f"::warning::Corrupt data file, starting fresh: {e}")
+                  existing = {}
+          for day in [d for d in existing if d >= daily_start]:
+              del existing[day]
+          for day, downloads in fetched_daily.items():
+              existing[day] = {"date": day, "downloads": downloads}
+          merged = sorted(existing.values(), key=lambda x: x["date"], reverse=True)
+
+          result_data = {
+              "schema_version": 1,
+              "latest": {
+                  "as_of": today.isoformat(),
+                  "downloads_90d": downloads_90d,
+                  "unique_sources_90d": unique_sources_90d,
+                  "window_start": window_start,
+                  "window_end": end,
+              },
+              "packages_90d": packages,
+              "daily": merged,
+          }
+
+          os.makedirs(FOLDER, exist_ok=True)
+          tmp_path = os.path.join(FOLDER, ".scarf.tmp")
+          with open(tmp_path, "w") as f:
+              json.dump(result_data, f, indent=2)
+              f.write("\n")
+          os.replace(tmp_path, json_path)
+
+          print(f"{FOLDER}: {downloads_90d} downloads / {unique_sources_90d} unique sources (90d), "
+                f"{len(packages)} artifacts | {len(merged)} days tracked")
+          PYTHON
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add */scarf.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          today=$(date -u +%Y-%m-%d)
+          git commit -m "Update scarf data ${today}"
+          for i in 1 2 3; do
+            if git pull --rebase; then
+              git push && exit 0
+            else
+              echo "::warning::Rebase failed (possible conflict), aborting rebase"
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::Failed to push after 3 attempts"
+          exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::warning::Scarf collection failed. Check the workflow logs."

@@ -9,6 +9,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `.github/workflows/collect-github.yml` — GitHub clone stats for all 4 SDKs (10:00 UTC)
 - `.github/workflows/collect-packagist.yml` — Packagist download stats for stellar-php-sdk (10:05 UTC)
 - `.github/workflows/collect-pubdev.yml` — pub.dev download stats for stellar_flutter_sdk (10:10 UTC)
+- `.github/workflows/collect-scarf.yml` — Maven Central download stats for kmp-stellar-sdk via the Scarf v3 insights API (10:15 UTC)
 - `.github/workflows/collect-github-meta.yml` — GitHub repo stats and page views (10:20 UTC)
 - `.github/workflows/collect-github-activity.yml` — Commit frequency and release history (10:25 UTC)
 - `.github/workflows/collect-github-issues.yml` — Issue/PR response times and closure stats (10:30 UTC)
@@ -23,6 +24,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `<sdk-folder>/github-activity.json` — weekly commit counts (52w+) and full release history with summary
 - `<sdk-folder>/github-issues.json` — issue/PR list with first response times, closure times, and summary stats
 - `<sdk-folder>/github-dependents.json` — dependent repos/packages with metadata (stars, forks) and daily count history (schema v2, not collected for iOS SDK)
+- `kmp-stellar-sdk/scarf.json` — Maven Central downloads via Scarf: `latest` (90d downloads + unique sources), `packages_90d` (per-artifact), `daily` (per-day totals, KMP only)
 
 ## Key patterns
 
@@ -54,7 +56,13 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - dashboard: time-series data capped at rolling 365-day window to limit file size
 - dashboard: weekly commit data expanded into per-day entries for calendar heatmap
 - Push retries: 3 attempts with `git pull --rebase` and 5s backoff
-- Packagist and pub.dev workflows use `User-Agent: soneso-sdk-stats/1.0`
+- Packagist, pub.dev, and scarf workflows use `User-Agent: soneso-sdk-stats/1.0`
+- scarf: uses the v3 insights API (`/v3/insights/{owner}/aggregations/export`, NDJSON; the v2 packages aggregates endpoints return no rows for this org). Maven Central data reaches Scarf with ~1 week of ingest lag, so each run re-fetches a 45-day trailing window and rewrites those days
+- scarf: org-wide unique sources = distinct `origin_id` across a `breakdown=by-origin` export; summing per-artifact `unique_origins` overcounts (one consumer pulls common + platform artifacts)
+- scarf: on fetch failure the job keeps the old file and exits green, but errors if the stored file has no usable statistics (numeric summary values plus at least one well-formed history entry) or `latest.as_of` is missing, unparseable, or older than 7 days (staleness guard, like github-dependents)
+- scarf: an empty or schema-invalid export on HTTP 200 is treated as a fetch failure and nothing is written; ANY invalid row rejects its whole export (daily, artifact, and origin exports alike) since silently filtering bad rows would undercount; days past the ingest-lag horizon are zero-filled so a no-download day stays on the chart axis, while the lag tail stays absent until data arrives
+- scarf: window boundaries derive from the exclusive `end_date`, so the 90d summary and 45d daily windows cover exactly that many calendar days (today included); malformed daily history entries are dropped at load with a warning
+- dashboard: `extract_scarf` validates the file shape and falls back to empty Scarf data, so a corrupt scarf.json cannot abort the dashboard build
 
 ## Conventions
 
@@ -70,3 +78,4 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 
 - `TRAFFIC_TOKEN` — Fine-grained PAT with `administration:read` on the 4 SDK repos (used by all `gh api` workflows: collect-github.yml, collect-github-meta.yml, collect-github-activity.yml, collect-github-issues.yml). Required for correct `author_association` on issues (org membership is not visible with the default `GITHUB_TOKEN`).
 - The dependents workflow uses unauthenticated `curl` (HTML scraping, not GitHub API)
+- `SCARF_API_TOKEN` — Scarf API bearer token (user token from app.scarf.sh account settings, org `Soneso`), used by collect-scarf.yml
