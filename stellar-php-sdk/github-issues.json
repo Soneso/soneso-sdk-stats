@@ -1,17 +1,52 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "summary": {
-    "as_of": "2026-09-20",
+    "as_of": "2026-09-21",
+    "collected_at": "2026-09-21T18:41:04Z",
+    "definition_version": 2,
+    "coverage": "complete",
+    "community_issues_created_365d": 5,
+    "community_issues_closed_365d": 5,
+    "community_issue_median_close_hours": 28.3,
+    "community_prs_created_365d": 2,
+    "community_prs_closed_365d": 2,
+    "community_pr_median_close_hours": 23.9,
+    "maintainer_prs_created_365d": 37,
+    "maintainer_prs_closed_365d": 37,
+    "bot_prs_created_365d": 17
+  },
+  "open_scan": {
+    "observed_at": "2026-09-21T18:41:04Z",
     "open_issues": 0,
     "open_prs": 0,
-    "closed_issues_365d": 25,
-    "closed_prs_365d": 56,
-    "median_first_response_hours": 3.1,
-    "avg_first_response_hours": 10.7,
-    "median_time_to_close_hours": 31.4,
-    "avg_time_to_close_hours": 50.9,
-    "issues_with_response_pct": 87.5
+    "issue_median_age_days": null,
+    "pr_median_age_days": null
   },
+  "history": [
+    {
+      "as_of": "2026-09-21",
+      "collected_at": "2026-09-21T18:41:04Z",
+      "definition_version": 2,
+      "coverage": "complete",
+      "community_issues_created_365d": 5,
+      "community_issues_closed_365d": 5,
+      "community_issue_median_close_hours": 28.3,
+      "community_prs_created_365d": 2,
+      "community_prs_closed_365d": 2,
+      "community_pr_median_close_hours": 23.9,
+      "maintainer_prs_created_365d": 37,
+      "maintainer_prs_closed_365d": 37,
+      "bot_prs_created_365d": 17,
+      "date": "2026-09-21",
+      "open_scan": {
+        "observed_at": "2026-09-21T18:41:04Z",
+        "open_issues": 0,
+        "open_prs": 0,
+        "issue_median_age_days": null,
+        "pr_median_age_days": null
+      }
+    }
+  ],
   "issues": [
     {
       "number": 132,
@@ -19,7 +54,7 @@
       "type": "pr",
       "state": "closed",
       "author": "perroBlanco0",
-      "author_association": "FIRST_TIMER",
+      "author_association": "NONE",
       "created_at": "2026-09-19T03:07:51Z",
       "closed_at": "2026-09-20T13:38:50Z",
       "first_response_at": null,

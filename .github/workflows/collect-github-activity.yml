@@ -40,8 +40,12 @@ jobs:
               "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
           }
 
-          today = datetime.now(timezone.utc).date()
+          now = datetime.now(timezone.utc)
+          today = now.date()
           today_str = today.isoformat()
+          # Per-section freshness: commits and releases each carry their own
+          # collected_at, advanced only when that section's fetch succeeded.
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
           cutoff_90d = today - timedelta(days=90)
           cutoff_365d = today - timedelta(days=365)
 
@@ -66,7 +70,7 @@ jobs:
                           body = result.stdout.strip()
                           if not body:
                               if attempt < 2:
-                                  print(f"  Commit activity not ready (empty response), retrying in 5s...")
+                                  print(f"  Commit activity not ready (empty response), retrying in 20s...")
                                   time.sleep(20)
                               continue
 
@@ -74,7 +78,7 @@ jobs:
                               parsed = json.loads(body)
                           except json.JSONDecodeError:
                               if attempt < 2:
-                                  print(f"  Commit activity not ready (invalid JSON), retrying in 5s...")
+                                  print(f"  Commit activity not ready (invalid JSON), retrying in 20s...")
                                   time.sleep(20)
                               continue
 
@@ -83,7 +87,7 @@ jobs:
                               break
                           else:
                               if attempt < 2:
-                                  print(f"  Commit activity not ready (got {type(parsed).__name__}), retrying in 5s...")
+                                  print(f"  Commit activity not ready (got {type(parsed).__name__}), retrying in 20s...")
                                   time.sleep(20)
 
                       if commit_data is None:
@@ -183,6 +187,7 @@ jobs:
                           )
 
                       result_data["releases"] = {
+                          "collected_at": now_iso,
                           "summary": summary,
                           "all": new_releases,
                       }
@@ -196,6 +201,7 @@ jobs:
                           existing_weekly[entry["week_start"]] = entry
                       existing_weekly.update(new_weekly)
                       result_data["commits"] = {
+                          "collected_at": now_iso,
                           "weekly": sorted(
                               existing_weekly.values(),
                               key=lambda x: x["week_start"],

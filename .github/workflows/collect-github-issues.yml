@@ -44,11 +44,24 @@ jobs:
           MAINTAINER_ROLES = {"OWNER", "MEMBER", "COLLABORATOR"}
           SELF_FILED_ROLES = {"OWNER", "MEMBER"}
           ISSUE_CAP = 500
+          # Version of the summary/history definitions. v2: closed counts and
+          # close medians are computed over the community creation cohort
+          # (created in the trailing 365 days; self-filed OWNER/MEMBER and
+          # bot-authored items excluded), issues and PRs separately; open
+          # counts/ages come only from the complete open scan; the response
+          # percentage and first-response medians are no longer emitted (the
+          # capped comment scan cannot support them).
+          DEFINITION_VERSION = 2
 
-          today = datetime.now(timezone.utc)
-          today_str = today.date().isoformat()
-          since_date = (today - timedelta(days=365)).date().isoformat()
-          cutoff_365d = since_date
+          now = datetime.now(timezone.utc)
+          today_str = now.date().isoformat()
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
+          since_date = (now - timedelta(days=365)).date().isoformat()
+          # Inclusive-of-today 365-day cohort window (364-day offset, same
+          # arithmetic as the dashboard's release windows). The API fetch
+          # window above is one day wider, which is harmless: it only needs
+          # to cover the cohort.
+          cutoff_365d = (now - timedelta(days=364)).date().isoformat()
 
           def parse_dt(s):
               if not s:
@@ -61,6 +74,35 @@ jobs:
               dt_start = parse_dt(start) if isinstance(start, str) else start
               dt_end = parse_dt(end) if isinstance(end, str) else end
               return round((dt_end - dt_start).total_seconds() / 3600, 1)
+
+          def fetch_all_pages(path):
+              """Fetch every page of a list endpoint; None on any failure.
+
+              gh api --paginate merges REST array pages into one JSON array.
+              A nonzero exit (including mid-pagination failure) or an
+              unparseable body returns None, so a truncated fetch can never
+              be mistaken for a complete one.
+              """
+              try:
+                  result = subprocess.run(
+                      ["gh", "api", path, "--paginate"],
+                      capture_output=True, text=True, timeout=120,
+                  )
+              except Exception as e:
+                  print(f"::warning::API call raised for {path}: {e}")
+                  return None
+              if result.returncode != 0:
+                  print(f"::warning::API failed for {path}: {result.stderr}")
+                  return None
+              try:
+                  items = json.loads(result.stdout)
+              except json.JSONDecodeError as e:
+                  print(f"::warning::Unparseable API response for {path}: {e}")
+                  return None
+              if not isinstance(items, list):
+                  print(f"::warning::Unexpected API response shape for {path}")
+                  return None
+              return items
 
           for repo, folder in REPOS.items():
               try:
@@ -77,26 +119,23 @@ jobs:
                       except (json.JSONDecodeError, KeyError) as e:
                           print(f"::warning::Corrupt data file for {repo}, starting fresh: {e}")
 
-                  # Fetch issues updated in last 365 days
-                  result = subprocess.run(
-                      [
-                          "gh", "api",
-                          f"repos/{repo}/issues?state=all&since={since_date}&per_page=100",
-                          "--paginate",
-                      ],
-                      capture_output=True, text=True, timeout=60
+                  # Fetch issues updated in last 365 days (windowed activity
+                  # fetch; the complete open scan below is separate)
+                  api_issues = fetch_all_pages(
+                      f"repos/{repo}/issues?state=all&since={since_date}&per_page=100"
                   )
-                  if result.returncode != 0:
-                      print(f"::warning::Issues API failed for {repo}: {result.stderr}")
+                  if api_issues is None:
+                      print(f"::warning::Issues API failed for {repo}")
                       continue
 
-                  api_issues = json.loads(result.stdout)
-                  if len(api_issues) > ISSUE_CAP:
+                  capped = len(api_issues) > ISSUE_CAP
+                  if capped:
                       print(f"::warning::{repo} has {len(api_issues)} issues, capping at {ISSUE_CAP}")
                       api_issues = api_issues[:ISSUE_CAP]
 
                   # Process each issue
                   new_issues = {}
+                  processing_failures = 0
                   for item in api_issues:
                       try:
                           number = item["number"]
@@ -155,6 +194,7 @@ jobs:
                           new_issues[number] = entry
                       except Exception as e:
                           print(f"::warning::Failed to process {repo}#{item.get('number', '?')}: {e}")
+                          processing_failures += 1
                           continue
 
                   # Merge: preserve old issues not in current API response
@@ -163,10 +203,19 @@ jobs:
 
                   # Reconcile removed entries: issues absent from the API
                   # (deleted accounts, transferred, etc.) are flagged so they
-                  # are excluded from all metrics.
-                  api_numbers = set(new_issues.keys())
+                  # are excluded from all metrics. State transitions require
+                  # evidence: a removal flag is cleared only when the item
+                  # was OBSERVED (successfully processed) this run, and set
+                  # only when it is absent from COMPLETE coverage. During a
+                  # capped or partially processed run, unobserved items keep
+                  # their prior state untouched in both directions.
+                  coverage_complete = not capped and processing_failures == 0
+                  observed_numbers = set(new_issues.keys())
                   for num, entry in merged_issues.items():
-                      if num not in api_numbers:
+                      if num in observed_numbers:
+                          if entry.get("removed"):
+                              del entry["removed"]
+                      elif coverage_complete and not entry.get("removed"):
                           entry["removed"] = True
                           if entry["state"] == "open":
                               entry["state"] = "closed"
@@ -175,8 +224,6 @@ jobs:
                               entry["time_to_close_hours"] = hours_between(
                                   entry["created_at"], entry["closed_at"]
                               )
-                      elif entry.get("removed"):
-                          del entry["removed"]
 
                   # Sort by number descending
                   issues_list = sorted(
@@ -188,91 +235,136 @@ jobs:
                   # Exclude removed issues (deleted/transferred) from metrics
                   active_issues = [i for i in issues_list if not i.get("removed")]
 
-                  # Compute summary
-                  open_issues = sum(
-                      1 for i in active_issues
-                      if i["type"] == "issue" and i["state"] == "open"
-                  )
-                  open_prs = sum(
-                      1 for i in active_issues
-                      if i["type"] == "pr" and i["state"] == "open"
-                  )
-                  closed_issues_365d = sum(
-                      1 for i in active_issues
-                      if i["type"] == "issue"
-                      and i["state"] == "closed"
-                      and i.get("closed_at")
-                      and i["closed_at"][:10] >= cutoff_365d
-                  )
-                  closed_prs_365d = sum(
-                      1 for i in active_issues
-                      if i["type"] == "pr"
-                      and i["state"] == "closed"
-                      and i.get("closed_at")
-                      and i["closed_at"][:10] >= cutoff_365d
-                  )
-
-                  # Exclude self-filed issues and bot-authored items from response/close metrics.
-                  # Bot detection uses the GitHub `[bot]` login suffix (dependabot[bot],
-                  # github-actions[bot], etc.). Dependabot PRs are merged within minutes
-                  # without human comment, which both deflates response_pct and the
-                  # time-to-close medians. The `(... or "")` guard tolerates legacy cache
-                  # entries where `author` may be missing or stored as None.
-                  external = [
+                  # Community creation cohort: items CREATED in the trailing
+                  # 365 days, excluding self-filed (OWNER/MEMBER) and
+                  # bot-authored items. Bot detection uses the GitHub `[bot]`
+                  # login suffix (dependabot[bot], github-actions[bot], etc.);
+                  # dependabot PRs are merged within minutes without human
+                  # comment, which would skew the close medians. The
+                  # `(... or "")` guard tolerates legacy cache entries where
+                  # `author` may be missing or stored as None.
+                  community = [
                       i for i in active_issues
                       if i.get("author_association") not in SELF_FILED_ROLES
                       and not (i.get("author") or "").endswith("[bot]")
+                      and (i.get("created_at") or "")[:10] >= cutoff_365d
                   ]
 
-                  # Exclude issues open for more than 5 years from
-                  # response/close metrics — stale PRs skew the averages
-                  MAX_HOURS = 5 * 365 * 24  # 43800h
-                  response_hours = [
-                      i["first_response_hours"] for i in external
-                      if i.get("first_response_hours") is not None
-                      and i["first_response_hours"] <= MAX_HOURS
-                  ]
-                  close_hours = [
-                      i["time_to_close_hours"] for i in external
-                      if i.get("time_to_close_hours") is not None
-                      and i["time_to_close_hours"] <= MAX_HOURS
-                  ]
-                  external_with_comments = [
-                      i for i in external if i.get("first_response_at") is not None
-                  ]
-                  external_total = len(external)
+                  def cohort_stats(items):
+                      closed = [
+                          i for i in items
+                          if i["state"] == "closed"
+                          and i.get("time_to_close_hours") is not None
+                      ]
+                      close_hours = [i["time_to_close_hours"] for i in closed]
+                      return {
+                          "created": len(items),
+                          "closed": len(closed),
+                          "median_close_hours": (
+                              round(statistics.median(close_hours), 1)
+                              if close_hours else None
+                          ),
+                      }
 
+                  issue_stats = cohort_stats([i for i in community if i["type"] == "issue"])
+                  pr_stats = cohort_stats([i for i in community if i["type"] == "pr"])
+
+                  # Maintainer workload context: PRs authored by OWNER/MEMBER
+                  # (non-bot) created in the same window. Complements the
+                  # community cohort; bot-authored PRs belong to neither and
+                  # are counted separately.
+                  maintainer_prs = [
+                      i for i in active_issues
+                      if i["type"] == "pr"
+                      and i.get("author_association") in SELF_FILED_ROLES
+                      and not (i.get("author") or "").endswith("[bot]")
+                      and (i.get("created_at") or "")[:10] >= cutoff_365d
+                  ]
+                  maintainer_pr_stats = cohort_stats(maintainer_prs)
+                  bot_prs_created = sum(
+                      1 for i in active_issues
+                      if i["type"] == "pr"
+                      and (i.get("author") or "").endswith("[bot]")
+                      and (i.get("created_at") or "")[:10] >= cutoff_365d
+                  )
+
+                  # A capped or partially processed fetch cannot support
+                  # complete-cohort claims: publish the coverage state and
+                  # null cohort fields instead of a fabricated small cohort.
                   summary = {
                       "as_of": today_str,
-                      "open_issues": open_issues,
-                      "open_prs": open_prs,
-                      "closed_issues_365d": closed_issues_365d,
-                      "closed_prs_365d": closed_prs_365d,
-                      "median_first_response_hours": (
-                          round(statistics.median(response_hours), 1)
-                          if response_hours else None
-                      ),
-                      "avg_first_response_hours": (
-                          round(sum(response_hours) / len(response_hours), 1)
-                          if response_hours else None
-                      ),
-                      "median_time_to_close_hours": (
-                          round(statistics.median(close_hours), 1)
-                          if close_hours else None
-                      ),
-                      "avg_time_to_close_hours": (
-                          round(sum(close_hours) / len(close_hours), 1)
-                          if close_hours else None
-                      ),
-                      "issues_with_response_pct": (
-                          round(len(external_with_comments) / external_total * 100, 1)
-                          if external_total > 0 else None
-                      ),
+                      "collected_at": now_iso,
+                      "definition_version": DEFINITION_VERSION,
+                      "coverage": "complete" if coverage_complete else "incomplete",
+                      "community_issues_created_365d": issue_stats["created"] if coverage_complete else None,
+                      "community_issues_closed_365d": issue_stats["closed"] if coverage_complete else None,
+                      "community_issue_median_close_hours": issue_stats["median_close_hours"] if coverage_complete else None,
+                      "community_prs_created_365d": pr_stats["created"] if coverage_complete else None,
+                      "community_prs_closed_365d": pr_stats["closed"] if coverage_complete else None,
+                      "community_pr_median_close_hours": pr_stats["median_close_hours"] if coverage_complete else None,
+                      "maintainer_prs_created_365d": maintainer_pr_stats["created"] if coverage_complete else None,
+                      "maintainer_prs_closed_365d": maintainer_pr_stats["closed"] if coverage_complete else None,
+                      "bot_prs_created_365d": bot_prs_created if coverage_complete else None,
                   }
 
+                  # Complete open scan (no since filter, every page): the
+                  # authoritative backlog. Only a fully successful scan yields
+                  # an observation; a failed or truncated scan produces none
+                  # for today and the previous observation is carried with its
+                  # own timestamp, never re-dated.
+                  open_scan = None
+                  open_items = fetch_all_pages(
+                      f"repos/{repo}/issues?state=open&per_page=100"
+                  )
+                  if open_items is not None:
+                      open_issue_items = [i for i in open_items if "pull_request" not in i]
+                      open_pr_items = [i for i in open_items if "pull_request" in i]
+
+                      def median_age_days(items):
+                          ages = [
+                              round((now - parse_dt(i["created_at"])).total_seconds() / 86400, 1)
+                              for i in items if i.get("created_at")
+                          ]
+                          return round(statistics.median(ages), 1) if ages else None
+
+                      open_scan = {
+                          "observed_at": now_iso,
+                          "open_issues": len(open_issue_items),
+                          "open_prs": len(open_pr_items),
+                          "issue_median_age_days": median_age_days(open_issue_items),
+                          "pr_median_age_days": median_age_days(open_pr_items),
+                      }
+                  else:
+                      print(f"::warning::Open scan failed for {repo}; no backlog observation today")
+
+                  carried_open_scan = open_scan or existing_data.get("open_scan")
+
+                  # Daily history: append today's summary (plus the open-scan
+                  # observation when one exists). Keyed by date, newest first,
+                  # never trimmed.
+                  history = {
+                      e["date"]: e
+                      for e in existing_data.get("history", [])
+                      if isinstance(e, dict) and e.get("date")
+                  }
+                  history_entry = dict(summary)
+                  history_entry["date"] = today_str
+                  if open_scan is not None:
+                      history_entry["open_scan"] = open_scan
+                  else:
+                      prior_today = history.get(today_str)
+                      if isinstance(prior_today, dict) and prior_today.get("open_scan"):
+                          history_entry["open_scan"] = prior_today["open_scan"]
+                  history[today_str] = history_entry
+                  history_list = sorted(
+                      history.values(), key=lambda e: e["date"], reverse=True
+                  )
+
                   result_data = {
-                      "schema_version": 1,
+                      "schema_version": 2,
                       "summary": summary,
+                      "open_scan": carried_open_scan,
+                      "history": history_list,
                       "issues": issues_list,
                   }
 
@@ -284,10 +376,12 @@ jobs:
                       f.write("\n")
                   os.replace(tmp_path, json_path)
 
-                  closed_365d = closed_issues_365d + closed_prs_365d
-                  median_h = summary["median_first_response_hours"]
-                  median_str = f"{median_h}h" if median_h is not None else "n/a"
-                  print(f"{folder}: {open_issues} open, {closed_365d} closed (365d), median response {median_str}")
+                  scan_str = (
+                      f"{open_scan['open_issues']}+{open_scan['open_prs']} open (scanned)"
+                      if open_scan else "open scan failed"
+                  )
+                  closed_str = f"{issue_stats['closed']}+{pr_stats['closed']} community closed (365d cohort)"
+                  print(f"{folder}: {scan_str}, {closed_str}")
 
               except Exception as e:
                   print(f"::warning::Failed to process {repo}: {e}")

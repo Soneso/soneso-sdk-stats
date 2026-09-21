@@ -1,0 +1,83 @@
+{
+  "_readme": "Production users with public dependency or usage evidence. Examples, never a census. An entry renders only when it has a well-formed http(s) evidence url AND a verified ISO date set by the maintainer. evidence_kind: dependency-manifest (strongest), contribution (PR/commits from the user's engineers), fork, public-statement. Optional affiliation_url: a second public link establishing the connection between the evidence author and the named project, when the evidence itself does not show it.",
+  "users": [
+    {
+      "sdk": "ios",
+      "name": "LOBSTR",
+      "evidence_kind": "contribution",
+      "url": "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+      "verified": "2026-09-22",
+      "affiliation_url": "https://github.com/search?q=author%3Agpg4+org%3ALobstrco&type=commits"
+    },
+    {
+      "sdk": "ios",
+      "name": "Unstoppable Wallet",
+      "evidence_kind": "dependency-manifest",
+      "url": "https://github.com/horizontalsystems/StellarKit.Swift/blob/main/Package.swift",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "ios",
+      "name": "Tangem",
+      "evidence_kind": "fork",
+      "url": "https://github.com/tangem/stellar-ios-mac-sdk",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "flutter",
+      "name": "Beans App",
+      "evidence_kind": "public-statement",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5127263482",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "flutter",
+      "name": "Stack Wallet",
+      "evidence_kind": "dependency-manifest",
+      "url": "https://github.com/cypherstack/stack_wallet/blob/staging/scripts/app_config/templates/pubspec.template.yaml",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "flutter",
+      "name": "Defindex (PaltaLabs)",
+      "evidence_kind": "dependency-manifest",
+      "url": "VERIFY: Defindex repo manifest link",
+      "verified": null
+    },
+    {
+      "sdk": "flutter",
+      "name": "Meru",
+      "evidence_kind": "public-statement",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5064281566",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "php",
+      "name": "StellarChain.io",
+      "evidence_kind": "public-statement",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5028300091",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "php",
+      "name": "cNGN Stablecoin",
+      "evidence_kind": "dependency-manifest",
+      "url": "VERIFY: cNGN usage evidence link",
+      "verified": null
+    },
+    {
+      "sdk": "php",
+      "name": "PHP Anchor SDK",
+      "evidence_kind": "dependency-manifest",
+      "url": "https://github.com/Argo-Navis-Dev/php-anchor-sdk/blob/main/composer.json",
+      "verified": "2026-09-22"
+    },
+    {
+      "sdk": "php",
+      "name": "Montelibero",
+      "evidence_kind": "public-statement",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5078950513",
+      "verified": "2026-09-22"
+    }
+  ]
+}
