@@ -62,6 +62,17 @@ jobs:
               dt_end = parse_dt(end) if isinstance(end, str) else end
               return round((dt_end - dt_start).total_seconds() / 3600, 1)
 
+          def response_ts(event, ts_key, item_author):
+              # A qualifying maintainer response: human maintainer account,
+              # not the item's own author. Pending reviews have no
+              # submitted_at and are skipped.
+              login = ((event.get("user") or {}).get("login") or "")
+              if not login or login == item_author or login.endswith("[bot]"):
+                  return None
+              if event.get("author_association") not in MAINTAINER_ROLES:
+                  return None
+              return event.get(ts_key)
+
           for repo, folder in REPOS.items():
               try:
                   # Load existing data for caching
@@ -128,7 +139,10 @@ jobs:
                               entry["first_response_at"] = cached["first_response_at"]
                               entry["first_response_hours"] = cached["first_response_hours"]
                           else:
-                              # Fetch comments to find first maintainer response
+                              # First maintainer response: earliest of issue
+                              # comments and, for PRs, submitted reviews
+                              author = entry["author"]
+                              candidates = []
                               try:
                                   time.sleep(0.5)
                                   cr = subprocess.run(
@@ -139,18 +153,39 @@ jobs:
                                       capture_output=True, text=True, timeout=30
                                   )
                                   if cr.returncode == 0:
-                                      comments = json.loads(cr.stdout)
-                                      for comment in comments:
-                                          if comment.get("author_association") in MAINTAINER_ROLES:
-                                              entry["first_response_at"] = comment["created_at"]
-                                              entry["first_response_hours"] = hours_between(
-                                                  created_at, comment["created_at"]
-                                              )
+                                      for comment in json.loads(cr.stdout):
+                                          ts = response_ts(comment, "created_at", author)
+                                          if ts:
+                                              candidates.append(ts)
                                               break
                                   else:
                                       print(f"::warning::Comments API failed for {repo}#{number}: {cr.stderr}")
                               except Exception as e:
                                   print(f"::warning::Comments fetch failed for {repo}#{number}: {e}")
+                              if is_pr:
+                                  try:
+                                      time.sleep(0.5)
+                                      rr = subprocess.run(
+                                          [
+                                              "gh", "api",
+                                              f"repos/{repo}/pulls/{number}/reviews?per_page=30",
+                                          ],
+                                          capture_output=True, text=True, timeout=30
+                                      )
+                                      if rr.returncode == 0:
+                                          for review in json.loads(rr.stdout):
+                                              ts = response_ts(review, "submitted_at", author)
+                                              if ts:
+                                                  candidates.append(ts)
+                                                  break
+                                      else:
+                                          print(f"::warning::Reviews API failed for {repo}#{number}: {rr.stderr}")
+                                  except Exception as e:
+                                      print(f"::warning::Reviews fetch failed for {repo}#{number}: {e}")
+                              if candidates:
+                                  first = min(candidates, key=parse_dt)
+                                  entry["first_response_at"] = first
+                                  entry["first_response_hours"] = hours_between(created_at, first)
 
                           new_issues[number] = entry
                       except Exception as e:
