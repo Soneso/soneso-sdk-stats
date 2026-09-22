@@ -6,15 +6,15 @@
     "label": "KMP",
     "repository_url": "https://github.com/Soneso/kmp-stellar-sdk"
   },
-  "as_of": "2026-09-22T12:38:36Z",
+  "as_of": "2026-09-22T14:32:28.530256Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-09-22T13:58:21.041991Z",
-    "as_of": "2026-09-22T12:38:36Z",
-    "build_commit": "fd7469f3e15b06e5a59aa1ee90c59f7c165096e6",
+    "generated_at": "2026-09-22T14:32:28.564595Z",
+    "as_of": "2026-09-22T14:32:28.530256Z",
+    "build_commit": "c12a07fa7569477bafea38d9580c722e3ef78c23",
     "working_tree_dirty": true,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/fd7469f3e15b06e5a59aa1ee90c59f7c165096e6/docs/index.html#L286",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/c12a07fa7569477bafea38d9580c722e3ef78c23/docs/index.html#L287",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
@@ -646,7 +646,7 @@
       ]
     },
     "scarf.downloads_90d": {
-      "value": 32507,
+      "value": 32528,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
@@ -665,7 +665,7 @@
       ]
     },
     "scarf.unique_sources_90d": {
-      "value": 2678,
+      "value": 2680,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
@@ -871,8 +871,8 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "Not tracked for Gradle/Maven.",
-      "observed_at": "2026-09-20",
-      "freshness": "stale",
+      "observed_at": "2026-09-21",
+      "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
