@@ -274,6 +274,7 @@ h3{font-size:0.95rem}
 <!-- Data sources, freshness, definitions -->
 <div class="card">
   <h2>Data Sources and Freshness</h2>
+  <p>Profiles: <a href="profiles/index.json">download JSON index</a>.</p>
   <div style="overflow-x:auto">
     <table class="evidence-table">
     <tr><th style="color:#FF6B4A">iOS</th><td>Clone traffic<br><span class="muted">2026-09-21 18:33</span></td><td>Repo metadata<br><span class="muted">2026-09-21 18:33</span></td><td>Commit activity<br><span class="muted">2026-09-21 18:33</span></td><td>Releases<br><span class="muted">2026-09-21 18:33</span></td><td>Issues/PRs (windowed)<br><span class="muted">2026-09-21 20:50</span></td><td>Response events<br><span class="muted">2026-09-21 20:50</span></td><td>Open backlog scan<br><span class="muted">2026-09-21 20:50</span></td></tr>
@@ -285,6 +286,7 @@ h3{font-size:0.95rem}
   <div class="definitions">
     <h3>Definitions</h3>
     <ul>
+      <li id="definitions">Profiles export this dashboard's raw signals, samples, coverage, freshness, and evidence following the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-profile proposal</a>; uncollected signals and percentiles are null with reasons. There is no comparison pool or combined score.</li>
       <li>All times are UTC. Each source shows its own last successful collection time; a green build never implies every source is fresh.</li>
       <li>Release cadence (shown on the maintenance cards as median release gap): median gap in days between stable (non-prerelease) GitHub releases, over gaps whose later release falls in the trailing 365 days. GitHub publication is the shipping proxy; registry artifacts may lag briefly.</li>
       <li>Commit activity: GitHub's per-day commit counts for the default branch, shown for the trailing 365 days.</li>

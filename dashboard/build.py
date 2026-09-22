@@ -12,8 +12,11 @@ data sources and definitions at the end.
 
 import html as html_mod
 import json
+import math
 import os
 import statistics
+import subprocess
+import tempfile
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from string import Template
@@ -45,6 +48,104 @@ CUTOFF_DAYS = 365
 
 NOW = datetime.now(timezone.utc)
 TODAY = NOW.date()
+
+DEFINITION_VERSION = "dashboard-v1-response-v3"
+REPOSITORY_URL = "https://github.com/Soneso/soneso-sdk-stats"
+DASHBOARD_URL = "https://soneso.github.io/soneso-sdk-stats/"
+PROFILE_PROPOSAL_URL = "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
+
+
+class Signals(dict):
+    """Capture raw headlines at their rendering site, after the page's gates.
+
+    Snapshots and profiles consume these records, never recalculate metrics
+    from the source JSON. Observation time is independent of generation time.
+    """
+
+    @staticmethod
+    def clean(value):
+        """JSON-safe copy of a structured value, or (None, False) on any
+        non-finite number, non-string key, or unsupported type. Exported
+        records must serialize under allow_nan=False."""
+        if value is None or isinstance(value, str):
+            return value, True
+        if isinstance(value, bool):
+            return None, False
+        if isinstance(value, int):
+            return value, True
+        if isinstance(value, float):
+            return (value, True) if math.isfinite(value) else (None, False)
+        if isinstance(value, dict):
+            out = {}
+            for k, v in value.items():
+                cv, ok = Signals.clean(v)
+                if not isinstance(k, str) or not ok:
+                    return None, False
+                out[k] = cv
+            return out, True
+        if isinstance(value, (list, tuple)):
+            out = []
+            for v in value:
+                cv, ok = Signals.clean(v)
+                if not ok:
+                    return None, False
+                out.append(cv)
+            return out, True
+        return None, False
+
+    def add(self, key, value, window, observed_at=None, *, unit="count",
+            sample_size=None, evidence_urls=(), reason=None, coverage=None,
+            numeric=True, window_end=None):
+        if numeric:
+            if not is_num(value) or (isinstance(value, float) and not math.isfinite(value)):
+                value = None
+        else:
+            value, _ = self.clean(value)
+        if not (isinstance(sample_size, int) and not isinstance(sample_size, bool)
+                and sample_size >= 0):
+            sample_size = None
+        if not isinstance(window, str):
+            window = "unknown"
+        if not isinstance(window_end, str):
+            window_end = None
+        if value is None:
+            reason = reason or "Missing, malformed, or incomplete source data."
+        observed = parse_dt(observed_at)
+        self[key] = {
+            "value": value, "unit": unit, "sample_size": sample_size,
+            "window": window, "window_end": window_end,
+            "coverage": coverage or ("complete" if value is not None else "incomplete"),
+            "reason": reason, "observed_at": observed_at if observed else None,
+            "freshness": ("not_applicable" if window in {"curated_snapshot", "mainnet_activation", "Q3 2026 proposal thread"} else
+                          "unknown" if observed is None else
+                          "stale" if observed < NOW - timedelta(hours=48) else "fresh"),
+            "evidence_urls": list(dict.fromkeys(u for u in evidence_urls if valid_evidence_url(u))),
+            "percentile": None, "percentile_reason": "No comparison pool is maintained.",
+            "pool_size": None, "pool_size_reason": "No comparison pool is maintained.",
+        }
+
+
+def build_provenance():
+    """Record the source checkout; never invent a commit for exported data."""
+    commit = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=Path(__file__).resolve().parent.parent, text=True).strip()
+    dirty = bool(subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=normal"],
+        cwd=Path(__file__).resolve().parent.parent, text=True).strip())
+    committed_page = subprocess.check_output(
+        ["git", "show", f"{commit}:docs/index.html"],
+        cwd=Path(__file__).resolve().parent.parent, text=True)
+    definition_line = next((i for i, line in enumerate(committed_page.splitlines(), 1)
+                            if ">Definitions</h3>" in line), 1)
+    return {
+        "definition_version": DEFINITION_VERSION,
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "as_of": NOW.astimezone(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "build_commit": commit, "working_tree_dirty": dirty,
+        "dashboard_url": DASHBOARD_URL + "#definitions",
+        "definitions_at_commit": REPOSITORY_URL + f"/blob/{commit}/docs/index.html#L{definition_line}",
+        "proposal_url": PROFILE_PROPOSAL_URL,
+    }
 
 
 def load_json(path):
@@ -555,9 +656,11 @@ def stat_row(label, value, muted=False):
             f'<span class="sdk-stat-value"{style}>{value}</span></div>')
 
 
-def response_rows(summary):
+def response_rows(summary, signals=None, evidence=None):
     """Only complete v3 response observations can support A of N claims."""
     rows = []
+    signals = signals if signals is not None else Signals()
+    evidence = evidence or {}
     available = (summary.get("definition_version") == 3
                  and summary.get("coverage", "complete") == "complete"
                  and summary.get("response_coverage") == "complete")
@@ -565,6 +668,15 @@ def response_rows(summary):
                                 ("prs", "Community PRs", "community PRs")):
         prefix = f"community_{kind}_"
         get = lambda key: summary.get(prefix + key) if available else None
+        keys = ("response_eligible_90d", "answered_within_48h_90d", "median_first_response_hours",
+                "unanswered_90d", "pending_90d", "unknown_attribution_90d", "unknown_clock_90d")
+        def record(key, value, **kwargs):
+            signals.add(f"{kind}.{key}", value, "90d", summary.get("response_collected_at"),
+                        unit="hours" if key == "median_first_response_hours" else "count",
+                        evidence_urls=evidence.get(kind, []),
+                        window_end=summary.get("collected_at"), **kwargs)
+        for key in keys:
+            record(key, None)
         n, a = get("response_eligible_90d"), get("answered_within_48h_90d")
         counts_ok = all(isinstance(v, int) and not isinstance(v, bool) and v >= 0 for v in (n, a))
         if not counts_ok or a > n:
@@ -573,27 +685,41 @@ def response_rows(summary):
             continue
         rows.append(stat_row(f"{label} answered within 48h (90d)",
                              f"{a} of {n}" if n else "no eligible items", muted=n == 0))
+        record("response_eligible_90d", n, sample_size=n)
+        record("answered_within_48h_90d", a, sample_size=n)
         median = get("median_first_response_hours")
         unanswered = get("unanswered_90d")
         median_text = ("not applicable" if n == 0 or unanswered == n else format_hours(median))
+        no_answers = n == 0 or unanswered == n
+        answered_sample = n - unanswered if isinstance(unanswered, int) and not isinstance(unanswered, bool) and 0 <= unanswered <= n else None
+        record("median_first_response_hours", None if no_answers else median,
+               sample_size=answered_sample,
+               coverage="not_applicable" if no_answers else None,
+               reason="No answered eligible items." if no_answers else None)
         rows.append(stat_row(f"Median first response ({inline}, 90d)", median_text, muted=not is_num(median)))
         context = []
         for key, text in (("unanswered_90d", "unanswered eligible"), ("pending_90d", "pending"),
                           ("unknown_attribution_90d", "unknown attribution"), ("unknown_clock_90d", "unknown clock")):
             count = get(key)
+            record(key, count)
             if is_num(count) and count > 0:
                 context.append(f"{format_number(count)} {text}")
         if context:
             rows.append(stat_row(f"{label} response context (90d)", esc(", ".join(context)), muted=True))
     disposition = [summary.get(f"community_prs_{key}_90d") if available else None
                    for key in ("merged", "closed_without_merge", "still_open")]
+    disposition_ok = all(is_num(n) for n in disposition)
+    for key, value in zip(("merged", "closed_without_merge", "still_open"), disposition):
+        signals.add(f"prs.{key}_90d", value if disposition_ok else None, "90d",
+                    summary.get("response_collected_at"), evidence_urls=evidence.get("prs", []),
+                    window_end=summary.get("collected_at"))
     text = (f"{format_number(disposition[0])} merged, {format_number(disposition[1])} closed without merge, "
             f"{format_number(disposition[2])} open" if all(is_num(n) for n in disposition) else "n/a")
     rows.append(stat_row("Community PR disposition (90d)", esc(text), muted=True))
     return rows
 
 
-def response_evidence(issues):
+def response_evidence(issues, evidence=None):
     summary = issues["summary"]
     complete = (summary.get("definition_version") == 3
                 and summary.get("coverage", "complete") == "complete"
@@ -605,11 +731,15 @@ def response_evidence(issues):
         status = status_labels.get(str(item.get("response_status")), "n/a") if complete else "n/a (incomplete collection)"
         label = f"#{item.get('number', '?')} {item.get('type', 'item')}: {status}"
         url = item.get("url")
+        urls = evidence.setdefault("prs" if item.get("type") == "pr" else "issues", []) if evidence is not None else []
+        if valid_evidence_url(url):
+            urls.append(url)
         link = f'<a href="{esc(url)}">{esc(label)}</a>' if valid_evidence_url(url) else esc(label)
         response = item.get("response")
         if complete and isinstance(response, dict) and response.get("definition_version") == 3:
             evidence_url = response.get("url")
             if valid_evidence_url(evidence_url):
+                urls.append(evidence_url)
                 detail = f"{response.get('kind', 'response')} by {response.get('actor', '?')} ({format_hours(response.get('hours'))})"
                 link += f' <a href="{esc(evidence_url)}">{esc(detail)}</a>'
         links.append(f"<li>{link}</li>")
@@ -619,12 +749,12 @@ def response_evidence(issues):
     return '<details class="response-evidence"><summary>Response evidence (90d)</summary>' + content + '</details>'
 
 
-def build_protocol_delivery():
+def build_protocol_delivery(signals=None):
     """Publish only maintainer-verified upgrades with complete evidence."""
     data = load_json(ROOT / "curated" / "protocol-delivery.json")
     entries = as_list(data.get("upgrades")) if isinstance(data, dict) else []
     rows = []
-    for entry in entries:
+    for entry_index, entry in enumerate(entries):
         if not isinstance(entry, dict) or not valid_verified_date(entry.get("verified")):
             continue
         activation = entry.get("mainnet_activation_date")
@@ -642,6 +772,8 @@ def build_protocol_delivery():
         for sdk in ACTIVE_SDKS:
             release = releases.get(sdk["key"])
             value = "n/a"
+            delta, shipped = None, None
+            evidence = [entry["activation_url"]] + [c["url"] for c in caps]
             if isinstance(release, dict) and valid_evidence_url(release.get("url")) and isinstance(release.get("tag"), str):
                 published = parse_dt(release.get("published_at"))
                 if published:
@@ -651,6 +783,16 @@ def build_protocol_delivery():
                     lag = (f"shipped {abs(delta)} {unit} before activation" if delta < 0 else
                            f"shipped {delta} {unit} after activation" if delta > 0 else "shipped on activation day")
                     value = f'<a href="{esc(release["url"])}">{esc(release["tag"])}</a> ({esc(shipped.isoformat())})<br>{esc(lag)}'
+                    evidence.append(release["url"])
+            if signals is not None:
+                key = f"protocol.{entry_index}.lag_days"
+                signals[sdk["key"]].add(key, delta, "mainnet_activation", entry["verified"],
+                                        unit="days", evidence_urls=evidence)
+                signals[sdk["key"]][key]["protocol"] = {
+                    "name": entry["name"], "mainnet_activation_date": activation,
+                    "release_tag": release["tag"] if shipped else None,
+                    "release_date": shipped.isoformat() if shipped else None,
+                }
             rows.append(f'<tr><td>{upgrade}</td><td>{activation_link}</td><td>{esc(sdk["label"])}</td>'
                         f'<td>{value}</td><td>{esc(entry["verified"])}</td></tr>')
     content = ('<div style="overflow-x:auto"><table class="evidence-table"><thead><tr>'
@@ -660,7 +802,7 @@ def build_protocol_delivery():
     return '<div class="card"><h2>Protocol Delivery</h2>' + content + '</div>'
 
 
-def build_maintenance_cards(all_data):
+def build_maintenance_cards(all_data, signals=None):
     """Per-SDK maintenance evidence. Small cohorts show A/N counts, never
     percentages; zero open items reads as a real zero with age not
     applicable; missing collection reads n/a, never zero."""
@@ -671,6 +813,23 @@ def build_maintenance_cards(all_data):
         summary = sd["issues"]["summary"]
         open_scan = sd["issues"]["open_scan"]
         rows = []
+        metrics = signals[sdk["key"]] if signals is not None else Signals()
+        evidence = {}
+        evidence_html = response_evidence(sd["issues"], evidence)
+        for key, window, unit, empty_reason in (
+                ("median_gap_days_365d", "365d", "days", "No qualifying stable-release gaps in the 365-day window."),
+                ("days_since_last", "since_last_release", "days", "No stable releases."),
+                ("count_90d", "90d", "count", None), ("count_365d", "365d", "count", None)):
+            available = sd["activity"]["releases_available"]
+            # A successfully collected but empty release history is a real
+            # empty state (not applicable), not a collection gap.
+            empty = available and rs[key] is None and empty_reason is not None
+            metrics.add("release." + key, rs[key] if available else None,
+                        window, sd["activity"]["releases_collected_at"], unit=unit,
+                        sample_size=rs["gap_count_365d"] if key == "median_gap_days_365d" and available else None,
+                        coverage="not_applicable" if empty else None,
+                        reason=empty_reason if empty else None,
+                        window_end=TODAY.isoformat())
 
         if not sd["activity"]["releases_available"]:
             rows.append(stat_row("Release cadence", "n/a (no release data collected)", muted=True))
@@ -701,10 +860,35 @@ def build_maintenance_cards(all_data):
         else:
             rows.append(stat_row("Open issues / PRs", "n/a (no completed scan)", muted=True))
 
+        for kind, singular in (("issues", "issue"), ("prs", "pr")):
+            scan = open_scan or {}
+            count, age = scan.get("open_" + kind), scan.get(singular + "_median_age_days")
+            metrics.add(f"{kind}.open_count", count, "open_snapshot", scan.get("observed_at"))
+            no_items = count == 0 and not is_num(age)
+            metrics.add(f"{kind}.open_median_age_days", age, "open_snapshot", scan.get("observed_at"),
+                        unit="days", sample_size=count,
+                        coverage="not_applicable" if no_items else None,
+                        reason="No open items." if no_items else None)
+            for field in ("created_365d", "closed_365d", "median_close_hours"):
+                metrics.add(f"{kind}.{field}", None, "365d", summary.get("collected_at"),
+                            unit="hours" if field == "median_close_hours" else "count")
+        for field in ("created_365d", "closed_365d"):
+            metrics.add("maintainer_prs." + field, None, "365d", summary.get("collected_at"))
+
         if summary and summary.get("coverage", "complete") != "complete":
             rows.append(stat_row("Community cohort (365d)", "n/a (incomplete collection)", muted=True))
         elif summary:
             def cohort_rows(kind_label, created, closed, median):
+                kind = "issues" if kind_label == "issues" else "prs"
+                if is_num(created) and is_num(closed):
+                    for field, value in (("created_365d", created), ("closed_365d", closed)):
+                        metrics.add(f"{kind}.{field}", value, "365d", summary.get("collected_at"),
+                                    window_end=summary.get("collected_at"))
+                    metrics.add(f"{kind}.median_close_hours", median if created != 0 else None,
+                                "365d", summary.get("collected_at"), unit="hours", sample_size=closed,
+                                coverage="not_applicable" if created == 0 else None,
+                                reason="No eligible items." if created == 0 else None,
+                                window_end=summary.get("collected_at"))
                 if not is_num(created) or not is_num(closed):
                     rows.append(stat_row(f"Community {kind_label} (365d)", "n/a", muted=True))
                 elif created == 0:
@@ -724,16 +908,18 @@ def build_maintenance_cards(all_data):
             m_created = summary.get("maintainer_prs_created_365d")
             m_closed = summary.get("maintainer_prs_closed_365d")
             if is_num(m_created) and is_num(m_closed):
+                metrics.add("maintainer_prs.created_365d", m_created, "365d", summary.get("collected_at"), window_end=summary.get("collected_at"))
+                metrics.add("maintainer_prs.closed_365d", m_closed, "365d", summary.get("collected_at"), window_end=summary.get("collected_at"))
                 rows.append(stat_row("Maintainer PRs (365d)", f"{m_created} opened, {m_closed} closed"))
         else:
             rows.append(stat_row("Community cohort (365d)", "n/a", muted=True))
 
-        rows.extend(response_rows(summary))
+        rows.extend(response_rows(summary, metrics, evidence))
         rows_html = "\n    ".join(rows)
         cards.append(f'''<div class="sdk-card">
     <h3 style="color:{sdk["color"]}">{sdk["label"]}</h3>
     {rows_html}
-    {response_evidence(sd["issues"])}
+    {evidence_html}
   </div>''')
     return "\n  ".join(cards)
 
@@ -748,14 +934,18 @@ def usage_card(title, headline, chart_id):
     )
 
 
-def build_usage_cards(all_data):
+def build_usage_cards(all_data, signals=None):
     """The 2x2 usage-by-distribution-channel grid. The iOS card shows git
     clone traffic (the SPM/CocoaPods install path) and never uses the
     word downloads for it."""
     by_key = {sd["sdk"]["key"]: sd for sd in all_data}
     cards = []
+    signals = signals if signals is not None else {key: Signals() for key in by_key}
     if "ios" in ENABLED_SDKS:
         cl = by_key["ios"]["clones"]
+        for key, window in (("count_90d", "90d"), ("uniques_14d", "14d")):
+            signals["ios"].add("clones." + key, cl.get(key), window, cl.get("collected_at"),
+                               window_end=TODAY.isoformat() if key == "count_90d" else cl.get("collected_at"))
         headline = (
             f'Clones (last 90 days): {format_number(cl.get("count_90d"))}'
             f' &middot; unique cloners (last 14 days): {format_number(cl.get("uniques_14d"))}'
@@ -763,6 +953,8 @@ def build_usage_cards(all_data):
         cards.append(usage_card("Git Clones (iOS, SPM/CocoaPods install path)", headline, "chart-ios-clones"))
     if "flutter" in ENABLED_SDKS:
         latest = by_key["flutter"]["pubdev"]["latest"]
+        for key, window in (("download_count_52w", "52w"), ("download_count_30d", "30d")):
+            signals["flutter"].add("pubdev." + key, latest.get(key), window, by_key["flutter"]["pubdev"]["collected_at"])
         headline = (
             f'Downloads (last 52 weeks): {format_number(latest.get("download_count_52w"))}'
             f' &middot; downloads (last 30 days): {format_number(latest.get("download_count_30d"))}'
@@ -784,6 +976,9 @@ def build_usage_cards(all_data):
         last_full = None
         if mh and len(mh["months"]) >= 2:
             last_full = mh["months"][-2]
+        signals["php"].add("packagist.lifetime_downloads", lifetime, "lifetime", pk["collected_at"])
+        signals["php"].add("packagist.last_full_month_downloads", last_full["downloads"] if last_full else None,
+                           last_full["month"] if last_full else "last_full_month", mh.get("collected_at") if mh else None)
         headline = (
             f'Downloads (lifetime): {format_number(lifetime)}'
             + (f' &middot; last full month ({last_full["month"]}): {format_number(last_full["downloads"])}' if last_full else "")
@@ -791,6 +986,8 @@ def build_usage_cards(all_data):
         cards.append(usage_card("Packagist Monthly Downloads (PHP)", headline, "chart-packagist"))
     if "kmp" in ENABLED_SDKS:
         latest = by_key["kmp"]["scarf"]["latest"]
+        for key in ("downloads_90d", "unique_sources_90d"):
+            signals["kmp"].add("scarf." + key, latest.get(key), "90d", latest.get("as_of"))
         headline = (
             f'Downloads (last 90 days): {format_number(latest.get("downloads_90d"))}'
             f' &middot; unique sources (last 90 days): {format_number(latest.get("unique_sources_90d"))}'
@@ -804,12 +1001,11 @@ def build_usage_cards(all_data):
     return ""
 
 
-def build_usage_archive():
+def build_usage_archive(signals=None):
     """Curated usage evidence: verified production users and linked user
     statements. Entries render only after maintainer verification."""
     label_by_key = {s["key"]: s["label"] for s in SDKS}
     users = [u for u in load_curated("verified-users.json", "users") if u.get("sdk") in ENABLED_SDKS]
-    statements = [s for s in load_curated("user-statements.json", "statements") if s.get("sdk") in ENABLED_SDKS]
 
     if users:
         def evidence_cell(u):
@@ -818,21 +1014,27 @@ def build_usage_archive():
                 links += f', <a href="{esc(u["affiliation_url"])}">affiliation</a>'
             return links
 
-        def stars_cell(u):
+        def stars_cell(row_index, u):
             # A maintainer-set snapshot for open-source user projects;
             # closed-source or off-GitHub projects have no star count.
             stars = u.get("stars")
+            if signals is not None:
+                signals[u["sdk"]].add(f"production_user.{row_index}.stars", None,
+                                      "curated_snapshot", reason="No verified public repository star snapshot.")
             if (isinstance(stars, int) and not isinstance(stars, bool) and stars >= 0
                     and valid_evidence_url(u.get("repo_url"))
                     and valid_verified_date(u.get("stars_as_of"))):
+                if signals is not None:
+                    signals[u["sdk"]].add(f"production_user.{row_index}.stars", stars,
+                                          "curated_snapshot", u["stars_as_of"], evidence_urls=[u["repo_url"]])
                 return f'<a href="{esc(u["repo_url"])}">{format_number(stars)}</a>'
             return '<span class="muted">-</span>'
 
         user_rows = "\n      ".join(
             f'<tr><td>{esc(label_by_key.get(u["sdk"], u["sdk"]))}</td><td>{esc(u.get("name", ""))}</td>'
             f'<td>{esc(u.get("evidence_kind", ""))}</td>'
-            f'<td>{evidence_cell(u)}</td><td>{stars_cell(u)}</td><td>{esc(u.get("verified", ""))}</td></tr>'
-            for u in users
+            f'<td>{evidence_cell(u)}</td><td>{stars_cell(i, u)}</td><td>{esc(u.get("verified", ""))}</td></tr>'
+            for i, u in enumerate(users)
         )
         users_html = f'''<table class="evidence-table">
       <tr><th>SDK</th><th>Project</th><th>Evidence kind</th><th>Evidence</th><th>GitHub stars</th><th>Verified</th></tr>
@@ -847,7 +1049,7 @@ def build_usage_archive():
   </div>'''
 
 
-def build_community_feedback():
+def build_community_feedback(signals=None):
     """Compact feedback section: one line per SDK linking to the public
     PG Award proposal thread that holds the community comments, with the
     verified comment count. The full quotes stay in the curated JSON for
@@ -860,11 +1062,21 @@ def build_community_feedback():
         by_sdk.setdefault(st["sdk"], []).append(st)
     lines = []
     for sdk in ACTIVE_SDKS:
+        if signals is not None:
+            signals[sdk["key"]].add("feedback.verified_comments", None, "Q3 2026 proposal thread",
+                                     reason="No verified public comments are published.")
         entries = by_sdk.get(sdk["key"])
         if not entries:
             continue
         thread_url = entries[0]["url"].split("#")[0]
         n = len(entries)
+        if signals is not None:
+            # Each entry has its own verified date; do not invent a single
+            # collection timestamp for this manually curated collection.
+            signals[sdk["key"]].add("feedback.verified_comments", n, "Q3 2026 proposal thread",
+                                     evidence_urls=[thread_url],
+                                     reason="No shared collection timestamp; individual verified_dates are supplied.")
+            signals[sdk["key"]]["feedback.verified_comments"]["verified_dates"] = [e["verified"] for e in entries]
         lines.append(
             f'<div class="sdk-stat"><span class="sdk-stat-label" style="color:{color_by_key[sdk["key"]]}">'
             f'{esc(label_by_key[sdk["key"]])}</span><span class="sdk-stat-value">'
@@ -880,7 +1092,7 @@ def build_community_feedback():
 </div>'''
 
 
-def build_reach_cards(all_data):
+def build_reach_cards(all_data, signals=None):
     """Reach and history context, deliberately below the evidence sections."""
     cards = []
     for sd in all_data:
@@ -894,6 +1106,15 @@ def build_reach_cards(all_data):
         )
         rs = sd["release_stats"]
         dep = sd["dependents"]
+        metrics = signals[sdk["key"]] if signals is not None else Signals()
+        for key, value in (("stars", stars), ("forks", forks)):
+            metrics.add("reach." + key, value, "snapshot", sd["meta"]["repo_collected_at"])
+        metrics.add("release.all_time_count", releases_total, "lifetime", sd["activity"]["releases_collected_at"])
+        metrics.add("release.latest_stable", {"tag": rs["latest_tag"], "date": rs["latest_date"]} if rs["latest_tag"] else None,
+                    "latest", sd["activity"]["releases_collected_at"], numeric=False, unit="release")
+        metrics.add("release.first", sdk["first_release"], "first_release", numeric=False, unit="release",
+                    reason="Static repository history; observation time is not collected.")
+        metrics.add("reach.dependents", None, "snapshot", (dep or {}).get("as_of"))
 
         rows = [
             stat_row("Stars", format_number(stars)),
@@ -910,10 +1131,14 @@ def build_reach_cards(all_data):
             # a KMP zero is a blind spot, not a measured absence. A nonzero
             # count would mean the mapping started working and is shown.
             if sdk["key"] == "kmp" and total_dep == 0:
+                metrics.add("reach.dependents", None, "snapshot", dep.get("as_of"),
+                            coverage="not_applicable", reason="Not tracked for Gradle/Maven.")
                 rows.append(stat_row("Dependents (GitHub graph count)", "not tracked for Gradle/Maven", muted=True))
             else:
+                metrics.add("reach.dependents", total_dep, "snapshot", dep.get("as_of"))
                 rows.append(stat_row("Dependents (GitHub graph count)", format_number(total_dep)))
         elif sdk["key"] == "ios":
+            metrics.add("reach.dependents", None, "snapshot", coverage="not_applicable", reason="Not tracked for SPM.")
             rows.append(stat_row("Dependents (GitHub graph count)", "not tracked for SPM", muted=True))
 
         rows_html = "\n    ".join(rows)
@@ -973,6 +1198,7 @@ def build_freshness_section(all_data):
     table = "\n    ".join(rows)
     return f'''<div class="card">
   <h2>Data Sources and Freshness</h2>
+  <p>Profiles: <a href="profiles/index.json">download JSON index</a>.</p>
   <div style="overflow-x:auto">
     <table class="evidence-table">
     {table}
@@ -981,6 +1207,7 @@ def build_freshness_section(all_data):
   <div class="definitions">
     <h3>Definitions</h3>
     <ul>
+      <li id="definitions">Profiles export this dashboard's raw signals, samples, coverage, freshness, and evidence following the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-profile proposal</a>; uncollected signals and percentiles are null with reasons. There is no comparison pool or combined score.</li>
       <li>All times are UTC. Each source shows its own last successful collection time; a green build never implies every source is fresh.</li>
       <li>Release cadence (shown on the maintenance cards as median release gap): median gap in days between stable (non-prerelease) GitHub releases, over gaps whose later release falls in the trailing 365 days. GitHub publication is the shipping proxy; registry artifacts may lag briefly.</li>
       <li>Commit activity: GitHub's per-day commit counts for the default branch, shown for the trailing 365 days.</li>
@@ -1411,31 +1638,97 @@ window.addEventListener('resize', function() {
 </html>""")
 
 
-def generate():
+def render_dashboard():
+    """One rendering pass supplies both HTML and its captured raw headlines."""
     chart_data, all_data = build_data()
+    signals = {sdk["key"]: Signals() for sdk in ACTIVE_SDKS}
 
     today = NOW.strftime("%Y-%m-%d")
 
     html = HTML_TEMPLATE.substitute(
         last_updated=today,
         subtitle=build_subtitle(),
-        maintenance_cards=build_maintenance_cards(all_data),
-        usage_cards=build_usage_cards(all_data),
-        protocol_delivery=build_protocol_delivery(),
-        usage_archive=build_usage_archive(),
-        community_feedback=build_community_feedback(),
-        reach_cards=build_reach_cards(all_data),
+        maintenance_cards=build_maintenance_cards(all_data, signals),
+        usage_cards=build_usage_cards(all_data, signals),
+        protocol_delivery=build_protocol_delivery(signals),
+        usage_archive=build_usage_archive(signals),
+        community_feedback=build_community_feedback(signals),
+        reach_cards=build_reach_cards(all_data, signals),
         heatmap_divs=build_heatmap_divs(),
         heatmap_legend=build_heatmap_legend(),
         freshness_section=build_freshness_section(all_data),
         chart_data_json=json.dumps(chart_data, separators=(",", ":")).replace("</", "<\\/"),
     )
+    for sdk in ACTIVE_SDKS:
+        metrics = signals[sdk["key"]]
+        missing = {
+            "activity.days_since_last_push": ("since_last_push", "Pure push timestamps are not collected; commit dates are not push dates."),
+            "activity.non_merge_commits": ("not_configured", "Bot-filtered non-merge git-log counts are not collected; the heatmap uses GitHub daily counts."),
+            "issues.answered_within_7d": ("90d", "The dashboard publishes 48-hour A/N counts, not a seven-day response signal."),
+            "prs.answered_within_7d": ("90d", "The dashboard publishes 48-hour A/N counts, not a seven-day response signal."),
+            "maintainer_issues.created_90d": ("90d", "Separate maintainer issue counts are not published."),
+            "maintainer_prs.created_90d": ("90d", "Only the separate 365-day maintainer PR cohort is published."),
+            "host.contributor_activity": ("not_configured", "Contributor-scoped host-repository activity is not collected."),
+        }
+        if not any(key.startswith("protocol.") for key in metrics):
+            missing["protocol.lag_days"] = ("mainnet_activation", "No maintainer-verified protocol delivery rows are available.")
+        for key, (window, reason) in missing.items():
+            metrics.add(key, None, window, reason=reason,
+                        unit="days" if key.endswith(("days", "push")) else "count")
+        for key, signal in metrics.items():
+            prefix = key.split(".", 1)[0]
+            filename = {"release": "github-activity.json", "issues": "github-issues.json",
+                        "prs": "github-issues.json", "maintainer_prs": "github-issues.json",
+                        "clones": "github-clones.json", "pubdev": "pub-dev.json",
+                        "packagist": "packagist.json", "scarf": "scarf.json",
+                        "reach": "github-dependents.json" if key == "reach.dependents" else "github-meta.json"}.get(prefix)
+            curated = {"protocol": "protocol-delivery.json", "production_user": "verified-users.json",
+                       "feedback": "user-statements.json"}.get(prefix)
+            signal["source_files"] = ([f"curated/{curated}"] if curated else
+                                      [sdk["folder"] + "/" + filename] if filename else [])
+            if key in missing or key == "release.first" or (key == "reach.dependents" and sdk["key"] == "ios"):
+                signal["source_files"] = []
+    return html, signals
 
+
+def profile_documents(signals, methodology):
+    """Serialize the captured page values using the documented local schema."""
+    documents = {}
+    index = {"schema_version": 1, "methodology": methodology, "sdks": []}
+    for sdk in ACTIVE_SDKS:
+        filename = sdk["folder"] + ".json"
+        identity = {key: sdk[key] for key in ("key", "folder", "label")}
+        identity["repository_url"] = "https://github.com/Soneso/" + sdk["folder"]
+        documents[filename] = {
+            "schema_version": 1, "sdk": identity, "as_of": methodology["as_of"],
+            "methodology": methodology, "signals": signals[sdk["key"]],
+            "comparison_pool": None, "comparison_pool_reason": "No comparison pool is maintained.",
+        }
+        index["sdks"].append({**identity, "profile": filename})
+    documents["index.json"] = index
+    return {name: json.dumps(value, indent=2, allow_nan=False) + "\n" for name, value in documents.items()}
+
+
+def generate():
+    html, signals = render_dashboard()
+    documents = profile_documents(signals, build_provenance())
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    tmp = OUT.with_suffix(".tmp")
-    with open(tmp, "w") as f:
-        f.write(html)
-    os.replace(tmp, OUT)
+    profiles = OUT.parent / "profiles"
+    # Stage every artifact before replacing outputs. The workflow publishes
+    # page and profiles in one commit only after this entire step succeeds.
+    with tempfile.TemporaryDirectory(prefix=".dashboard-", dir=OUT.parent) as staging:
+        staging = Path(staging)
+        (staging / "page.html").write_text(html, encoding="utf-8")
+        for name, text in documents.items():
+            (staging / name).write_text(text, encoding="utf-8")
+        profiles.mkdir(exist_ok=True)
+        for name in documents:
+            os.replace(staging / name, profiles / name)
+        for sdk in SDKS:
+            name = sdk["folder"] + ".json"
+            if name not in documents:
+                (profiles / name).unlink(missing_ok=True)
+        os.replace(staging / "page.html", OUT)
     print(f"Dashboard written to {OUT}")
 
 

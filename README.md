@@ -42,10 +42,36 @@ Automated daily statistics for Soneso Stellar SDKs.
 | Data | Description | File |
 |------|-------------|------|
 | GitHub clones | Daily clone counts and unique cloners (14-day rolling window) | [github-clones.json](kmp-stellar-sdk/github-clones.json) |
+| Maven Central downloads | 90-day downloads and unique sources via the Scarf insights API | [scarf.json](kmp-stellar-sdk/scarf.json) |
 | GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](kmp-stellar-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](kmp-stellar-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](kmp-stellar-sdk/github-issues.json) |
 | GitHub dependents | Dependent open source repos and packages | [github-dependents.json](kmp-stellar-sdk/github-dependents.json) |
+
+## Curated evidence
+
+The [curated/](curated/) files hold maintainer-verified evidence: production
+users ([verified-users.json](curated/verified-users.json)), community
+feedback with verbatim public comments
+([user-statements.json](curated/user-statements.json)), and protocol
+delivery records ([protocol-delivery.json](curated/protocol-delivery.json)).
+An entry appears on the dashboard only with a public evidence URL and a
+maintainer-set ISO verification date.
+
+## Profiles and snapshots
+
+The daily build publishes machine-readable per-SDK profiles at
+[docs/profiles/](docs/profiles/) alongside the page: raw signal values,
+sample sizes, coverage states, freshness, and evidence URLs. The manual
+snapshot workflow freezes all inputs and headline values into an immutable
+`snapshots/<quarter>/` directory so cited numbers stay reproducible.
+Schema and contracts: [dashboard/exports.md](dashboard/exports.md).
+
+## Tests
+
+`python3 -m unittest discover -s tests` runs the offline regression suite
+against the collector code extracted from the workflows and the dashboard
+builder.
 
 ## Workflows
 
@@ -54,8 +80,10 @@ Automated daily statistics for Soneso Stellar SDKs.
 | Collect SDK Traffic Stats | 10:00 |
 | Collect Packagist Stats | 10:05 |
 | Collect pub.dev Stats | 10:10 |
+| Collect Scarf Stats | 10:15 |
 | Collect GitHub Meta Stats | 10:20 |
 | Collect GitHub Activity Stats | 10:25 |
 | Collect GitHub Issues Stats | 10:30 |
 | Collect GitHub Dependents Stats | 10:35 |
 | Build Dashboard | 11:00 |
+| Quarterly Dashboard Snapshot | manual dispatch |

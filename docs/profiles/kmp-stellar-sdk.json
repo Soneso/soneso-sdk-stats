@@ -1,0 +1,1007 @@
+{
+  "schema_version": 1,
+  "sdk": {
+    "key": "kmp",
+    "folder": "kmp-stellar-sdk",
+    "label": "KMP",
+    "repository_url": "https://github.com/Soneso/kmp-stellar-sdk"
+  },
+  "as_of": "2026-09-22T12:38:36Z",
+  "methodology": {
+    "definition_version": "dashboard-v1-response-v3",
+    "generated_at": "2026-09-22T13:58:21.041991Z",
+    "as_of": "2026-09-22T12:38:36Z",
+    "build_commit": "fd7469f3e15b06e5a59aa1ee90c59f7c165096e6",
+    "working_tree_dirty": true,
+    "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/fd7469f3e15b06e5a59aa1ee90c59f7c165096e6/docs/index.html#L286",
+    "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
+  },
+  "signals": {
+    "release.median_gap_days_365d": {
+      "value": 10.3,
+      "unit": "days",
+      "sample_size": 27,
+      "window": "365d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-activity.json"
+      ]
+    },
+    "release.days_since_last": {
+      "value": 7.1,
+      "unit": "days",
+      "sample_size": null,
+      "window": "since_last_release",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-activity.json"
+      ]
+    },
+    "release.count_90d": {
+      "value": 6,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-activity.json"
+      ]
+    },
+    "release.count_365d": {
+      "value": 28,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-activity.json"
+      ]
+    },
+    "issues.open_count": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.open_median_age_days": {
+      "value": null,
+      "unit": "days",
+      "sample_size": 0,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "not_applicable",
+      "reason": "No open items.",
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.created_365d": {
+      "value": 2,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.closed_365d": {
+      "value": 2,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.median_close_hours": {
+      "value": 23.0,
+      "unit": "hours",
+      "sample_size": 2,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.open_count": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.open_median_age_days": {
+      "value": null,
+      "unit": "days",
+      "sample_size": 0,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "not_applicable",
+      "reason": "No open items.",
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.created_365d": {
+      "value": 4,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.closed_365d": {
+      "value": 4,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.median_close_hours": {
+      "value": 10.5,
+      "unit": "hours",
+      "sample_size": 4,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "maintainer_prs.created_365d": {
+      "value": 43,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "maintainer_prs.closed_365d": {
+      "value": 43,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.response_eligible_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": 0,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.answered_within_48h_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": 0,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.median_first_response_hours": {
+      "value": null,
+      "unit": "hours",
+      "sample_size": 0,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "not_applicable",
+      "reason": "No answered eligible items.",
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.unanswered_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.pending_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.unknown_attribution_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "issues.unknown_clock_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.response_eligible_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": 0,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.answered_within_48h_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": 0,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.median_first_response_hours": {
+      "value": null,
+      "unit": "hours",
+      "sample_size": 0,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "not_applicable",
+      "reason": "No answered eligible items.",
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.unanswered_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.pending_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.unknown_attribution_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.unknown_clock_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.merged_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.closed_without_merge_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "prs.still_open_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-issues.json"
+      ]
+    },
+    "scarf.downloads_90d": {
+      "value": 32507,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/scarf.json"
+      ]
+    },
+    "scarf.unique_sources_90d": {
+      "value": 2678,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/scarf.json"
+      ]
+    },
+    "protocol.0.lag_days": {
+      "value": -19,
+      "unit": "days",
+      "sample_size": null,
+      "window": "mainnet_activation",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-22",
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://horizon.stellar.org/ledgers/63386819",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0071.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/releases/tag/v1.8.0"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "protocol": {
+        "name": "Protocol 27",
+        "mainnet_activation_date": "2026-07-08",
+        "release_tag": "v1.8.0",
+        "release_date": "2026-06-19"
+      },
+      "source_files": [
+        "curated/protocol-delivery.json"
+      ]
+    },
+    "protocol.1.lag_days": {
+      "value": -21,
+      "unit": "days",
+      "sample_size": null,
+      "window": "mainnet_activation",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-22",
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://horizon.stellar.org/ledgers/64458446",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0085.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/releases/tag/v1.12.0"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "protocol": {
+        "name": "Protocol 28",
+        "mainnet_activation_date": "2026-09-16",
+        "release_tag": "v1.12.0",
+        "release_date": "2026-08-26"
+      },
+      "source_files": [
+        "curated/protocol-delivery.json"
+      ]
+    },
+    "feedback.verified_comments": {
+      "value": 3,
+      "unit": "count",
+      "sample_size": null,
+      "window": "Q3 2026 proposal thread",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": "No shared collection timestamp; individual verified_dates are supplied.",
+      "observed_at": null,
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/121"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "verified_dates": [
+        "2026-09-22",
+        "2026-09-22",
+        "2026-09-22"
+      ],
+      "source_files": [
+        "curated/user-statements.json"
+      ]
+    },
+    "reach.stars": {
+      "value": 13,
+      "unit": "count",
+      "sample_size": null,
+      "window": "snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:15Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-meta.json"
+      ]
+    },
+    "reach.forks": {
+      "value": 4,
+      "unit": "count",
+      "sample_size": null,
+      "window": "snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:15Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-meta.json"
+      ]
+    },
+    "release.all_time_count": {
+      "value": 28,
+      "unit": "count",
+      "sample_size": null,
+      "window": "lifetime",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-activity.json"
+      ]
+    },
+    "release.latest_stable": {
+      "value": {
+        "tag": "v1.13.0",
+        "date": "2026-09-15"
+      },
+      "unit": "release",
+      "sample_size": null,
+      "window": "latest",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-activity.json"
+      ]
+    },
+    "release.first": {
+      "value": "v0.2.0 (2025-10-25)",
+      "unit": "release",
+      "sample_size": null,
+      "window": "first_release",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": "Static repository history; observation time is not collected.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "reach.dependents": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "snapshot",
+      "window_end": null,
+      "coverage": "not_applicable",
+      "reason": "Not tracked for Gradle/Maven.",
+      "observed_at": "2026-09-20",
+      "freshness": "stale",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "kmp-stellar-sdk/github-dependents.json"
+      ]
+    },
+    "activity.days_since_last_push": {
+      "value": null,
+      "unit": "days",
+      "sample_size": null,
+      "window": "since_last_push",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Pure push timestamps are not collected; commit dates are not push dates.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "activity.non_merge_commits": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "not_configured",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Bot-filtered non-merge git-log counts are not collected; the heatmap uses GitHub daily counts.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "issues.answered_within_7d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "The dashboard publishes 48-hour A/N counts, not a seven-day response signal.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "prs.answered_within_7d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "The dashboard publishes 48-hour A/N counts, not a seven-day response signal.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "maintainer_issues.created_90d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Separate maintainer issue counts are not published.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "maintainer_prs.created_90d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Only the separate 365-day maintainer PR cohort is published.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "host.contributor_activity": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "not_configured",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Contributor-scoped host-repository activity is not collected.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    }
+  },
+  "comparison_pool": null,
+  "comparison_pool_reason": "No comparison pool is maintained."
+}

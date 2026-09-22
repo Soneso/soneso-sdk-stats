@@ -66,7 +66,7 @@ jobs:
               dt_end = parse_dt(end) if isinstance(end, str) else end
               return round((dt_end - dt_start).total_seconds() / 3600, 1)
 
-          # Response definitions are independent of the Phase 1 closure cohort.
+          # Response definitions are independent of the closure cohort.
           DEFINITION_VERSION = 3
           cutoff_90d = (now - timedelta(days=89)).date().isoformat()
           run_started = time.monotonic()

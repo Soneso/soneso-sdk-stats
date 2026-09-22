@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html
+          git add docs/index.html docs/profiles
           git diff --staged --quiet && echo "No changes" && exit 0
           today=$(date -u +%Y-%m-%d)
           git commit -m "Update dashboard data ${today}"
