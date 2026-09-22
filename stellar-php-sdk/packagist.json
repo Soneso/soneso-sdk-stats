@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-09-22T14:40:01Z",
+  "collected_at": "2026-09-22T14:43:05Z",
   "latest": {
     "total": 62088,
     "monthly": 2716,
@@ -1452,7 +1452,7 @@
     }
   ],
   "monthly_history": {
-    "collected_at": "2026-09-22T14:40:01Z",
+    "collected_at": "2026-09-22T14:43:05Z",
     "source": "packagist stats/all.json average=daily, summed per calendar month",
     "months": [
       {
