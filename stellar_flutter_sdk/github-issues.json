@@ -2,7 +2,7 @@
   "schema_version": 3,
   "summary": {
     "as_of": "2026-09-22",
-    "collected_at": "2026-09-22T14:40:14Z",
+    "collected_at": "2026-09-22T15:03:25Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 4,
@@ -15,7 +15,7 @@
     "maintainer_prs_closed_365d": 37,
     "bot_prs_created_365d": 16,
     "response_coverage": "complete",
-    "response_collected_at": "2026-09-22T14:40:14Z",
+    "response_collected_at": "2026-09-22T15:03:25Z",
     "community_issues_response_cohort_90d": 2,
     "community_issues_response_eligible_90d": 2,
     "community_issues_answered_within_48h_90d": 2,
@@ -37,7 +37,7 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-09-22T14:40:14Z",
+    "observed_at": "2026-09-22T15:03:25Z",
     "open_issues": 0,
     "open_prs": 0,
     "issue_median_age_days": null,
@@ -46,7 +46,7 @@
   "history": [
     {
       "as_of": "2026-09-22",
-      "collected_at": "2026-09-22T14:40:14Z",
+      "collected_at": "2026-09-22T15:03:25Z",
       "definition_version": 3,
       "coverage": "complete",
       "community_issues_created_365d": 4,
@@ -59,7 +59,7 @@
       "maintainer_prs_closed_365d": 37,
       "bot_prs_created_365d": 16,
       "response_coverage": "complete",
-      "response_collected_at": "2026-09-22T14:40:14Z",
+      "response_collected_at": "2026-09-22T15:03:25Z",
       "community_issues_response_cohort_90d": 2,
       "community_issues_response_eligible_90d": 2,
       "community_issues_answered_within_48h_90d": 2,
@@ -81,7 +81,7 @@
       "community_prs_still_open_90d": 0,
       "date": "2026-09-22",
       "open_scan": {
-        "observed_at": "2026-09-22T14:40:14Z",
+        "observed_at": "2026-09-22T15:03:25Z",
         "open_issues": 0,
         "open_prs": 0,
         "issue_median_age_days": null,
