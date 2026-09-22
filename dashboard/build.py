@@ -210,20 +210,43 @@ def compute_release_stats(releases_all):
 
 
 def extract_issues(sdk):
-    """Read github-issues.json, tolerating both the old (v1) and new (v2)
-    schemas; missing v2 fields render as unavailable, never as zero."""
+    """Read closure definitions v2+; response claims require v3 evidence."""
     data = load_json(ROOT / sdk["folder"] / "github-issues.json")
     if not isinstance(data, dict):
-        return {"summary": {}, "open_scan": None, "history": []}
+        return {"summary": {}, "open_scan": None, "history": [], "response_cohort": [], "response_evidence_available": False}
     summary = data.get("summary")
-    if not isinstance(summary, dict) or summary.get("definition_version") != 2:
+    if (not isinstance(summary, dict) or not is_num(summary.get("definition_version"))
+            or summary["definition_version"] < 2):
         summary = {}
     open_scan = data.get("open_scan")
     if not (isinstance(open_scan, dict) and is_num(open_scan.get("open_issues"))
             and is_num(open_scan.get("open_prs"))):
         open_scan = None
     history = [e for e in as_list(data.get("history")) if isinstance(e, dict)]
-    return {"summary": summary, "open_scan": open_scan, "history": history}
+    observed = parse_dt(summary.get("collected_at"))
+    raw_issues = data.get("issues")
+
+    def evidence_item_ok(i):
+        # The cohort filter tests set membership on these fields, so a
+        # non-hashable value in a stored record must make the evidence
+        # section unavailable, never abort the whole build.
+        return (isinstance(i, dict)
+                and isinstance(i.get("author_association"), (str, type(None)))
+                and isinstance(i.get("author"), (str, type(None)))
+                and isinstance(i.get("created_at"), (str, type(None))))
+
+    evidence_available = (isinstance(raw_issues, list)
+                          and all(evidence_item_ok(i) for i in raw_issues))
+    cohort = []
+    if summary.get("definition_version") == 3 and observed and evidence_available:
+        cutoff = (observed.date() - timedelta(days=89)).isoformat()
+        cohort = [i for i in raw_issues
+                  if not i.get("removed") and i.get("author_association") not in {"OWNER", "MEMBER"}
+                  and not str(i.get("author") or "").endswith("[bot]")
+                  and isinstance(i.get("created_at"), str)
+                  and cutoff <= i["created_at"][:10] <= observed.date().isoformat()]
+    return {"summary": summary, "open_scan": open_scan, "history": history,
+            "response_cohort": cohort, "response_evidence_available": evidence_available}
 
 
 def extract_dependents(sdk):
@@ -532,6 +555,111 @@ def stat_row(label, value, muted=False):
             f'<span class="sdk-stat-value"{style}>{value}</span></div>')
 
 
+def response_rows(summary):
+    """Only complete v3 response observations can support A of N claims."""
+    rows = []
+    available = (summary.get("definition_version") == 3
+                 and summary.get("coverage", "complete") == "complete"
+                 and summary.get("response_coverage") == "complete")
+    for kind, label, inline in (("issues", "Community issues", "community issues"),
+                                ("prs", "Community PRs", "community PRs")):
+        prefix = f"community_{kind}_"
+        get = lambda key: summary.get(prefix + key) if available else None
+        n, a = get("response_eligible_90d"), get("answered_within_48h_90d")
+        counts_ok = all(isinstance(v, int) and not isinstance(v, bool) and v >= 0 for v in (n, a))
+        if not counts_ok or a > n:
+            rows.append(stat_row(f"{label} answered within 48h (90d)", "n/a", muted=True))
+            rows.append(stat_row(f"Median first response ({inline}, 90d)", "n/a", muted=True))
+            continue
+        rows.append(stat_row(f"{label} answered within 48h (90d)",
+                             f"{a} of {n}" if n else "no eligible items", muted=n == 0))
+        median = get("median_first_response_hours")
+        unanswered = get("unanswered_90d")
+        median_text = ("not applicable" if n == 0 or unanswered == n else format_hours(median))
+        rows.append(stat_row(f"Median first response ({inline}, 90d)", median_text, muted=not is_num(median)))
+        context = []
+        for key, text in (("unanswered_90d", "unanswered eligible"), ("pending_90d", "pending"),
+                          ("unknown_attribution_90d", "unknown attribution"), ("unknown_clock_90d", "unknown clock")):
+            count = get(key)
+            if is_num(count) and count > 0:
+                context.append(f"{format_number(count)} {text}")
+        if context:
+            rows.append(stat_row(f"{label} response context (90d)", esc(", ".join(context)), muted=True))
+    disposition = [summary.get(f"community_prs_{key}_90d") if available else None
+                   for key in ("merged", "closed_without_merge", "still_open")]
+    text = (f"{format_number(disposition[0])} merged, {format_number(disposition[1])} closed without merge, "
+            f"{format_number(disposition[2])} open" if all(is_num(n) for n in disposition) else "n/a")
+    rows.append(stat_row("Community PR disposition (90d)", esc(text), muted=True))
+    return rows
+
+
+def response_evidence(issues):
+    summary = issues["summary"]
+    complete = (summary.get("definition_version") == 3
+                and summary.get("coverage", "complete") == "complete"
+                and summary.get("response_coverage") == "complete")
+    links = []
+    status_labels = {"answered": "answered", "unanswered": "unanswered", "pending": "pending eligibility",
+                     "unknown_attribution": "unknown attribution", "unknown_clock": "unknown clock"}
+    for item in issues["response_cohort"]:
+        status = status_labels.get(str(item.get("response_status")), "n/a") if complete else "n/a (incomplete collection)"
+        label = f"#{item.get('number', '?')} {item.get('type', 'item')}: {status}"
+        url = item.get("url")
+        link = f'<a href="{esc(url)}">{esc(label)}</a>' if valid_evidence_url(url) else esc(label)
+        response = item.get("response")
+        if complete and isinstance(response, dict) and response.get("definition_version") == 3:
+            evidence_url = response.get("url")
+            if valid_evidence_url(evidence_url):
+                detail = f"{response.get('kind', 'response')} by {response.get('actor', '?')} ({format_hours(response.get('hours'))})"
+                link += f' <a href="{esc(evidence_url)}">{esc(detail)}</a>'
+        links.append(f"<li>{link}</li>")
+    content = ("<ul>" + "".join(links) + "</ul>" if links else
+               "<p>No community items in the 90-day cohort.</p>" if complete and issues.get("response_evidence_available")
+               else "<p>Response evidence unavailable.</p>")
+    return '<details class="response-evidence"><summary>Response evidence (90d)</summary>' + content + '</details>'
+
+
+def build_protocol_delivery():
+    """Publish only maintainer-verified upgrades with complete evidence."""
+    data = load_json(ROOT / "curated" / "protocol-delivery.json")
+    entries = as_list(data.get("upgrades")) if isinstance(data, dict) else []
+    rows = []
+    for entry in entries:
+        if not isinstance(entry, dict) or not valid_verified_date(entry.get("verified")):
+            continue
+        activation = entry.get("mainnet_activation_date")
+        if not valid_verified_date(activation) or not valid_evidence_url(entry.get("activation_url")):
+            continue
+        releases = entry.get("releases")
+        if not isinstance(releases, dict):
+            continue
+        caps = [c for c in as_list(entry.get("caps")) if isinstance(c, dict) and valid_evidence_url(c.get("url"))]
+        if not caps or not isinstance(entry.get("name"), str):
+            continue
+        cap_links = ", ".join(f'<a href="{esc(c["url"])}">{esc(c.get("name", "CAP"))}</a>' for c in caps)
+        upgrade = f'{esc(entry["name"])}<br>{cap_links}'
+        activation_link = f'<a href="{esc(entry["activation_url"])}">{esc(activation)}</a>'
+        for sdk in ACTIVE_SDKS:
+            release = releases.get(sdk["key"])
+            value = "n/a"
+            if isinstance(release, dict) and valid_evidence_url(release.get("url")) and isinstance(release.get("tag"), str):
+                published = parse_dt(release.get("published_at"))
+                if published:
+                    shipped = published.astimezone(timezone.utc).date()
+                    delta = (shipped - date.fromisoformat(activation)).days
+                    unit = "day" if abs(delta) == 1 else "days"
+                    lag = (f"shipped {abs(delta)} {unit} before activation" if delta < 0 else
+                           f"shipped {delta} {unit} after activation" if delta > 0 else "shipped on activation day")
+                    value = f'<a href="{esc(release["url"])}">{esc(release["tag"])}</a> ({esc(shipped.isoformat())})<br>{esc(lag)}'
+            rows.append(f'<tr><td>{upgrade}</td><td>{activation_link}</td><td>{esc(sdk["label"])}</td>'
+                        f'<td>{value}</td><td>{esc(entry["verified"])}</td></tr>')
+    content = ('<div style="overflow-x:auto"><table class="evidence-table"><thead><tr>'
+               '<th>Upgrade</th><th>Mainnet activation</th><th>SDK</th><th>First supporting stable release</th><th>Verified</th>'
+               '</tr></thead><tbody>' + "".join(rows) + '</tbody></table></div>' if rows else
+               '<p class="muted">Protocol delivery entries are awaiting maintainer verification.</p>')
+    return '<div class="card"><h2>Protocol Delivery</h2>' + content + '</div>'
+
+
 def build_maintenance_cards(all_data):
     """Per-SDK maintenance evidence. Small cohorts show A/N counts, never
     percentages; zero open items reads as a real zero with age not
@@ -581,10 +709,10 @@ def build_maintenance_cards(all_data):
                     rows.append(stat_row(f"Community {kind_label} (365d)", "n/a", muted=True))
                 elif created == 0:
                     rows.append(stat_row(f"Community {kind_label} (365d)", "no eligible items", muted=True))
-                    rows.append(stat_row(f"Median time to close ({kind_label})", "not applicable", muted=True))
+                    rows.append(stat_row(f"Median time to close (community {kind_label}, 365d)", "not applicable", muted=True))
                 else:
                     rows.append(stat_row(f"Community {kind_label} (365d)", f"{created} opened, {closed} closed"))
-                    rows.append(stat_row(f"Median time to close ({kind_label})", format_hours(median)))
+                    rows.append(stat_row(f"Median time to close (community {kind_label}, 365d)", format_hours(median)))
             cohort_rows("issues",
                         summary.get("community_issues_created_365d"),
                         summary.get("community_issues_closed_365d"),
@@ -600,10 +728,12 @@ def build_maintenance_cards(all_data):
         else:
             rows.append(stat_row("Community cohort (365d)", "n/a", muted=True))
 
+        rows.extend(response_rows(summary))
         rows_html = "\n    ".join(rows)
         cards.append(f'''<div class="sdk-card">
     <h3 style="color:{sdk["color"]}">{sdk["label"]}</h3>
     {rows_html}
+    {response_evidence(sd["issues"])}
   </div>''')
     return "\n  ".join(cards)
 
@@ -624,11 +754,18 @@ def build_usage_cards(all_data):
     word downloads for it."""
     by_key = {sd["sdk"]["key"]: sd for sd in all_data}
     cards = []
+    if "ios" in ENABLED_SDKS:
+        cl = by_key["ios"]["clones"]
+        headline = (
+            f'Clones (last 90 days): {format_number(cl.get("count_90d"))}'
+            f' &middot; unique cloners (last 14 days): {format_number(cl.get("uniques_14d"))}'
+        )
+        cards.append(usage_card("Git Clones (iOS, SPM/CocoaPods install path)", headline, "chart-ios-clones"))
     if "flutter" in ENABLED_SDKS:
         latest = by_key["flutter"]["pubdev"]["latest"]
         headline = (
-            f'Downloads (last 30 days): {format_number(latest.get("download_count_30d"))}'
-            f' &middot; downloads (last 52 weeks): {format_number(latest.get("download_count_52w"))}'
+            f'Downloads (last 52 weeks): {format_number(latest.get("download_count_52w"))}'
+            f' &middot; downloads (last 30 days): {format_number(latest.get("download_count_30d"))}'
         )
         card = (
             '<div class="card">\n'
@@ -659,13 +796,6 @@ def build_usage_cards(all_data):
             f' &middot; unique sources (last 90 days): {format_number(latest.get("unique_sources_90d"))}'
         )
         cards.append(usage_card("Maven Central Daily Downloads (KMP, via Scarf)", headline, "chart-scarf"))
-    if "ios" in ENABLED_SDKS:
-        cl = by_key["ios"]["clones"]
-        headline = (
-            f'Clones (last 90 days): {format_number(cl.get("count_90d"))}'
-            f' &middot; unique cloners (last 14 days): {format_number(cl.get("uniques_14d"))}'
-        )
-        cards.append(usage_card("Git Clones (iOS, SPM/CocoaPods install path)", headline, "chart-ios-clones"))
     if len(cards) > 1:
         inner = "\n  ".join(cards)
         return f'<div class="two-col">\n  {inner}\n</div>'
@@ -688,14 +818,24 @@ def build_usage_archive():
                 links += f', <a href="{esc(u["affiliation_url"])}">affiliation</a>'
             return links
 
+        def stars_cell(u):
+            # A maintainer-set snapshot for open-source user projects;
+            # closed-source or off-GitHub projects have no star count.
+            stars = u.get("stars")
+            if (isinstance(stars, int) and not isinstance(stars, bool) and stars >= 0
+                    and valid_evidence_url(u.get("repo_url"))
+                    and valid_verified_date(u.get("stars_as_of"))):
+                return f'<a href="{esc(u["repo_url"])}">{format_number(stars)}</a>'
+            return '<span class="muted">-</span>'
+
         user_rows = "\n      ".join(
             f'<tr><td>{esc(label_by_key.get(u["sdk"], u["sdk"]))}</td><td>{esc(u.get("name", ""))}</td>'
             f'<td>{esc(u.get("evidence_kind", ""))}</td>'
-            f'<td>{evidence_cell(u)}</td><td>{esc(u.get("verified", ""))}</td></tr>'
+            f'<td>{evidence_cell(u)}</td><td>{stars_cell(u)}</td><td>{esc(u.get("verified", ""))}</td></tr>'
             for u in users
         )
         users_html = f'''<table class="evidence-table">
-      <tr><th>SDK</th><th>Project</th><th>Evidence kind</th><th>Evidence</th><th>Verified</th></tr>
+      <tr><th>SDK</th><th>Project</th><th>Evidence kind</th><th>Evidence</th><th>GitHub stars</th><th>Verified</th></tr>
       {user_rows}
     </table>'''
     else:
@@ -765,7 +905,14 @@ def build_reach_cards(all_data):
         rows.append(stat_row("First release", sdk["first_release"]))
         if dep is not None:
             total_dep = (dep.get("total_repos") or 0) + (dep.get("total_packages") or 0)
-            rows.append(stat_row("Dependents (GitHub graph count)", format_number(total_dep)))
+            # The graph does not map Maven/Gradle coordinates to source
+            # repos (a mature control, java-stellar-sdk, also reads 0), so
+            # a KMP zero is a blind spot, not a measured absence. A nonzero
+            # count would mean the mapping started working and is shown.
+            if sdk["key"] == "kmp" and total_dep == 0:
+                rows.append(stat_row("Dependents (GitHub graph count)", "not tracked for Gradle/Maven", muted=True))
+            else:
+                rows.append(stat_row("Dependents (GitHub graph count)", format_number(total_dep)))
         elif sdk["key"] == "ios":
             rows.append(stat_row("Dependents (GitHub graph count)", "not tracked for SPM", muted=True))
 
@@ -804,6 +951,7 @@ def build_freshness_section(all_data):
             ("Commit activity", sd["activity"]["commits_collected_at"]),
             ("Releases", sd["activity"]["releases_collected_at"]),
             ("Issues/PRs (windowed)", sd["issues"]["summary"].get("collected_at")),
+            ("Response events", sd["issues"]["summary"].get("response_collected_at")),
             ("Open backlog scan", (sd["issues"]["open_scan"] or {}).get("observed_at")),
         ]
         if sdk["key"] == "flutter":
@@ -834,13 +982,20 @@ def build_freshness_section(all_data):
     <h3>Definitions</h3>
     <ul>
       <li>All times are UTC. Each source shows its own last successful collection time; a green build never implies every source is fresh.</li>
-      <li>Release cadence: median gap in days between stable (non-prerelease) GitHub releases, over gaps whose later release falls in the trailing 365 days. GitHub publication is the shipping proxy; registry artifacts may lag briefly.</li>
+      <li>Release cadence (shown on the maintenance cards as median release gap): median gap in days between stable (non-prerelease) GitHub releases, over gaps whose later release falls in the trailing 365 days. GitHub publication is the shipping proxy; registry artifacts may lag briefly.</li>
+      <li>Commit activity: GitHub's per-day commit counts for the default branch, shown for the trailing 365 days.</li>
       <li>Open issues and PRs: complete scan of all open items at the stated observation time (no window). Zero shows a real zero; median age at zero is not applicable.</li>
-      <li>Community cohort: issues and PRs created in the trailing 365 days, excluding self-filed (owner/member) and bot-authored items. Counts are shown as opened and closed; percentages are avoided for small cohorts.</li>
-      <li>Median time to close covers closed community-cohort items, from creation to closure.</li>
+      <li>Community cohort: issues and PRs created in the trailing 365 days, excluding self-filed (owner/member), bot-authored, and removed items. Counts are shown as opened and closed, never percentages. Median time to close covers the closed items of this cohort, from creation to closure.</li>
       <li>Maintainer PRs count owner/member-authored pull requests created in the same trailing 365 days, as workload context; bot-authored PRs (dependabot and similar) belong to neither cohort and are not shown.</li>
+      <li>Responsiveness (definition v3): community issues and PRs created in the trailing 90 UTC calendar days, including today (89-day offset), with the same exclusions as the community cohort. A of N counts eligible items whose first qualifying response arrived within 48 elapsed hours, including exactly 48h. No percentage or combined score is shown. An empty denominator reads no eligible items; incomplete or pre-v3 data reads n/a.</li>
+      <li>Eligibility requires a full 48 hours of observation, even when already answered. The clock starts at creation; for a PR created as a draft, it starts at its first ready-for-review event. Later draft conversions do not restart the clock. A response before readiness has zero elapsed response time. If draft readiness cannot be established, creation is retained as a fallback timestamp but the unknown clock is counted and excluded from N.</li>
+      <li>Qualifying issue comments, submitted PR reviews, and PR review comments must have OWNER, MEMBER, or COLLABORATOR association, come from a login not ending [bot], and not be by the item author. Pending reviews do not count. A review comment counts from when it became visible: the later of its creation and its parent review submission; comments in unsubmitted reviews do not count. For PRs, a human non-author merge or close also counts. For issues, only a close linked to a commit or merged PR counts; a manual click-close never counts. Full pagination is required. A cross-reference alone does not prove closure: GitHub must identify the closing commit or merged PR.</li>
+      <li>If an unresolved actor could change the first-response result, attribution is unknown and the item is excluded from N and the median. Unknown attribution and clock counts cover the full cohort and may overlap pending items and each other. Unanswered eligible items stay in N. Median first response uses answered eligible items in the same 90-day cohort, including slow responses; the separate close medians retain their 365-day creation cohort. PR disposition covers all community PRs in the 90-day cohort, including pending and unknown items.</li>
+      <li>Response evidence expands below each SDK card. Closed, answered v3 records are cached while their source update time is unchanged; open, unanswered, unknown, changed, or legacy records are collected again. A response-fetch failure makes the response section incomplete and preserves its last successful timestamp; the closure and backlog metrics remain independently covered.</li>
+      <li>Differences from the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-signals proposal</a>: this dashboard uses 48h instead of the proposed seven days, counts qualifying PR discussion and review comments as well as submitted reviews, and explicitly handles draft readiness as above. It uses counts, without percentile ranks or a comparison pool. Author exclusions remain OWNER/MEMBER and bots; there is no declared-maintainer login override. Coverage is complete/incomplete, missing data is n/a, and retained values older than 48h are marked STALE in the freshness table; host-repository and external-tracker exemptions are not configured for these four repositories.</li>
+      <li>Protocol Delivery: maintainer-verified entries only. A supporting release is the first stable GitHub release whose notes explicitly announce the usable protocol API, not preliminary XDR adoption. Shipping uses the GitHub publication date as a proxy, not registry publication or testnet activation. Lag is publication minus mainnet activation in UTC calendar days; early, same-day, and later delivery are descriptive, with no judgment coloring. Each row links the release, CAP, and activation evidence.</li>
       <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
-      <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count.</li>
+      <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. GitHub star counts in the users table are maintainer-set snapshots for open-source user projects, linked to the project repository and dated in the curated file; closed-source or off-GitHub projects show a dash. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count; it is shown only where the graph can attribute dependents to the repository (pub.dev and Composer manifests). SPM manifests are not parsed by the graph, and Maven/Gradle coordinates are not mapped back to source repositories, so iOS and KMP read not tracked instead of a false zero.</li>
     </ul>
   </div>
 </div>'''
@@ -915,12 +1070,20 @@ h3{font-size:0.95rem}
 .evidence-table a{color:#6B93D6;text-decoration:none}
 .muted{color:#8b949e}
 .sdk-stat-value a{color:#6B93D6;text-decoration:none}
+.response-evidence{font-size:0.8rem;color:#8b949e;margin-top:12px}
+.response-evidence summary{cursor:pointer}
+.response-evidence ul{margin:8px 0 0 18px}
+.response-evidence li{margin-bottom:6px}
+.response-evidence a{color:#6B93D6;overflow-wrap:anywhere}
+.sdk-stat{gap:10px}
 .definitions{margin-top:16px;font-size:0.82rem;color:#8b949e}
 .definitions h3{color:#e6edf3;margin-bottom:8px}
 .definitions ul{margin-left:18px}
 .definitions li{margin-bottom:6px}
+.maintenance-grid{grid-template-columns:1fr 1fr}
 @media(max-width:768px){
   .two-col{grid-template-columns:1fr}
+  .maintenance-grid{grid-template-columns:1fr}
   body{padding:12px}
 }
 </style>
@@ -936,24 +1099,16 @@ h3{font-size:0.95rem}
 
 <!-- Maintenance -->
 <h2 class="section-title">Maintenance</h2>
-<div class="sdk-grid">
+<div class="sdk-grid maintenance-grid">
   $maintenance_cards
 </div>
 
-<!-- Usage by distribution channel -->
-<h2 class="section-title">Usage by Distribution Channel</h2>
-$usage_cards
+$protocol_delivery
 
 <!-- Release Timeline -->
 <div class="card">
   <h2>Release Timeline (365d)</h2>
   <div id="chart-releases" class="chart-tall"></div>
-</div>
-
-<!-- Reach & history -->
-<h2 class="section-title">Reach and History</h2>
-<div class="sdk-grid">
-  $reach_cards
 </div>
 
 <!-- Commit Heatmaps -->
@@ -966,12 +1121,22 @@ $usage_cards
   $heatmap_divs
 </div>
 
+<!-- Usage by distribution channel -->
+<h2 class="section-title">Usage by Distribution Channel</h2>
+$usage_cards
+
 <!-- Usage archive -->
 <h2 class="section-title">Who Uses These SDKs</h2>
 $usage_archive
 
 <!-- Community feedback -->
 $community_feedback
+
+<!-- Reach & history -->
+<h2 class="section-title">Reach and History</h2>
+<div class="sdk-grid">
+  $reach_cards
+</div>
 
 <!-- Data sources, freshness, definitions -->
 $freshness_section
@@ -1256,6 +1421,7 @@ def generate():
         subtitle=build_subtitle(),
         maintenance_cards=build_maintenance_cards(all_data),
         usage_cards=build_usage_cards(all_data),
+        protocol_delivery=build_protocol_delivery(),
         usage_archive=build_usage_archive(),
         community_feedback=build_community_feedback(),
         reach_cards=build_reach_cards(all_data),

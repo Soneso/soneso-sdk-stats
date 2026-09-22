@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "definition": "First stable GitHub release whose notes announce the usable protocol support API. Publication is the shipping proxy; compare UTC calendar dates against mainnet activation. Drafts do not render until verified is an ISO date.",
+  "upgrades": [
+    {
+      "name": "Protocol 27",
+      "caps": [
+        {
+          "name": "CAP-71",
+          "url": "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0071.md"
+        }
+      ],
+      "mainnet_activation_date": "2026-07-08",
+      "activation_url": "https://horizon.stellar.org/ledgers/63386819",
+      "activation_predecessor_url": "https://horizon.stellar.org/ledgers/63386818",
+      "verified": "2026-09-22",
+      "note": "Verified 2026-09-22. Supporting release means the first stable release explicitly announcing the usable protocol API, not preliminary XDR adoption. Activation evidence is mainnet ledger data: ledger 63386819 closed at 2026-07-08T17:00:10Z with protocol_version 27; predecessor 63386818 has version 26.",
+      "releases": {
+        "ios": {
+          "tag": "3.6.0",
+          "published_at": "2026-06-19T00:19:30Z",
+          "url": "https://github.com/Soneso/stellar-ios-mac-sdk/releases/tag/3.6.0",
+          "note": "Stable release notes explicitly announce protocol support."
+        },
+        "flutter": {
+          "tag": "3.2.0",
+          "published_at": "2026-06-18T23:25:35Z",
+          "url": "https://github.com/Soneso/stellar_flutter_sdk/releases/tag/3.2.0",
+          "note": "Stable release notes explicitly announce protocol support."
+        },
+        "php": {
+          "tag": "1.10.0",
+          "published_at": "2026-06-18T22:53:14Z",
+          "url": "https://github.com/Soneso/stellar-php-sdk/releases/tag/1.10.0",
+          "note": "Version 1.9.8 adopted Protocol 27 XDR on 2026-06-11; 1.10.0 adds the authorization API and qualifies under the usable-API rule."
+        },
+        "kmp": {
+          "tag": "v1.8.0",
+          "published_at": "2026-06-19T09:46:26Z",
+          "url": "https://github.com/Soneso/kmp-stellar-sdk/releases/tag/v1.8.0",
+          "note": "Stable release notes explicitly announce protocol support."
+        }
+      }
+    },
+    {
+      "name": "Protocol 28",
+      "caps": [
+        {
+          "name": "CAP-85",
+          "url": "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0085.md"
+        }
+      ],
+      "mainnet_activation_date": "2026-09-16",
+      "activation_url": "https://horizon.stellar.org/ledgers/64458446",
+      "activation_predecessor_url": "https://horizon.stellar.org/ledgers/64458445",
+      "verified": "2026-09-22",
+      "note": "Verified 2026-09-22. Supporting release means the first stable release explicitly announcing the usable protocol API, not preliminary XDR adoption. Protocol 28 also includes CAP-83 and CAP-86; CAP-85 is the SDK feature used to identify these releases. Activation evidence is mainnet ledger data: ledger 64458446 closed at 2026-09-16T17:00:06Z with protocol_version 28; predecessor 64458445 has version 27.",
+      "releases": {
+        "ios": {
+          "tag": "3.10.0",
+          "published_at": "2026-08-25T18:08:48Z",
+          "url": "https://github.com/Soneso/stellar-ios-mac-sdk/releases/tag/3.10.0",
+          "note": "Stable release notes explicitly announce protocol support."
+        },
+        "flutter": {
+          "tag": "3.6.0",
+          "published_at": "2026-08-24T23:41:42Z",
+          "url": "https://github.com/Soneso/stellar_flutter_sdk/releases/tag/3.6.0",
+          "note": "Version 3.5.0 includes preliminary XDR on 2026-08-11 but its notes explicitly exclude external-reference contract creation until the protocol is finalized; 3.6.0 qualifies under the usable-API rule."
+        },
+        "php": {
+          "tag": "1.13.0",
+          "published_at": "2026-08-24T14:34:23Z",
+          "url": "https://github.com/Soneso/stellar-php-sdk/releases/tag/1.13.0",
+          "note": "Stable release notes explicitly announce protocol support."
+        },
+        "kmp": {
+          "tag": "v1.12.0",
+          "published_at": "2026-08-26T11:19:16Z",
+          "url": "https://github.com/Soneso/kmp-stellar-sdk/releases/tag/v1.12.0",
+          "note": "Stable release notes explicitly announce protocol support."
+        }
+      }
+    }
+  ]
+}

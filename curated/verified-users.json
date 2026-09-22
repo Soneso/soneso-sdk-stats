@@ -1,5 +1,5 @@
 {
-  "_readme": "Production users with public dependency or usage evidence. Examples, never a census. An entry renders only when it has a well-formed http(s) evidence url AND a verified ISO date set by the maintainer. evidence_kind: dependency-manifest (strongest), contribution (PR/commits from the user's engineers), fork, public-statement. Optional affiliation_url: a second public link establishing the connection between the evidence author and the named project, when the evidence itself does not show it.",
+  "_readme": "Production users with public dependency or usage evidence. Examples, never a census. An entry renders only when it has a well-formed http(s) evidence url AND a verified ISO date set by the maintainer. evidence_kind: dependency-manifest (strongest), contribution (PR/commits from the user's engineers), fork, public-statement. Optional affiliation_url: a second public link establishing the connection between the evidence author and the named project, when the evidence itself does not show it. Optional repo_url + stars + stars_as_of: GitHub star snapshot for open-source user projects, set by the maintainer; the stars column renders only when all three are valid (int stars, http(s) repo_url, ISO stars_as_of).",
   "users": [
     {
       "sdk": "ios",
@@ -14,14 +14,10 @@
       "name": "Unstoppable Wallet",
       "evidence_kind": "dependency-manifest",
       "url": "https://github.com/horizontalsystems/StellarKit.Swift/blob/main/Package.swift",
-      "verified": "2026-09-22"
-    },
-    {
-      "sdk": "ios",
-      "name": "Tangem",
-      "evidence_kind": "fork",
-      "url": "https://github.com/tangem/stellar-ios-mac-sdk",
-      "verified": "2026-09-22"
+      "verified": "2026-09-22",
+      "repo_url": "https://github.com/horizontalsystems/unstoppable-wallet-ios",
+      "stars": 907,
+      "stars_as_of": "2026-09-22"
     },
     {
       "sdk": "flutter",
@@ -35,7 +31,10 @@
       "name": "Stack Wallet",
       "evidence_kind": "dependency-manifest",
       "url": "https://github.com/cypherstack/stack_wallet/blob/staging/scripts/app_config/templates/pubspec.template.yaml",
-      "verified": "2026-09-22"
+      "verified": "2026-09-22",
+      "repo_url": "https://github.com/cypherstack/stack_wallet",
+      "stars": 460,
+      "stars_as_of": "2026-09-22"
     },
     {
       "sdk": "flutter",
@@ -64,13 +63,6 @@
       "evidence_kind": "dependency-manifest",
       "url": "VERIFY: cNGN usage evidence link",
       "verified": null
-    },
-    {
-      "sdk": "php",
-      "name": "PHP Anchor SDK",
-      "evidence_kind": "dependency-manifest",
-      "url": "https://github.com/Argo-Navis-Dev/php-anchor-sdk/blob/main/composer.json",
-      "verified": "2026-09-22"
     },
     {
       "sdk": "php",
