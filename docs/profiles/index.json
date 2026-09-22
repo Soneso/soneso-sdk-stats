@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "methodology": {
+    "definition_version": "dashboard-v1-response-v3",
+    "generated_at": "2026-09-22T14:32:28.564595Z",
+    "as_of": "2026-09-22T14:32:28.530256Z",
+    "build_commit": "c12a07fa7569477bafea38d9580c722e3ef78c23",
+    "working_tree_dirty": true,
+    "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/c12a07fa7569477bafea38d9580c722e3ef78c23/docs/index.html#L287",
+    "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
+  },
+  "sdks": [
+    {
+      "key": "ios",
+      "folder": "stellar-ios-mac-sdk",
+      "label": "iOS",
+      "repository_url": "https://github.com/Soneso/stellar-ios-mac-sdk",
+      "profile": "stellar-ios-mac-sdk.json"
+    },
+    {
+      "key": "flutter",
+      "folder": "stellar_flutter_sdk",
+      "label": "Flutter",
+      "repository_url": "https://github.com/Soneso/stellar_flutter_sdk",
+      "profile": "stellar_flutter_sdk.json"
+    },
+    {
+      "key": "php",
+      "folder": "stellar-php-sdk",
+      "label": "PHP",
+      "repository_url": "https://github.com/Soneso/stellar-php-sdk",
+      "profile": "stellar-php-sdk.json"
+    },
+    {
+      "key": "kmp",
+      "folder": "kmp-stellar-sdk",
+      "label": "KMP",
+      "repository_url": "https://github.com/Soneso/kmp-stellar-sdk",
+      "profile": "kmp-stellar-sdk.json"
+    }
+  ]
+}

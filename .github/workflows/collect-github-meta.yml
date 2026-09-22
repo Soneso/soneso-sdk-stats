@@ -39,8 +39,13 @@ jobs:
               "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
           }
 
-          today = datetime.now(timezone.utc).date()
+          now = datetime.now(timezone.utc)
+          today = now.date()
           today_str = today.isoformat()
+          # Per-section freshness: each section carries its own collected_at,
+          # advanced only when that section's fetch succeeded; a failed
+          # section keeps its previous data AND its previous timestamp.
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
           cutoff = today - timedelta(days=13)  # 14-day inclusive window
 
           for repo, folder in REPOS.items():
@@ -120,6 +125,7 @@ jobs:
                           existing_repo[entry["date"]] = entry
                       existing_repo[today_str] = new_repo_entry
                       result_data["repo"] = {
+                          "collected_at": now_iso,
                           "daily": sorted(existing_repo.values(), key=lambda x: x["date"], reverse=True)
                       }
                   elif "repo" in existing_data:
@@ -145,6 +151,7 @@ jobs:
                       uniques_14d = views_api_uniques
 
                       result_data["views"] = {
+                          "collected_at": now_iso,
                           "summary": {
                               "last_14_days": {
                                   "count": count_14d,

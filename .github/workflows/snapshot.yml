@@ -1,0 +1,72 @@
+name: Quarterly Dashboard Snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      quarter:
+        description: 'Immutable snapshot label (20YY-Q1 through 20YY-Q4)'
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: dashboard-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    env:
+      SNAPSHOT_QUARTER: ${{ inputs.quarter }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Freeze inputs and shared dashboard headlines
+        run: |
+          python3 <<'PYTHON'
+          import os
+          from dashboard.snapshot import create_snapshot
+
+          try:
+              result = create_snapshot(os.environ["SNAPSHOT_QUARTER"])
+          except (ValueError, FileExistsError) as error:
+              raise SystemExit(f"::error::{error}")
+          print(f"Snapshot written to {result}")
+          PYTHON
+
+      - name: Commit and push snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -- "snapshots/${SNAPSHOT_QUARTER}"
+          git commit -m "Add ${SNAPSHOT_QUARTER} snapshot"
+          for i in 1 2 3; do
+            if git fetch origin main; then
+              if git cat-file -e "origin/main:snapshots/${SNAPSHOT_QUARTER}" 2>/dev/null; then
+                echo "::error::The quarter already exists on origin/main and is immutable. Nothing pushed."
+                exit 1
+              fi
+              if git rebase origin/main; then
+                git push origin HEAD:main && exit 0
+              else
+                echo "::warning::Rebase failed (possible conflict), aborting rebase"
+                git rebase --abort 2>/dev/null || true
+              fi
+            else
+              echo "::warning::Fetch failed; the remote quarter check needs a fresh origin/main"
+            fi
+            echo "::warning::Push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::Failed to push after 3 attempts"
+          exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::warning::Snapshot failed. Check the workflow logs."

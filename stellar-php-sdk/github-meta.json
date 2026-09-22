@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "repo": {
+    "collected_at": "2026-09-21T18:33:15Z",
     "daily": [
       {
         "date": "2026-09-21",
@@ -1629,6 +1630,7 @@
     ]
   },
   "views": {
+    "collected_at": "2026-09-21T18:33:15Z",
     "summary": {
       "last_14_days": {
         "count": 147,

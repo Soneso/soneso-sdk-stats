@@ -14,7 +14,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
@@ -44,11 +44,15 @@ jobs:
           MAINTAINER_ROLES = {"OWNER", "MEMBER", "COLLABORATOR"}
           SELF_FILED_ROLES = {"OWNER", "MEMBER"}
           ISSUE_CAP = 500
-
-          today = datetime.now(timezone.utc)
-          today_str = today.date().isoformat()
-          since_date = (today - timedelta(days=365)).date().isoformat()
-          cutoff_365d = since_date
+          now = datetime.now(timezone.utc)
+          today_str = now.date().isoformat()
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
+          since_date = (now - timedelta(days=365)).date().isoformat()
+          # Inclusive-of-today 365-day cohort window (364-day offset, same
+          # arithmetic as the dashboard's release windows). The API fetch
+          # window above is one day wider, which is harmless: it only needs
+          # to cover the cohort.
+          cutoff_365d = (now - timedelta(days=364)).date().isoformat()
 
           def parse_dt(s):
               if not s:
@@ -62,18 +66,287 @@ jobs:
               dt_end = parse_dt(end) if isinstance(end, str) else end
               return round((dt_end - dt_start).total_seconds() / 3600, 1)
 
-          def response_ts(event, ts_key, item_author):
-              # A qualifying maintainer response: human maintainer account,
-              # not the item's own author. Pending reviews have no
-              # submitted_at and are skipped.
-              login = ((event.get("user") or {}).get("login") or "")
-              if not login or login == item_author or login.endswith("[bot]"):
+          # Response definitions are independent of the closure cohort.
+          DEFINITION_VERSION = 3
+          cutoff_90d = (now - timedelta(days=89)).date().isoformat()
+          run_started = time.monotonic()
+          request_stats = {"requests": 0, "failures": 0, "timeouts": 0}
+          RUN_BUDGET_SECONDS = 24 * 60
+
+
+          def fetch_json(path, per_item=False, arguments=()):
+              """One GitHub request, including headers for exact pagination/counting."""
+              remaining = RUN_BUDGET_SECONDS - (time.monotonic() - run_started)
+              if remaining <= (0.5 if per_item else 0):
+                  raise RuntimeError("Collection time budget exhausted")
+              if per_item:
+                  time.sleep(0.5)
+                  remaining = RUN_BUDGET_SECONDS - (time.monotonic() - run_started)
+                  if remaining <= 0:
+                      raise RuntimeError("Collection time budget exhausted")
+              request_stats["requests"] += 1
+              try:
+                  result = subprocess.run(
+                      ["gh", "api", path, "--include", *arguments],
+                      capture_output=True, text=True, timeout=min(120, remaining),
+                  )
+                  if result.returncode:
+                      raise RuntimeError(result.stderr.strip())
+                  # gh normalizes headers to LF when text=True; split only once so
+                  # newlines in a JSON string can never be mistaken for headers.
+                  headers, body = result.stdout.replace("\r\n", "\n").split("\n\n", 1)
+                  links = next((h[5:].strip() for h in headers.splitlines()
+                                if h.lower().startswith("link:")), "")
+                  next_url = None
+                  for link in links.split(","):
+                      if 'rel="next"' in link:
+                          next_url = link.split("<", 1)[1].split(">", 1)[0]
+                  data = json.loads(body)
+                  if isinstance(data, dict) and data.get("errors"):
+                      raise ValueError("GraphQL returned errors: " + str(data["errors"]))
+                  return data, next_url
+              except Exception as e:
+                  request_stats["failures"] += 1
+                  if isinstance(e, subprocess.TimeoutExpired):
+                      request_stats["timeouts"] += 1
+                  raise
+
+
+          def fetch_all_pages(path, per_item=False):
+              """Return every page, or None on any failure, never a partial list."""
+              items, visited = [], set()
+              try:
+                  while path:
+                      if path in visited:
+                          raise ValueError("Pagination loop")
+                      visited.add(path)
+                      page, path = fetch_json(path, per_item=per_item)
+                      if not isinstance(page, list) or any(not isinstance(i, dict) for i in page):
+                          raise ValueError("Expected an array of objects")
+                      items.extend(page)
+                  return items
+              except Exception as e:
+                  print(f"::warning::API list fetch failed: {e}")
                   return None
-              if event.get("author_association") not in MAINTAINER_ROLES:
-                  return None
-              return event.get(ts_key)
+
+
+          def community_item(item, cutoff):
+              return (not item.get("removed")
+                      and item.get("author_association") not in SELF_FILED_ROLES
+                      and not (item.get("author") or "").endswith("[bot]")
+                      and cutoff <= (item.get("created_at") or "")[:10] <= today_str)
+
+
+          def response_clock(item, timeline):
+              created = item["created_at"]
+              clock = {"at": created, "kind": "creation", "status": "known"}
+              if item["type"] != "pr":
+                  return clock
+              transitions = sorted(
+                  (e for e in timeline if e.get("event") in {"ready_for_review", "convert_to_draft"}),
+                  key=lambda e: e["created_at"],
+              )
+              # First transition to ready means the PR began as a draft. A later
+              # conversion to draft does not restart an already running clock.
+              if transitions and transitions[0]["event"] == "ready_for_review":
+                  clock = {"at": transitions[0]["created_at"], "kind": "ready_for_review", "status": "known"}
+              elif not transitions and item.get("draft") is True:
+                  clock = {"at": created, "kind": "creation_fallback", "status": "unknown"}
+              elif not transitions and item.get("draft") is None:
+                  clock = {"at": created, "kind": "creation_fallback", "status": "unknown"}
+              return clock
+
+
+          def linked_closures(repo, number):
+              """Resolve ambiguous REST closes through GitHub's explicit closer.
+
+              Cross-references alone are mentions, not evidence that a PR closed an
+              issue. ClosedEvent.closer records the actual commit or pull request.
+              """
+              owner, name = repo.split("/", 1)
+              query = '''query($owner:String!, $name:String!, $number:Int!, $after:String) {
+                repository(owner:$owner, name:$name) {
+                  issue(number:$number) {
+                    timelineItems(first:100, after:$after, itemTypes:[CLOSED_EVENT]) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes { ... on ClosedEvent {
+                        createdAt actor { login }
+                        closer { __typename
+                          ... on PullRequest { url mergedAt mergedBy { login } }
+                          ... on Commit { url }
+                        }
+                      } }
+                    }
+                  }
+                }
+              }'''
+              events, seen, cursor = [], set(), None
+              while True:
+                  arguments = ["-f", f"query={query}", "-f", f"owner={owner}",
+                               "-f", f"name={name}", "-F", f"number={number}"]
+                  if cursor:
+                      arguments.extend(["-f", f"after={cursor}"])
+                  data, _ = fetch_json("graphql", per_item=True, arguments=arguments)
+                  timeline = data["data"]["repository"]["issue"]["timelineItems"]
+                  events.extend(timeline["nodes"])
+                  page = timeline["pageInfo"]
+                  if not page["hasNextPage"]:
+                      return events
+                  cursor = page["endCursor"]
+                  if not cursor or cursor in seen:
+                      raise ValueError("Invalid GraphQL pagination")
+                  seen.add(cursor)
+
+
+          def collect_response(repo, item):
+              number = item["number"]
+              base = f"repos/{repo}"
+              timeline = fetch_all_pages(f"{base}/issues/{number}/timeline?per_page=100", per_item=True)
+              comments = fetch_all_pages(f"{base}/issues/{number}/comments?per_page=100", per_item=True)
+              if timeline is None or comments is None:
+                  raise RuntimeError("Incomplete response events")
+              clock = response_clock(item, timeline)
+              candidates = []
+
+              def add(kind, at, actor, url, association=None, needs_role=False):
+                  if needs_role and association not in MAINTAINER_ROLES:
+                      return
+                  login = (actor or {}).get("login") or None
+                  if login and (login.endswith("[bot]") or login.lower() == (item.get("author") or "").lower()):
+                      return
+                  dt = parse_dt(at)
+                  if dt is None or dt < parse_dt(item["created_at"]):
+                      raise ValueError("Response event has no valid timestamp")
+                  if dt > now:
+                      return
+                  if not url:
+                      raise ValueError("Response event has no evidence URL")
+                  candidates.append({"at": at, "actor": login, "kind": kind, "url": url})
+
+              for comment in comments:
+                  add("comment", comment.get("created_at"), comment.get("user"),
+                      comment.get("html_url"), comment.get("author_association"), True)
+              if item["type"] == "pr":
+                  reviews = fetch_all_pages(f"{base}/pulls/{number}/reviews?per_page=100", per_item=True)
+                  review_comments = fetch_all_pages(f"{base}/pulls/{number}/comments?per_page=100", per_item=True)
+                  if reviews is None or review_comments is None:
+                      raise RuntimeError("Incomplete PR response events")
+                  for review in reviews:
+                      if review.get("submitted_at"):
+                          add("review", review["submitted_at"], review.get("user"),
+                              review.get("html_url"), review.get("author_association"), True)
+                  # A comment drafted inside a review is visible to nobody but
+                  # its author until the review is submitted, so its response
+                  # time is the later of its creation and the parent review's
+                  # submission. Comments in unsubmitted reviews do not count;
+                  # a comment without a resolvable parent review is an
+                  # evidence gap, never a guessed timestamp.
+                  review_submissions = {r.get("id"): r.get("submitted_at")
+                                        for r in reviews if r.get("id") is not None}
+                  for comment in review_comments:
+                      rid = comment.get("pull_request_review_id")
+                      if rid not in review_submissions:
+                          raise ValueError("Review comment has no resolvable parent review")
+                      submitted_at = review_submissions[rid]
+                      if not submitted_at:
+                          continue
+                      created = comment.get("created_at")
+                      try:
+                          published = max(created, submitted_at, key=parse_dt) if created else None
+                      except (AttributeError, TypeError, ValueError):
+                          published = None
+                      add("review_comment", published, comment.get("user"),
+                          comment.get("html_url"), comment.get("author_association"), True)
+
+              closed_events = [e for e in timeline if e.get("event") == "closed"]
+              for event in timeline:
+                  kind = event.get("event")
+                  if item["type"] == "pr" and kind in {"merged", "closed"}:
+                      add("merge" if kind == "merged" else "close", event.get("created_at"),
+                          event.get("actor"), event.get("url"))
+                  elif item["type"] == "issue" and kind == "closed" and event.get("commit_id"):
+                      add("linked_close", event.get("created_at"), event.get("actor"), event.get("url"))
+              if item["type"] == "issue" and any(not e.get("commit_id") for e in closed_events):
+                  for event in linked_closures(repo, number):
+                      closer = event.get("closer") or {}
+                      kind = closer.get("__typename")
+                      if kind == "Commit" or (kind == "PullRequest" and closer.get("mergedAt")):
+                          # Prefer the closing actor; mergedBy resolves an absent
+                          # actor only when GitHub identifies this PR as the closer.
+                          actor = event.get("actor") or closer.get("mergedBy")
+                          add("linked_close", event.get("createdAt"), actor, closer.get("url"))
+
+              # Ties prefer an attributable event. An unknown earlier event would
+              # change the first-response claim, so it excludes the item entirely.
+              kind_order = {"comment": 0, "review": 1, "review_comment": 2,
+                            "merge": 3, "close": 4, "linked_close": 5}
+              candidates.sort(key=lambda e: (parse_dt(e["at"]), e["actor"] is None,
+                                              kind_order[e["kind"]], e["url"]))
+              first = candidates[0] if candidates else None
+              response = None
+              attribution = "unknown" if first and not first["actor"] else "known"
+              if first and first["actor"]:
+                  response = dict(first)
+                  response["hours"] = max(0, (parse_dt(first["at"]) - parse_dt(clock["at"])).total_seconds() / 3600)
+                  response["definition_version"] = DEFINITION_VERSION
+              return {
+                  "response": response,
+                  "response_definition_version": DEFINITION_VERSION,
+                  "response_collection": "complete",
+                  "attribution": attribution,
+                  "unknown_response": first if attribution == "unknown" else None,
+                  "response_clock": clock,
+                  "disposition": ("merged" if any(e.get("event") == "merged" for e in timeline)
+                                  else "closed_without_merge" if item["state"] == "closed" else "still_open")
+                                 if item["type"] == "pr" else None,
+              }
+
+
+          RESPONSE_CACHE_FIELDS = ("response", "response_definition_version", "response_collection",
+                                   "attribution", "unknown_response", "response_clock", "disposition")
+
+
+          def response_stats(items):
+              stats = {"response_cohort_90d": len(items), "response_eligible_90d": 0,
+                       "answered_within_48h_90d": 0, "median_first_response_hours": None,
+                       "unanswered_90d": 0, "pending_90d": 0,
+                       "unknown_attribution_90d": 0, "unknown_clock_90d": 0}
+              answered_hours = []
+              for item in items:
+                  clock = item.get("response_clock") or {}
+                  response = item.get("response")
+                  if item.get("attribution") == "unknown":
+                      stats["unknown_attribution_90d"] += 1
+                  if item.get("response_collection") == "complete" and clock.get("status") != "known":
+                      stats["unknown_clock_90d"] += 1
+                  if item.get("response_collection") != "complete":
+                      status = "unavailable"
+                  elif now - parse_dt(item["created_at"]) < timedelta(hours=48):
+                      status = "pending"
+                  elif clock.get("status") != "known":
+                      status = "unknown_clock"
+                  elif now - parse_dt(clock["at"]) < timedelta(hours=48):
+                      status = "pending"
+                  elif item.get("attribution") == "unknown":
+                      status = "unknown_attribution"
+                  else:
+                      stats["response_eligible_90d"] += 1
+                      status = "answered" if response else "unanswered"
+                      if response:
+                          answered_hours.append(response["hours"])
+                          if parse_dt(response["at"]) - parse_dt(clock["at"]) <= timedelta(hours=48):
+                              stats["answered_within_48h_90d"] += 1
+                  if status in {"pending", "unanswered"}:
+                      stats[status + "_90d"] += 1
+                  item["response_status"] = status
+              if answered_hours:
+                  stats["median_first_response_hours"] = round(statistics.median(answered_hours), 1)
+              return stats
+
 
           for repo, folder in REPOS.items():
+              repo_started = time.monotonic()
+              before_requests = dict(request_stats)
               try:
                   # Load existing data for caching
                   json_path = os.path.join(folder, "github-issues.json")
@@ -88,26 +361,23 @@ jobs:
                       except (json.JSONDecodeError, KeyError) as e:
                           print(f"::warning::Corrupt data file for {repo}, starting fresh: {e}")
 
-                  # Fetch issues updated in last 365 days
-                  result = subprocess.run(
-                      [
-                          "gh", "api",
-                          f"repos/{repo}/issues?state=all&since={since_date}&per_page=100",
-                          "--paginate",
-                      ],
-                      capture_output=True, text=True, timeout=60
+                  # Fetch issues updated in last 365 days (windowed activity
+                  # fetch; the complete open scan below is separate)
+                  api_issues = fetch_all_pages(
+                      f"repos/{repo}/issues?state=all&since={since_date}&per_page=100"
                   )
-                  if result.returncode != 0:
-                      print(f"::warning::Issues API failed for {repo}: {result.stderr}")
+                  if api_issues is None:
+                      print(f"::warning::Issues API failed for {repo}")
                       continue
 
-                  api_issues = json.loads(result.stdout)
-                  if len(api_issues) > ISSUE_CAP:
+                  capped = len(api_issues) > ISSUE_CAP
+                  if capped:
                       print(f"::warning::{repo} has {len(api_issues)} issues, capping at {ISSUE_CAP}")
                       api_issues = api_issues[:ISSUE_CAP]
 
                   # Process each issue
                   new_issues = {}
+                  processing_failures = 0
                   for item in api_issues:
                       try:
                           number = item["number"]
@@ -127,69 +397,46 @@ jobs:
                               "author_association": item.get("author_association", "NONE"),
                               "created_at": created_at,
                               "closed_at": closed_at,
+                              "updated_at": item.get("updated_at"),
+                              "url": item["html_url"],
+                              "draft": item.get("draft") if is_pr else None,
                               "first_response_at": None,
                               "first_response_hours": None,
                               "time_to_close_hours": time_to_close,
                               "labels": [l["name"] for l in item.get("labels", [])],
                           }
 
-                          # Check cache for first_response_at
+                          # Legacy fields are retained only as archival data, never used
+                          # by v3. Only a complete v3 response on an unchanged closed
+                          # item can bypass event collection. Unanswered items retry.
                           cached = existing_issues.get(number, {})
-                          if cached.get("first_response_at"):
-                              entry["first_response_at"] = cached["first_response_at"]
-                              entry["first_response_hours"] = cached["first_response_hours"]
-                          else:
-                              # First maintainer response: earliest of issue
-                              # comments and, for PRs, submitted reviews
-                              author = entry["author"]
-                              candidates = []
-                              try:
-                                  time.sleep(0.5)
-                                  cr = subprocess.run(
-                                      [
-                                          "gh", "api",
-                                          f"repos/{repo}/issues/{number}/comments?per_page=5",
-                                      ],
-                                      capture_output=True, text=True, timeout=30
-                                  )
-                                  if cr.returncode == 0:
-                                      for comment in json.loads(cr.stdout):
-                                          ts = response_ts(comment, "created_at", author)
-                                          if ts:
-                                              candidates.append(ts)
-                                              break
-                                  else:
-                                      print(f"::warning::Comments API failed for {repo}#{number}: {cr.stderr}")
-                              except Exception as e:
-                                  print(f"::warning::Comments fetch failed for {repo}#{number}: {e}")
-                              if is_pr:
+                          for field in ("first_response_at", "first_response_hours"):
+                              entry[field] = cached.get(field)
+                          if community_item(entry, cutoff_90d):
+                              reusable = (entry["state"] == "closed" and cached.get("state") == "closed"
+                                          and entry.get("updated_at") == cached.get("updated_at")
+                                          and cached.get("response_definition_version") == DEFINITION_VERSION
+                                          and cached.get("response_collection") == "complete"
+                                          and cached.get("response")
+                                          and cached.get("attribution") == "known"
+                                          and (cached.get("response_clock") or {}).get("status") == "known")
+                              if reusable:
+                                  entry.update({k: cached.get(k) for k in RESPONSE_CACHE_FIELDS})
+                              else:
                                   try:
-                                      time.sleep(0.5)
-                                      rr = subprocess.run(
-                                          [
-                                              "gh", "api",
-                                              f"repos/{repo}/pulls/{number}/reviews?per_page=30",
-                                          ],
-                                          capture_output=True, text=True, timeout=30
-                                      )
-                                      if rr.returncode == 0:
-                                          for review in json.loads(rr.stdout):
-                                              ts = response_ts(review, "submitted_at", author)
-                                              if ts:
-                                                  candidates.append(ts)
-                                                  break
-                                      else:
-                                          print(f"::warning::Reviews API failed for {repo}#{number}: {rr.stderr}")
+                                      entry.update(collect_response(repo, entry))
                                   except Exception as e:
-                                      print(f"::warning::Reviews fetch failed for {repo}#{number}: {e}")
-                              if candidates:
-                                  first = min(candidates, key=parse_dt)
-                                  entry["first_response_at"] = first
-                                  entry["first_response_hours"] = hours_between(created_at, first)
+                                      print(f"::warning::Response collection failed for {repo}#{number}: {e}")
+                                      entry.update({"response": None, "response_definition_version": DEFINITION_VERSION,
+                                                    "response_collection": "incomplete"})
+                          else:
+                              # Keep prior v3 evidence when an item ages out of the cohort.
+                              entry.update({k: cached[k] for k in RESPONSE_CACHE_FIELDS if k in cached})
 
                           new_issues[number] = entry
                       except Exception as e:
                           print(f"::warning::Failed to process {repo}#{item.get('number', '?')}: {e}")
+                          processing_failures += 1
                           continue
 
                   # Merge: preserve old issues not in current API response
@@ -198,10 +445,19 @@ jobs:
 
                   # Reconcile removed entries: issues absent from the API
                   # (deleted accounts, transferred, etc.) are flagged so they
-                  # are excluded from all metrics.
-                  api_numbers = set(new_issues.keys())
+                  # are excluded from all metrics. State transitions require
+                  # evidence: a removal flag is cleared only when the item
+                  # was OBSERVED (successfully processed) this run, and set
+                  # only when it is absent from COMPLETE coverage. During a
+                  # capped or partially processed run, unobserved items keep
+                  # their prior state untouched in both directions.
+                  coverage_complete = not capped and processing_failures == 0
+                  observed_numbers = set(new_issues.keys())
                   for num, entry in merged_issues.items():
-                      if num not in api_numbers:
+                      if num in observed_numbers:
+                          if entry.get("removed"):
+                              del entry["removed"]
+                      elif coverage_complete and not entry.get("removed"):
                           entry["removed"] = True
                           if entry["state"] == "open":
                               entry["state"] = "closed"
@@ -210,8 +466,6 @@ jobs:
                               entry["time_to_close_hours"] = hours_between(
                                   entry["created_at"], entry["closed_at"]
                               )
-                      elif entry.get("removed"):
-                          del entry["removed"]
 
                   # Sort by number descending
                   issues_list = sorted(
@@ -223,91 +477,153 @@ jobs:
                   # Exclude removed issues (deleted/transferred) from metrics
                   active_issues = [i for i in issues_list if not i.get("removed")]
 
-                  # Compute summary
-                  open_issues = sum(
-                      1 for i in active_issues
-                      if i["type"] == "issue" and i["state"] == "open"
-                  )
-                  open_prs = sum(
-                      1 for i in active_issues
-                      if i["type"] == "pr" and i["state"] == "open"
-                  )
-                  closed_issues_365d = sum(
-                      1 for i in active_issues
-                      if i["type"] == "issue"
-                      and i["state"] == "closed"
-                      and i.get("closed_at")
-                      and i["closed_at"][:10] >= cutoff_365d
-                  )
-                  closed_prs_365d = sum(
-                      1 for i in active_issues
-                      if i["type"] == "pr"
-                      and i["state"] == "closed"
-                      and i.get("closed_at")
-                      and i["closed_at"][:10] >= cutoff_365d
-                  )
-
-                  # Exclude self-filed issues and bot-authored items from response/close metrics.
-                  # Bot detection uses the GitHub `[bot]` login suffix (dependabot[bot],
-                  # github-actions[bot], etc.). Dependabot PRs are merged within minutes
-                  # without human comment, which both deflates response_pct and the
-                  # time-to-close medians. The `(... or "")` guard tolerates legacy cache
-                  # entries where `author` may be missing or stored as None.
-                  external = [
+                  # Community creation cohort: items CREATED in the trailing
+                  # 365 days, excluding self-filed (OWNER/MEMBER) and
+                  # bot-authored items. Bot detection uses the GitHub `[bot]`
+                  # login suffix (dependabot[bot], github-actions[bot], etc.);
+                  # dependabot PRs are merged within minutes without human
+                  # comment, which would skew the close medians. The
+                  # `(... or "")` guard tolerates legacy cache entries where
+                  # `author` may be missing or stored as None.
+                  community = [
                       i for i in active_issues
                       if i.get("author_association") not in SELF_FILED_ROLES
                       and not (i.get("author") or "").endswith("[bot]")
+                      and (i.get("created_at") or "")[:10] >= cutoff_365d
                   ]
 
-                  # Exclude issues open for more than 5 years from
-                  # response/close metrics — stale PRs skew the averages
-                  MAX_HOURS = 5 * 365 * 24  # 43800h
-                  response_hours = [
-                      i["first_response_hours"] for i in external
-                      if i.get("first_response_hours") is not None
-                      and i["first_response_hours"] <= MAX_HOURS
-                  ]
-                  close_hours = [
-                      i["time_to_close_hours"] for i in external
-                      if i.get("time_to_close_hours") is not None
-                      and i["time_to_close_hours"] <= MAX_HOURS
-                  ]
-                  external_with_comments = [
-                      i for i in external if i.get("first_response_at") is not None
-                  ]
-                  external_total = len(external)
+                  def cohort_stats(items):
+                      closed = [
+                          i for i in items
+                          if i["state"] == "closed"
+                          and i.get("time_to_close_hours") is not None
+                      ]
+                      close_hours = [i["time_to_close_hours"] for i in closed]
+                      return {
+                          "created": len(items),
+                          "closed": len(closed),
+                          "median_close_hours": (
+                              round(statistics.median(close_hours), 1)
+                              if close_hours else None
+                          ),
+                      }
 
+                  issue_stats = cohort_stats([i for i in community if i["type"] == "issue"])
+                  pr_stats = cohort_stats([i for i in community if i["type"] == "pr"])
+
+                  # Maintainer workload context: PRs authored by OWNER/MEMBER
+                  # (non-bot) created in the same window. Complements the
+                  # community cohort; bot-authored PRs belong to neither and
+                  # are counted separately.
+                  maintainer_prs = [
+                      i for i in active_issues
+                      if i["type"] == "pr"
+                      and i.get("author_association") in SELF_FILED_ROLES
+                      and not (i.get("author") or "").endswith("[bot]")
+                      and (i.get("created_at") or "")[:10] >= cutoff_365d
+                  ]
+                  maintainer_pr_stats = cohort_stats(maintainer_prs)
+                  bot_prs_created = sum(
+                      1 for i in active_issues
+                      if i["type"] == "pr"
+                      and (i.get("author") or "").endswith("[bot]")
+                      and (i.get("created_at") or "")[:10] >= cutoff_365d
+                  )
+
+                  # A capped or partially processed fetch cannot support
+                  # complete-cohort claims: publish the coverage state and
+                  # null cohort fields instead of a fabricated small cohort.
                   summary = {
                       "as_of": today_str,
-                      "open_issues": open_issues,
-                      "open_prs": open_prs,
-                      "closed_issues_365d": closed_issues_365d,
-                      "closed_prs_365d": closed_prs_365d,
-                      "median_first_response_hours": (
-                          round(statistics.median(response_hours), 1)
-                          if response_hours else None
-                      ),
-                      "avg_first_response_hours": (
-                          round(sum(response_hours) / len(response_hours), 1)
-                          if response_hours else None
-                      ),
-                      "median_time_to_close_hours": (
-                          round(statistics.median(close_hours), 1)
-                          if close_hours else None
-                      ),
-                      "avg_time_to_close_hours": (
-                          round(sum(close_hours) / len(close_hours), 1)
-                          if close_hours else None
-                      ),
-                      "issues_with_response_pct": (
-                          round(len(external_with_comments) / external_total * 100, 1)
-                          if external_total > 0 else None
-                      ),
+                      "collected_at": now_iso,
+                      "definition_version": DEFINITION_VERSION,
+                      "coverage": "complete" if coverage_complete else "incomplete",
+                      "community_issues_created_365d": issue_stats["created"] if coverage_complete else None,
+                      "community_issues_closed_365d": issue_stats["closed"] if coverage_complete else None,
+                      "community_issue_median_close_hours": issue_stats["median_close_hours"] if coverage_complete else None,
+                      "community_prs_created_365d": pr_stats["created"] if coverage_complete else None,
+                      "community_prs_closed_365d": pr_stats["closed"] if coverage_complete else None,
+                      "community_pr_median_close_hours": pr_stats["median_close_hours"] if coverage_complete else None,
+                      "maintainer_prs_created_365d": maintainer_pr_stats["created"] if coverage_complete else None,
+                      "maintainer_prs_closed_365d": maintainer_pr_stats["closed"] if coverage_complete else None,
+                      "bot_prs_created_365d": bot_prs_created if coverage_complete else None,
                   }
 
+                  response_cohort = [i for i in active_issues if community_item(i, cutoff_90d)]
+                  response_complete = coverage_complete and all(
+                      i.get("response_definition_version") == DEFINITION_VERSION
+                      and i.get("response_collection") == "complete" for i in response_cohort
+                  )
+                  summary["response_coverage"] = "complete" if response_complete else "incomplete"
+                  summary["response_collected_at"] = (now_iso if response_complete else
+                                                       existing_data.get("summary", {}).get("response_collected_at"))
+                  for kind, prefix in (("issue", "community_issues"), ("pr", "community_prs")):
+                      cohort = [i for i in response_cohort if i["type"] == kind]
+                      stats = response_stats(cohort)
+                      if kind == "pr":
+                          for disposition in ("merged", "closed_without_merge", "still_open"):
+                              stats[disposition + "_90d"] = sum(i.get("disposition") == disposition for i in cohort)
+                      summary.update({f"{prefix}_{key}": value if response_complete else None
+                                      for key, value in stats.items()})
+
+                  # Complete open scan (no since filter, every page): the
+                  # authoritative backlog. Only a fully successful scan yields
+                  # an observation; a failed or truncated scan produces none
+                  # for today and the previous observation is carried with its
+                  # own timestamp, never re-dated.
+                  open_scan = None
+                  open_items = fetch_all_pages(
+                      f"repos/{repo}/issues?state=open&per_page=100"
+                  )
+                  if open_items is not None:
+                      open_issue_items = [i for i in open_items if "pull_request" not in i]
+                      open_pr_items = [i for i in open_items if "pull_request" in i]
+
+                      def median_age_days(items):
+                          ages = [
+                              round((now - parse_dt(i["created_at"])).total_seconds() / 86400, 1)
+                              for i in items if i.get("created_at")
+                          ]
+                          return round(statistics.median(ages), 1) if ages else None
+
+                      open_scan = {
+                          "observed_at": now_iso,
+                          "open_issues": len(open_issue_items),
+                          "open_prs": len(open_pr_items),
+                          "issue_median_age_days": median_age_days(open_issue_items),
+                          "pr_median_age_days": median_age_days(open_pr_items),
+                      }
+                  else:
+                      print(f"::warning::Open scan failed for {repo}; no backlog observation today")
+
+                  carried_open_scan = open_scan or existing_data.get("open_scan")
+
+                  # Daily history: append today's summary (plus the open-scan
+                  # observation when one exists). Keyed by date, newest first,
+                  # never trimmed.
+                  history = {
+                      e["date"]: e
+                      for e in existing_data.get("history", [])
+                      if isinstance(e, dict) and e.get("date")
+                  }
+                  history_entry = dict(summary)
+                  history_entry["date"] = today_str
+                  if open_scan is not None:
+                      history_entry["open_scan"] = open_scan
+                  else:
+                      prior_today = history.get(today_str)
+                      if isinstance(prior_today, dict) and prior_today.get("open_scan"):
+                          history_entry["open_scan"] = prior_today["open_scan"]
+                  history[today_str] = history_entry
+                  history_list = sorted(
+                      history.values(), key=lambda e: e["date"], reverse=True
+                  )
+
                   result_data = {
-                      "schema_version": 1,
+                      "schema_version": 3,
                       "summary": summary,
+                      "open_scan": carried_open_scan,
+                      "history": history_list,
                       "issues": issues_list,
                   }
 
@@ -319,14 +635,19 @@ jobs:
                       f.write("\n")
                   os.replace(tmp_path, json_path)
 
-                  closed_365d = closed_issues_365d + closed_prs_365d
-                  median_h = summary["median_first_response_hours"]
-                  median_str = f"{median_h}h" if median_h is not None else "n/a"
-                  print(f"{folder}: {open_issues} open, {closed_365d} closed (365d), median response {median_str}")
+                  scan_str = (
+                      f"{open_scan['open_issues']}+{open_scan['open_prs']} open (scanned)"
+                      if open_scan else "open scan failed"
+                  )
+                  closed_str = f"{issue_stats['closed']}+{pr_stats['closed']} community closed (365d cohort)"
+                  print(f"{folder}: {scan_str}, {closed_str}")
 
               except Exception as e:
                   print(f"::warning::Failed to process {repo}: {e}")
                   continue
+              finally:
+                  counts = {key: value - before_requests[key] for key, value in request_stats.items()}
+                  print(f"{folder}: API {json.dumps(counts, sort_keys=True)}, elapsed {time.monotonic() - repo_started:.1f}s")
           PYTHON
 
       - name: Commit and push if changed

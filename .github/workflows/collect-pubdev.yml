@@ -34,7 +34,9 @@ jobs:
               "stellar_flutter_sdk": "stellar_flutter_sdk",
           }
 
-          today = datetime.now(timezone.utc).date().isoformat()
+          now = datetime.now(timezone.utc)
+          today = now.date().isoformat()
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
 
           for package, folder in PACKAGES.items():
               try:
@@ -93,35 +95,85 @@ jobs:
                       "download_count_30d": download_count_30d,
                   }
 
-                  # Build weekly entries from newest-first download counts
-                  weekly_entries = []
+                  # pub.dev reports rolling 7-day buckets anchored to the
+                  # API's newestDate, NOT calendar weeks. Each bucket is
+                  # stored with its exact start/end dates and observation
+                  # time, keyed by that range; the archive accumulates
+                  # non-identical ranges across runs. The old ISO-week labels
+                  # are retired: they collapsed differently anchored buckets
+                  # onto one label. Bucket i covers the 7 inclusive days
+                  # ending at newestDate minus 7*i days.
+                  new_buckets = {}
+                  snapshot_keys = []
                   if weekly_downloads is not None:
                       newest_date_str = wvd.get("newestDate", "")[:10]
+                      newest_date = None
                       if newest_date_str:
                           try:
                               newest_date = datetime.strptime(newest_date_str, "%Y-%m-%d").date()
                           except ValueError:
                               print(f"::warning::Invalid newestDate format '{newest_date_str}' for {package}")
-                              newest_date = None
-                          if newest_date:
-                              for i, count in enumerate(weekly_downloads):
-                                  week_date = newest_date - timedelta(weeks=i)
-                                  iso_year, iso_week, _ = week_date.isocalendar()
-                                  weekly_entries.append({
-                                      "week": f"{iso_week:02d} ({iso_year})",
-                                      "download_count": count,
-                                  })
-                              if len(weekly_downloads) >= 4:
-                                  latest["download_count_4w"] = sum(weekly_downloads[:4])
-                              if len(weekly_downloads) >= 12:
-                                  latest["download_count_12w"] = sum(weekly_downloads[:12])
-                              if len(weekly_downloads) >= 52:
-                                  latest["download_count_52w"] = sum(weekly_downloads[:52])
+                      if newest_date:
+                          for i, count in enumerate(weekly_downloads):
+                              b_end = newest_date - timedelta(days=7 * i)
+                              b_start = b_end - timedelta(days=6)
+                              key = f"{b_start.isoformat()}..{b_end.isoformat()}"
+                              new_buckets[key] = {
+                                  "start": b_start.isoformat(),
+                                  "end": b_end.isoformat(),
+                                  "downloads": count,
+                                  "observed_at": now_iso,
+                              }
+                              snapshot_keys.append(key)
+                          if len(weekly_downloads) >= 4:
+                              latest["download_count_4w"] = sum(weekly_downloads[:4])
+                          if len(weekly_downloads) >= 12:
+                              latest["download_count_12w"] = sum(weekly_downloads[:12])
+                          if len(weekly_downloads) >= 52:
+                              latest["download_count_52w"] = sum(weekly_downloads[:52])
+
+                  existing_buckets = {}
+                  latest_snapshot = None
+                  if os.path.exists(json_path):
+                      try:
+                          with open(json_path) as f:
+                              prior = json.load(f)
+                          if isinstance(prior, dict):
+                              for key, b in (prior.get("buckets") or {}).items():
+                                  if isinstance(b, dict):
+                                      existing_buckets[key] = b
+                              latest_snapshot = prior.get("latest_snapshot")
+                      except json.JSONDecodeError:
+                          pass
+                  if snapshot_keys:
+                      # Prune archived buckets that BEGIN inside the new
+                      # snapshot's span and are not part of it: they are
+                      # superseded rolling views of days the authoritative
+                      # snapshot now covers. A bucket that begins before the
+                      # span survives even while its tail still overlaps, so
+                      # under daily anchor drift roughly one bucket per day
+                      # ages out into permanent history (bounded growth);
+                      # pruning on ANY overlap would delete every aging
+                      # bucket before it could exit and no history would
+                      # ever accumulate.
+                      span_start = min(b["start"] for b in new_buckets.values())
+                      existing_buckets = {
+                          k: b for k, b in existing_buckets.items()
+                          if k in new_buckets or b.get("start", "") < span_start
+                      }
+                      existing_buckets.update(new_buckets)
+                      latest_snapshot = {
+                          "newest_date": newest_date.isoformat(),
+                          "observed_at": now_iso,
+                          "bucket_keys": snapshot_keys,
+                      }
 
                   result_data = {
-                      "schema_version": 2,
+                      "schema_version": 3,
+                      "collected_at": now_iso,
                       "latest": latest,
-                      "weekly": weekly_entries,
+                      "latest_snapshot": latest_snapshot,
+                      "buckets": dict(sorted(existing_buckets.items())),
                       "daily": merged,
                   }
 
@@ -133,8 +185,8 @@ jobs:
                   os.replace(tmp_path, json_path)
 
                   days_tracked = len(merged)
-                  weeks_tracked = len(weekly_entries)
-                  print(f"{folder}: {download_count_30d} downloads (30d), {weeks_tracked} weeks of history | {days_tracked} days tracked")
+                  buckets_tracked = len(result_data["buckets"])
+                  print(f"{folder}: {download_count_30d} downloads (30d), {buckets_tracked} buckets archived | {days_tracked} days tracked")
 
               except Exception as e:
                   print(f"::warning::Failed to process {package}: {e}")

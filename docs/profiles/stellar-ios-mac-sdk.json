@@ -1,0 +1,1111 @@
+{
+  "schema_version": 1,
+  "sdk": {
+    "key": "ios",
+    "folder": "stellar-ios-mac-sdk",
+    "label": "iOS",
+    "repository_url": "https://github.com/Soneso/stellar-ios-mac-sdk"
+  },
+  "as_of": "2026-09-22T14:32:28.530256Z",
+  "methodology": {
+    "definition_version": "dashboard-v1-response-v3",
+    "generated_at": "2026-09-22T14:32:28.564595Z",
+    "as_of": "2026-09-22T14:32:28.530256Z",
+    "build_commit": "c12a07fa7569477bafea38d9580c722e3ef78c23",
+    "working_tree_dirty": true,
+    "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/c12a07fa7569477bafea38d9580c722e3ef78c23/docs/index.html#L287",
+    "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
+  },
+  "signals": {
+    "release.median_gap_days_365d": {
+      "value": 14.5,
+      "unit": "days",
+      "sample_size": 21,
+      "window": "365d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-activity.json"
+      ]
+    },
+    "release.days_since_last": {
+      "value": 6.9,
+      "unit": "days",
+      "sample_size": null,
+      "window": "since_last_release",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-activity.json"
+      ]
+    },
+    "release.count_90d": {
+      "value": 7,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-activity.json"
+      ]
+    },
+    "release.count_365d": {
+      "value": 21,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-activity.json"
+      ]
+    },
+    "issues.open_count": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.open_median_age_days": {
+      "value": null,
+      "unit": "days",
+      "sample_size": 0,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "not_applicable",
+      "reason": "No open items.",
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.created_365d": {
+      "value": 4,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.closed_365d": {
+      "value": 4,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.median_close_hours": {
+      "value": 74.6,
+      "unit": "hours",
+      "sample_size": 4,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.open_count": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.open_median_age_days": {
+      "value": null,
+      "unit": "days",
+      "sample_size": 0,
+      "window": "open_snapshot",
+      "window_end": null,
+      "coverage": "not_applicable",
+      "reason": "No open items.",
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.created_365d": {
+      "value": 2,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.closed_365d": {
+      "value": 2,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.median_close_hours": {
+      "value": 11.7,
+      "unit": "hours",
+      "sample_size": 2,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "maintainer_prs.created_365d": {
+      "value": 37,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "maintainer_prs.closed_365d": {
+      "value": 37,
+      "unit": "count",
+      "sample_size": null,
+      "window": "365d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.response_eligible_90d": {
+      "value": 2,
+      "unit": "count",
+      "sample_size": 2,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.answered_within_48h_90d": {
+      "value": 2,
+      "unit": "count",
+      "sample_size": 2,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.median_first_response_hours": {
+      "value": 1.5,
+      "unit": "hours",
+      "sample_size": 2,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.unanswered_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.pending_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.unknown_attribution_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "issues.unknown_clock_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235#issuecomment-5346116026",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/issues/231#issuecomment-5285326145"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.response_eligible_90d": {
+      "value": 1,
+      "unit": "count",
+      "sample_size": 1,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.answered_within_48h_90d": {
+      "value": 1,
+      "unit": "count",
+      "sample_size": 1,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.median_first_response_hours": {
+      "value": 2.2,
+      "unit": "hours",
+      "sample_size": 1,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.unanswered_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.pending_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.unknown_attribution_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.unknown_clock_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.merged_90d": {
+      "value": 1,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.closed_without_merge_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "prs.still_open_90d": {
+      "value": 0,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-21T20:50:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T20:50:54Z",
+      "freshness": "fresh",
+      "evidence_urls": [
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229#issuecomment-5164894146"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-issues.json"
+      ]
+    },
+    "clones.count_90d": {
+      "value": 25236,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": "2026-09-22",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:13Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-clones.json"
+      ]
+    },
+    "clones.uniques_14d": {
+      "value": 216,
+      "unit": "count",
+      "sample_size": null,
+      "window": "14d",
+      "window_end": "2026-09-21T18:33:13Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:13Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-clones.json"
+      ]
+    },
+    "protocol.0.lag_days": {
+      "value": -19,
+      "unit": "days",
+      "sample_size": null,
+      "window": "mainnet_activation",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-22",
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://horizon.stellar.org/ledgers/63386819",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0071.md",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/releases/tag/3.6.0"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "protocol": {
+        "name": "Protocol 27",
+        "mainnet_activation_date": "2026-07-08",
+        "release_tag": "3.6.0",
+        "release_date": "2026-06-19"
+      },
+      "source_files": [
+        "curated/protocol-delivery.json"
+      ]
+    },
+    "protocol.1.lag_days": {
+      "value": -22,
+      "unit": "days",
+      "sample_size": null,
+      "window": "mainnet_activation",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-22",
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://horizon.stellar.org/ledgers/64458446",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0085.md",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/releases/tag/3.10.0"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "protocol": {
+        "name": "Protocol 28",
+        "mainnet_activation_date": "2026-09-16",
+        "release_tag": "3.10.0",
+        "release_date": "2026-08-25"
+      },
+      "source_files": [
+        "curated/protocol-delivery.json"
+      ]
+    },
+    "production_user.0.stars": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "curated_snapshot",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "No verified public repository star snapshot.",
+      "observed_at": null,
+      "freshness": "not_applicable",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "curated/verified-users.json"
+      ]
+    },
+    "production_user.1.stars": {
+      "value": 907,
+      "unit": "count",
+      "sample_size": null,
+      "window": "curated_snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-22",
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://github.com/horizontalsystems/unstoppable-wallet-ios"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "curated/verified-users.json"
+      ]
+    },
+    "feedback.verified_comments": {
+      "value": 4,
+      "unit": "count",
+      "sample_size": null,
+      "window": "Q3 2026 proposal thread",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": "No shared collection timestamp; individual verified_dates are supplied.",
+      "observed_at": null,
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/97"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "verified_dates": [
+        "2026-09-22",
+        "2026-09-22",
+        "2026-09-22",
+        "2026-09-22"
+      ],
+      "source_files": [
+        "curated/user-statements.json"
+      ]
+    },
+    "reach.stars": {
+      "value": 132,
+      "unit": "count",
+      "sample_size": null,
+      "window": "snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:15Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-meta.json"
+      ]
+    },
+    "reach.forks": {
+      "value": 55,
+      "unit": "count",
+      "sample_size": null,
+      "window": "snapshot",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:15Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-meta.json"
+      ]
+    },
+    "release.all_time_count": {
+      "value": 150,
+      "unit": "count",
+      "sample_size": null,
+      "window": "lifetime",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-activity.json"
+      ]
+    },
+    "release.latest_stable": {
+      "value": {
+        "tag": "3.11.0",
+        "date": "2026-09-15"
+      },
+      "unit": "release",
+      "sample_size": null,
+      "window": "latest",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-09-21T18:33:27Z",
+      "freshness": "fresh",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": [
+        "stellar-ios-mac-sdk/github-activity.json"
+      ]
+    },
+    "release.first": {
+      "value": "1.0.0 (2018-03-02)",
+      "unit": "release",
+      "sample_size": null,
+      "window": "first_release",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": "Static repository history; observation time is not collected.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "reach.dependents": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "snapshot",
+      "window_end": null,
+      "coverage": "not_applicable",
+      "reason": "Not tracked for SPM.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "activity.days_since_last_push": {
+      "value": null,
+      "unit": "days",
+      "sample_size": null,
+      "window": "since_last_push",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Pure push timestamps are not collected; commit dates are not push dates.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "activity.non_merge_commits": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "not_configured",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Bot-filtered non-merge git-log counts are not collected; the heatmap uses GitHub daily counts.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "issues.answered_within_7d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "The dashboard publishes 48-hour A/N counts, not a seven-day response signal.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "prs.answered_within_7d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "The dashboard publishes 48-hour A/N counts, not a seven-day response signal.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "maintainer_issues.created_90d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Separate maintainer issue counts are not published.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "maintainer_prs.created_90d": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "90d",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Only the separate 365-day maintainer PR cohort is published.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    },
+    "host.contributor_activity": {
+      "value": null,
+      "unit": "count",
+      "sample_size": null,
+      "window": "not_configured",
+      "window_end": null,
+      "coverage": "incomplete",
+      "reason": "Contributor-scoped host-repository activity is not collected.",
+      "observed_at": null,
+      "freshness": "unknown",
+      "evidence_urls": [],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "source_files": []
+    }
+  },
+  "comparison_pool": null,
+  "comparison_pool_reason": "No comparison pool is maintained."
+}

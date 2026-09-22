@@ -34,7 +34,11 @@ jobs:
               "soneso/stellar-php-sdk": "stellar-php-sdk",
           }
 
-          today = datetime.now(timezone.utc).date().isoformat()
+          now = datetime.now(timezone.utc)
+          today = now.date().isoformat()
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
+          # Packagist package creation; start of the daily history series.
+          HISTORY_FROM = "2021-12-29"
 
           for package, folder in PACKAGES.items():
               try:
@@ -88,8 +92,58 @@ jobs:
                   # Sort by date descending (most recent first)
                   merged = sorted(existing.values(), key=lambda x: x["date"], reverse=True)
 
+                  # Lifetime monthly totals, summed from the DAILY history
+                  # endpoint. The average=monthly endpoint reports rounded
+                  # per-day averages, not totals, and is not used; totals are
+                  # never reconstructed from averages. The current month is
+                  # partial and carries its covered date bounds. Refreshed in
+                  # full on every successful run; kept from the previous file
+                  # when the fetch fails.
+                  monthly_history = None
+                  try:
+                      hist_url = (
+                          f"https://packagist.org/packages/{package}/stats/all.json"
+                          f"?average=daily&from={HISTORY_FROM}"
+                      )
+                      hreq = urllib.request.Request(hist_url, headers={"User-Agent": "soneso-sdk-stats/1.0"})
+                      with urllib.request.urlopen(hreq, timeout=60) as hresp:
+                          hist_data = json.loads(hresp.read().decode())
+                      labels = hist_data.get("labels") or []
+                      values_by_series = hist_data.get("values") or {}
+                      values = next(iter(values_by_series.values()), [])
+                      if len(labels) == len(values) and labels:
+                          months = {}
+                          for label, value in zip(labels, values):
+                              month = label[:7]
+                              m = months.setdefault(
+                                  month,
+                                  {"month": month, "downloads": 0, "first_day": label, "last_day": label},
+                              )
+                              m["downloads"] += int(value)
+                              if label < m["first_day"]:
+                                  m["first_day"] = label
+                              if label > m["last_day"]:
+                                  m["last_day"] = label
+                          monthly_history = {
+                              "collected_at": now_iso,
+                              "source": "packagist stats/all.json average=daily, summed per calendar month",
+                              "months": sorted(months.values(), key=lambda x: x["month"]),
+                          }
+                      else:
+                          print(f"::warning::Unexpected stats history shape for {package}")
+                  except Exception as e:
+                      print(f"::warning::Monthly history fetch failed for {package}: {e}")
+
+                  if monthly_history is None and os.path.exists(json_path):
+                      try:
+                          with open(json_path) as f:
+                              monthly_history = json.load(f).get("monthly_history")
+                      except (json.JSONDecodeError, AttributeError):
+                          monthly_history = None
+
                   result_data = {
-                      "schema_version": 1,
+                      "schema_version": 2,
+                      "collected_at": now_iso,
                       "latest": {
                           "total": total,
                           "monthly": monthly,
@@ -97,6 +151,7 @@ jobs:
                           "favers": favers,
                       },
                       "daily": merged,
+                      "monthly_history": monthly_history,
                   }
 
                   os.makedirs(folder, exist_ok=True)

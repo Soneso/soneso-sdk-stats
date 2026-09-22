@@ -39,7 +39,9 @@ jobs:
               "Soneso/kmp-stellar-sdk": "kmp-stellar-sdk",
           }
 
-          today = datetime.now(timezone.utc).date()
+          now = datetime.now(timezone.utc)
+          today = now.date()
+          now_iso = now.isoformat(timespec="seconds").replace("+00:00", "Z")
           cutoff = today - timedelta(days=13)  # 14-day inclusive window
 
           for repo, folder in REPOS.items():
@@ -102,6 +104,7 @@ jobs:
 
                   result_data = {
                       "schema_version": 1,
+                      "collected_at": now_iso,
                       "summary": {
                           "last_14_days": {
                               "count": count_14d,
