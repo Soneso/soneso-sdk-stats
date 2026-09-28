@@ -1,60 +1,64 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-09-27",
-    "downloads_90d": 32001,
-    "unique_sources_90d": 2108,
-    "window_start": "2026-06-30",
-    "window_end": "2026-09-28"
+    "as_of": "2026-09-28",
+    "downloads_90d": 31828,
+    "unique_sources_90d": 2129,
+    "window_start": "2026-07-01",
+    "window_end": "2026-09-29"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 4577,
-      "unique_origins": 380
+      "downloads": 4538,
+      "unique_origins": 379
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4425,
-      "unique_origins": 450
+      "downloads": 4372,
+      "unique_origins": 446
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 4094,
-      "unique_origins": 421
+      "downloads": 4114,
+      "unique_origins": 458
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3875,
+      "downloads": 3869,
       "unique_origins": 340
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3549,
+      "downloads": 3529,
       "unique_origins": 449
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3444,
+      "downloads": 3431,
       "unique_origins": 478
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 3350,
-      "unique_origins": 347
+      "downloads": 3318,
+      "unique_origins": 345
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2899,
-      "unique_origins": 387
+      "downloads": 2893,
+      "unique_origins": 384
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1788,
-      "unique_origins": 277
+      "downloads": 1764,
+      "unique_origins": 274
     }
   ],
   "daily": [
+    {
+      "date": "2026-09-25",
+      "downloads": 125
+    },
     {
       "date": "2026-09-24",
       "downloads": 100
