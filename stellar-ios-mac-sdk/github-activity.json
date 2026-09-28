@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-09-27T15:10:53Z",
+    "collected_at": "2026-09-28T18:11:02Z",
     "summary": {
-      "total_releases": 150,
-      "latest_release": "3.11.0",
-      "latest_release_date": "2026-09-15",
+      "total_releases": 151,
+      "latest_release": "3.12.0",
+      "latest_release_date": "2026-09-27",
       "releases_last_90d": 7,
-      "releases_last_365d": 21,
+      "releases_last_365d": 22,
       "avg_days_between_releases": 20.9
     },
     "all": [
+      {
+        "tag": "3.12.0",
+        "name": "v3.12.0 - SEP-29 on fee bumps and XDR decoding hardening",
+        "published_at": "2026-09-27T21:03:49Z",
+        "prerelease": false
+      },
       {
         "tag": "3.11.0",
         "name": "v3.11.0 - Native ScVal Conversion",
@@ -914,14 +920,14 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-09-27T15:10:53Z",
+    "collected_at": "2026-09-28T18:11:02Z",
     "weekly": [
       {
         "week_start": "2026-09-27",
-        "total": 0,
+        "total": 5,
         "days": [
-          0,
-          0,
+          3,
+          2,
           0,
           0,
           0,
@@ -931,12 +937,12 @@
       },
       {
         "week_start": "2026-09-20",
-        "total": 3,
+        "total": 4,
         "days": [
           0,
           0,
           0,
-          2,
+          3,
           0,
           0,
           1

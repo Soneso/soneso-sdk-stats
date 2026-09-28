@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-09-27T15:10:53Z",
+    "collected_at": "2026-09-28T18:11:02Z",
     "summary": {
-      "total_releases": 115,
-      "latest_release": "3.7.0",
-      "latest_release_date": "2026-09-15",
-      "releases_last_90d": 5,
-      "releases_last_365d": 21,
-      "avg_days_between_releases": 20.0
+      "total_releases": 116,
+      "latest_release": "3.8.0",
+      "latest_release_date": "2026-09-28",
+      "releases_last_90d": 6,
+      "releases_last_365d": 22,
+      "avg_days_between_releases": 19.9
     },
     "all": [
+      {
+        "tag": "3.8.0",
+        "name": "v3.8.0 SEP-29 memo checks and XDR decoding hardening",
+        "published_at": "2026-09-28T00:34:32Z",
+        "prerelease": false
+      },
       {
         "tag": "3.7.0",
         "name": "v3.7.0 Native ScVal Conversion",
@@ -704,14 +710,14 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-09-27T15:10:53Z",
+    "collected_at": "2026-09-28T18:11:02Z",
     "weekly": [
       {
         "week_start": "2026-09-27",
-        "total": 0,
+        "total": 3,
         "days": [
           0,
-          0,
+          3,
           0,
           0,
           0,
@@ -721,13 +727,13 @@
       },
       {
         "week_start": "2026-09-20",
-        "total": 6,
+        "total": 8,
         "days": [
           0,
           0,
           0,
           0,
-          3,
+          5,
           0,
           3
         ]
