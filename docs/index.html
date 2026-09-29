@@ -47,6 +47,7 @@ a{color:#6B93D6}
 .response-evidence li{margin-bottom:6px}
 .response-evidence a{overflow-wrap:anywhere}
 .sdk-stat{gap:10px}
+.profiles{margin-top:12px}
 .definitions{margin-top:16px;font-size:0.82rem;color:#8b949e}
 .definitions summary{color:#e6edf3;font-size:0.95rem;font-weight:600;cursor:pointer}
 .definitions ul{margin:8px 0 0 18px}
@@ -137,7 +138,7 @@ a{color:#6B93D6}
   <div class="sdk-card">
     <h3 style="color:#B07CFF">KMP</h3>
     <div class="sdk-stat"><span class="sdk-stat-label">Median release gap (365d)</span><span class="sdk-stat-value">10.6 days</span></div>
-    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">1.3</span></div>
+    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">1.4</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Stable releases (90d / 365d)</span><span class="sdk-stat-value">6 / 29</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issues</span><span class="sdk-stat-value">0</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issue median age</span><span class="sdk-stat-value" style="color:#8b949e">not applicable</span></div>
@@ -274,7 +275,6 @@ a{color:#6B93D6}
 <!-- Data sources, freshness, definitions -->
 <div class="card">
   <h2>Data Sources and Freshness</h2>
-  <p>Profiles: <a href="profiles/index.json">download JSON index</a>.</p>
   <div style="overflow-x:auto">
     <table class="evidence-table">
     <tr><th style="color:#FF6B4A">iOS</th><td>Clone traffic<br><span class="muted">2026-09-29 16:15</span></td><td>Repo metadata<br><span class="muted">2026-09-29 16:32</span></td><td>Commit activity<br><span class="muted">2026-09-29 16:32</span></td><td>Releases<br><span class="muted">2026-09-29 16:32</span></td><td>Issues/PRs (windowed)<br><span class="muted">2026-09-29 16:33</span></td><td>Response events<br><span class="muted">2026-09-29 16:33</span></td><td>Open backlog scan<br><span class="muted">2026-09-29 16:33</span></td></tr>
@@ -283,6 +283,7 @@ a{color:#6B93D6}
     <tr><th style="color:#B07CFF">KMP</th><td>Clone traffic<br><span class="muted">2026-09-29 16:15</span></td><td>Repo metadata<br><span class="muted">2026-09-29 16:32</span></td><td>Commit activity<br><span class="muted">2026-09-29 16:32</span></td><td>Releases<br><span class="muted">2026-09-29 16:32</span></td><td>Issues/PRs (windowed)<br><span class="muted">2026-09-29 16:33</span></td><td>Response events<br><span class="muted">2026-09-29 16:33</span></td><td>Open backlog scan<br><span class="muted">2026-09-29 16:33</span></td><td>Scarf (Maven Central)<br><span class="muted">2026-09-29</span></td><td>Dependents scrape<br><span class="muted">2026-09-29</span></td></tr>
     </table>
   </div>
+  <p class="profiles">Profiles: <a href="profiles/index.json">JSON index</a>.</p>
   <details class="definitions" id="definitions">
     <summary>Definitions</summary>
     <ul>
