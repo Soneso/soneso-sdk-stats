@@ -6,15 +6,15 @@
     "label": "KMP",
     "repository_url": "https://github.com/Soneso/kmp-stellar-sdk"
   },
-  "as_of": "2026-09-29T16:42:30.152412Z",
+  "as_of": "2026-09-29T18:48:32.470243Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-09-29T16:42:30.230816Z",
-    "as_of": "2026-09-29T16:42:30.152412Z",
-    "build_commit": "bab7f5173956af6666fe792658bf4c708073a948",
+    "generated_at": "2026-09-29T18:48:32.502204Z",
+    "as_of": "2026-09-29T18:48:32.470243Z",
+    "build_commit": "66ffd2b981e619e047d6eff57e34dd909c4f12e2",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/bab7f5173956af6666fe792658bf4c708073a948/docs/index.html#L287",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/66ffd2b981e619e047d6eff57e34dd909c4f12e2/docs/index.html#L289",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
