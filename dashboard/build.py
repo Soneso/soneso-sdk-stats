@@ -1205,12 +1205,12 @@ def build_freshness_section(all_data):
     table = "\n    ".join(rows)
     return f'''<div class="card">
   <h2>Data Sources and Freshness</h2>
-  <p>Profiles: <a href="profiles/index.json">download JSON index</a>.</p>
   <div style="overflow-x:auto">
     <table class="evidence-table">
     {table}
     </table>
   </div>
+  <p class="profiles">Profiles: <a href="profiles/index.json">JSON index</a>.</p>
   <details class="definitions" id="definitions">
     <summary>Definitions</summary>
     <ul>
@@ -1310,6 +1310,7 @@ a{color:#6B93D6}
 .response-evidence li{margin-bottom:6px}
 .response-evidence a{overflow-wrap:anywhere}
 .sdk-stat{gap:10px}
+.profiles{margin-top:12px}
 .definitions{margin-top:16px;font-size:0.82rem;color:#8b949e}
 .definitions summary{color:#e6edf3;font-size:0.95rem;font-weight:600;cursor:pointer}
 .definitions ul{margin:8px 0 0 18px}
