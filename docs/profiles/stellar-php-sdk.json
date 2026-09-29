@@ -6,15 +6,15 @@
     "label": "PHP",
     "repository_url": "https://github.com/Soneso/stellar-php-sdk"
   },
-  "as_of": "2026-09-29T18:48:32.470243Z",
+  "as_of": "2026-09-29T18:48:56.695048Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-09-29T18:48:32.502204Z",
-    "as_of": "2026-09-29T18:48:32.470243Z",
-    "build_commit": "66ffd2b981e619e047d6eff57e34dd909c4f12e2",
+    "generated_at": "2026-09-29T18:48:56.728271Z",
+    "as_of": "2026-09-29T18:48:56.695048Z",
+    "build_commit": "97f30cdd23a73e24307c0b98c1955f39e034adfc",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/66ffd2b981e619e047d6eff57e34dd909c4f12e2/docs/index.html#L289",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/97f30cdd23a73e24307c0b98c1955f39e034adfc/docs/index.html#L286",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
