@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-09-28T17:53:44Z",
+  "collected_at": "2026-09-29T16:15:54Z",
   "summary": {
     "last_14_days": {
-      "count": 403,
+      "count": 329,
       "uniques": 249
     }
   },
