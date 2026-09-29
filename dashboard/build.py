@@ -125,6 +125,14 @@ class Signals(dict):
         }
 
 
+def definitions_line(page):
+    """Line of the definitions anchor in a rendered page, the target of the methodology links."""
+    line = next((i for i, text in enumerate(page.splitlines(), 1) if 'id="definitions"' in text), None)
+    if line is None:
+        raise RuntimeError("definitions anchor missing in the rendered page")
+    return line
+
+
 def build_provenance():
     """Record the source checkout; never invent a commit for exported data."""
     commit = subprocess.check_output(
@@ -135,8 +143,7 @@ def build_provenance():
     committed_page = subprocess.check_output(
         ["git", "show", f"{commit}:docs/index.html"],
         cwd=Path(__file__).resolve().parent.parent, text=True)
-    definition_line = next((i for i, line in enumerate(committed_page.splitlines(), 1)
-                            if ">Definitions</h3>" in line), 1)
+    definition_line = definitions_line(committed_page)
     return {
         "definition_version": DEFINITION_VERSION,
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -1204,10 +1211,10 @@ def build_freshness_section(all_data):
     {table}
     </table>
   </div>
-  <div class="definitions">
-    <h3>Definitions</h3>
+  <details class="definitions" id="definitions">
+    <summary>Definitions</summary>
     <ul>
-      <li id="definitions">Profiles export this dashboard's raw signals, samples, coverage, freshness, and evidence following the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-profile proposal</a>; uncollected signals and percentiles are null with reasons. There is no comparison pool or combined score.</li>
+      <li>Profiles export this dashboard's raw signals, samples, coverage, freshness, and evidence following the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-profile proposal</a>; uncollected signals and percentiles are null with reasons. There is no comparison pool or combined score.</li>
       <li>All times are UTC. Each source shows its own last successful collection time; a green build never implies every source is fresh.</li>
       <li>Release cadence (shown on the maintenance cards as median release gap): median gap in days between stable (non-prerelease) GitHub releases, over gaps whose later release falls in the trailing 365 days. GitHub publication is the shipping proxy; registry artifacts may lag briefly.</li>
       <li>Commit activity: GitHub's per-day commit counts for the default branch, shown for the trailing 365 days.</li>
@@ -1224,7 +1231,7 @@ def build_freshness_section(all_data):
       <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
       <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. GitHub star counts in the users table are maintainer-set snapshots for open-source user projects, linked to the project repository and dated in the curated file; closed-source or off-GitHub projects show a dash. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count; it is shown only where the graph can attribute dependents to the repository (pub.dev and Composer manifests). SPM manifests are not parsed by the graph, and Maven/Gradle coordinates are not mapped back to source repositories, so iOS and KMP read not tracked instead of a false zero.</li>
     </ul>
-  </div>
+  </details>
 </div>'''
 
 
@@ -1268,7 +1275,7 @@ HTML_TEMPLATE = Template(r"""<!DOCTYPE html>
 body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;padding:24px;max-width:1400px;margin:0 auto}
 h1{font-size:1.6rem;font-weight:600}
 h2{font-size:1.15rem;font-weight:600;color:#e6edf3;margin-bottom:12px}
-h3{font-size:0.95rem}
+a{color:#6B93D6}
 .subtitle{color:#8b949e;font-size:0.85rem;margin-top:4px}
 .header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #30363d}
 .section-title{margin:24px 0 12px 0}
@@ -1285,7 +1292,7 @@ h3{font-size:0.95rem}
 .chart-heatmap{width:100%;height:150px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .footer{text-align:center;color:#8b949e;font-size:0.8rem;margin-top:32px;padding-top:16px;border-top:1px solid #30363d}
-.footer a{color:#6B93D6;text-decoration:none}
+.footer a{text-decoration:none}
 .heatmap-legend{display:flex;gap:16px;align-items:center;font-size:0.8rem;color:#8b949e}
 .heatmap-legend-item{display:flex;align-items:center;gap:5px}
 .heatmap-legend-dot{width:12px;height:12px;border-radius:3px;display:inline-block}
@@ -1294,18 +1301,18 @@ h3{font-size:0.95rem}
 .evidence-table{width:100%;border-collapse:collapse;font-size:0.82rem}
 .evidence-table th{color:#8b949e;text-align:left;padding:6px 8px;border-bottom:1px solid #30363d;font-weight:600}
 .evidence-table td{padding:6px 8px;border-bottom:1px solid #21262d;vertical-align:top}
-.evidence-table a{color:#6B93D6;text-decoration:none}
+.evidence-table a{text-decoration:none}
 .muted{color:#8b949e}
-.sdk-stat-value a{color:#6B93D6;text-decoration:none}
+.sdk-stat-value a{text-decoration:none}
 .response-evidence{font-size:0.8rem;color:#8b949e;margin-top:12px}
 .response-evidence summary{cursor:pointer}
 .response-evidence ul{margin:8px 0 0 18px}
 .response-evidence li{margin-bottom:6px}
-.response-evidence a{color:#6B93D6;overflow-wrap:anywhere}
+.response-evidence a{overflow-wrap:anywhere}
 .sdk-stat{gap:10px}
 .definitions{margin-top:16px;font-size:0.82rem;color:#8b949e}
-.definitions h3{color:#e6edf3;margin-bottom:8px}
-.definitions ul{margin-left:18px}
+.definitions summary{color:#e6edf3;font-size:0.95rem;font-weight:600;cursor:pointer}
+.definitions ul{margin:8px 0 0 18px}
 .definitions li{margin-bottom:6px}
 .maintenance-grid{grid-template-columns:1fr 1fr}
 @media(max-width:768px){
@@ -1374,6 +1381,18 @@ $freshness_section
 </div>
 
 <script>
+// Fragment navigation scrolls to the collapsed definitions without opening them; the profile
+// methodology links target #definitions, and printed copies need the definitions visible.
+(function() {
+  var definitions = document.getElementById('definitions');
+  function openDefinitionsIfTargeted() {
+    if (location.hash === '#definitions') definitions.open = true;
+  }
+  openDefinitionsIfTargeted();
+  window.addEventListener('hashchange', openDefinitionsIfTargeted);
+  window.addEventListener('beforeprint', function() { definitions.open = true; });
+})();
+
 const DATA = $chart_data_json;
 const COLORS = DATA.colors;
 const SDK_NAMES = DATA.sdks;

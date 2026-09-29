@@ -72,6 +72,10 @@ class ExportTests(unittest.TestCase):
         profiles = {}
         page = build.OUT.read_text()
         self.assert_clean_text(page)
+        self.assertIn('<details class="definitions" id="definitions">',
+                      page.splitlines()[build.definitions_line(page) - 1])
+        with self.assertRaises(RuntimeError):
+            build.definitions_line(page.replace('id="definitions"', ''))
         for entry in index["sdks"]:
             text = (output / entry["profile"]).read_text()
             self.assert_clean_text(text)

@@ -401,6 +401,7 @@ class RenderingTests(unittest.TestCase):
                         self.assertNotIn('href="javascript:', text)
                         self.assertNotIn('\u2014', text)
                         self.assertFalse(any(0x1F000 <= ord(c) <= 0x1FAFF or 0x2600 <= ord(c) <= 0x27BF for c in text))
+                        self.assertLess(text.index('id="definitions"'), text.index('<script>'))
                         pages.append({'script': re.search(r'<script>([\s\S]*?)</script>', text).group(1),
                                       'ids': re.findall(r'id="([^"]+)"', text)})
             if shutil.which('node'):
@@ -408,12 +409,29 @@ class RenderingTests(unittest.TestCase):
 const vm = require('vm');
 const fs = require('fs');
 for (const page of JSON.parse(fs.readFileSync(0, 'utf8'))) {
-  const ids = new Set(page.ids), options = [];
-  vm.runInNewContext(page.script, {
-    document: {getElementById: id => ids.has(id) ? {} : null},
-    window: {addEventListener() {}},
-    echarts: {init() {return {setOption(option) {options.push(option);}, resize() {}};}}
-  }, {timeout: 1000});
+  for (const hash of ['', '#definitions']) {
+    const elements = new Map(page.ids.map(id => [id, {}])), listeners = [], options = [];
+    const context = {
+      document: {getElementById: id => elements.get(id) || null},
+      window: {addEventListener(name, listener) {listeners.push([name, listener]);}},
+      location: {hash},
+      echarts: {init() {return {setOption(option) {options.push(option);}, resize() {}};}}
+    };
+    vm.runInNewContext(page.script, context, {timeout: 1000});
+    const definitions = elements.get('definitions');
+    if (!definitions) throw new Error('definitions element missing');
+    if (Boolean(definitions.open) !== (hash === '#definitions')) {
+      throw new Error(`definitions open=${definitions.open} after load with hash "${hash}"`);
+    }
+    const fire = name => listeners.filter(([event]) => event === name).forEach(([, listener]) => listener());
+    definitions.open = false;
+    fire('beforeprint');
+    if (definitions.open !== true) throw new Error('definitions stay closed before print');
+    definitions.open = false;
+    context.location.hash = '#definitions';
+    fire('hashchange');
+    if (definitions.open !== true) throw new Error('definitions stay closed after hashchange');
+  }
 }
 """
                 subprocess.run(['node', '-e', script], input=json.dumps(pages), text=True, check=True,
