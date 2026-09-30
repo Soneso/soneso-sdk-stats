@@ -73,7 +73,7 @@ def create_snapshot(quarter, output_root=None, source_root=None, now=None):
             (target / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n", encoding="utf-8")
             with (target / "summary.csv").open("w", newline="", encoding="utf-8") as stream:
                 fields = ["sdk", "metric", "window", "value", "coverage", "observed_at",
-                          "unit", "sample_size", "window_end", "freshness", "reason", "protocol"]
+                          "unit", "sample_size", "window_end", "freshness", "reason", "protocol", "compatibility"]
                 writer = csv.DictWriter(stream, fieldnames=fields)
                 writer.writeheader()
                 for sdk in summary["sdks"]:
@@ -83,7 +83,8 @@ def create_snapshot(quarter, output_root=None, source_root=None, now=None):
                         # structured release context without losing type.
                         row.update(sdk=sdk["folder"], metric=key,
                                    value=json.dumps(signal["value"], separators=(",", ":"), allow_nan=False),
-                                   protocol=json.dumps(signal["protocol"], separators=(",", ":")) if "protocol" in signal else "")
+                                   protocol=json.dumps(signal["protocol"], separators=(",", ":")) if "protocol" in signal else "",
+                                   compatibility=json.dumps(signal["compatibility"], separators=(",", ":"), allow_nan=False) if "compatibility" in signal else "")
                         writer.writerow(row)
             (target / "README.md").write_text(
                 f"This {quarter} snapshot freezes the SDK dashboard inputs byte for byte in `inputs/`, "

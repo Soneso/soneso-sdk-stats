@@ -4,6 +4,7 @@ Run with: python3 -m unittest discover -s tests -v
 The workflow's actual inline Python is exercised with mocked HTTP responses.
 """
 import contextlib
+import html
 import copy
 import io
 import itertools
@@ -379,6 +380,10 @@ class RenderingTests(unittest.TestCase):
                                'response_status': [], 'url': 'javascript:alert(1)',
                                'response': {'definition_version': 3, 'actor': payload, 'kind': payload,
                                             'hours': 1, 'url': 'https://example.org/"onmouseover="x'}}]}
+        compatibility_fixture = json.loads((ROOT / 'tests/fixtures/compatibility.json').read_text())['collected']
+        compatibility_fixture['seps'][0]['title'] = payload + '\u2014\U0001F600'
+        compatibility_fixture['seps'][0]['upstream']['status'] = payload
+        compatibility_fixture['seps'][0]['url'] = 'javascript:alert(1)'
         with tempfile.TemporaryDirectory() as temp:
             self.m['OUT'] = Path(temp) / 'index.html'
             pages = []
@@ -386,10 +391,12 @@ class RenderingTests(unittest.TestCase):
                 for keys in itertools.combinations([s['key'] for s in self.m['SDKS']], count):
                     self.m['ENABLED_SDKS'] = set(keys)
                     self.m['ACTIVE_SDKS'] = [s for s in self.m['SDKS'] if s['key'] in keys]
-                    for malformed in ('real', None, [], 1, 'bad', {}, fixture):
+                    for malformed in ('real', None, [], 1, 'bad', {}, fixture, compatibility_fixture):
                         def loader(path):
                             if malformed == 'real':
                                 return original_loader(path)
+                            if malformed is compatibility_fixture:
+                                return compatibility_fixture if path.name == 'compatibility.json' else original_loader(path)
                             if malformed is fixture:
                                 return fixture if path.name == 'github-issues.json' else original_loader(path)
                             return malformed
@@ -440,6 +447,199 @@ for (const page of JSON.parse(fs.readFileSync(0, 'utf8'))) {
             corrupt.write_text('{broken')
             self.assertIsNone(original_loader(corrupt))
             self.assertIsNone(original_loader(Path(temp) / 'missing.json'))
+
+    def compatibility_card(self, raw, sdks=None):
+        self.m['load_json'] = lambda path: raw if not isinstance(raw, list) else raw[next(i for i, sdk in enumerate(sdks) if sdk['folder'] == path.parent.name)]
+        sdks = sdks or self.m['SDKS'][:1]
+        with contextlib.redirect_stdout(io.StringIO()):
+            data = [{'sdk': sdk, 'compatibility': self.m['extract_compatibility'](sdk)} for sdk in sdks]
+        signals = {sdk['key']: self.m['Signals']() for sdk in sdks}
+        with contextlib.redirect_stdout(io.StringIO()):
+            page = self.m['build_compatibility_card'](data, signals)
+        cells = {key: html.unescape(re.sub('<[^>]+>', '', text)) for key, text in
+                 re.findall(r'<td data-kind="([^"]+)">(.*?)</td>', page)}
+        cells.update({key: html.unescape(text) for key, text in re.findall(r'<span data-kind="([^"]+)">(.*?)</span>', page)})
+        return page, cells, data, signals
+
+    def release_cells(self, page, kind, key='ios'):
+        row = re.search(r'<tr data-release="' + key + '-' + kind + r'">(.*?)</tr>', page)[1]
+        return [html.unescape(re.sub('<[^>]+>', '', cell)) for cell in re.findall(r'<t[dh]>(.*?)</t[dh]>', row)]
+
+    def test_compatibility_cells_and_invalid_entries(self):
+        raw = json.loads((ROOT / 'tests/fixtures/compatibility.json').read_text())['collected']
+        for states, phrase in [(['unknown'], 'SEP-{0} not compared'), (['no_version_field'], 'SEP-{0} has no upstream version'),
+                               (['current'], '1 of 1 at current version'),
+                               (['current', 'updated_date_not_later'],
+                                '1 of 1 at current version; 1 without upstream update recorded since generation'),
+                               (['updated_date_not_later', 'updated_date_later'],
+                                'matrices record no version; 1 without upstream update recorded since generation; '
+                                '1 with upstream update recorded since generation'),
+                               (['no_version_field', 'no_version_field'], 'SEP-{0}, SEP-{1} have no upstream version')]:
+            fixture = copy.deepcopy(raw)
+            fixture['seps'] = fixture['seps'][:len(states)]
+            for entry, state in zip(fixture['seps'], states):
+                entry.update(state=state, layout='php', sep_version='1.0.0' if state == 'current' else None)
+                entry['upstream'].update(version='1.0.0' if state != 'no_version_field' else None,
+                                         updated=None if state == 'current' else '2099-01-01' if state == 'updated_date_later' else '2026-09-01')
+            _, cells, data, _ = self.compatibility_card(fixture)
+            self.assertEqual(cells['sep-versions'], phrase.format(*[entry['number'] for entry in fixture['seps']]))
+            self.assertEqual(data[0]['compatibility']['summary']['sep_matrices'], len(states))
+        for malformed in (None, {}, {'schema_version': 2}, {'schema_version': True}):
+            page, cells, _, signals = self.compatibility_card(malformed)
+            self.assertTrue(all('n/a' in text and '0 of 0' not in text for text in cells.values()))
+            self.assertTrue(all(s['value'] is None and s['reason'] for s in signals[self.m['SDKS'][0]['key']].values()))
+            self.assertTrue(all(s['value'] is None and s['reason'] == 'Missing or malformed compatibility data.'
+                                for key, s in signals[self.m['SDKS'][0]['key']].items()
+                                if key.startswith('compatibility.sep.')))
+        for bad in (True, -1, 3.5, '50', [], {}):
+            fixture = copy.deepcopy(raw)
+            fixture['horizon']['total'] = bad
+            fixture['seps'][0]['implemented'] = bad
+            page, cells, data, _ = self.compatibility_card(fixture)
+            self.assertIn('n/a', cells['horizon'])
+            self.assertIn('<td class="nowrap">not compared: Matrix entry missing or malformed</td>', page)
+            self.assertIsNone(data[0]['compatibility']['summary']['sep_at_full'])
+        for bad in (True, 50.0):
+            fixture = copy.deepcopy(raw)
+            fixture['horizon'].update(full=bad, total=bad)
+            _, _, data, _ = self.compatibility_card(fixture)
+            self.assertEqual((data[0]['compatibility']['horizon']['coverage'], data[0]['compatibility']['horizon']['total']),
+                             ('incomplete', None))
+        for state in ('list_incomplete', 'cited_not_found', 'unknown'):
+            fixture = copy.deepcopy(raw)
+            fixture['horizon'].update(state=state, newer_stable_releases=None, reason='test reason')
+            if state == 'list_incomplete':
+                fixture['upstream']['horizon']['list_complete'] = False
+            if state == 'unknown':
+                fixture['horizon'].update(coverage='incomplete', full=None, total=None)
+            _, cells, _, signals = self.compatibility_card(fixture)
+            self.assertIn('newest stable ' + ('n/a: upstream release list incomplete' if state == 'list_incomplete' else 'v28.0.1'), cells['horizon'])
+            self.assertIsNone(signals[self.m['SDKS'][0]['key']]['compatibility.horizon.newer_stable_releases']['value'])
+            if state == 'cited_not_found':
+                self.assertIn('cited release not found, count n/a', cells['horizon'])
+
+    def test_compatibility_rejects_inconsistent_comparisons(self):
+        raw = json.loads((ROOT / 'tests/fixtures/compatibility.json').read_text())['collected']
+        for field, bad in [('upstream', []), ('sep_version', []), ('sep_version', 'wrong'),
+                           ('state', {}), ('layout', 'ios')]:
+            fixture = copy.deepcopy(raw)
+            if field == 'layout':
+                fixture['seps'][0].update(state='updated_date_not_later', sep_version=None)
+            fixture['seps'][0][field] = bad
+            _, _, data, _ = self.compatibility_card(fixture)
+            entry = data[0]['compatibility']['seps'][0]
+            self.assertEqual((entry['state'], entry['coverage'], bool(entry['reason'])), ('unknown', 'complete', True))
+        for changes in [{'version': 'v21.3.0', 'state': 'cites_prerelease', 'cited_is_prerelease': True},
+                        {'version': 'v27.0.0-rc.1', 'state': 'newer_available', 'cited_is_prerelease': False,
+                         'newer_stable_releases': 1, 'newer': [{'tag': raw['upstream']['horizon']['current'],
+                         'published_at': raw['upstream']['horizon']['published_at'], 'url': raw['upstream']['horizon']['url']}]},
+                        {'version': 'v27.0.0'}, {'state': 'newer_available'}, {'state': 'cites_prerelease'},
+                        {'state': 'newer_available', 'newer_stable_releases': 1,
+                         'newer': [{'tag': 'v20.0.0', 'published_at': raw['source']['published_at'], 'url': 'https://example.org/release'}]}]:
+            fixture = copy.deepcopy(raw)
+            fixture['horizon'].update(changes)
+            _, _, data, _ = self.compatibility_card(fixture)
+            entry = data[0]['compatibility']['horizon']
+            self.assertEqual((entry['state'], entry['newer_stable_releases'], entry['coverage'], bool(entry['reason'])),
+                             ('unknown', None, 'complete', True))
+
+        fixture = copy.deepcopy(raw)
+        fixture['upstream']['horizon']['url'] = 'javascript:alert(1)'
+        page, _, data, _ = self.compatibility_card(fixture)
+        self.assertEqual(data[0]['compatibility']['horizon']['state'], 'unknown')
+        self.assertNotIn('javascript:', page)
+
+    def test_compatibility_guards_and_summary(self):
+        raw = json.loads((ROOT / 'tests/fixtures/compatibility.json').read_text())['collected']
+        raw['summary']['sep_matrices'] = 999
+        raw['guards'] = [{'kind': 'sdk_version_mismatch', 'section': section, 'sep': 10 if section == 'sep' else None,
+                          'file': section + '/matrix.md', 'text': section + ' header says old'} for section in ('horizon', 'rpc', 'sep')]
+        raw['guards'].append({'kind': 'total_changed', 'section': 'rpc', 'sep': None, 'file': 'rpc/matrix.md', 'text': 'total changed'})
+        _, _, data, signals = self.compatibility_card(raw)
+        self.assertEqual(data[0]['compatibility']['summary']['sep_matrices'], len(raw['seps']))
+        for key, signal in signals[self.m['SDKS'][0]['key']].items():
+            self.assertEqual((key.split('.')[1] + ' header says old' in signal['reason'], 'total changed' in signal['reason']),
+                             (True, key == 'compatibility.rpc.total'))
+        second = copy.deepcopy(raw)
+        second['horizon'].update(full=49, total=49)
+        for changed, count, expected in [(False, 2, True), (True, 2, False), (False, 1, False)]:
+            second['horizon']['version'] = 'v27.0.0' if changed else raw['horizon']['version']
+            page, _, _, signals = self.compatibility_card([raw, second][:count], self.m['SDKS'][:count])
+            self.assertEqual('totals differ across SDKs' in page, expected)
+            if expected:
+                self.assertIn('HORIZON totals differ across SDKs for v28.0.1: iOS 50, Flutter 49', page)
+            self.assertEqual('totals differ across SDKs' in (signals[self.m['SDKS'][0]['key']]['compatibility.horizon.total']['reason'] or ''), expected)
+        second['horizon'].update(version=raw['horizon']['version'], coverage='incomplete')
+        page, _, _, _ = self.compatibility_card([raw, second], self.m['SDKS'][:2])
+        self.assertNotIn('totals differ across SDKs', page)
+
+    def test_compatibility_upstream_reasons_and_release_links(self):
+        raw = json.loads((ROOT / 'tests/fixtures/compatibility.json').read_text())['collected']
+        _, cells, _, _ = self.compatibility_card(None)
+        self.assertEqual(cells['horizon'],
+                         'n/a, n/a: Matrix entry missing or malformed, '
+                         'newest stable n/a: upstream release data missing (matrix)')
+        cases = [
+            ({'list_complete': False}, 'upstream release list incomplete'),
+            ({'list_complete': True, 'current': None}, 'no stable release in list'),
+            (dict(raw['upstream']['horizon'], url='javascript:alert(1)'), 'upstream release data invalid'),
+            (dict(raw['upstream']['horizon'], current='v28.0.1-rc.1'), 'upstream release data invalid'),
+            ({}, 'upstream release data missing'),
+        ]
+        for upstream, reason in cases:
+            fixture = copy.deepcopy(raw)
+            fixture['horizon'].update(coverage='incomplete', reason='broken matrix.')
+            fixture['upstream']['horizon'] = upstream
+            page, cells, _, _ = self.compatibility_card(fixture)
+            self.assertIn('n/a: broken matrix, newest stable n/a: ' + reason, cells['horizon'])
+            self.assertEqual(self.release_cells(page, 'horizon')[3:], ['n/a: ' + reason, 'n/a: broken matrix'])
+        fixture = copy.deepcopy(raw)
+        fixture['horizon'].update(coverage='incomplete', reason='broken matrix.')
+        page, cells, _, _ = self.compatibility_card(fixture)
+        self.assertIn('n/a: broken matrix, newest stable v28.0.1', cells['horizon'])
+        published = raw['upstream']['horizon']['published_at'][:10]
+        self.assertEqual(self.release_cells(page, 'horizon')[2:], ['v28.0.1', f'v28.0.1 ({published})', 'n/a: broken matrix'])
+        for count in (1, 2):
+            fixture = copy.deepcopy(raw)
+            up = fixture['upstream']['horizon']
+            newer = [{'tag': up['current'], 'published_at': up['published_at'], 'url': up['url']}]
+            if count == 2:
+                newer.append({'tag': 'v28.0.0', 'published_at': up['published_at'],
+                              'url': 'https://github.com/stellar/stellar-horizon/releases/tag/v28.0.0'})
+            fixture['horizon'].update(version='v27.0.0', state='newer_available',
+                                      newer_stable_releases=count, newer=newer)
+            page, cells, _, _ = self.compatibility_card(fixture)
+            phrase = f"{count} newer stable release{'s' if count != 1 else ''}"
+            self.assertIn(phrase + ', newest v28.0.1', cells['horizon'])
+            tags = ', '.join(f"{r['tag']} ({r['published_at'][:10]})" for r in newer)
+            self.assertEqual(self.release_cells(page, 'horizon')[2:],
+                             ['v27.0.0', f"{up['current']} ({up['published_at'][:10]})", f'{count}: {tags}'])
+        fixture['horizon']['version'] = 'not-a-release'
+        page, cells, _, signals = self.compatibility_card(fixture)
+        self.assertEqual(cells['horizon'].split(', ', 1)[0], 'n/a')
+        self.assertNotIn('/releases/tag/not-a-release', page)
+        self.assertNotIn('https://github.com/stellar/stellar-horizon/releases/tag/not-a-release',
+                         signals['ios']['compatibility.horizon.full']['evidence_urls'])
+
+    def test_compatibility_sep_evidence_by_state(self):
+        raw = json.loads((ROOT / 'tests/fixtures/compatibility.json').read_text())['collected']
+        raw['seps'] = raw['seps'][:6]
+        states = ('current', 'version_differs', 'updated_date_not_later',
+                  'updated_date_later', 'no_version_field', 'unknown')
+        for entry, state in zip(raw['seps'], states):
+            entry.update(state=state, layout='php', reason=None,
+                         sep_version='1.0.0' if state in ('current', 'version_differs') else None)
+            entry['upstream'].update(version=None if state == 'no_version_field' else
+                                    '2.0.0' if state == 'version_differs' else '1.0.0',
+                                    updated='2099-01-01' if state == 'updated_date_later' else '2020-01-01')
+        page, _, _, signals = self.compatibility_card(raw)
+        for state, entry in zip(states, raw['seps']):
+            urls = signals['ios']['compatibility.sep.' + state]['evidence_urls']
+            self.assertEqual(set(urls), {entry['url'], entry['upstream']['url']})
+            self.assertTrue(all('href="' + html.escape(url, quote=True) + '"' in page for url in urls))
+        tree = 'https://github.com/Soneso/stellar-ios-mac-sdk/tree/' + raw['source']['commit'] + '/compatibility/sep'
+        for field in ('matrices', 'at_full'):
+            self.assertEqual(signals['ios']['compatibility.sep.' + field]['evidence_urls'], [tree])
 
     def test_malformed_nested_association_never_aborts_the_build(self):
         original_loader = self.m['load_json']

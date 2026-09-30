@@ -14,6 +14,7 @@ import html as html_mod
 import json
 import math
 import os
+import re
 import statistics
 import subprocess
 import tempfile
@@ -556,6 +557,7 @@ def build_data():
             "activity": extract_activity(sdk),
             "issues": extract_issues(sdk),
             "dependents": extract_dependents(sdk),
+            "compatibility": extract_compatibility(sdk),
         }
         sdk_data["release_stats"] = compute_release_stats(sdk_data["activity"]["releases_all"])
         sdk_data["packagist"] = extract_packagist() if sdk["key"] == "php" else {"latest": {}, "monthly_history": None, "collected_at": None}
@@ -581,11 +583,6 @@ def build_data():
             sd["activity"]["weekly_commits"]
         )
         cut = cutoff_date()
-        def display_text(v):
-            # Rendered-copy rule: no em dashes in anything the page shows,
-            # including tooltip text; the stored source data is untouched.
-            return str(v if v is not None else "").replace("\u2014", "-")
-
         chart_data["releases"][sdk["label"]] = [
             {"date": r["published_at"][:10], "tag": display_text(r.get("tag", "")), "name": display_text(r.get("name", ""))}
             for r in sd["activity"]["releases_all"]
@@ -754,6 +751,363 @@ def response_evidence(issues, evidence=None):
                "<p>No community items in the 90-day cohort.</p>" if complete and issues.get("response_evidence_available")
                else "<p>Response evidence unavailable.</p>")
     return '<details class="response-evidence"><summary>Response evidence (90d)</summary>' + content + '</details>'
+
+
+STABLE_TAG = re.compile(r'v\d+\.\d+\.\d+')
+RELEASE_TAG = re.compile(r'v\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?')
+COMPATIBILITY_STATES = ('current', 'version_differs', 'updated_date_not_later',
+                        'updated_date_later', 'no_version_field', 'unknown')
+
+
+def display_text(value):
+    """Normalize display copies while source JSON keeps its original text."""
+    if not isinstance(value, str):
+        return ''
+    return ''.join(c for c in value.replace('\u2014', '-')
+                   if not (0x1F000 <= ord(c) <= 0x1FAFF or 0x2600 <= ord(c) <= 0x27BF
+                           or ord(c) in (0xFE0F, 0x200D)))
+
+
+def stable_core(tag):
+    return tuple(int(n) for n in tag[1:].split('-', 1)[0].split('.'))
+
+
+def compatibility_count(value):
+    return type(value) is int and value >= 0
+
+
+def compatibility_release(value):
+    if not isinstance(value, dict):
+        return None
+    if not (isinstance(value.get('tag'), str) and parse_dt(value.get('published_at'))
+            and valid_evidence_url(value.get('url'))):
+        return None
+    return {key: display_text(value[key]) for key in ('tag', 'published_at', 'url')}
+
+
+def validate_matrix_counts(value, fields):
+    """Normalize one matrix entry and accept its counts only when they are complete and add up."""
+    e = {k: display_text(value.get(k)) or None for k in
+         ('file', 'url', 'title', 'version', 'generated_date', 'sep_version', 'layout', 'reason')}
+    e.update(number=value.get('number') if compatibility_count(value.get('number')) else None,
+             coverage='incomplete', state='unknown', newer=[], newer_stable_releases=None,
+             cited_is_prerelease=value.get('cited_is_prerelease') is True)
+    e.update(dict.fromkeys(fields))
+    valid = (value.get('coverage') == 'complete' and all(compatibility_count(value.get(k)) for k in fields)
+             and sum(value[k] for k in fields[:-1]) == value['total'])
+    if valid:
+        e.update({k: value[k] for k in fields}, coverage='complete')
+    else:
+        e['reason'] = e['reason'] or 'Matrix entry missing or malformed.'
+    return e, valid
+
+
+def validate_sep_comparison(e, value):
+    """Keep the stored SEP state only when the upstream metadata supports it under the ordered rules."""
+    valid = e['coverage'] == 'complete'
+    up = value.get('upstream') if isinstance(value.get('upstream'), dict) else {}
+    e['upstream'] = {k: display_text(up.get(k)) or None for k in ('version', 'status', 'updated', 'commit', 'url', 'reason')}
+    e['upstream']['found'] = up.get('found') is True
+    e['server_only_excluded'] = value.get('server_only_excluded') if compatibility_count(value.get('server_only_excluded')) else None
+    state = value.get('state')
+    metadata_valid = (up.get('found') is True and not e['upstream']['reason']
+                      and bool(e['upstream']['status'])
+                      and (up.get('version') is None or bool(e['upstream']['version']))
+                      and (value.get('sep_version') is None or bool(e['sep_version'])))
+    matrix_version, upstream_version = e['sep_version'], e['upstream']['version']
+    state_valid = state == 'unknown'
+    if metadata_valid:
+        if isinstance(state, str) and state in ('current', 'version_differs') and matrix_version and upstream_version:
+            same = matrix_version.strip().removeprefix('v') == upstream_version.strip().removeprefix('v')
+            state_valid = same == (state == 'current')
+        elif state == 'no_version_field':
+            state_valid = upstream_version is None
+        elif isinstance(state, str) and state in ('updated_date_not_later', 'updated_date_later'):
+            updated, generated = parse_dt(e['upstream']['updated']), parse_dt(e['generated_date'])
+            state_valid = (e['layout'] == 'php' and matrix_version is None and bool(upstream_version)
+                           and updated is not None and generated is not None
+                           and ((updated <= generated) == (state == 'updated_date_not_later')))
+    if valid and state_valid:
+        e['state'] = state
+    elif valid:
+        e['reason'] = e['reason'] or 'Missing or inconsistent SEP comparison evidence.'
+    if e['state'] == 'unknown':
+        e['reason'] = e['reason'] or e['upstream']['reason'] or 'SEP comparison unavailable.'
+
+
+def validate_release_comparison(e, value, upstream):
+    """Keep the stored Horizon/RPC state and newer-release records only when they agree with the validated upstream release."""
+    state = value.get('state')
+    states = ('unknown', 'list_incomplete', 'cited_not_found', 'cites_prerelease', 'newer_available', 'current')
+    if isinstance(state, str) and state in states:
+        e['state'] = state
+    newer = value.get('newer')
+    records = [compatibility_release(r) for r in newer] if isinstance(newer, list) else None
+    count = value.get('newer_stable_releases')
+    current = upstream['current']
+    version = e['version']
+    records_valid = (records is not None and all(r is not None for r in records)
+                     and compatibility_count(count) and count == len(records)
+                     and current and version and RELEASE_TAG.fullmatch(version))
+    if records_valid:
+        tags = [r['tag'] for r in records]
+        stable_tags = all(STABLE_TAG.fullmatch(tag) for tag in tags)
+        records_valid = (stable_tags and len(set(tags)) == len(tags)
+                         and all(stable_core(version) < stable_core(tag) <= stable_core(current) for tag in tags)
+                         and tags == sorted(tags, key=stable_core, reverse=True)
+                         and (not tags or tags[0] == current)
+                         and bool(tags) == (stable_core(current) > stable_core(version))
+                         and ('-' not in version or e['cited_is_prerelease']))
+    state_valid = ((e['state'] == 'current' and version == current and count == 0 and not e['cited_is_prerelease'])
+                   or (e['state'] == 'newer_available' and compatibility_count(count) and count > 0 and not e['cited_is_prerelease'])
+                   or (e['state'] == 'cites_prerelease' and e['cited_is_prerelease']))
+    if records_valid and state_valid:
+        e.update(newer=records, newer_stable_releases=count)
+    elif e['state'] in ('cites_prerelease', 'newer_available', 'current'):
+        e.update(state='unknown', reason='Missing or inconsistent upstream comparison.')
+    if e['newer_stable_releases'] is None:
+        e['reason'] = e['reason'] or 'Upstream comparison unavailable.'
+
+
+def extract_compatibility(sdk):
+    """Validate each matrix independently and derive headlines from those entries."""
+    raw = load_json(ROOT / sdk['folder'] / 'compatibility.json')
+    if not isinstance(raw, dict) or type(raw.get('schema_version')) is not int or raw['schema_version'] != 1:
+        raw = {}
+    result = {'source': {}, 'upstream': {}, 'guards': [], 'seps': None, 'summary': None,
+              'collected_at': raw.get('collected_at') if parse_dt(raw.get('collected_at')) else None,
+              'reason': 'Missing or malformed compatibility data.'}
+    source = raw.get('source')
+    if isinstance(source, dict):
+        result['source'] = {k: display_text(source.get(k)) or None
+                            for k in ('tag', 'sdk_version', 'commit', 'published_at', 'url')}
+    upstream = raw.get('upstream') if isinstance(raw.get('upstream'), dict) else {}
+    for kind in ('horizon', 'rpc', 'stellar_protocol'):
+        value = upstream.get(kind) if isinstance(upstream.get(kind), dict) else {}
+        result['upstream'][kind] = {k: display_text(value.get(k)) or None
+                                   for k in ('current', 'published_at', 'url', 'checked_at', 'commit', 'commit_date')}
+        if kind != 'stellar_protocol' and not (value.get('list_complete') is True
+                and isinstance(value.get('current'), str) and STABLE_TAG.fullmatch(value['current'])
+                and parse_dt(value.get('published_at'))
+                and valid_evidence_url(value.get('url'))):
+            for key in ('current', 'published_at', 'url'):
+                result['upstream'][kind][key] = None
+        if kind != 'stellar_protocol':
+            result['upstream'][kind]['reason'] = (
+                'upstream release list incomplete' if value.get('list_complete') is False else
+                'no stable release in list' if value.get('list_complete') is True and value.get('current') is None else
+                'upstream release data invalid' if value.get('list_complete') is True and not result['upstream'][kind]['current'] else
+                'upstream release data missing')
+
+    def matrix(value, section):
+        value = value if isinstance(value, dict) else {}
+        fields = ('implemented', 'not_implemented', 'total') if section == 'sep' else ('full', 'partial', 'none', 'deprecated', 'total')
+        e, valid = validate_matrix_counts(value, fields)
+        if section == 'sep':
+            validate_sep_comparison(e, value)
+        elif valid:
+            validate_release_comparison(e, value, result['upstream'][section])
+        return e
+
+    for kind in ('horizon', 'rpc'):
+        result[kind] = matrix(raw.get(kind), kind)
+    seps = raw.get('seps')
+    if isinstance(seps, list) and seps:
+        result['seps'] = [matrix(e, 'sep') for e in seps]
+        numbers = [e['number'] for e in result['seps']]
+        if all(n is not None for n in numbers) and len(set(numbers)) == len(numbers):
+            entries = result['seps']
+            summary = {'sep_matrices': len(entries), 'sep_at_full': None}
+            if all(e['coverage'] == 'complete' for e in entries):
+                summary['sep_at_full'] = sum(e['implemented'] == e['total'] and e['total'] > 0 for e in entries)
+            for state in COMPATIBILITY_STATES:
+                matches = [e['number'] for e in entries if e['state'] == state]
+                summary['sep_' + state] = len(matches) if state in ('current', 'updated_date_not_later') else matches
+            summary['complete'] = all(e['coverage'] == 'complete' for e in [result['horizon'], result['rpc']] + entries) and not summary['sep_unknown']
+            result['summary'] = summary
+            if summary != raw.get('summary'):
+                print(f"::warning::{sdk['folder']}: compatibility summary disagrees with validated entries")
+    for guard in as_list(raw.get('guards')):
+        if (isinstance(guard, dict) and isinstance(guard.get('kind'), str)
+                and guard['kind'] in ('total_changed', 'sdk_version_mismatch')
+                and isinstance(guard.get('section'), str) and guard['section'] in ('horizon', 'rpc', 'sep')
+                and isinstance(guard.get('file'), str) and isinstance(guard.get('text'), str)):
+            result['guards'].append({**{k: display_text(guard[k]) for k in ('kind', 'section', 'file', 'text')},
+                                     'sep': guard.get('sep') if compatibility_count(guard.get('sep')) else None})
+    return result
+
+
+def render_release_cell(e, up, kind, link):
+    """Render one Horizon or RPC main-table cell and the three cells of its upstream-releases row."""
+    unit = {'horizon': 'endpoints', 'rpc': 'methods'}[kind]
+    matrix_link = link(e['url'], 'matrix', kind)
+    version = 'n/a'
+    if e['version'] and RELEASE_TAG.fullmatch(e['version']):
+        version = link('https://github.com/stellar/stellar-' + kind + '/releases/tag/' + e['version'], e['version'], kind)
+    current = link(up['url'], up['current'], kind) if up['current'] else 'n/a'
+    counts = f"{e['full']} of {e['total']} {unit}" if e['coverage'] == 'complete' else 'n/a: ' + esc(e['reason'].rstrip('.'))
+    if e['coverage'] == 'complete' and e['partial']:
+        counts += f", {e['partial']} partial"
+    state = e['state']
+    if state == 'current':
+        phrase = 'current'
+    elif state == 'newer_available':
+        phrase = f"{e['newer_stable_releases']} newer stable release{'s' if e['newer_stable_releases'] != 1 else ''}, newest {current}"
+    elif state == 'cites_prerelease':
+        phrase = f'cites prerelease {version}, newest stable {current}'
+    elif state == 'cited_not_found':
+        phrase = f'newest stable {current}, cited release not found, count n/a'
+    else:
+        phrase = f'newest stable {current}' if up['current'] else 'newest stable n/a: ' + esc(up['reason'])
+    cell = f'<td data-kind="{kind}">{version}, <span class="matrix-count">{counts}</span>, {phrase} ({matrix_link})</td>'
+    if up['current']:
+        newest = current + (' (' + esc(up['published_at'][:10]) + ')' if up['published_at'] else '')
+    else:
+        newest = 'n/a: ' + esc(up['reason'])
+    if e['newer_stable_releases'] is None:
+        newer = 'n/a: ' + esc(e['reason'].rstrip('.'))
+    else:
+        newer = str(e['newer_stable_releases'])
+        if e['newer']:
+            newer += ': ' + ', '.join(link(r['url'], r['tag'], kind) + ' (' + esc(r['published_at'][:10]) + ')' for r in e['newer'])
+    return cell, f'<td>{version}</td><td>{newest}</td><td>{newer}</td>'
+
+
+def render_sep_details(data, sdk, link, version_check):
+    """Render the SEP matrices details block of one SDK: the version-check summary and a table with one row per SEP."""
+    labels = {'current': 'at current version', 'version_differs': 'at a different version',
+              'updated_date_not_later': 'no upstream update recorded since generation',
+              'updated_date_later': 'upstream update recorded since generation',
+              'no_version_field': 'no upstream version', 'unknown': 'not compared'}
+    rows = []
+    for e in data['seps'] or []:
+        up = e['upstream']
+        fields = f"{e['implemented']} of {e['total']}" if e['coverage'] == 'complete' else 'n/a'
+        if e['server_only_excluded']:
+            fields += f" ({e['server_only_excluded']} server-only excluded)"
+        state = labels[e['state']]
+        if e['reason']:
+            state += ': ' + e['reason'].rstrip('.')
+        cells = ((f"SEP-{e['number'] if e['number'] is not None else '?'}", True), (e['title'] or 'n/a', False), (fields, True),
+                 (e['sep_version'] or 'n/a', False), (up['version'] or 'n/a', False), (up['updated'] or 'n/a', False),
+                 (e['generated_date'] or 'n/a', False), (up['status'] or 'n/a', False), (state, True))
+        rows.append(f'<tr data-sep="{esc(str(e["number"]))}">'
+                    + ''.join(('<td class="nowrap">' if nowrap else '<td>') + esc(text) + '</td>' for text, nowrap in cells)
+                    + '<td class="nowrap">' + link(e['url'], 'matrix', e['state']) + ', ' + link(up['url'], 'specification', e['state']) + '</td></tr>')
+    proto = data['upstream']['stellar_protocol']
+    header = f"Checked against stellar-protocol master at {(proto['commit'] or 'n/a')[:7]} ({proto['commit_date'] or 'n/a'})."
+    table = ('<div style="overflow-x:auto"><table class="evidence-table"><thead><tr><th>SEP</th><th>Title</th><th>Fields</th>'
+             '<th>Matrix version</th><th>Upstream version</th><th>Upstream updated</th><th>Matrix generated</th><th>Status</th>'
+             '<th>State</th><th>Evidence</th></tr></thead>'
+             '<tbody>' + ''.join(rows) + '</tbody></table></div>') if rows else '<p class="muted">n/a: ' + esc(data['reason']) + '</p>'
+    return (f"<details class=\"compatibility-seps\" data-sdk=\"{sdk['key']}\"><summary>SEP matrices ({esc(sdk['label'])})</summary>"
+            + table + f'<p class="muted">{esc(header)} Version check: <span data-kind="sep-versions">{esc(version_check)}</span>.</p></details>')
+
+
+def build_compatibility_card(all_data, signals=None):
+    """Render matrix evidence and capture the same gated counts for exports."""
+    rows, details, release_details, notes = [], [], [], []
+    cross_guards = {}
+    for kind in ('horizon', 'rpc'):
+        by_version = {}
+        for sd in all_data:
+            e = sd['compatibility'][kind]
+            if e['coverage'] == 'complete' and e['version']:
+                by_version.setdefault(e['version'], []).append((sd['sdk']['key'], sd['sdk']['label'], e['total']))
+        for version, values in by_version.items():
+            if len({total for _, _, total in values}) > 1:
+                text = f"{kind.upper()} totals differ across SDKs for {version}: " + ', '.join(f'{label} {total}' for _, label, total in values)
+                notes.append(esc(text))
+                for key, _, _ in values:
+                    cross_guards[(key, kind)] = text
+
+    for sd in all_data:
+        sdk, data = sd['sdk'], sd['compatibility']
+        source, upstream, summary = data['source'], data['upstream'], data['summary']
+        evidence = {key: [] for key in ('horizon', 'rpc', 'sep') + COMPATIBILITY_STATES}
+        metrics = signals[sdk['key']] if signals is not None else Signals()
+        context = {'tag': source.get('tag'), 'commit': source.get('commit'), 'published_at': source.get('published_at'),
+                   'stellar_protocol_commit': upstream['stellar_protocol']['commit']}
+        for kind in ('horizon', 'rpc'):
+            context[kind] = {'version': data[kind]['version'], 'state': data[kind]['state'],
+                             'current': upstream[kind]['current'], 'newer': data[kind]['newer']}
+
+        def link(url, label, section):
+            if valid_evidence_url(url):
+                evidence[section].append(url)
+                return f'<a href="{esc(url)}">{esc(label)}</a>'
+            return esc(label)
+
+        def capture(key, value, section, comparison=False, reason=None, evidence_key=None):
+            guard_notes = [g['file'] + ': ' + g['text'] for g in data['guards'] if g['section'] == section
+                           and (g['kind'] == 'sdk_version_mismatch' or key.endswith('.total'))]
+            if key.endswith('.total') and (sdk['key'], section) in cross_guards:
+                guard_notes.append(cross_guards[(sdk['key'], section)])
+            reasons = ([reason] if reason else []) + guard_notes
+            key = 'compatibility.' + key
+            metrics.add(key, value, 'snapshot' if comparison else 'latest_release', data['collected_at'],
+                        evidence_urls=evidence[evidence_key or section], reason='; '.join(reasons) or None,
+                        window_end=upstream['stellar_protocol' if section == 'sep' else section]['checked_at'] if comparison else source.get('published_at'))
+            metrics[key]['compatibility'] = context
+
+        cells = []
+        for kind in ('horizon', 'rpc'):
+            e, up = data[kind], upstream[kind]
+            cell, release_cells = render_release_cell(e, up, kind, link)
+            cells.append(cell)
+            release_details.append(f'<tr data-release="{sdk["key"]}-{kind}"><th>{esc(sdk["label"])}</th>'
+                                   f'<td>{"Horizon" if kind == "horizon" else "RPC"}</td>' + release_cells + '</tr>')
+            capture(kind + '.full', e['full'], kind, reason=e['reason'])
+            capture(kind + '.total', e['total'], kind, reason=e['reason'])
+            capture(kind + '.newer_stable_releases', e['newer_stable_releases'], kind, True, e['reason'])
+
+        tree = 'https://github.com/Soneso/' + sdk['folder'] + '/tree/' + source['commit'] + '/compatibility/sep' if source.get('commit') else None
+        matrix_count = f"{summary['sep_at_full']} of {summary['sep_matrices']} report full coverage" if summary and summary['sep_at_full'] is not None else 'n/a: ' + next((e['reason'] for e in data['seps'] or [] if e['coverage'] != 'complete'), data['reason'])
+        matrix_cell = link(tree, matrix_count, 'sep')
+        version_parts = []
+        if summary:
+            compared = summary['sep_current'] + len(summary['sep_version_differs'])
+            dated = summary['sep_updated_date_not_later'] + len(summary['sep_updated_date_later'])
+            if compared:
+                version_parts.append(f"{summary['sep_current']} of {compared} at current version")
+            if summary['sep_version_differs']:
+                version_parts.append(', '.join('SEP-' + str(n) for n in summary['sep_version_differs']) + ' at a different version')
+            if dated and not compared:
+                version_parts.append('matrices record no version')
+            if summary['sep_updated_date_not_later']:
+                version_parts.append(f"{summary['sep_updated_date_not_later']} without upstream update recorded since generation")
+            if summary['sep_updated_date_later']:
+                version_parts.append(f"{len(summary['sep_updated_date_later'])} with upstream update recorded since generation")
+            if summary['sep_no_version_field']:
+                seps = summary['sep_no_version_field']
+                version_parts.append(', '.join('SEP-' + str(n) for n in seps) + (' has' if len(seps) == 1 else ' have') + ' no upstream version')
+            if summary['sep_unknown']:
+                version_parts.append(', '.join('SEP-' + str(n) for n in summary['sep_unknown']) + ' not compared')
+        else:
+            version_parts.append('n/a: ' + data['reason'])
+        details.append(render_sep_details(data, sdk, link, '; '.join(version_parts)))
+        for field in ('matrices', 'at_full') + COMPATIBILITY_STATES:
+            value = summary.get('sep_' + field) if summary else None
+            if isinstance(value, list):
+                value = len(value)
+            reason = data['reason'] if value is None else None
+            if field == 'at_full' and value is None:
+                reason = next((e['reason'] for e in data['seps'] or [] if e['coverage'] != 'complete'), reason)
+            capture('sep.' + field, value, 'sep', field in COMPATIBILITY_STATES, reason,
+                    field if field in COMPATIBILITY_STATES else 'sep')
+        release_link = f'<a href="{esc(source["url"])}">{esc(source["tag"])}</a>' if valid_evidence_url(source.get('url')) and source.get('tag') else 'n/a'
+        rows.append(f'<tr data-sdk="{sdk["key"]}"><th>{esc(sdk["label"])}</th><td>{release_link}</td>' + ''.join(cells)
+                    + '<td data-kind="sep-matrices">' + matrix_cell + '</td></tr>')
+        notes.extend(esc(sdk['label'] + ' ' + g['file'] + ': ' + g['text']) for g in data['guards'])
+    qualification = 'Matrix-reported support; checks and exclusions differ by SDK. Matching versions do not verify conformance.'
+    return ('<div class="card" id="compatibility"><h2>Compatibility</h2><div style="overflow-x:auto"><table class="evidence-table">'
+            '<thead><tr><th>SDK</th><th>Release</th><th>Horizon</th><th>RPC</th><th>SEP matrices</th></tr></thead><tbody>'
+            + ''.join(rows) + '</tbody></table></div><p class="muted">' + qualification + '</p>'
+            + ''.join('<p class="muted">' + n + '</p>' for n in notes)
+            + '<details class="compatibility-releases"><summary>Upstream releases</summary><div style="overflow-x:auto">'
+            '<table class="evidence-table"><thead><tr><th>SDK</th><th>Upstream</th><th>Cited release</th><th>Newest stable</th>'
+            '<th>Newer stable releases</th></tr></thead><tbody>' + ''.join(release_details) + '</tbody></table></div></details>'
+            + ''.join(details) + '</div>')
 
 
 def build_protocol_delivery(signals=None):
@@ -1182,6 +1536,7 @@ def build_freshness_section(all_data):
             ("Repo metadata", sd["meta"]["repo_collected_at"]),
             ("Commit activity", sd["activity"]["commits_collected_at"]),
             ("Releases", sd["activity"]["releases_collected_at"]),
+            ("Compatibility matrices", sd["compatibility"]["collected_at"]),
             ("Issues/PRs (windowed)", sd["issues"]["summary"].get("collected_at")),
             ("Response events", sd["issues"]["summary"].get("response_collected_at")),
             ("Open backlog scan", (sd["issues"]["open_scan"] or {}).get("observed_at")),
@@ -1215,6 +1570,7 @@ def build_freshness_section(all_data):
     <summary>Definitions</summary>
     <ul>
       <li>Profiles export this dashboard's raw signals, samples, coverage, freshness, and evidence following the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-profile proposal</a>; uncollected signals and percentiles are null with reasons. There is no comparison pool or combined score.</li>
+      <li>Compatibility: matrices are read at the commit of each SDK's latest stable GitHub release. Coverage counts are the matrices' own fully-supported counts: Horizon endpoints, RPC methods, and SEP fields as defined by each SDK's generator, with server-only rows excluded. Counts are not comparable across SDKs. Horizon and RPC "current" means the cited release is the newest stable, non-prerelease release in the complete release list of stellar/stellar-horizon or stellar/stellar-rpc. A SEP "at current version" means the version string recorded by the matrix equals the Version field on stellar-protocol master at the checked commit; "at a different version" means the strings differ. When a matrix records no version, the SEP's Updated field is compared with the matrix generation date: "upstream update recorded since generation" means the Updated date is later. "No upstream version" means the SEP has no Version field. Neither comparison verifies conformance or the absence of intervening edits. SEP-23 has no matrix in any SDK. Generation dates describe matrix freshness, not adoption time.</li>
       <li>All times are UTC. Each source shows its own last successful collection time; a green build never implies every source is fresh.</li>
       <li>Release cadence (shown on the maintenance cards as median release gap): median gap in days between stable (non-prerelease) GitHub releases, over gaps whose later release falls in the trailing 365 days. GitHub publication is the shipping proxy; registry artifacts may lag briefly.</li>
       <li>Commit activity: GitHub's per-day commit counts for the default branch, shown for the trailing 365 days.</li>
@@ -1315,6 +1671,13 @@ a{color:#6B93D6}
 .definitions summary{color:#e6edf3;font-size:0.95rem;font-weight:600;cursor:pointer}
 .definitions ul{margin:8px 0 0 18px}
 .definitions li{margin-bottom:6px}
+#compatibility td[data-kind="horizon"],#compatibility td[data-kind="rpc"],#compatibility td[data-kind="sep-matrices"]{white-space:nowrap}
+#compatibility .muted{font-size:0.82rem;margin-top:10px}
+#compatibility details{margin-top:12px;font-size:0.82rem}
+#compatibility summary{color:#e6edf3;font-size:0.85rem;font-weight:600;cursor:pointer}
+#compatibility details .muted{margin:8px 0 6px 0}
+#compatibility details .evidence-table{margin-bottom:4px}
+.compatibility-seps td.nowrap{white-space:nowrap}
 .maintenance-grid{grid-template-columns:1fr 1fr}
 @media(max-width:768px){
   .two-col{grid-template-columns:1fr}
@@ -1339,6 +1702,8 @@ a{color:#6B93D6}
 </div>
 
 $protocol_delivery
+
+$compatibility_card
 
 <!-- Release Timeline -->
 <div class="card">
@@ -1671,6 +2036,7 @@ def render_dashboard():
         maintenance_cards=build_maintenance_cards(all_data, signals),
         usage_cards=build_usage_cards(all_data, signals),
         protocol_delivery=build_protocol_delivery(signals),
+        compatibility_card=build_compatibility_card(all_data, signals),
         usage_archive=build_usage_archive(signals),
         community_feedback=build_community_feedback(signals),
         reach_cards=build_reach_cards(all_data, signals),
@@ -1697,7 +2063,7 @@ def render_dashboard():
                         unit="days" if key.endswith(("days", "push")) else "count")
         for key, signal in metrics.items():
             prefix = key.split(".", 1)[0]
-            filename = {"release": "github-activity.json", "issues": "github-issues.json",
+            filename = {"compatibility": "compatibility.json", "release": "github-activity.json", "issues": "github-issues.json",
                         "prs": "github-issues.json", "maintainer_prs": "github-issues.json",
                         "clones": "github-clones.json", "pubdev": "pub-dev.json",
                         "packagist": "packagist.json", "scarf": "scarf.json",

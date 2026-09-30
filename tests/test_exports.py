@@ -135,6 +135,80 @@ class ExportTests(unittest.TestCase):
                               f"shipped {lag} days after activation" if lag else "shipped on activation day")
                     self.assertIn(phrase, page)
 
+        self.assert_compatibility_values(page, profiles)
+
+    def assert_compatibility_values(self, page, profiles):
+        card = page.split('id="compatibility"', 1)[1].split('<details class="compatibility-seps"', 1)[0]
+        rows = dict(re.findall(r'<tr data-sdk="([^"]+)">(.*?)</tr>', card))
+        for sdk in build.ACTIVE_SDKS:
+            cells = {key: html.unescape(re.sub('<[^>]+>', '', text)) for key, text in
+                     re.findall(r'<td data-kind="([^"]+)">(.*?)</td>', rows[sdk['key']])}
+            seps = re.search(r'<details class="compatibility-seps" data-sdk="' + sdk['key'] + r'">(.*?)</details>', page)[1]
+            cells['sep-versions'] = html.unescape(re.search(r'<span data-kind="sep-versions">(.*?)</span>', seps)[1])
+            self.assertIn('<th>SEP</th><th>Title</th><th>Fields</th><th>Matrix version</th><th>Upstream version</th>'
+                          '<th>Upstream updated</th><th>Matrix generated</th><th>Status</th><th>State</th><th>Evidence</th>', seps)
+            signals = {key.removeprefix('compatibility.'): value for key, value in profiles[sdk['key']]['signals'].items()
+                       if key.startswith('compatibility.')}
+            source = json.loads((ROOT / sdk['folder'] / 'compatibility.json').read_text())
+            for entry in source['seps']:
+                row = re.search(r'<tr data-sep="' + str(entry['number']) + r'">(.*?)</tr>', seps)[1]
+                self.assertTrue(row.startswith(f"<td class=\"nowrap\">SEP-{entry['number']}</td>"
+                                               f"<td>{build.esc(build.display_text(entry['title']))}</td>"
+                                               f"<td class=\"nowrap\">{entry['implemented']} of {entry['total']}"), row)
+                if entry['server_only_excluded']:
+                    self.assertIn(f"<td class=\"nowrap\">{entry['implemented']} of {entry['total']} "
+                                  f"({entry['server_only_excluded']} server-only excluded)</td>", seps)
+                if entry['state'] == 'current':
+                    self.assertIn(f"<td>{entry['sep_version']}</td><td>{entry['upstream']['version']}</td>"
+                                  f"<td>{entry['upstream']['updated'] or 'n/a'}</td><td>{entry['generated_date']}</td>"
+                                  f"<td>{build.esc(build.display_text(entry['upstream']['status']))}</td>"
+                                  '<td class="nowrap">at current version</td>', row)
+            expected = {kind + '.' + field: source[kind][field] for kind in ('horizon', 'rpc')
+                        for field in ('full', 'total', 'newer_stable_releases')}
+            expected.update({'sep.' + key.removeprefix('sep_'): len(value) if isinstance(value, list) else value
+                             for key, value in source['summary'].items() if key != 'complete'})
+            self.assertEqual({key: signal['value'] for key, signal in signals.items()}, expected)
+            for key, signal in signals.items():
+                section, field = key.split('.')
+                coverage = field in ('full', 'total', 'matrices', 'at_full')
+                upstream = 'stellar_protocol' if section == 'sep' else section
+                self.assertEqual((signal['unit'], signal['window'], signal['window_end'], signal['observed_at'], signal['source_files']),
+                                 ('count', 'latest_release' if coverage else 'snapshot',
+                                  source['source']['published_at'] if coverage else source['upstream'][upstream]['checked_at'],
+                                  source['collected_at'], [sdk['folder'] + '/compatibility.json']))
+                self.assertEqual(signal['compatibility'], {
+                    'tag': source['source']['tag'], 'commit': source['source']['commit'],
+                    'published_at': source['source']['published_at'],
+                    'stellar_protocol_commit': source['upstream']['stellar_protocol']['commit'],
+                    **{kind: {'version': source[kind]['version'], 'state': source[kind]['state'],
+                              'current': source['upstream'][kind]['current'], 'newer': source[kind]['newer']}
+                       for kind in ('horizon', 'rpc')}})
+            for kind in ('horizon', 'rpc'):
+                self.assertIn(f"{expected[kind + '.full']} of {expected[kind + '.total']} {'endpoints' if kind == 'horizon' else 'methods'}", cells[kind])
+                releases = page.split('<summary>Upstream releases</summary>', 1)[1].split('</details>', 1)[0]
+                row = re.search(r'<tr data-release="' + sdk['key'] + '-' + kind + r'">(.*?)</tr>', releases)[1]
+                newer = html.unescape(re.sub('<[^>]+>', '', row.rsplit('<td>', 1)[1]))
+                count = expected[kind + '.newer_stable_releases']
+                self.assertEqual(newer.split(':')[0], str(count) if count is not None else 'n/a')
+            self.assertIn(f"{expected['sep.at_full']} of {expected['sep.matrices']} report full coverage", cells['sep-matrices'])
+            compared = expected['sep.current'] + expected['sep.version_differs']
+            phrases = ([f"{expected['sep.current']} of {compared} at current version"] if compared else ['matrices record no version'])
+            phrases += [f"{expected['sep.' + field]} {label}" for field, label in
+                        [('updated_date_not_later', 'without upstream update recorded since generation'),
+                         ('updated_date_later', 'with upstream update recorded since generation')] if expected['sep.' + field]]
+            for field, label in [('version_differs', ' at a different version'), ('unknown', ' not compared'),
+                                 ('no_version_field', ' no upstream version')]:
+                numbers = source['summary']['sep_' + field]
+                if numbers:
+                    verb = (' has' if len(numbers) == 1 else ' have') if field == 'no_version_field' else ''
+                    phrases.append(', '.join('SEP-' + str(n) for n in numbers) + verb + label)
+            self.assertTrue(all(phrase in cells['sep-versions'] for phrase in phrases), (phrases, cells['sep-versions']))
+        self.assertEqual(page.count('<td>Compatibility matrices<br>'), len(build.ACTIVE_SDKS))
+        self.assertIn('Matrix-reported support; checks and exclusions differ by SDK. Matching versions do not verify conformance.', page)
+        self.assertIn('SEP-23 has no matrix in any SDK.', page)
+        self.assertLess(page.index('Protocol Delivery'), page.index('id="compatibility"'))
+        self.assertLess(page.index('id="compatibility"'), page.index('Release Timeline'))
+
     def test_real_profiles_match_page_and_loaded_inputs(self):
         original = build.load_json
         reads = []
@@ -183,6 +257,7 @@ class ExportTests(unittest.TestCase):
         self.assertEqual(len({(r["sdk"], r["metric"]) for r in rows}), len(rows))
         for row in rows:
             signal = expected[(row["sdk"], row["metric"])]
+            self.assertEqual(json.loads(row["compatibility"]) if row["compatibility"] else None, signal.get("compatibility"))
             self.assertEqual(json.loads(row["value"]), signal["value"])
             for field in ("window", "coverage", "observed_at"):
                 self.assertEqual(row[field], signal[field] or "")

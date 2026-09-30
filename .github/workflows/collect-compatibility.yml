@@ -1,0 +1,517 @@
+name: Collect Compatibility Stats
+
+on:
+  schedule:
+    - cron: '40 10 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: compatibility-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Fetch compatibility data
+        id: collection
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 <<'PYTHON'
+          # Collect released SDK matrix counts and compare their recorded versions
+          # with upstream releases and SEP preambles. Fetch failures retain the
+          # affected SDK file; shared upstream failures retain all four files.
+          # Parse failures are saved as incomplete observations with evidence.
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import time
+          from datetime import date, datetime, timedelta, timezone
+          from email.utils import parsedate_to_datetime
+          from urllib.error import HTTPError, URLError
+          from urllib.parse import quote, urlsplit
+          from urllib.request import Request, urlopen
+
+          SDKS = ['stellar-ios-mac-sdk', 'stellar_flutter_sdk', 'stellar-php-sdk', 'kmp-stellar-sdk']
+          API = 'https://api.github.com/repos/'
+          RAW = 'https://raw.githubusercontent.com/'
+          WEB = 'https://github.com/'
+          SEP_FILE = r'SEP-(\d{4})_COMPATIBILITY_MATRIX\.md'
+          STABLE = r'v\d+\.\d+\.\d+'
+          STATES = ('current', 'version_differs', 'updated_date_not_later',
+                    'updated_date_later', 'no_version_field', 'unknown')
+          now = datetime.now(timezone.utc)
+          stamp = now.isoformat(timespec='seconds').replace('+00:00', 'Z')
+          started = time.monotonic()
+          BUDGET = 12 * 60
+          cache = {}
+          shared = {}
+
+
+          def remaining():
+              seconds = BUDGET - (time.monotonic() - started)
+              if seconds <= 0:
+                  raise TimeoutError('collection budget exhausted')
+              return seconds
+
+
+          def pause(seconds):
+              if seconds >= remaining():
+                  raise TimeoutError('collection budget exhausted')
+              time.sleep(seconds)
+
+
+          def fetch(url):
+              """Return status, UTF-8 body, and headers within the collection budget."""
+              headers = {'User-Agent': 'soneso-sdk-stats/1.0'}
+              if urlsplit(url).hostname == 'api.github.com':
+                  headers['X-GitHub-Api-Version'] = '2022-11-28'
+                  if os.environ.get('GH_TOKEN'):
+                      headers['Authorization'] = 'Bearer ' + os.environ['GH_TOKEN']
+              for attempt in range(2):
+                  remaining()
+                  if urlsplit(url).hostname == 'raw.githubusercontent.com':
+                      pause(0.2)
+                  try:
+                      with urlopen(Request(url, headers=headers), timeout=min(20, remaining())) as response:
+                          body = response.read().decode('utf-8')
+                          remaining()
+                          return response.status, body, dict(response.headers.items())
+                  except HTTPError as error:
+                      if error.code == 404:
+                          return 404, '', {}
+                      retry_after = error.headers.get('Retry-After')
+                      if attempt == 0 and error.code in (403, 429) and retry_after:
+                          try:
+                              delay = float(retry_after)
+                          except ValueError:
+                              delay = (parsedate_to_datetime(retry_after) - datetime.now(timezone.utc)).total_seconds()
+                          pause(max(0, delay))
+                      elif attempt == 0 and error.code >= 500:
+                          pause(1)
+                      else:
+                          raise
+                  except (URLError, TimeoutError, ConnectionError):
+                      if attempt:
+                          raise
+                      pause(1)
+
+
+          def once(url):
+              """Share successful responses and failures among SDKs during this run."""
+              if url not in cache:
+                  try:
+                      result = fetch(url)
+                      if result[0] not in (200, 404):
+                          raise ValueError(f'HTTP {result[0]}: {url}')
+                      cache[url] = result
+                  except Exception as error:
+                      cache[url] = error
+              if isinstance(cache[url], Exception):
+                  raise cache[url]
+              return cache[url]
+
+
+          def api(path):
+              status, body, headers = once(API + path)
+              if status != 200:
+                  raise ValueError(f'API HTTP {status}: {path}')
+              return json.loads(body), headers
+
+
+          def valid_time(value):
+              try:
+                  parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
+                  return parsed if parsed.tzinfo is not None else None
+              except (AttributeError, TypeError, ValueError):
+                  return None
+
+
+          def url_valid(value):
+              if not isinstance(value, str):
+                  return False
+              try:
+                  parts = urlsplit(value)
+                  return parts.scheme == 'https' and bool(parts.netloc)
+              except (TypeError, ValueError):
+                  return False
+
+
+          def required(pattern, lines, label):
+              matches = [m for line in lines if (m := re.match(pattern, line))]
+              if len(matches) != 1:
+                  raise ValueError('missing or duplicate ' + label)
+              return matches[0]
+
+
+          def optional(pattern, lines):
+              matches = [m for line in lines if (m := re.match(pattern, line))]
+              if len(matches) > 1:
+                  raise ValueError('duplicate field')
+              return matches[0] if matches else None
+
+
+          def regions(text):
+              lines = [line.rstrip() for line in text.splitlines()]
+              end = next((i for i, line in enumerate(lines) if line.startswith('## ')), len(lines))
+              if '## Overall Coverage' not in lines:
+                  raise ValueError('missing Overall Coverage block')
+              start = lines.index('## Overall Coverage')
+              stop = next((i for i in range(start + 1, len(lines)) if lines[i].startswith('## ')), len(lines))
+              return lines[:end], lines[start + 1:stop]
+
+
+          def parse_matrix(text, section, path, url, sdk_version, layout='ios'):
+              """Read the matrix's header and Overall Coverage, preserving failed entries."""
+              fields = ['sdk_version', 'sdk_version_matches_tag', 'generated', 'generated_date', 'percent_printed']
+              fields += (['number', 'title', 'sep_version', 'sep_status', 'sdk_verdict', 'implemented',
+                          'not_implemented', 'total', 'server_only_excluded'] if section == 'sep' else
+                         ['version', 'released', 'full', 'partial', 'none', 'deprecated', 'total',
+                          'cited_is_prerelease', 'newer_stable_releases', 'newer'])
+              result = dict.fromkeys(fields)
+              result.update(file=path, url=url, coverage='incomplete', state='unknown', reason=None)
+              if section == 'sep':
+                  result.update(number=int(re.fullmatch(SEP_FILE, Path(path).name)[1]), layout=layout)
+              try:
+                  if text is None:
+                      raise ValueError('file not found at commit')
+                  header, block = regions(text)
+                  parsed = {}
+                  parsed['sdk_version'] = required(r'^\*\*SDK Version:\*\* (\S+)$', header, 'SDK Version')[1]
+                  parsed['sdk_version_matches_tag'] = parsed['sdk_version'] == sdk_version
+                  generated = required(r'^\*\*Generated:\*\* (\d{4}-\d{2}-\d{2})(?: (\d{2}:\d{2})(?::\d{2})?)?( UTC)?$', header, 'Generated')
+                  parsed['generated_date'] = date.fromisoformat(generated[1]).isoformat()
+                  parsed['generated'] = generated[0].split('**Generated:** ', 1)[1]
+                  labels = [('Implemented', 'implemented'), ('Not Implemented', 'not_implemented')] if section == 'sep' else [
+                      ('Fully Supported', 'full'), ('Partially Supported', 'partial'), ('Not Supported', 'none')]
+                  denominators = []
+                  for label, key in labels:
+                      count = required(r'^- (?:\S+ )?\*\*' + label + r':\*\* (\d+)/(\d+)$', block, label)
+                      parsed[key] = int(count[1])
+                      denominators.append(int(count[2]))
+                  if section == 'sep':
+                      title_pattern = r'^# SEP-(\d{2,4}): (.*)$' if layout == 'php' else r'^# SEP-(\d{4}) \((.*)\) Compatibility Matrix$'
+                      title = required(title_pattern, header, 'SEP title')
+                      if int(title[1]) != result['number']:
+                          raise ValueError('H1 number disagrees with file name')
+                      parsed['title'] = title[2]
+                      if layout == 'php':
+                          parsed['sdk_verdict'] = required(r'^\*\*Status:\*\* (.+)$', header, 'Status')[1]
+                          required(r'^\*\*Spec:\*\* \[[^\]]+\]\(https://[^)]+\)$', header, 'Spec')
+                      else:
+                          required(r'^\*\*SEP URL:\*\* (\S+)$', header, 'SEP URL')
+                      for label, key in [('SEP Version', 'sep_version'), ('SEP Status', 'sep_status')]:
+                          value = optional(r'^\*\*' + label + r':\*\* (.+)$', header)
+                          parsed[key] = value[1] if value else None
+                      if parsed['sep_version'] in ('Unknown', 'N/A'):
+                          parsed['sep_version'] = None
+                      fraction = required(r'^\*\*Total Coverage:\*\* (\d+(?:\.\d+)?)% \((\d+)/(\d+) fields\)$', block, 'Total Coverage')
+                      denominators.append(int(fraction[3]))
+                      if int(fraction[2]) != parsed['implemented']:
+                          raise ValueError('counts disagree')
+                      excluded = optional(r'^_Note: Excludes (\d+) server-side-only .*_$', block)
+                      parsed['server_only_excluded'] = int(excluded[1]) if excluded else 0
+                  else:
+                      version = required(r'^\*\*' + {'horizon': 'Horizon', 'rpc': 'RPC'}[section] + r' Version:\*\* (v\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?)(?: \(released (\d{4}-\d{2}-\d{2}|unknown)\))?$', header, 'upstream version')
+                      parsed['version'] = version[1]
+                      parsed['released'] = date.fromisoformat(version[2]).isoformat() if version[2] and version[2] != 'unknown' else None
+                      required(r'^\*\*(Horizon|RPC) Source:\*\* \[[^\]]*\]\((https://github\.com/stellar/[^)]+)\)$', header, 'Source')
+                      parsed['cited_is_prerelease'] = '-' in version[1]
+                      deprecated = optional(r'^- (?:\S+ )?\*\*Deprecated:\*\* (\d+)/(\d+)$', block)
+                      parsed['deprecated'] = int(deprecated[1]) if deprecated else 0
+                      if deprecated:
+                          denominators.append(int(deprecated[2]))
+                      fraction = required(r'^\*\*Coverage:\*\* (\d+(?:\.\d+)?)%', block, 'Coverage')
+                  parsed['percent_printed'] = float(fraction[1])
+                  parsed['total'] = denominators[0]
+                  count_sum = sum(parsed[key] for _, key in labels) + parsed.get('deprecated', 0)
+                  if len(set(denominators)) != 1 or count_sum != parsed['total']:
+                      raise ValueError('counts disagree')
+                  result.update(parsed, coverage='complete')
+              except ValueError as error:
+                  result['reason'] = path + ': ' + str(error)
+              return result
+
+
+          def parse_preamble(text):
+              result = dict(found=text is not None, version=None, status=None, updated=None, reason=None)
+              if text is None:
+                  result['reason'] = 'upstream SEP not found at commit'
+                  return result
+              lines = [line.rstrip() for line in text.splitlines()]
+              if '## Preamble' in lines:
+                  tail = lines[lines.index('## Preamble') + 1:]
+                  fence = next((i for i, line in enumerate(tail) if line.startswith('```')), None)
+                  if fence is not None:
+                      end = next((i for i in range(fence + 1, len(tail)) if tail[i].startswith('```')), len(tail))
+                      lines = tail[fence + 1:end]
+                  else:
+                      lines = lines[:40]
+              else:
+                  lines = lines[:40]
+              try:
+                  result['status'] = required(r'^Status:\s*(.+)$', lines, 'Status')[1]
+                  version = optional(r'^Version:?\s+(\S+)$', lines)
+                  if not version and any(re.match(r'^Version\b', line) for line in lines):
+                      raise ValueError('invalid Version field')
+                  result['version'] = version[1] if version else None
+                  updated = optional(r'^Updated:\s*(\d{4}-\d{2}-\d{2})$', lines)
+                  if updated:
+                      try:
+                          result['updated'] = date.fromisoformat(updated[1]).isoformat()
+                      except ValueError:
+                          pass
+              except ValueError as error:
+                  result['reason'] = 'invalid preamble: ' + str(error)
+              return result
+
+
+          def sep_state(entry):
+              upstream = entry['upstream']
+              if entry['coverage'] != 'complete' or upstream.get('reason'):
+                  return 'unknown', entry['reason'] or upstream['reason']
+              if upstream['version'] is None:
+                  return 'no_version_field', None
+              version = entry['sep_version']
+              if version is not None:
+                  same = version.strip().removeprefix('v') == upstream['version'].strip().removeprefix('v')
+                  return ('current' if same else 'version_differs'), None
+              if entry['layout'] == 'ios':
+                  return 'unknown', 'matrix records no SEP version'
+              if upstream['updated'] is None:
+                  return 'unknown', 'no Updated date upstream'
+              return ('updated_date_not_later' if upstream['updated'] <= entry['generated_date'] else 'updated_date_later'), None
+
+
+          def semver(tag):
+              return tuple(int(n) for n in tag.removeprefix('v').split('-', 1)[0].split('.'))
+
+
+          def release_record(release):
+              return {'tag': release['tag_name'], 'published_at': release['published_at'], 'url': release['html_url']}
+
+
+          def releases(kind):
+              path = f'stellar/stellar-{kind}/releases?per_page=100'
+              entries = {}
+              for page in range(3):
+                  data, headers = api(path)
+                  if not isinstance(data, list):
+                      raise ValueError('invalid release list')
+                  for entry in data:
+                      if not (isinstance(entry, dict) and isinstance(entry.get('tag_name'), str)
+                              and type(entry.get('draft')) is bool and type(entry.get('prerelease')) is bool
+                              and (entry['draft'] or valid_time(entry.get('published_at')))
+                              and url_valid(entry.get('html_url'))):
+                          raise ValueError('invalid release entry')
+                      entries[entry['tag_name']] = entry
+                  link = next((v for k, v in headers.items() if k.lower() == 'link'), '')
+                  next_page = re.search(r'<([^>]+)>;\s*rel="next"', link)
+                  if not next_page:
+                      break
+                  next_url = next_page[1]
+                  if not next_url.startswith(API + f'stellar/stellar-{kind}/releases?'):
+                      raise ValueError('unexpected pagination URL')
+                  path = next_url.removeprefix(API)
+              complete = next_page is None
+              stable = [r for r in entries.values() if re.fullmatch(STABLE, r['tag_name']) and not r['draft'] and not r['prerelease']]
+              current = max(stable, key=lambda r: semver(r['tag_name'])) if complete and stable else None
+              return {'list_complete': complete, 'current': current['tag_name'] if current else None,
+                      'published_at': current['published_at'] if current else None,
+                      'url': current['html_url'] if current else None, 'checked_at': stamp}, entries, stable
+
+
+          def release_state(entry, upstream, entries, stable):
+              entry.update(newer_stable_releases=None, newer=[])
+              if entry['coverage'] != 'complete':
+                  return
+              if upstream['list_complete'] and upstream['current'] is None:
+                  entry.update(state='unknown', reason='no stable release in list')
+              elif not upstream['list_complete']:
+                  entry.update(state='list_incomplete', reason='upstream release list incomplete')
+              elif entry['version'] not in entries or entries[entry['version']]['draft']:
+                  entry.update(state='cited_not_found', reason='cited release not found')
+              else:
+                  entry['cited_is_prerelease'] = '-' in entry['version'] or entries[entry['version']]['prerelease']
+                  newer = sorted([r for r in stable if semver(r['tag_name']) > semver(entry['version'])], key=lambda r: semver(r['tag_name']), reverse=True)
+                  entry.update(newer_stable_releases=len(newer), newer=[release_record(r) for r in newer])
+                  entry['state'] = 'cites_prerelease' if entry['cited_is_prerelease'] else 'newer_available' if newer else 'current'
+
+
+          def shared_upstream():
+              """Resolve shared upstream sources before any SDK file is replaced."""
+              if 'result' not in shared:
+                  try:
+                      horizon = releases('horizon')
+                      rpc = releases('rpc')
+                      commit, _ = api('stellar/stellar-protocol/commits/master')
+                      sha = commit['sha']
+                      committed = commit['commit']['committer']['date']
+                      if not re.fullmatch(r'[0-9a-f]{40}', sha) or not valid_time(committed):
+                          raise ValueError('invalid stellar-protocol commit')
+                      shared['result'] = horizon, rpc, {'commit': sha, 'commit_date': committed[:10], 'checked_at': stamp}
+                  except Exception as error:
+                      shared['result'] = error
+              if isinstance(shared['result'], Exception):
+                  raise shared['result']
+              return shared['result']
+
+
+          def summary_for(entries, horizon, rpc):
+              summary = {'sep_matrices': len(entries), 'sep_at_full': None}
+              if all(e['coverage'] == 'complete' for e in entries):
+                  summary['sep_at_full'] = sum(e['implemented'] == e['total'] and e['total'] > 0 for e in entries)
+              for state in STATES:
+                  values = [e['number'] for e in entries if e['state'] == state]
+                  summary['sep_' + state] = len(values) if state in ('current', 'updated_date_not_later') else values
+              summary['complete'] = all(e['coverage'] == 'complete' for e in [horizon, rpc] + entries) and not summary['sep_unknown']
+              return summary
+
+
+          def load_existing(path):
+              try:
+                  value = json.loads(path.read_text())
+                  return value if isinstance(value, dict) else {}
+              except (OSError, ValueError):
+                  return {}
+
+
+          def collect(sdk):
+              horizon, rpc, protocol = shared_upstream()
+              repo = 'Soneso/' + sdk
+              release, _ = api(repo + '/releases/latest')
+              if not (isinstance(release.get('tag_name'), str) and release['tag_name']
+                      and valid_time(release.get('published_at')) and url_valid(release.get('html_url'))
+                      and not release.get('draft') and not release.get('prerelease')):
+                  raise ValueError('invalid SDK release')
+              tag = release['tag_name']
+              commit, _ = api(repo + '/commits/' + quote(tag, safe=''))
+              sha = commit['sha']
+              if not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha):
+                  raise ValueError('invalid SDK commit')
+              listing, _ = api(repo + '/contents/compatibility/sep?ref=' + sha)
+              if not isinstance(listing, list):
+                  raise ValueError('invalid SEP listing')
+              files = sorted({e['name'] for e in listing if isinstance(e, dict) and e.get('type') == 'file'
+                              and isinstance(e.get('name'), str) and re.fullmatch(SEP_FILE, e['name'])})
+              if not files:
+                  raise ValueError('SEP listing has no matrix files')
+              paths = [('horizon', 'compatibility/horizon/' + ('COMPATIBILITY_MATRIX.md' if sdk == 'stellar-php-sdk' else 'HORIZON_COMPATIBILITY_MATRIX.md')),
+                       ('rpc', 'compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md')]
+              paths += [('sep', 'compatibility/sep/' + file) for file in files]
+              result = {'schema_version': 1, 'collected_at': stamp,
+                        'source': dict(tag=tag, sdk_version=tag.removeprefix('v'), commit=sha,
+                                       published_at=release['published_at'], url=release['html_url']),
+                        'seps': [], 'guards': [], 'upstream': {'horizon': horizon[0], 'rpc': rpc[0], 'stellar_protocol': protocol}}
+              for section, path in paths:
+                  status, text, _ = once(RAW + repo + '/' + sha + '/' + path)
+                  entry = parse_matrix(text if status == 200 else None, section, path, WEB + repo + '/blob/' + sha + '/' + path,
+                                       tag.removeprefix('v'), 'php' if sdk == 'stellar-php-sdk' else 'ios')
+                  if section == 'sep':
+                      upstream_path = f"stellar/stellar-protocol/{protocol['commit']}/ecosystem/sep-{entry['number']:04d}.md"
+                      status, text, _ = once(RAW + upstream_path)
+                      entry['upstream'] = parse_preamble(text if status == 200 else None)
+                      entry['upstream'].update(commit=protocol['commit'], url=WEB + 'stellar/stellar-protocol/blob/' + protocol['commit'] + f"/ecosystem/sep-{entry['number']:04d}.md")
+                      entry['state'], entry['reason'] = sep_state(entry)
+                      result['seps'].append(entry)
+                  else:
+                      release_state(entry, *(horizon if section == 'horizon' else rpc))
+                      result[section] = entry
+                  if entry['sdk_version_matches_tag'] is False:
+                      result['guards'].append(dict(kind='sdk_version_mismatch', section=section, file=path,
+                                                   sep=entry.get('number'), text='header says ' + entry['sdk_version']))
+              result['summary'] = summary_for(result['seps'], result['horizon'], result['rpc'])
+              path = Path(sdk) / 'compatibility.json'
+              existing = load_existing(path)
+              history = {e['date']: e for e in existing.get('history', []) if isinstance(e, dict) and isinstance(e.get('date'), str)}
+              all_entries = [result['horizon'], result['rpc']] + result['seps']
+              matches = [e['sdk_version_matches_tag'] for e in all_entries]
+              row = dict(date=now.date().isoformat(), tag=tag,
+                         sdk_version_matches_tag=False if False in matches else True if all(v is True for v in matches) else None)
+              for section in ('horizon', 'rpc'):
+                  entry = result[section]
+                  for field in ('version', 'total', 'full'):
+                      row[section + '_' + field] = entry[field]
+                  row[section + '_newer'] = entry['newer_stable_releases']
+                  previous = next((e for e in sorted(history.values(), key=lambda e: e['date'], reverse=True)
+                                   if e['date'] <= row['date'] and e.get('tag') != tag
+                                   and e.get(section + '_version') == entry['version']
+                                   and type(e.get(section + '_total')) is int), None)
+                  if entry['coverage'] == 'complete' and previous and previous[section + '_total'] != entry['total']:
+                      result['guards'].append(dict(kind='total_changed', section=section, file=entry['file'], sep=None,
+                                                   text=f"{section.upper()} total {entry['total']} at {entry['version']} differs from {previous[section + '_total']} at tag {previous['tag']}"))
+              for key in ('sep_matrices', 'sep_at_full', 'sep_current', 'sep_updated_date_not_later'):
+                  row[key] = result['summary'][key]
+              history[row['date']] = row
+              result['history'] = sorted(history.values(), key=lambda e: e['date'], reverse=True)
+              path.parent.mkdir(parents=True, exist_ok=True)
+              temp = path.with_suffix('.tmp')
+              temp.write_text(json.dumps(result, indent=2, allow_nan=False) + '\n')
+              os.replace(temp, path)
+              print(f"{sdk}: {tag}, Horizon {result['horizon']['state']}, RPC {result['rpc']['state']}, {result['summary']}")
+
+
+          for sdk in SDKS:
+              try:
+                  collect(sdk)
+              except Exception as error:
+                  print(f'::warning::{sdk}: retained previous compatibility data: {error}')
+
+          stale = []
+          for sdk in SDKS:
+              observed = valid_time(load_existing(Path(sdk) / 'compatibility.json').get('collected_at'))
+              if observed is None or observed < now - timedelta(days=7):
+                  stale.append(sdk)
+          if os.environ.get('GITHUB_OUTPUT'):
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+                  output.write('stale=' + ','.join(stale) + '\n')
+          if stale:
+              print('::warning::Compatibility collection stale for: ' + ', '.join(stale))
+          PYTHON
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          compgen -G "*/compatibility.json" > /dev/null || exit 0
+          git add */compatibility.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          today=$(date -u +%Y-%m-%d)
+          git commit -m "Update compatibility data ${today}"
+          for i in 1 2 3; do
+            if git pull --rebase; then
+              git push && exit 0
+            else
+              echo "::warning::Rebase failed (possible conflict), aborting rebase"
+              git rebase --abort 2>/dev/null || true
+            fi
+            echo "::warning::Push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::Failed to push after 3 attempts"
+          exit 1
+
+      - name: Staleness check
+        if: ${{ steps.collection.outputs.stale != '' }}
+        env:
+          STALE_SDKS: ${{ steps.collection.outputs.stale }}
+        run: |
+          if [ -n "$STALE_SDKS" ]; then
+            echo "::error::Compatibility collection stale for: $STALE_SDKS"
+            exit 1
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::warning::Compatibility collection failed. Check the workflow logs."
