@@ -2,12 +2,12 @@
   "schema_version": 1,
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-09-30T10:40:08.205547Z",
-    "as_of": "2026-09-30T10:40:08.139417Z",
-    "build_commit": "be29e9ac928b17375b9510dbb0b348f4c6c72aae",
+    "generated_at": "2026-09-30T16:35:42.700247Z",
+    "as_of": "2026-09-30T16:35:42.650240Z",
+    "build_commit": "915e965d379ec981d36cb6176c1a98615173fc4d",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/be29e9ac928b17375b9510dbb0b348f4c6c72aae/docs/index.html#L296",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/915e965d379ec981d36cb6176c1a98615173fc4d/docs/index.html#L296",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "sdks": [
