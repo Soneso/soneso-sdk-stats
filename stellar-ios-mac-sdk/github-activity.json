@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-09-29T16:32:31Z",
+    "collected_at": "2026-09-30T16:25:54Z",
     "summary": {
       "total_releases": 151,
       "latest_release": "3.12.0",
       "latest_release_date": "2026-09-27",
       "releases_last_90d": 7,
-      "releases_last_365d": 22,
+      "releases_last_365d": 21,
       "avg_days_between_releases": 20.9
     },
     "all": [
@@ -920,16 +920,16 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-09-29T16:32:31Z",
+    "collected_at": "2026-09-30T16:25:54Z",
     "weekly": [
       {
         "week_start": "2026-09-27",
-        "total": 5,
+        "total": 6,
         "days": [
           3,
           2,
           0,
-          0,
+          1,
           0,
           0,
           0
