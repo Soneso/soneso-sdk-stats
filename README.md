@@ -14,6 +14,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 | GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](stellar-ios-mac-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](stellar-ios-mac-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](stellar-ios-mac-sdk/github-issues.json) |
+| Compatibility | Release matrix coverage and upstream version comparisons | [compatibility.json](stellar-ios-mac-sdk/compatibility.json) |
 
 ### [stellar_flutter_sdk](https://github.com/Soneso/stellar_flutter_sdk)
 
@@ -24,6 +25,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 | GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](stellar_flutter_sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](stellar_flutter_sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](stellar_flutter_sdk/github-issues.json) |
+| Compatibility | Release matrix coverage and upstream version comparisons | [compatibility.json](stellar_flutter_sdk/compatibility.json) |
 | GitHub dependents | Dependent open source repos and packages | [github-dependents.json](stellar_flutter_sdk/github-dependents.json) |
 
 ### [stellar-php-sdk](https://github.com/Soneso/stellar-php-sdk)
@@ -35,6 +37,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 | GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](stellar-php-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](stellar-php-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](stellar-php-sdk/github-issues.json) |
+| Compatibility | Release matrix coverage and upstream version comparisons | [compatibility.json](stellar-php-sdk/compatibility.json) |
 | GitHub dependents | Dependent open source repos and packages | [github-dependents.json](stellar-php-sdk/github-dependents.json) |
 
 ### [kmp-stellar-sdk](https://github.com/Soneso/kmp-stellar-sdk)
@@ -46,6 +49,7 @@ Automated daily statistics for Soneso Stellar SDKs.
 | GitHub meta | Stars, forks, watchers, and page views | [github-meta.json](kmp-stellar-sdk/github-meta.json) |
 | GitHub activity | 52-week commit history and full release list with summary | [github-activity.json](kmp-stellar-sdk/github-activity.json) |
 | GitHub issues | Issue/PR response times, closure stats, and maintainer metrics | [github-issues.json](kmp-stellar-sdk/github-issues.json) |
+| Compatibility | Release matrix coverage and upstream version comparisons | [compatibility.json](kmp-stellar-sdk/compatibility.json) |
 | GitHub dependents | Dependent open source repos and packages | [github-dependents.json](kmp-stellar-sdk/github-dependents.json) |
 
 ## Curated evidence
@@ -85,5 +89,6 @@ builder.
 | Collect GitHub Activity Stats | 10:25 |
 | Collect GitHub Issues Stats | 10:30 |
 | Collect GitHub Dependents Stats | 10:35 |
+| Collect Compatibility Stats | 10:40 |
 | Build Dashboard | 11:00 |
 | Quarterly Dashboard Snapshot | manual dispatch |

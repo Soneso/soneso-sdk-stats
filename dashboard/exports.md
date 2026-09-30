@@ -37,8 +37,8 @@ Every signal has these fields:
 | `value` | Raw number, null, or release context. `release.latest_stable` is a tag/date object and `release.first` is the static first-release text. Every exported field is JSON-safe under strict serialization: non-finite numbers, malformed structured values, and non-string window boundaries become null (with a reason on the value), never Infinity/NaN output. |
 | `unit` | `count`, `hours`, `days`, or `release`. Medians retain their source precision, before HTML display formatting. |
 | `sample_size` | Median gap count, closed-item count, open backlog count, answered eligible count, or response denominator, when applicable and available; otherwise null. |
-| `window` | `90d`, `365d`, `14d`, `30d`, `52w`, a calendar month, `lifetime`, `open_snapshot`, `snapshot`, `latest`, `first_release`, `since_last_release`, `curated_snapshot`, `mainnet_activation`, or the stated proposal thread. Unsupported windows use `not_configured` or `since_last_push`. |
-| `window_end` | Explicit evaluation boundary for locally calculated rolling releases/clones and collected issue cohorts; otherwise null and the source observation anchors the stated source window. |
+| `window` | `90d`, `365d`, `14d`, `30d`, `52w`, a calendar month, `lifetime`, `open_snapshot`, `snapshot`, `latest_release`, `latest`, `first_release`, `since_last_release`, `curated_snapshot`, `mainnet_activation`, or the stated proposal thread. Unsupported windows use `not_configured` or `since_last_push`. |
+| `window_end` | Explicit evaluation boundary for locally calculated rolling releases/clones and collected issue cohorts; for compatibility coverage, the SDK release publication time; for compatibility comparisons, the relevant upstream checked_at; otherwise null and the source observation anchors the stated source window. |
 | `coverage` | `complete`, `incomplete`, or `not_applicable`. Missing/malformed/incomplete data is null, never a synthetic zero. |
 | `reason` | Required nonempty text for null values; optional explanatory text for present values. |
 | `observed_at` | The section's successful source timestamp, or a curated verification date; null when no timestamp exists. Never inferred from generation time. |
@@ -72,6 +72,31 @@ are local to the rendered collection, not stable project identifiers.
 `feedback.verified_comments` includes individual `verified_dates`; it has no
 fabricated shared observation timestamp.
 
+`compatibility.*` adds fourteen count signals. Matrix coverage uses window
+`latest_release` with `window_end` equal to the SDK release `published_at`:
+`horizon.full`, `horizon.total`, `rpc.full`, `rpc.total`, `sep.matrices`, and
+`sep.at_full`. Comparisons use window `snapshot`, ending at the relevant
+upstream `checked_at`: `horizon.newer_stable_releases`,
+`rpc.newer_stable_releases`, and `sep.current`, `sep.version_differs`,
+`sep.updated_date_not_later`, `sep.updated_date_later`,
+`sep.no_version_field`, `sep.unknown`. Both groups use the collector's
+`collected_at` as `observed_at` and `<sdk-folder>/compatibility.json` as
+`source_files`.
+
+Every compatibility signal has a `compatibility` object with `tag`, `commit`,
+`published_at`, `stellar_protocol_commit`, and `horizon`/`rpc` objects containing
+`version`, `state`, `current`, and `newer` (tag/date/URL records). Evidence URLs
+are the card's matrix, upstream release, SEP tree and specification links.
+SEP matrix counts use the tree link; each SEP comparison state uses only the
+matrix and specification links of entries in that state.
+Unavailable counts are null with reasons. Stored header/tag guards annotate
+all signals in their section; stored and cross-SDK total guards annotate only
+the affected total signals. The collector's SEP summary is recomputed from
+validated entries. Matching versions and date comparisons do not verify
+conformance. Profiles produced before this family was added lack it; absence
+means "not yet collected". The definition identifier remains
+`dashboard-v1-response-v3` because existing definitions are unchanged.
+
 ## Relationship to the maintenance-profile proposal
 
 This is a local serialization of the concepts in
@@ -88,6 +113,7 @@ not a claim of compatibility with the example fork's API schema.
 - Push recency and bot-filtered non-merge commits are null. Daily GitHub
   heatmap counts cannot stand in for either.
 - Protocol lag retains verified API-support releases and mainnet dates.
+- Issue 80 has no API coverage signal; the compatibility family is Soneso-specific.
 - Coverage uses the dashboard vocabulary and separate freshness; stale
   retained values remain visible. No ranking pool is available.
 - No declared-maintainer override or host/external-tracker exemption is
@@ -108,7 +134,8 @@ The two-paragraph README links the methodology at the producing commit.
 
 `summary.csv` has one unique SDK-folder/metric row with `window`, `value`,
 `coverage`, `observed_at`, `unit`, `sample_size`, `window_end`, `freshness`,
-`reason`, and optional JSON `protocol` context. `value` cells are JSON
+`reason`, and optional JSON `protocol` and `compatibility` context columns.
+The compatibility column follows protocol and round-trips to the JSON object. `value` cells are JSON
 encoded: numbers are bare, missing is literal `null`, strings are quoted,
 and the latest release retains its tag/date object. Other absent cells are
 empty. Thus CSV values round-trip to exactly the JSON headline values.
