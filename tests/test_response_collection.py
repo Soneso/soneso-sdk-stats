@@ -372,6 +372,28 @@ class RenderingTests(unittest.TestCase):
             entry['verified'] = verified
             self.assertIn('awaiting maintainer', self.m['build_protocol_delivery']())
 
+    def test_protocol_without_sdk_change_renders_reason_and_no_lag(self):
+        entry = {'name': 'Protocol 29', 'verified': '2026-10-02', 'mainnet_activation_date': '2026-10-01',
+                 'activation_url': 'https://example.org/activation', 'caps': [], 'releases': {},
+                 'sdk_change_required': False, 'reason': 'Security release <no> XDR change',
+                 'evidence_url': 'https://example.org/notes'}
+        self.m['load_json'] = lambda p: {'upgrades': [entry]}
+        text = self.m['build_protocol_delivery']()
+        self.assertIn('no SDK change required', text)
+        self.assertIn('href="https://example.org/notes"', text)
+        self.assertIn('Security release &lt;no&gt; XDR change', text)
+        self.assertNotIn('shipped', text)
+        self.assertNotIn('n/a', text)
+        # The gate: a no-change upgrade needs its reason and release-notes evidence.
+        for missing in ('reason', 'evidence_url'):
+            broken = dict(entry)
+            del broken[missing]
+            self.m['load_json'] = lambda p, b=broken: {'upgrades': [b]}
+            self.assertIn('awaiting maintainer', self.m['build_protocol_delivery']())
+        # Without the flag, an entry with no CAPs stays unpublished as before.
+        self.m['load_json'] = lambda p: {'upgrades': [{**entry, 'sdk_change_required': True}]}
+        self.assertIn('awaiting maintainer', self.m['build_protocol_delivery']())
+
     def test_all_sdk_subsets_and_missing_corrupt_hostile_inputs(self):
         original_loader = self.m['load_json']
         payload = '</script><img src=x onerror=alert(1)>'

@@ -131,6 +131,11 @@ class ExportTests(unittest.TestCase):
             for key, signal in m.items():
                 if key.startswith("protocol."):
                     lag = signal["value"]
+                    if signal["protocol"]["sdk_change_required"] is False:
+                        self.assertIsNone(lag)
+                        self.assertEqual(signal["coverage"], "not_applicable")
+                        self.assertIn("no SDK change required", page)
+                        continue
                     phrase = (f"shipped {abs(lag)} days before activation" if lag < 0 else
                               f"shipped {lag} days after activation" if lag else "shipped on activation day")
                     self.assertIn(phrase, page)
@@ -424,6 +429,25 @@ class ExportTests(unittest.TestCase):
             self.assertEqual(metric["value"], -1 if key == "ios" else None)
             self.assertEqual(metric["coverage"], "complete" if key == "ios" else "incomplete")
         self.assertEqual(profiles["ios"]["signals"]["protocol.0.lag_days"]["protocol"]["release_date"], "2026-09-21")
+
+    def test_protocol_export_without_sdk_change_is_not_applicable(self):
+        original = build.load_json
+        entry = {"name": "Protocol 29", "verified": "2026-10-02", "mainnet_activation_date": "2026-10-01",
+                 "activation_url": "https://example.org/activation", "caps": [], "releases": {},
+                 "sdk_change_required": False, "reason": "Security release without XDR or API changes",
+                 "evidence_url": "https://example.org/notes"}
+        fixture = {"upgrades": [entry]}
+        with patch.object(build, "load_json", lambda path: fixture if path.name == "protocol-delivery.json" else original(path)):
+            page, profiles = self.generate()
+        self.assertIn("no SDK change required", page)
+        for profile in profiles.values():
+            metric = profile["signals"]["protocol.0.lag_days"]
+            self.assertIsNone(metric["value"])
+            self.assertEqual(metric["coverage"], "not_applicable")
+            self.assertEqual(metric["reason"], entry["reason"])
+            self.assertEqual(metric["evidence_urls"], ["https://example.org/activation", "https://example.org/notes"])
+            self.assertIs(metric["protocol"]["sdk_change_required"], False)
+            self.assertIsNone(metric["protocol"]["release_tag"])
 
     def test_serialization_failure_does_not_publish_partial_outputs(self):
         self.generate()

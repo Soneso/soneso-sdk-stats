@@ -1122,20 +1122,32 @@ def build_protocol_delivery(signals=None):
         if not valid_verified_date(activation) or not valid_evidence_url(entry.get("activation_url")):
             continue
         releases = entry.get("releases")
-        if not isinstance(releases, dict):
+        if not isinstance(releases, dict) or not isinstance(entry.get("name"), str):
             continue
         caps = [c for c in as_list(entry.get("caps")) if isinstance(c, dict) and valid_evidence_url(c.get("url"))]
-        if not caps or not isinstance(entry.get("name"), str):
-            continue
-        cap_links = ", ".join(f'<a href="{esc(c["url"])}">{esc(c.get("name", "CAP"))}</a>' for c in caps)
-        upgrade = f'{esc(entry["name"])}<br>{cap_links}'
+        # An upgrade without SDK-facing changes (a security release that changes no XDR
+        # and no API) publishes with a reason and a release-notes link instead of CAPs,
+        # and its rows carry no lag.
+        no_sdk_change = entry.get("sdk_change_required") is False
+        reason = entry.get("reason") if isinstance(entry.get("reason"), str) and entry.get("reason").strip() else None
+        if no_sdk_change:
+            if not reason or not valid_evidence_url(entry.get("evidence_url")):
+                continue
+            upgrade = f'{esc(entry["name"])}<br><a href="{esc(entry["evidence_url"])}">{esc(reason)}</a>'
+            base_evidence = [entry["activation_url"], entry["evidence_url"]]
+        else:
+            if not caps:
+                continue
+            cap_links = ", ".join(f'<a href="{esc(c["url"])}">{esc(c.get("name", "CAP"))}</a>' for c in caps)
+            upgrade = f'{esc(entry["name"])}<br>{cap_links}'
+            base_evidence = [entry["activation_url"]] + [c["url"] for c in caps]
         activation_link = f'<a href="{esc(entry["activation_url"])}">{esc(activation)}</a>'
         for sdk in ACTIVE_SDKS:
             release = releases.get(sdk["key"])
-            value = "n/a"
+            value = "no SDK change required" if no_sdk_change else "n/a"
             delta, shipped = None, None
-            evidence = [entry["activation_url"]] + [c["url"] for c in caps]
-            if isinstance(release, dict) and valid_evidence_url(release.get("url")) and isinstance(release.get("tag"), str):
+            evidence = list(base_evidence)
+            if not no_sdk_change and isinstance(release, dict) and valid_evidence_url(release.get("url")) and isinstance(release.get("tag"), str):
                 published = parse_dt(release.get("published_at"))
                 if published:
                     shipped = published.astimezone(timezone.utc).date()
@@ -1148,9 +1160,12 @@ def build_protocol_delivery(signals=None):
             if signals is not None:
                 key = f"protocol.{entry_index}.lag_days"
                 signals[sdk["key"]].add(key, delta, "mainnet_activation", entry["verified"],
-                                        unit="days", evidence_urls=evidence)
+                                        unit="days", evidence_urls=evidence,
+                                        coverage="not_applicable" if no_sdk_change else None,
+                                        reason=reason if no_sdk_change else None)
                 signals[sdk["key"]][key]["protocol"] = {
                     "name": entry["name"], "mainnet_activation_date": activation,
+                    "sdk_change_required": not no_sdk_change,
                     "release_tag": release["tag"] if shipped else None,
                     "release_date": shipped.isoformat() if shipped else None,
                 }
@@ -1583,7 +1598,7 @@ def build_freshness_section(all_data):
       <li>If an unresolved actor could change the first-response result, attribution is unknown and the item is excluded from N and the median. Unknown attribution and clock counts cover the full cohort and may overlap pending items and each other. Unanswered eligible items stay in N. Median first response uses answered eligible items in the same 90-day cohort, including slow responses; the separate close medians retain their 365-day creation cohort. PR disposition covers all community PRs in the 90-day cohort, including pending and unknown items.</li>
       <li>Response evidence expands below each SDK card. Closed, answered v3 records are cached while their source update time is unchanged; open, unanswered, unknown, changed, or legacy records are collected again. A response-fetch failure makes the response section incomplete and preserves its last successful timestamp; the closure and backlog metrics remain independently covered.</li>
       <li>Differences from the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-signals proposal</a>: this dashboard uses 48h instead of the proposed seven days, counts qualifying PR discussion and review comments as well as submitted reviews, and explicitly handles draft readiness as above. It uses counts, without percentile ranks or a comparison pool. Author exclusions remain OWNER/MEMBER and bots; there is no declared-maintainer login override. Coverage is complete/incomplete, missing data is n/a, and retained values older than 48h are marked STALE in the freshness table; host-repository and external-tracker exemptions are not configured for these four repositories.</li>
-      <li>Protocol Delivery: maintainer-verified entries only. A supporting release is the first stable GitHub release whose notes explicitly announce the usable protocol API, not preliminary XDR adoption. Shipping uses the GitHub publication date as a proxy, not registry publication or testnet activation. Lag is publication minus mainnet activation in UTC calendar days; early, same-day, and later delivery are descriptive, with no judgment coloring. Each row links the release, CAP, and activation evidence.</li>
+      <li>Protocol Delivery: maintainer-verified entries only. A supporting release is the first stable GitHub release whose notes explicitly announce the usable protocol API, not preliminary XDR adoption. Shipping uses the GitHub publication date as a proxy, not registry publication or testnet activation. Lag is publication minus mainnet activation in UTC calendar days; early, same-day, and later delivery are descriptive, with no judgment coloring. Each row links the release, CAP, and activation evidence. An upgrade that changes no XDR and no Horizon or RPC API is listed as "no SDK change required" with a link to its release notes and carries no lag.</li>
       <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
       <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. GitHub star counts in the users table are maintainer-set snapshots for open-source user projects, linked to the project repository and dated in the curated file; closed-source or off-GitHub projects show a dash. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count; it is shown only where the graph can attribute dependents to the repository (pub.dev and Composer manifests). SPM manifests are not parsed by the graph, and Maven/Gradle coordinates are not mapped back to source repositories, so iOS and KMP read not tracked instead of a false zero.</li>
     </ul>
