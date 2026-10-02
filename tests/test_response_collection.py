@@ -17,7 +17,7 @@ import subprocess
 import tempfile
 import textwrap
 import unittest
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -334,6 +334,33 @@ class WorkflowTests(unittest.TestCase):
 class RenderingTests(unittest.TestCase):
     def setUp(self):
         self.m = build_module()
+
+    def test_packagist_last_full_month_needs_every_calendar_day(self):
+        def month(label, first_day, last_day, downloads=1):
+            return {'month': label, 'downloads': downloads, 'first_day': first_day, 'last_day': last_day}
+        last_full = self.m['last_full_month']
+        july = month('2026-07', '2026-07-01', '2026-07-31', 3107)
+        august = month('2026-08', '2026-08-01', '2026-08-31', 2634)
+        # 1 October: Packagist has reported September only through the 29th.
+        self.assertEqual(last_full([july, august, month('2026-09', '2026-09-01', '2026-09-29')], date(2026, 10, 1)), august)
+        # 2 October: the 30th is in and no October day exists yet.
+        september = month('2026-09', '2026-09-01', '2026-09-30', 2984)
+        self.assertEqual(last_full([july, august, september], date(2026, 10, 2)), september)
+        # 3 October: the partial current month does not change the pick.
+        october = month('2026-10', '2026-10-01', '2026-10-01')
+        self.assertEqual(last_full([july, august, september, october], date(2026, 10, 3)), september)
+        # Inside September a complete-looking September is still the current month.
+        self.assertEqual(last_full([july, august, september], date(2026, 9, 30)), august)
+        # The first month of a series that starts mid-month is not full.
+        self.assertIsNone(last_full([month('2021-12', '2021-12-14', '2021-12-31')], date(2026, 10, 2)))
+        # The pick does not depend on the order of the entries.
+        self.assertEqual(last_full([september, july, august], date(2026, 10, 2)), september)
+        # Entries without day bounds or with an unparseable label never qualify, even when they sort before today.
+        self.assertIsNone(last_full([{'month': '2026-08', 'downloads': 1},
+                                     {'month': '2025-13', 'first_day': 'x', 'last_day': 'y'},
+                                     {'month': '2025-xy', 'first_day': '2025-xy-01', 'last_day': '2025-xy-31'}],
+                                    date(2026, 10, 2)))
+        self.assertIsNone(last_full([], date(2026, 10, 2)))
 
     def test_v2_zero_unknown_and_incomplete(self):
         old = '\n'.join(self.m['response_rows']({'definition_version': 2}))

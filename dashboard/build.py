@@ -10,6 +10,7 @@ usage (distribution + curated archive) second, reach/history demoted below,
 data sources and definitions at the end.
 """
 
+import calendar
 import html as html_mod
 import json
 import math
@@ -397,6 +398,29 @@ def extract_packagist():
     else:
         mh = None
     return {"latest": latest, "monthly_history": mh, "collected_at": data.get("collected_at")}
+
+
+def last_full_month(months, today):
+    """
+    The latest month before ``today``'s month whose reported days run from the 1st to the month end.
+
+    Packagist reports a day's count on the following day, so at a month start the
+    series can still end inside the previous month. A month counts as full only
+    when its first and last calendar days are both in. ``None`` when no month qualifies.
+    """
+    current = today.strftime("%Y-%m")
+
+    def is_full(m):
+        month = m.get("month")
+        if not isinstance(month, str) or month >= current:
+            return False
+        try:
+            days = calendar.monthrange(int(month[:4]), int(month[5:7]))[1]
+        except ValueError:
+            return False
+        return m.get("first_day") == f"{month}-01" and m.get("last_day") == f"{month}-{days:02d}"
+
+    return max((m for m in months if is_full(m)), key=lambda m: m["month"], default=None)
 
 
 def extract_pubdev():
@@ -1349,9 +1373,7 @@ def build_usage_cards(all_data, signals=None):
         pk = by_key["php"]["packagist"]
         lifetime = pk["latest"].get("total")
         mh = pk["monthly_history"]
-        last_full = None
-        if mh and len(mh["months"]) >= 2:
-            last_full = mh["months"][-2]
+        last_full = last_full_month(mh["months"], TODAY) if mh else None
         signals["php"].add("packagist.lifetime_downloads", lifetime, "lifetime", pk["collected_at"])
         signals["php"].add("packagist.last_full_month_downloads", last_full["downloads"] if last_full else None,
                            last_full["month"] if last_full else "last_full_month", mh.get("collected_at") if mh else None)
@@ -1599,7 +1621,7 @@ def build_freshness_section(all_data):
       <li>Response evidence expands below each SDK card. Closed, answered v3 records are cached while their source update time is unchanged; open, unanswered, unknown, changed, or legacy records are collected again. A response-fetch failure makes the response section incomplete and preserves its last successful timestamp; the closure and backlog metrics remain independently covered.</li>
       <li>Differences from the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-signals proposal</a>: this dashboard uses 48h instead of the proposed seven days, counts qualifying PR discussion and review comments as well as submitted reviews, and explicitly handles draft readiness as above. It uses counts, without percentile ranks or a comparison pool. Author exclusions remain OWNER/MEMBER and bots; there is no declared-maintainer login override. Coverage is complete/incomplete, missing data is n/a, and retained values older than 48h are marked STALE in the freshness table; host-repository and external-tracker exemptions are not configured for these four repositories.</li>
       <li>Protocol Delivery: maintainer-verified entries only. A supporting release is the first stable GitHub release whose notes explicitly announce the usable protocol API, not preliminary XDR adoption. Shipping uses the GitHub publication date as a proxy, not registry publication or testnet activation. Lag is publication minus mainnet activation in UTC calendar days; early, same-day, and later delivery are descriptive, with no judgment coloring. Each row links the release, CAP, and activation evidence. An upgrade that changes no XDR and no Horizon or RPC API is listed as "no SDK change required" with a link to its release notes and carries no lag.</li>
-      <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
+      <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial; the last full month in the headline is the latest month reported from its 1st to its last day); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
       <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. GitHub star counts in the users table are maintainer-set snapshots for open-source user projects, linked to the project repository and dated in the curated file; closed-source or off-GitHub projects show a dash. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count; it is shown only where the graph can attribute dependents to the repository (pub.dev and Composer manifests). SPM manifests are not parsed by the graph, and Maven/Gradle coordinates are not mapped back to source repositories, so iOS and KMP read not tracked instead of a false zero.</li>
     </ul>
   </details>

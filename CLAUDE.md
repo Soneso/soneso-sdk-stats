@@ -22,7 +22,7 @@ This repo collects daily statistics for Soneso Stellar SDKs via GitHub Actions w
 - `dashboard/snapshot.py` - Shared-renderer snapshot entry point, invoked only by the manual `snapshot.yml` workflow or in a local scratch directory
 - `dashboard/exports.md` - Profile/snapshot schema 1, metric fields, proposal differences, and immutability contract
 - `<sdk-folder>/github-clones.json` — accumulated GitHub clone data
-- `<sdk-folder>/packagist.json` — Packagist v2: daily snapshots plus `monthly_history` (calendar-month TOTALS summed from the daily stats endpoint; the average=monthly endpoint returns rounded per-day averages and is never used)
+- `<sdk-folder>/packagist.json` — Packagist v2: daily snapshots plus `monthly_history` (calendar-month TOTALS summed from the daily stats endpoint; the average=monthly endpoint returns rounded per-day averages and is never used). The dashboard's "last full month" is the latest month before the current one whose `first_day`/`last_day` span the whole calendar month. Packagist reports a day on the following day, so at a month start the previous month can still lack its last day; the pick is then the month before it
 - `<sdk-folder>/pub-dev.json` — pub.dev stats v3: `latest` (30d count, 4w/12w/52w sums), `buckets` (rolling 7-day buckets keyed by exact start..end dates, accumulating), `latest_snapshot` (authoritative bucket keys), `daily` (30d-rolling snapshots). ISO-week labels are retired: pub.dev buckets are anchored to newestDate, not calendar weeks
 - `<sdk-folder>/github-meta.json` — accumulated GitHub metadata (stars, forks, issues, views)
 - `<sdk-folder>/github-activity.json` — weekly commit counts (52w+) and full release history with summary

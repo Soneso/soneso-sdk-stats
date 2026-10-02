@@ -234,6 +234,22 @@ class ExportTests(unittest.TestCase):
         self.assertIsNone(profiles["kmp"]["signals"]["reach.dependents"]["value"])
         self.assertEqual(profiles["kmp"]["signals"]["reach.dependents"]["coverage"], "not_applicable")
 
+    def test_packagist_last_full_month_at_a_month_start(self):
+        months = json.loads((ROOT / "stellar-php-sdk" / "packagist.json").read_text())["monthly_history"]["months"]
+        by_month = {m["month"]: m for m in months}
+        # 2 October 2026: September is complete in the file and Packagist has not reported an October day yet.
+        october_2 = datetime(2026, 10, 2, 16, 30, tzinfo=timezone.utc)
+        for build_now, month in ((NOW, "2026-08"), (october_2, "2026-09")):
+            with patch.object(build, "NOW", build_now), patch.object(build, "TODAY", build_now.date()):
+                page, profiles = self.generate()
+            expected = by_month[month]
+            signal = profiles["php"]["signals"]["packagist.last_full_month_downloads"]
+            self.assertEqual(signal["window"], expected["month"])
+            self.assertEqual(signal["value"], expected["downloads"])
+            headline = re.search(r"last full month \((\d{4}-\d{2})\): ([\d,]+)", page)
+            self.assertIsNotNone(headline)
+            self.assertEqual(headline.groups(), (expected["month"], build.format_number(expected["downloads"])))
+
     def test_snapshot_bytes_csv_values_and_immutability(self):
         page, profiles = self.generate()
         target = create_snapshot("2099-Q4", self.temp / "snapshots", now=NOW)
