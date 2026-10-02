@@ -82,7 +82,7 @@ a{color:#6B93D6}
   <div class="sdk-card">
     <h3 style="color:#FF6B4A">iOS</h3>
     <div class="sdk-stat"><span class="sdk-stat-label">Median release gap (365d)</span><span class="sdk-stat-value">14.1 days</span></div>
-    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.8</span></div>
+    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.9</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Stable releases (90d / 365d)</span><span class="sdk-stat-value">7 / 21</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issues</span><span class="sdk-stat-value">0</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issue median age</span><span class="sdk-stat-value" style="color:#8b949e">not applicable</span></div>
@@ -103,7 +103,7 @@ a{color:#6B93D6}
   <div class="sdk-card">
     <h3 style="color:#54C5F8">Flutter</h3>
     <div class="sdk-stat"><span class="sdk-stat-label">Median release gap (365d)</span><span class="sdk-stat-value">15.1 days</span></div>
-    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.7</span></div>
+    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.8</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Stable releases (90d / 365d)</span><span class="sdk-stat-value">6 / 21</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issues</span><span class="sdk-stat-value">0</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issue median age</span><span class="sdk-stat-value" style="color:#8b949e">not applicable</span></div>
@@ -124,7 +124,7 @@ a{color:#6B93D6}
   <div class="sdk-card">
     <h3 style="color:#6B93D6">PHP</h3>
     <div class="sdk-stat"><span class="sdk-stat-label">Median release gap (365d)</span><span class="sdk-stat-value">19.3 days</span></div>
-    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.7</span></div>
+    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.8</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Stable releases (90d / 365d)</span><span class="sdk-stat-value">5 / 19</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issues</span><span class="sdk-stat-value">0</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issue median age</span><span class="sdk-stat-value" style="color:#8b949e">not applicable</span></div>
@@ -145,7 +145,7 @@ a{color:#6B93D6}
   <div class="sdk-card">
     <h3 style="color:#B07CFF">KMP</h3>
     <div class="sdk-stat"><span class="sdk-stat-label">Median release gap (365d)</span><span class="sdk-stat-value">10.6 days</span></div>
-    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.2</span></div>
+    <div class="sdk-stat"><span class="sdk-stat-label">Days since last stable release</span><span class="sdk-stat-value">4.4</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Stable releases (90d / 365d)</span><span class="sdk-stat-value">6 / 29</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issues</span><span class="sdk-stat-value">0</span></div>
     <div class="sdk-stat"><span class="sdk-stat-label">Open issue median age</span><span class="sdk-stat-value" style="color:#8b949e">not applicable</span></div>
@@ -205,7 +205,7 @@ a{color:#6B93D6}
   </div>
   <div class="card">
     <h2>Packagist Monthly Downloads (PHP)</h2>
-    <div class="usage-headline">Downloads (lifetime): 63,427 &middot; last full month (2026-08): 2,634</div>
+    <div class="usage-headline">Downloads (lifetime): 63,427 &middot; last full month (2026-09): 2,984</div>
     <div id="chart-packagist" class="chart"></div>
   </div>
   <div class="card">
@@ -311,7 +311,7 @@ a{color:#6B93D6}
       <li>Response evidence expands below each SDK card. Closed, answered v3 records are cached while their source update time is unchanged; open, unanswered, unknown, changed, or legacy records are collected again. A response-fetch failure makes the response section incomplete and preserves its last successful timestamp; the closure and backlog metrics remain independently covered.</li>
       <li>Differences from the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-signals proposal</a>: this dashboard uses 48h instead of the proposed seven days, counts qualifying PR discussion and review comments as well as submitted reviews, and explicitly handles draft readiness as above. It uses counts, without percentile ranks or a comparison pool. Author exclusions remain OWNER/MEMBER and bots; there is no declared-maintainer login override. Coverage is complete/incomplete, missing data is n/a, and retained values older than 48h are marked STALE in the freshness table; host-repository and external-tracker exemptions are not configured for these four repositories.</li>
       <li>Protocol Delivery: maintainer-verified entries only. A supporting release is the first stable GitHub release whose notes explicitly announce the usable protocol API, not preliminary XDR adoption. Shipping uses the GitHub publication date as a proxy, not registry publication or testnet activation. Lag is publication minus mainnet activation in UTC calendar days; early, same-day, and later delivery are descriptive, with no judgment coloring. Each row links the release, CAP, and activation evidence. An upgrade that changes no XDR and no Horizon or RPC API is listed as "no SDK change required" with a link to its release notes and carries no lag.</li>
-      <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
+      <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial; the last full month in the headline is the latest month reported from its 1st to its last day); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
       <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. GitHub star counts in the users table are maintainer-set snapshots for open-source user projects, linked to the project repository and dated in the curated file; closed-source or off-GitHub projects show a dash. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count; it is shown only where the graph can attribute dependents to the repository (pub.dev and Composer manifests). SPM manifests are not parsed by the graph, and Maven/Gradle coordinates are not mapped back to source repositories, so iOS and KMP read not tracked instead of a false zero.</li>
     </ul>
   </details>
