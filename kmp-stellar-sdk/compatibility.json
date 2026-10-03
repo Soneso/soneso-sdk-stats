@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-02T16:21:48Z",
+  "collected_at": "2026-10-03T14:53:58Z",
   "source": {
     "tag": "v1.14.0",
     "sdk_version": "1.14.0",
@@ -575,19 +575,19 @@
       "current": "v29.0.0",
       "published_at": "2026-10-01T20:17:56Z",
       "url": "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0",
-      "checked_at": "2026-10-02T16:21:48Z"
+      "checked_at": "2026-10-03T14:53:58Z"
     },
     "rpc": {
       "list_complete": true,
       "current": "v29.0.0",
       "published_at": "2026-10-01T20:15:08Z",
       "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.0",
-      "checked_at": "2026-10-02T16:21:48Z"
+      "checked_at": "2026-10-03T14:53:58Z"
     },
     "stellar_protocol": {
       "commit": "974df5f0ae3e544e2479c50f844924e5e8f94d2e",
       "commit_date": "2026-09-30",
-      "checked_at": "2026-10-02T16:21:48Z"
+      "checked_at": "2026-10-03T14:53:58Z"
     }
   },
   "horizon": {
@@ -660,6 +660,23 @@
     "complete": true
   },
   "history": [
+    {
+      "date": "2026-10-03",
+      "tag": "v1.14.0",
+      "sdk_version_matches_tag": true,
+      "horizon_version": "v28.0.1",
+      "horizon_total": 50,
+      "horizon_full": 50,
+      "horizon_newer": 1,
+      "rpc_version": "v28.0.1",
+      "rpc_total": 12,
+      "rpc_full": 12,
+      "rpc_newer": 1,
+      "sep_matrices": 18,
+      "sep_at_full": 18,
+      "sep_current": 17,
+      "sep_updated_date_not_later": 0
+    },
     {
       "date": "2026-10-02",
       "tag": "v1.14.0",
