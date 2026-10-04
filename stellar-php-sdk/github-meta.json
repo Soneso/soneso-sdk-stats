@@ -1,8 +1,16 @@
 {
   "schema_version": 1,
   "repo": {
-    "collected_at": "2026-10-03T14:44:59Z",
+    "collected_at": "2026-10-04T15:24:16Z",
     "daily": [
+      {
+        "date": "2026-10-04",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8106
+      },
       {
         "date": "2026-10-03",
         "stars": 42,
@@ -1726,14 +1734,19 @@
     ]
   },
   "views": {
-    "collected_at": "2026-10-03T14:44:59Z",
+    "collected_at": "2026-10-04T15:24:16Z",
     "summary": {
       "last_14_days": {
-        "count": 195,
+        "count": 186,
         "uniques": 51
       }
     },
     "daily": [
+      {
+        "date": "2026-10-03",
+        "count": 10,
+        "uniques": 4
+      },
       {
         "date": "2026-10-02",
         "count": 9,
