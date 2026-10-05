@@ -1,0 +1,2905 @@
+{
+  "schema_version": 1,
+  "repo": {
+    "collected_at": "2026-10-05T19:18:52Z",
+    "daily": [
+      {
+        "date": "2026-10-05",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8106
+      },
+      {
+        "date": "2026-10-04",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8106
+      },
+      {
+        "date": "2026-10-03",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8106
+      },
+      {
+        "date": "2026-10-02",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8106
+      },
+      {
+        "date": "2026-10-01",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8105
+      },
+      {
+        "date": "2026-09-30",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8073
+      },
+      {
+        "date": "2026-09-29",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8028
+      },
+      {
+        "date": "2026-09-28",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8028
+      },
+      {
+        "date": "2026-09-27",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7949
+      },
+      {
+        "date": "2026-09-26",
+        "stars": 42,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7866
+      },
+      {
+        "date": "2026-09-25",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8147
+      },
+      {
+        "date": "2026-09-24",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8147
+      },
+      {
+        "date": "2026-09-23",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 8109
+      },
+      {
+        "date": "2026-09-22",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8054
+      },
+      {
+        "date": "2026-09-21",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8054
+      },
+      {
+        "date": "2026-09-20",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8053
+      },
+      {
+        "date": "2026-09-19",
+        "stars": 41,
+        "forks": 21,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 8053
+      },
+      {
+        "date": "2026-09-18",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8053
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8053
+      },
+      {
+        "date": "2026-09-16",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 8053
+      },
+      {
+        "date": "2026-09-15",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 8053
+      },
+      {
+        "date": "2026-09-14",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7922
+      },
+      {
+        "date": "2026-09-13",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7922
+      },
+      {
+        "date": "2026-09-12",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7922
+      },
+      {
+        "date": "2026-09-11",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7922
+      },
+      {
+        "date": "2026-09-10",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-09",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-08",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-07",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-06",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-05",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-04",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7902
+      },
+      {
+        "date": "2026-09-03",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7899
+      },
+      {
+        "date": "2026-09-02",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7899
+      },
+      {
+        "date": "2026-09-01",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7899
+      },
+      {
+        "date": "2026-08-31",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7912
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7912
+      },
+      {
+        "date": "2026-08-29",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7912
+      },
+      {
+        "date": "2026-08-28",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7912
+      },
+      {
+        "date": "2026-08-27",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7874
+      },
+      {
+        "date": "2026-08-26",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7874
+      },
+      {
+        "date": "2026-08-25",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 11,
+        "size_kb": 7874
+      },
+      {
+        "date": "2026-08-24",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 11,
+        "size_kb": 7596
+      },
+      {
+        "date": "2026-08-23",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 11,
+        "size_kb": 7595
+      },
+      {
+        "date": "2026-08-22",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 11,
+        "size_kb": 8691
+      },
+      {
+        "date": "2026-08-21",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 11,
+        "size_kb": 8691
+      },
+      {
+        "date": "2026-08-20",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 8657
+      },
+      {
+        "date": "2026-08-19",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8443
+      },
+      {
+        "date": "2026-08-18",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8334
+      },
+      {
+        "date": "2026-08-17",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 8236
+      },
+      {
+        "date": "2026-08-16",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8161
+      },
+      {
+        "date": "2026-08-15",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8161
+      },
+      {
+        "date": "2026-08-14",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8161
+      },
+      {
+        "date": "2026-08-13",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8161
+      },
+      {
+        "date": "2026-08-12",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8161
+      },
+      {
+        "date": "2026-08-11",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 8161
+      },
+      {
+        "date": "2026-08-10",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 8050
+      },
+      {
+        "date": "2026-08-09",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 8050
+      },
+      {
+        "date": "2026-08-08",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 8050
+      },
+      {
+        "date": "2026-08-07",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7899
+      },
+      {
+        "date": "2026-08-06",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7899
+      },
+      {
+        "date": "2026-08-05",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7781
+      },
+      {
+        "date": "2026-08-04",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7781
+      },
+      {
+        "date": "2026-08-03",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7781
+      },
+      {
+        "date": "2026-08-02",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7781
+      },
+      {
+        "date": "2026-08-01",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7642
+      },
+      {
+        "date": "2026-07-31",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-30",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-29",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-28",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-27",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-26",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-25",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-24",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-23",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-22",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-21",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-20",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-19",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7533
+      },
+      {
+        "date": "2026-07-18",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7531
+      },
+      {
+        "date": "2026-07-17",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7531
+      },
+      {
+        "date": "2026-07-16",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7531
+      },
+      {
+        "date": "2026-07-15",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7531
+      },
+      {
+        "date": "2026-07-14",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7531
+      },
+      {
+        "date": "2026-07-13",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7307
+      },
+      {
+        "date": "2026-07-12",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7305
+      },
+      {
+        "date": "2026-07-11",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7300
+      },
+      {
+        "date": "2026-07-10",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-09",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-08",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-07",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-06",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-05",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-04",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-03",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-02",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-07-01",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7417
+      },
+      {
+        "date": "2026-06-30",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7385
+      },
+      {
+        "date": "2026-06-29",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7385
+      },
+      {
+        "date": "2026-06-28",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7385
+      },
+      {
+        "date": "2026-06-27",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7385
+      },
+      {
+        "date": "2026-06-26",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7439
+      },
+      {
+        "date": "2026-06-25",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7439
+      },
+      {
+        "date": "2026-06-24",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7344
+      },
+      {
+        "date": "2026-06-23",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7344
+      },
+      {
+        "date": "2026-06-22",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7344
+      },
+      {
+        "date": "2026-06-21",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7344
+      },
+      {
+        "date": "2026-06-20",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7344
+      },
+      {
+        "date": "2026-06-19",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 7344
+      },
+      {
+        "date": "2026-06-18",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7131
+      },
+      {
+        "date": "2026-06-17",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7131
+      },
+      {
+        "date": "2026-06-16",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7131
+      },
+      {
+        "date": "2026-06-15",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 2,
+        "watchers": 12,
+        "size_kb": 7131
+      },
+      {
+        "date": "2026-06-14",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 7127
+      },
+      {
+        "date": "2026-06-13",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6979
+      },
+      {
+        "date": "2026-06-12",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6979
+      },
+      {
+        "date": "2026-06-11",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6951
+      },
+      {
+        "date": "2026-06-10",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6884
+      },
+      {
+        "date": "2026-06-09",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-08",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-07",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-06",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-05",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-04",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-03",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-02",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 4,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-06-01",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 3,
+        "watchers": 12,
+        "size_kb": 6570
+      },
+      {
+        "date": "2026-05-31",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-30",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-29",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-28",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-27",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-26",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-25",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-24",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-23",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-22",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-21",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-20",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-19",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-18",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-17",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-16",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-15",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-14",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-13",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-12",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-11",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-10",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-09",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-08",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-07",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 6558
+      },
+      {
+        "date": "2026-05-06",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 5663
+      },
+      {
+        "date": "2026-05-05",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 5255
+      },
+      {
+        "date": "2026-05-04",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4833
+      },
+      {
+        "date": "2026-05-03",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4833
+      },
+      {
+        "date": "2026-05-02",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4833
+      },
+      {
+        "date": "2026-05-01",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 4,
+        "watchers": 12,
+        "size_kb": 4833
+      },
+      {
+        "date": "2026-04-30",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-29",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-28",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-27",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-26",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-25",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-24",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-23",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-22",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-21",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-20",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-19",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-18",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-17",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-16",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-15",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-14",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-13",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-12",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-11",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-10",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-09",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4822
+      },
+      {
+        "date": "2026-04-08",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 4817
+      },
+      {
+        "date": "2026-04-07",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4817
+      },
+      {
+        "date": "2026-04-06",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4817
+      },
+      {
+        "date": "2026-04-05",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4817
+      },
+      {
+        "date": "2026-04-04",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4817
+      },
+      {
+        "date": "2026-04-03",
+        "stars": 41,
+        "forks": 20,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 4620
+      },
+      {
+        "date": "2026-04-02",
+        "stars": 41,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4620
+      },
+      {
+        "date": "2026-04-01",
+        "stars": 41,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4620
+      },
+      {
+        "date": "2026-03-31",
+        "stars": 41,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4620
+      },
+      {
+        "date": "2026-03-30",
+        "stars": 41,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4620
+      },
+      {
+        "date": "2026-03-29",
+        "stars": 41,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4620
+      },
+      {
+        "date": "2026-03-28",
+        "stars": 41,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-27",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-26",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-25",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-24",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-23",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-22",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-21",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-20",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-19",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-18",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-17",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-16",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-15",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-14",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-13",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-12",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4611
+      },
+      {
+        "date": "2026-03-11",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 5142
+      },
+      {
+        "date": "2026-03-10",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 1,
+        "watchers": 12,
+        "size_kb": 5088
+      },
+      {
+        "date": "2026-03-09",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4742
+      },
+      {
+        "date": "2026-03-08",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4685
+      },
+      {
+        "date": "2026-03-07",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4685
+      },
+      {
+        "date": "2026-03-06",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4668
+      },
+      {
+        "date": "2026-03-05",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4639
+      },
+      {
+        "date": "2026-03-04",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4607
+      },
+      {
+        "date": "2026-03-03",
+        "stars": 40,
+        "forks": 19,
+        "open_issues_and_prs": 0,
+        "watchers": 12,
+        "size_kb": 4339
+      }
+    ]
+  },
+  "views": {
+    "collected_at": "2026-10-05T19:18:52Z",
+    "summary": {
+      "last_14_days": {
+        "count": 192,
+        "uniques": 51
+      }
+    },
+    "daily": [
+      {
+        "date": "2026-10-04",
+        "count": 14,
+        "uniques": 5
+      },
+      {
+        "date": "2026-10-03",
+        "count": 10,
+        "uniques": 4
+      },
+      {
+        "date": "2026-10-02",
+        "count": 9,
+        "uniques": 6
+      },
+      {
+        "date": "2026-10-01",
+        "count": 4,
+        "uniques": 2
+      },
+      {
+        "date": "2026-09-30",
+        "count": 27,
+        "uniques": 7
+      },
+      {
+        "date": "2026-09-29",
+        "count": 5,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-28",
+        "count": 6,
+        "uniques": 5
+      },
+      {
+        "date": "2026-09-27",
+        "count": 33,
+        "uniques": 9
+      },
+      {
+        "date": "2026-09-26",
+        "count": 10,
+        "uniques": 5
+      },
+      {
+        "date": "2026-09-25",
+        "count": 9,
+        "uniques": 6
+      },
+      {
+        "date": "2026-09-24",
+        "count": 13,
+        "uniques": 8
+      },
+      {
+        "date": "2026-09-23",
+        "count": 42,
+        "uniques": 6
+      },
+      {
+        "date": "2026-09-22",
+        "count": 10,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-21",
+        "count": 8,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-20",
+        "count": 19,
+        "uniques": 6
+      },
+      {
+        "date": "2026-09-19",
+        "count": 40,
+        "uniques": 6
+      },
+      {
+        "date": "2026-09-18",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-17",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-09-16",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-15",
+        "count": 26,
+        "uniques": 7
+      },
+      {
+        "date": "2026-09-14",
+        "count": 6,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-13",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-09-12",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-09-11",
+        "count": 21,
+        "uniques": 8
+      },
+      {
+        "date": "2026-09-10",
+        "count": 5,
+        "uniques": 1
+      },
+      {
+        "date": "2026-09-09",
+        "count": 11,
+        "uniques": 4
+      },
+      {
+        "date": "2026-09-08",
+        "count": 7,
+        "uniques": 3
+      },
+      {
+        "date": "2026-09-07",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "date": "2026-09-06",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-09-05",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-09-04",
+        "count": 4,
+        "uniques": 2
+      },
+      {
+        "date": "2026-09-03",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-09-02",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-09-01",
+        "count": 7,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-31",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-30",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-29",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-28",
+        "count": 22,
+        "uniques": 5
+      },
+      {
+        "date": "2026-08-27",
+        "count": 15,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-26",
+        "count": 16,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-25",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-24",
+        "count": 23,
+        "uniques": 4
+      },
+      {
+        "date": "2026-08-23",
+        "count": 11,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-22",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-21",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-20",
+        "count": 16,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-19",
+        "count": 32,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-18",
+        "count": 59,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-17",
+        "count": 48,
+        "uniques": 7
+      },
+      {
+        "date": "2026-08-16",
+        "count": 6,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-15",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-14",
+        "count": 5,
+        "uniques": 4
+      },
+      {
+        "date": "2026-08-13",
+        "count": 8,
+        "uniques": 5
+      },
+      {
+        "date": "2026-08-12",
+        "count": 12,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-11",
+        "count": 7,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-10",
+        "count": 24,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-09",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-08",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-07",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-08-06",
+        "count": 21,
+        "uniques": 3
+      },
+      {
+        "date": "2026-08-05",
+        "count": 8,
+        "uniques": 7
+      },
+      {
+        "date": "2026-08-04",
+        "count": 11,
+        "uniques": 10
+      },
+      {
+        "date": "2026-08-03",
+        "count": 6,
+        "uniques": 5
+      },
+      {
+        "date": "2026-08-02",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-08-01",
+        "count": 19,
+        "uniques": 5
+      },
+      {
+        "date": "2026-07-31",
+        "count": 38,
+        "uniques": 4
+      },
+      {
+        "date": "2026-07-30",
+        "count": 5,
+        "uniques": 3
+      },
+      {
+        "date": "2026-07-29",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-07-28",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-07-27",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "date": "2026-07-26",
+        "count": 7,
+        "uniques": 4
+      },
+      {
+        "date": "2026-07-25",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-07-24",
+        "count": 6,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-23",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "date": "2026-07-22",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-21",
+        "count": 37,
+        "uniques": 4
+      },
+      {
+        "date": "2026-07-20",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-19",
+        "count": 8,
+        "uniques": 4
+      },
+      {
+        "date": "2026-07-18",
+        "count": 20,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-17",
+        "count": 5,
+        "uniques": 3
+      },
+      {
+        "date": "2026-07-16",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-15",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "date": "2026-07-14",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-07-13",
+        "count": 15,
+        "uniques": 1
+      },
+      {
+        "date": "2026-07-12",
+        "count": 9,
+        "uniques": 1
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-07-10",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "date": "2026-07-09",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 9,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-06",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-07-02",
+        "count": 21,
+        "uniques": 2
+      },
+      {
+        "date": "2026-07-01",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-30",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-29",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-28",
+        "count": 7,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-27",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-06-26",
+        "count": 7,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-25",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-06-24",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-06-23",
+        "count": 3,
+        "uniques": 3
+      },
+      {
+        "date": "2026-06-22",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "date": "2026-06-21",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-20",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-19",
+        "count": 6,
+        "uniques": 2
+      },
+      {
+        "date": "2026-06-18",
+        "count": 37,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-17",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-16",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-06-15",
+        "count": 10,
+        "uniques": 2
+      },
+      {
+        "date": "2026-06-14",
+        "count": 20,
+        "uniques": 4
+      },
+      {
+        "date": "2026-06-13",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "date": "2026-06-12",
+        "count": 5,
+        "uniques": 5
+      },
+      {
+        "date": "2026-06-11",
+        "count": 33,
+        "uniques": 6
+      },
+      {
+        "date": "2026-06-10",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-09",
+        "count": 16,
+        "uniques": 2
+      },
+      {
+        "date": "2026-06-08",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-07",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-06-06",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-05",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-04",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-06-03",
+        "count": 8,
+        "uniques": 5
+      },
+      {
+        "date": "2026-06-02",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "date": "2026-06-01",
+        "count": 4,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-31",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-30",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-29",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-05-28",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-27",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-05-26",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-05-25",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-24",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-23",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-05-22",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-21",
+        "count": 31,
+        "uniques": 3
+      },
+      {
+        "date": "2026-05-20",
+        "count": 5,
+        "uniques": 1
+      },
+      {
+        "date": "2026-05-19",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-18",
+        "count": 9,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-17",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-05-16",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-15",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-14",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-13",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-12",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-11",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-10",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-09",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-05-08",
+        "count": 9,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-07",
+        "count": 14,
+        "uniques": 3
+      },
+      {
+        "date": "2026-05-06",
+        "count": 56,
+        "uniques": 5
+      },
+      {
+        "date": "2026-05-05",
+        "count": 8,
+        "uniques": 3
+      },
+      {
+        "date": "2026-05-04",
+        "count": 4,
+        "uniques": 2
+      },
+      {
+        "date": "2026-05-03",
+        "count": 18,
+        "uniques": 5
+      },
+      {
+        "date": "2026-05-02",
+        "count": 7,
+        "uniques": 5
+      },
+      {
+        "date": "2026-05-01",
+        "count": 8,
+        "uniques": 3
+      },
+      {
+        "date": "2026-04-30",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "date": "2026-04-29",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-28",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-04-27",
+        "count": 4,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-26",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-04-25",
+        "count": 3,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-24",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-23",
+        "count": 6,
+        "uniques": 2
+      },
+      {
+        "date": "2026-04-22",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-21",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-20",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-04-19",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-04-18",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-17",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-04-16",
+        "count": 16,
+        "uniques": 4
+      },
+      {
+        "date": "2026-04-15",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-14",
+        "count": 19,
+        "uniques": 3
+      },
+      {
+        "date": "2026-04-13",
+        "count": 23,
+        "uniques": 6
+      },
+      {
+        "date": "2026-04-12",
+        "count": 8,
+        "uniques": 4
+      },
+      {
+        "date": "2026-04-11",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-04-10",
+        "count": 48,
+        "uniques": 6
+      },
+      {
+        "date": "2026-04-09",
+        "count": 11,
+        "uniques": 4
+      },
+      {
+        "date": "2026-04-08",
+        "count": 72,
+        "uniques": 15
+      },
+      {
+        "date": "2026-04-07",
+        "count": 39,
+        "uniques": 20
+      },
+      {
+        "date": "2026-04-06",
+        "count": 25,
+        "uniques": 8
+      },
+      {
+        "date": "2026-04-05",
+        "count": 18,
+        "uniques": 4
+      },
+      {
+        "date": "2026-04-04",
+        "count": 44,
+        "uniques": 6
+      },
+      {
+        "date": "2026-04-03",
+        "count": 189,
+        "uniques": 8
+      },
+      {
+        "date": "2026-04-02",
+        "count": 13,
+        "uniques": 4
+      },
+      {
+        "date": "2026-04-01",
+        "count": 59,
+        "uniques": 6
+      },
+      {
+        "date": "2026-03-31",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-03-30",
+        "count": 7,
+        "uniques": 3
+      },
+      {
+        "date": "2026-03-29",
+        "count": 11,
+        "uniques": 3
+      },
+      {
+        "date": "2026-03-28",
+        "count": 22,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-27",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-03-26",
+        "count": 4,
+        "uniques": 3
+      },
+      {
+        "date": "2026-03-25",
+        "count": 29,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-24",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-03-23",
+        "count": 7,
+        "uniques": 3
+      },
+      {
+        "date": "2026-03-22",
+        "count": 9,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-21",
+        "count": 9,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-20",
+        "count": 4,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-19",
+        "count": 27,
+        "uniques": 4
+      },
+      {
+        "date": "2026-03-18",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-03-17",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-16",
+        "count": 54,
+        "uniques": 3
+      },
+      {
+        "date": "2026-03-15",
+        "count": 54,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-14",
+        "count": 44,
+        "uniques": 5
+      },
+      {
+        "date": "2026-03-13",
+        "count": 29,
+        "uniques": 4
+      },
+      {
+        "date": "2026-03-12",
+        "count": 12,
+        "uniques": 3
+      },
+      {
+        "date": "2026-03-11",
+        "count": 87,
+        "uniques": 14
+      },
+      {
+        "date": "2026-03-10",
+        "count": 47,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-09",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-08",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-03-07",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "date": "2026-03-06",
+        "count": 34,
+        "uniques": 4
+      },
+      {
+        "date": "2026-03-05",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-04",
+        "count": 32,
+        "uniques": 6
+      },
+      {
+        "date": "2026-03-03",
+        "count": 13,
+        "uniques": 2
+      },
+      {
+        "date": "2026-03-02",
+        "count": 51,
+        "uniques": 8
+      },
+      {
+        "date": "2026-03-01",
+        "count": 27,
+        "uniques": 4
+      },
+      {
+        "date": "2026-02-28",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-27",
+        "count": 24,
+        "uniques": 4
+      },
+      {
+        "date": "2026-02-26",
+        "count": 9,
+        "uniques": 3
+      },
+      {
+        "date": "2026-02-25",
+        "count": 6,
+        "uniques": 5
+      },
+      {
+        "date": "2026-02-24",
+        "count": 30,
+        "uniques": 4
+      },
+      {
+        "date": "2026-02-23",
+        "count": 26,
+        "uniques": 6
+      },
+      {
+        "date": "2026-02-22",
+        "count": 46,
+        "uniques": 5
+      },
+      {
+        "date": "2026-02-21",
+        "count": 20,
+        "uniques": 2
+      },
+      {
+        "date": "2026-02-20",
+        "count": 2,
+        "uniques": 1
+      },
+      {
+        "date": "2026-02-19",
+        "count": 6,
+        "uniques": 3
+      },
+      {
+        "date": "2026-02-18",
+        "count": 11,
+        "uniques": 5
+      },
+      {
+        "date": "2026-02-17",
+        "count": 14,
+        "uniques": 5
+      }
+    ]
+  }
+}

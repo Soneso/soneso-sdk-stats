@@ -1,0 +1,194 @@
+{
+  "_readme": "Community feedback posted publicly in the PG Award proposal threads. Each entry carries the author's comment text VERBATIM (their own public post, quoted with attribution and source link; the outreach ask requested public thread comments with no limited-use promise) plus the link to the original. Rendered only when verified is set to an ISO date by the maintainer.",
+  "statements": [
+    {
+      "sdk": "ios",
+      "author": "tupui",
+      "project": "ChimpDAO (macOS app)",
+      "date": "2026-07-20",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/97#issuecomment-5022601105",
+      "verified": "2026-09-22",
+      "quote": "I am using the SDK for the ChimpDAO macOS app! It's very valuable to me and would have been very annoying to not have this. Thanks for the continued support on this \ud83d\ude4f"
+    },
+    {
+      "sdk": "ios",
+      "author": "Dadybayo",
+      "project": "Unstoppable Wallet",
+      "date": "2026-07-28",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/97#issuecomment-5102388054",
+      "verified": "2026-09-22",
+      "quote": "We've been using the Soneso iOS SDK to power Stellar support in Unstoppable Wallet and it's been a pleasure to work with. In a space where many blockchain SDKs are thin wrappers or lack long term maintenance, Soneso stands out as one of the few truly native, production grade implementations with a clean API and well thought out architecture.\n\nMaintaining infrastructure like this is rarely glamorous, but it's foundational for the entire ecosystem. We really appreciate the continued investment in the project and the commitment to keeping it healthy. Thank you for your work, it genuinely makes life easier for teams building on Stellar."
+    },
+    {
+      "sdk": "ios",
+      "author": "rohan-sethi",
+      "project": "SwiftEx (evaluating)",
+      "date": "2026-07-28",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/97#issuecomment-5108853864",
+      "verified": "2026-09-22",
+      "quote": "We've been evaluating the Soneso iOS SDK for Stellar support in SwiftEx, our non-custodial multi-chain wallet, as a native alternative to our current JS-based integration, mainly for tighter on-device key handling and native Soroban. It's genuinely native, clean, and well maintained. Looking forward to a deeper integration, and thanks for the continued investment \ud83d\ude4f"
+    },
+    {
+      "sdk": "ios",
+      "author": "christopherkarani",
+      "project": "Bebop",
+      "date": "2026-07-28",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/97#issuecomment-5109555580",
+      "verified": "2026-09-22",
+      "quote": "I used the stellar-ios-mac-sdk to build Bebop, a dollar wallet for iOS powered by the Stellar network. The SDK was a core part of the application, enabling us to manage accounts, construct and submit transactions, and integrate Stellar functionality into a native Swift codebase.\n\nChristian\u2019s work has made Stellar significantly more accessible to iOS developers. The SDK is well structured, reliable, and saves teams from having to build and maintain critical blockchain infrastructure themselves. Continued maintenance is especially important because production financial applications depend on compatibility with new Swift, Xcode, iOS, and Stellar protocol releases.\n\nI strongly support continued funding for Christian and the stellar-ios-mac-sdk. It is essential public infrastructure for anyone building native Apple-platform applications on Stellar."
+    },
+    {
+      "sdk": "flutter",
+      "author": "SurfingBowser",
+      "project": null,
+      "date": "2026-07-08",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-4911997265",
+      "verified": "2026-09-22",
+      "quote": "Proposed deliverables seem well scoped and can be measured easily. \nThe amount of use flutter has seen in q2 makes it clear this should be supported!"
+    },
+    {
+      "sdk": "flutter",
+      "author": "JFWooten4",
+      "project": null,
+      "date": "2026-07-22",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5049713925",
+      "verified": "2026-09-22",
+      "quote": "The Flutter SDK is a beauty and one of the best ways to build cross-platform apps. I don't know if Soneso works on these tools full-time, but $15k is a bargain for how much work goes in. This is one of the prime routes for passkey network access, and I support its further growth."
+    },
+    {
+      "sdk": "flutter",
+      "author": "aolieman",
+      "project": null,
+      "date": "2026-07-23",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5060218764",
+      "verified": "2026-09-22",
+      "quote": "Flutter is a very important target for devs across startups and enterprise. The stats show a healthy (probably growing) userbase for this SDK.\n\nExcellent work in the last quarter, and a good focus for Q3."
+    },
+    {
+      "sdk": "flutter",
+      "author": "ajoseerazo",
+      "project": "Meru",
+      "date": "2026-07-23",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5064281566",
+      "verified": "2026-09-22",
+      "quote": "We\u2019ve been using this Flutter SDK in our Meru mobile app for around two years.\n\nIt has been a core part of our integration with the Stellar ecosystem and has proven to be reliable in production. Having a well-maintained Flutter SDK has been extremely valuable for our team, and continued investment in its maintenance and improvement would benefit both existing projects like ours and the broader Stellar developer community. \n\nThanks, Christian, for your work and dedication to the project."
+    },
+    {
+      "sdk": "flutter",
+      "author": "sneurlax",
+      "project": "Stack Wallet",
+      "date": "2026-07-27",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5094979281",
+      "verified": "2026-09-22",
+      "quote": "3 years ago stellar_flutter_sdk use was merged into Stack Wallet, and just under a year later we worked together with them to merge some optional networking features in order to enable wider use of the library.  It's been great to work with an active maintainer over all that time"
+    },
+    {
+      "sdk": "flutter",
+      "author": "miguelfagundez",
+      "project": "NemorixPay",
+      "date": "2026-07-29",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5122087755",
+      "verified": "2026-09-22",
+      "quote": "We use the Stellar Flutter SDK as the foundation of the Stellar wallet in NemorixPay, and it has been an excellent experience.\n\nThe SDK has allowed us to integrate with the Stellar network quickly and reliably, handling account management, Horizon interactions, transactions, anchor communication, and more through a well-designed and consistently maintained API. Having a mature SDK has let our team focus on building our product instead of solving low-level blockchain integration challenges.\n\nThe project is actively maintained, well documented, and continuously improved, which gives us confidence to build on top of it. Beyond that, it has also set a high standard for Flutter blockchain development. Its architecture and developer experience have inspired us as we build Flutter SDKs for other blockchain ecosystems, following many of the same design principles that have made this SDK so enjoyable to work with.\n\nIt's an important public good for the Flutter and Stellar ecosystems, and we truly appreciate Christian's ongoing work maintaining it.\n\nI strongly support this application for the Stellar Community Fund Public Goods Award."
+    },
+    {
+      "sdk": "flutter",
+      "author": "jopmiddelkamp",
+      "project": "Beans",
+      "date": "2026-07-30",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/93#issuecomment-5127263482",
+      "verified": "2026-09-22",
+      "quote": "We use the Flutter SDK to develop the Beans app on the frontend and for several of our other SDK packages. So far, everything we need is included, and the SDK has been very helpful. I have had a very good experience working with Christian. He is very active when I submit a pull request, responding promptly and remaining open to constructive discussion. The SDK is well maintained, and all required features are present.\n\nWhile the SDK is not flawless, Christian has a strong understanding of areas for improvement. I have spoken with him many times at Meridian events. He consistently demonstrates a deep grasp of the latest technology, knows how to apply it, and maintains a high standard of code quality. I fully support his work and the ongoing maintenance he provides."
+    },
+    {
+      "sdk": "php",
+      "author": "MiSte-Git",
+      "project": "SKM",
+      "date": "2026-07-19",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5014788230",
+      "verified": "2026-09-22",
+      "quote": "We use the Stellar PHP SDK as the production backend for SKM (Stellar Konto Manager), a non-custodial Stellar wallet application (dual backend: Node.js for local dev, PHP SDK for production on shared hosting). It powers transaction building and Horizon interaction for our core account management features, and in particular our Multisig job management module \u2014 building, tracking, and merging multi-signature transactions with sequence/timeout validation. Reliable Horizon compatibility and correct XDR handling across SDK releases have been essential for us. Thanks for maintaining it!"
+    },
+    {
+      "sdk": "php",
+      "author": "Oluwatos94",
+      "project": "Jiidaa",
+      "date": "2026-07-20",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5022453554",
+      "verified": "2026-09-22",
+      "quote": "Jiidaa (formerly Shopping-complex) is a marketplace I'm building in Africa that connects buyers with vendors near them, and Stellar handles the payment side of it. The PHP SDK is what makes that workable for us: vendor subscription payments through SEP-24, provisioning each vendor's custodial wallet and trustline, and settling the recurring charges through Soroban contract calls. What I appreciate most is not having to reach for raw Horizon or RPC calls to get any of that done; the SDK keeps it all in one place, which is rare to find for PHP. It's been dependable. Grateful for the work you put into it."
+    },
+    {
+      "sdk": "php",
+      "author": "devfed1",
+      "project": "StellarChain.io",
+      "date": "2026-07-20",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5028300091",
+      "verified": "2026-09-22",
+      "quote": "StellarChain uses the Stellar PHP SDK in our production backend for [stellarchain.io](https://stellarchain.io/), across mainnet, testnet, and futurenet. \nIt supports our Horizon integrations, transaction and account processing, and XDR decoding for explorer and indexing workflows. Reliable XDR compatibility is especially important as we expose both decoded and raw blockchain data through our public API. SEP-51 XDR-JSON support further reduces custom conversion code and improves maintainability.\n\n Thanks for maintaining a dependable PHP SDK for the Stellar ecosystem!"
+    },
+    {
+      "sdk": "php",
+      "author": "K3rs0",
+      "project": null,
+      "date": "2026-07-21",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5037185522",
+      "verified": "2026-09-22",
+      "quote": "Great project.\nI'm using it for payments and more\n\nThanks for maintaining a dependable PHP SDK for the Stellar ecosystem!"
+    },
+    {
+      "sdk": "php",
+      "author": "icolomina",
+      "project": "Equilibrium sandbox",
+      "date": "2026-07-22",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5046099351",
+      "verified": "2026-09-22",
+      "quote": "Great SDK.\nI am using it to create a sandbox for connecting to [Equillar](https://github.com/icolomina/equillar-soroban). The SDK is really easy to integrate with any PHP project and supports all you need to interact both with stellar and soroban. \nI use it for:\n\n- Creating new keys using KeyPair\n- Funding accounts on testnet using friendbot\n- Creating trustlines\n- Getting token balances\n- Making Swaps\n- Installing and deploying contracts\n- Invoke contract functions\n- Consuming contract events\n\nAnd more ....\n\nThanks for maintaining it!"
+    },
+    {
+      "sdk": "php",
+      "author": "JFWooten4",
+      "project": null,
+      "date": "2026-07-22",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5049732782",
+      "verified": "2026-09-22",
+      "quote": "I am working on converting an entrenched platform from legacy payment rails to Stellar. The PHP SDK is central to these efforts. I support its development where we can spread the network into preexisting networks."
+    },
+    {
+      "sdk": "php",
+      "author": "sozidatel",
+      "project": "Montelibero",
+      "date": "2026-07-25",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/96#issuecomment-5078950513",
+      "verified": "2026-09-22",
+      "quote": "We at Montelibero (montelibero.org) use the Stellar PHP SDK extensively in the development of bsn.expert, as well as in several less public projects built with PHP. We are very grateful for such a reliable and well-designed library \u2014 it is an important part of our Stellar development stack.\n\nI also contributed a small but important fix for our use case, and Christian reviewed and accepted it promptly. Based on both our day-to-day usage and contribution experience, we strongly recommend supporting the continued maintenance and development of this SDK."
+    },
+    {
+      "sdk": "kmp",
+      "author": "waldmatias",
+      "project": "Ben Wallet",
+      "date": "2026-07-20",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/121#issuecomment-5028129576",
+      "verified": "2026-09-22",
+      "quote": "A strong submission by Christian, and one we fully support. Most of all, because some time ago we actually made a decision _not_ to make our own KMP SDK and commit to using this one for all our upcoming Android Apps (though current one: Ben Wallet / passkey+smart wallet). Why reinvent the wheel when you have one of the best already working on the problem? \ud83d\ude04"
+    },
+    {
+      "sdk": "kmp",
+      "author": "BenkikoDAO",
+      "project": null,
+      "date": "2026-07-23",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/121#issuecomment-5057714222",
+      "verified": "2026-09-22",
+      "quote": "Worthy submission. Very well documented and abstracted for beginner developers. Also the inclusion of SEPs and Skills to aid in faster development using AI tools.\n\n\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "sdk": "kmp",
+      "author": "rahimklaber",
+      "project": null,
+      "date": "2026-07-23",
+      "url": "https://github.com/SCF-Public-Goods-Maintenance/scf-public-goods-maintenance.github.io/pull/121#issuecomment-5058983409",
+      "verified": "2026-09-22",
+      "quote": "IMO this should be approved given that stellar's [official kotlin sdk is deprecated](https://github.com/stellar/kotlin-wallet-sdk).\n\nAside from that, i've used the sdk and its well written."
+    }
+  ]
+}

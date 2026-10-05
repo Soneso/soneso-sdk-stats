@@ -1,0 +1,1215 @@
+{
+  "schema_version": 2,
+  "dependents_list": {
+    "as_of": "2026-10-05",
+    "repos": [
+      {
+        "owner": "Argo-Navis-Dev",
+        "repo": "php-anchor-sdk",
+        "stars": 6,
+        "forks": 1
+      },
+      {
+        "owner": "icolomina",
+        "repo": "equillar",
+        "stars": 4,
+        "forks": 0
+      },
+      {
+        "owner": "wrappedcbdc",
+        "repo": "cngn-php-library",
+        "stars": 2,
+        "forks": 2
+      },
+      {
+        "owner": "jerryouma",
+        "repo": "peerpesaback",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "thegivehub",
+        "repo": "app",
+        "stars": 1,
+        "forks": 1
+      },
+      {
+        "owner": "DaanKrug",
+        "repo": "soroban-10",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "JohnGabrielRodi",
+        "repo": "lottery-generators-php-page",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "MiSte-Git",
+        "repo": "Stellar-Konto-Manager",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Montelibero",
+        "repo": "bsn_crawler",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Oluwatos94",
+        "repo": "shopping-complex",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Pipaypw",
+        "repo": "payroll",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "RemittEase-Dev-Team",
+        "repo": "RemittEase",
+        "stars": 0,
+        "forks": 1
+      },
+      {
+        "owner": "cointimes-app",
+        "repo": "xtimes-backend",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "common-repository",
+        "repo": "artemis-payment-gateway",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "emarinuk",
+        "repo": "anchors-prueba",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "sozidatel",
+        "repo": "MTLA_calc_delegations",
+        "stars": 0,
+        "forks": 1
+      },
+      {
+        "owner": "zainh332",
+        "repo": "tokenglade",
+        "stars": 0,
+        "forks": 0
+      }
+    ],
+    "packages": [
+      {
+        "owner": "Argo-Navis-Dev",
+        "repo": "php-anchor-sdk",
+        "stars": 6,
+        "forks": 1,
+        "package": "argonavis/php-anchor-sdk"
+      },
+      {
+        "owner": "Pipaypw",
+        "repo": "payroll",
+        "stars": 0,
+        "forks": 0,
+        "package": "pipaypw/payroll"
+      }
+    ]
+  },
+  "daily": [
+    {
+      "date": "2026-10-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-10-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-10-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-10-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-10-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-30",
+      "dependent_repos": null,
+      "dependent_packages": null,
+      "parse_error": true
+    },
+    {
+      "date": "2026-09-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-17",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-09-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-31",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-30",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-17",
+      "dependent_repos": null,
+      "dependent_packages": null,
+      "parse_error": true
+    },
+    {
+      "date": "2026-08-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-08-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-31",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-30",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-17",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-07-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-30",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-17",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-06-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-31",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-30",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-17",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-05-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-30",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-17",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-02",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-04-01",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-31",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-30",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-29",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-28",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-27",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-26",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-25",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-24",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-23",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-22",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-21",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-20",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-19",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-18",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-17",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-16",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-15",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-14",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-13",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-12",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-11",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-10",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-09",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-08",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-07",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-06",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-05",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
+    {
+      "date": "2026-03-03",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    }
+  ]
+}

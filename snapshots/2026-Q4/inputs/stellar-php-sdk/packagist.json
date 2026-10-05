@@ -1,0 +1,1905 @@
+{
+  "schema_version": 2,
+  "collected_at": "2026-10-05T19:13:49Z",
+  "latest": {
+    "total": 63654,
+    "monthly": 3159,
+    "daily": 195,
+    "favers": 42
+  },
+  "daily": [
+    {
+      "date": "2026-10-05",
+      "total": 63654,
+      "monthly": 3159,
+      "daily": 195,
+      "favers": 42
+    },
+    {
+      "date": "2026-10-04",
+      "total": 63457,
+      "monthly": 2971,
+      "daily": 19,
+      "favers": 42
+    },
+    {
+      "date": "2026-10-03",
+      "total": 63443,
+      "monthly": 3042,
+      "daily": 75,
+      "favers": 42
+    },
+    {
+      "date": "2026-10-02",
+      "total": 63427,
+      "monthly": 3173,
+      "daily": 236,
+      "favers": 42
+    },
+    {
+      "date": "2026-10-01",
+      "total": 63270,
+      "monthly": 3150,
+      "daily": 359,
+      "favers": 42
+    },
+    {
+      "date": "2026-09-30",
+      "total": 62820,
+      "monthly": 2786,
+      "daily": 174,
+      "favers": 42
+    },
+    {
+      "date": "2026-09-29",
+      "total": 62658,
+      "monthly": 2740,
+      "daily": 98,
+      "favers": 42
+    },
+    {
+      "date": "2026-09-28",
+      "total": 62589,
+      "monthly": 2701,
+      "daily": 109,
+      "favers": 42
+    },
+    {
+      "date": "2026-09-27",
+      "total": 62470,
+      "monthly": 2594,
+      "daily": 14,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-26",
+      "total": 62455,
+      "monthly": 2704,
+      "daily": 42,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-25",
+      "total": 62442,
+      "monthly": 2786,
+      "daily": 143,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-24",
+      "total": 62324,
+      "monthly": 2744,
+      "daily": 171,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-23",
+      "total": 62182,
+      "monthly": 2671,
+      "daily": 118,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-22",
+      "total": 62088,
+      "monthly": 2716,
+      "daily": 137,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-21",
+      "total": 62005,
+      "monthly": 2678,
+      "daily": 165,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-20",
+      "total": 61852,
+      "monthly": 2573,
+      "daily": 36,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-19",
+      "total": 61819,
+      "monthly": 2638,
+      "daily": 41,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-18",
+      "total": 61782,
+      "monthly": 2663,
+      "daily": 84,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-17",
+      "total": 61722,
+      "monthly": 2705,
+      "daily": 150,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-16",
+      "total": 61604,
+      "monthly": 2670,
+      "daily": 202,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-15",
+      "total": 61452,
+      "monthly": 2567,
+      "daily": 226,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-14",
+      "total": 61278,
+      "monthly": 2401,
+      "daily": 164,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-13",
+      "total": 61115,
+      "monthly": 2250,
+      "daily": 16,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-12",
+      "total": 61095,
+      "monthly": 2359,
+      "daily": 112,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-11",
+      "total": 61052,
+      "monthly": 2398,
+      "daily": 253,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-10",
+      "total": 60824,
+      "monthly": 2344,
+      "daily": 116,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-09",
+      "total": 60722,
+      "monthly": 2322,
+      "daily": 77,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-08",
+      "total": 60664,
+      "monthly": 2424,
+      "daily": 100,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-07",
+      "total": 60598,
+      "monthly": 2389,
+      "daily": 97,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-06",
+      "total": 60500,
+      "monthly": 2308,
+      "daily": 9,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-05",
+      "total": 60495,
+      "monthly": 2467,
+      "daily": 47,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-04",
+      "total": 60476,
+      "monthly": 2583,
+      "daily": 135,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-03",
+      "total": 60392,
+      "monthly": 2715,
+      "daily": 192,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-02",
+      "total": 60200,
+      "monthly": 2675,
+      "daily": 115,
+      "favers": 41
+    },
+    {
+      "date": "2026-09-01",
+      "total": 60107,
+      "monthly": 2678,
+      "daily": 119,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-31",
+      "total": 60029,
+      "monthly": 2625,
+      "daily": 119,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-30",
+      "total": 59904,
+      "monthly": 2504,
+      "daily": 21,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-29",
+      "total": 59883,
+      "monthly": 2619,
+      "daily": 54,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-28",
+      "total": 59876,
+      "monthly": 2743,
+      "daily": 137,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-27",
+      "total": 59751,
+      "monthly": 2764,
+      "daily": 107,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-26",
+      "total": 59597,
+      "monthly": 2708,
+      "daily": 56,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-25",
+      "total": 59525,
+      "monthly": 2740,
+      "daily": 93,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-24",
+      "total": 59411,
+      "monthly": 2643,
+      "daily": 64,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-23",
+      "total": 59346,
+      "monthly": 2585,
+      "daily": 46,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-22",
+      "total": 59298,
+      "monthly": 2722,
+      "daily": 75,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-21",
+      "total": 59204,
+      "monthly": 2829,
+      "daily": 58,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-20",
+      "total": 59131,
+      "monthly": 2899,
+      "daily": 70,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-19",
+      "total": 59035,
+      "monthly": 2919,
+      "daily": 65,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-18",
+      "total": 58961,
+      "monthly": 2928,
+      "daily": 55,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-17",
+      "total": 58911,
+      "monthly": 2885,
+      "daily": 31,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-16",
+      "total": 58879,
+      "monthly": 2865,
+      "daily": 9,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-15",
+      "total": 58867,
+      "monthly": 2980,
+      "daily": 76,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-14",
+      "total": 58807,
+      "monthly": 3018,
+      "daily": 119,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-13",
+      "total": 58673,
+      "monthly": 2983,
+      "daily": 113,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-12",
+      "total": 58511,
+      "monthly": 2959,
+      "daily": 74,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-11",
+      "total": 58420,
+      "monthly": 3027,
+      "daily": 109,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-10",
+      "total": 58292,
+      "monthly": 2908,
+      "daily": 69,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-09",
+      "total": 58215,
+      "monthly": 2849,
+      "daily": 16,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-08",
+      "total": 58200,
+      "monthly": 2931,
+      "daily": 101,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-07",
+      "total": 58089,
+      "monthly": 2960,
+      "daily": 134,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-06",
+      "total": 57987,
+      "monthly": 3026,
+      "daily": 201,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-05",
+      "total": 57782,
+      "monthly": 2930,
+      "daily": 181,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-04",
+      "total": 57591,
+      "monthly": 2887,
+      "daily": 114,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-03",
+      "total": 57494,
+      "monthly": 2842,
+      "daily": 76,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-02",
+      "total": 57424,
+      "monthly": 2809,
+      "daily": 22,
+      "favers": 41
+    },
+    {
+      "date": "2026-08-01",
+      "total": 57403,
+      "monthly": 2941,
+      "daily": 75,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-31",
+      "total": 57334,
+      "monthly": 2979,
+      "daily": 135,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-30",
+      "total": 57183,
+      "monthly": 2890,
+      "daily": 125,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-29",
+      "total": 57036,
+      "monthly": 2858,
+      "daily": 98,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-28",
+      "total": 56922,
+      "monthly": 2842,
+      "daily": 85,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-27",
+      "total": 56840,
+      "monthly": 2769,
+      "daily": 63,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-26",
+      "total": 56774,
+      "monthly": 2712,
+      "daily": 10,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-25",
+      "total": 56767,
+      "monthly": 2779,
+      "daily": 105,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-24",
+      "total": 56711,
+      "monthly": 2804,
+      "daily": 240,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-23",
+      "total": 56464,
+      "monthly": 2612,
+      "daily": 163,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-22",
+      "total": 56242,
+      "monthly": 2456,
+      "daily": 70,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-21",
+      "total": 56164,
+      "monthly": 2478,
+      "daily": 91,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-20",
+      "total": 56081,
+      "monthly": 2442,
+      "daily": 51,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-19",
+      "total": 56033,
+      "monthly": 2406,
+      "daily": 13,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-18",
+      "total": 56019,
+      "monthly": 2468,
+      "daily": 73,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-17",
+      "total": 55942,
+      "monthly": 2454,
+      "daily": 107,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-16",
+      "total": 55811,
+      "monthly": 2405,
+      "daily": 74,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-15",
+      "total": 55706,
+      "monthly": 2427,
+      "daily": 88,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-14",
+      "total": 55582,
+      "monthly": 2374,
+      "daily": 113,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-13",
+      "total": 55471,
+      "monthly": 2292,
+      "daily": 82,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-12",
+      "total": 55387,
+      "monthly": 2220,
+      "daily": 13,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-11",
+      "total": 55373,
+      "monthly": 2281,
+      "daily": 59,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-10",
+      "total": 55332,
+      "monthly": 2382,
+      "daily": 131,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-09",
+      "total": 55210,
+      "monthly": 2381,
+      "daily": 157,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-08",
+      "total": 55049,
+      "monthly": 2361,
+      "daily": 145,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-07",
+      "total": 54896,
+      "monthly": 2273,
+      "daily": 116,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-06",
+      "total": 54801,
+      "monthly": 2205,
+      "daily": 120,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-05",
+      "total": 54675,
+      "monthly": 2104,
+      "daily": 42,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-04",
+      "total": 54634,
+      "monthly": 2254,
+      "daily": 99,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-03",
+      "total": 54509,
+      "monthly": 2202,
+      "daily": 100,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-02",
+      "total": 54371,
+      "monthly": 2139,
+      "daily": 47,
+      "favers": 41
+    },
+    {
+      "date": "2026-07-01",
+      "total": 54317,
+      "monthly": 2211,
+      "daily": 79,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-30",
+      "total": 54221,
+      "monthly": 2203,
+      "daily": 91,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-29",
+      "total": 54164,
+      "monthly": 2178,
+      "daily": 88,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-28",
+      "total": 54076,
+      "monthly": 2104,
+      "daily": 10,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-27",
+      "total": 54062,
+      "monthly": 2157,
+      "daily": 39,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-26",
+      "total": 54001,
+      "monthly": 2254,
+      "daily": 53,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-25",
+      "total": 53948,
+      "monthly": 2360,
+      "daily": 68,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-24",
+      "total": 53874,
+      "monthly": 2343,
+      "daily": 54,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-23",
+      "total": 53816,
+      "monthly": 2351,
+      "daily": 78,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-22",
+      "total": 53761,
+      "monthly": 2327,
+      "daily": 92,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-21",
+      "total": 53642,
+      "monthly": 2233,
+      "daily": 9,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-20",
+      "total": 53629,
+      "monthly": 2347,
+      "daily": 40,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-19",
+      "total": 53598,
+      "monthly": 2381,
+      "daily": 75,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-18",
+      "total": 53521,
+      "monthly": 2408,
+      "daily": 69,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-17",
+      "total": 53440,
+      "monthly": 2500,
+      "daily": 89,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-16",
+      "total": 53394,
+      "monthly": 2573,
+      "daily": 141,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-15",
+      "total": 53272,
+      "monthly": 2472,
+      "daily": 74,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-14",
+      "total": 53194,
+      "monthly": 2408,
+      "daily": 21,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-13",
+      "total": 53167,
+      "monthly": 2501,
+      "daily": 38,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-12",
+      "total": 53136,
+      "monthly": 2617,
+      "daily": 107,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-11",
+      "total": 53054,
+      "monthly": 2588,
+      "daily": 154,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-10",
+      "total": 52893,
+      "monthly": 2501,
+      "daily": 126,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-09",
+      "total": 52763,
+      "monthly": 2439,
+      "daily": 106,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-08",
+      "total": 52674,
+      "monthly": 2362,
+      "daily": 62,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-07",
+      "total": 52608,
+      "monthly": 2310,
+      "daily": 25,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-06",
+      "total": 52577,
+      "monthly": 2343,
+      "daily": 106,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-05",
+      "total": 52508,
+      "monthly": 2346,
+      "daily": 163,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-04",
+      "total": 52339,
+      "monthly": 2238,
+      "daily": 68,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-03",
+      "total": 52296,
+      "monthly": 2264,
+      "daily": 114,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-02",
+      "total": 52204,
+      "monthly": 2257,
+      "daily": 134,
+      "favers": 41
+    },
+    {
+      "date": "2026-06-01",
+      "total": 52097,
+      "monthly": 2187,
+      "daily": 89,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-31",
+      "total": 51999,
+      "monthly": 2102,
+      "daily": 20,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-30",
+      "total": 51977,
+      "monthly": 2095,
+      "daily": 40,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-29",
+      "total": 51940,
+      "monthly": 2110,
+      "daily": 111,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-28",
+      "total": 51862,
+      "monthly": 2140,
+      "daily": 181,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-27",
+      "total": 51658,
+      "monthly": 1996,
+      "daily": 95,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-26",
+      "total": 51550,
+      "monthly": 1976,
+      "daily": 51,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-25",
+      "total": 51523,
+      "monthly": 1972,
+      "daily": 72,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-24",
+      "total": 51446,
+      "monthly": 1912,
+      "daily": 25,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-23",
+      "total": 51425,
+      "monthly": 1971,
+      "daily": 84,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-22",
+      "total": 51331,
+      "monthly": 2021,
+      "daily": 81,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-21",
+      "total": 51237,
+      "monthly": 2017,
+      "daily": 70,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-20",
+      "total": 51177,
+      "monthly": 2022,
+      "daily": 148,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-19",
+      "total": 51015,
+      "monthly": 1935,
+      "daily": 132,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-18",
+      "total": 50885,
+      "monthly": 1825,
+      "daily": 73,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-17",
+      "total": 50812,
+      "monthly": 1764,
+      "daily": 19,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-16",
+      "total": 50796,
+      "monthly": 1802,
+      "daily": 74,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-15",
+      "total": 50733,
+      "monthly": 1790,
+      "daily": 140,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-14",
+      "total": 50556,
+      "monthly": 1694,
+      "daily": 63,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-13",
+      "total": 50473,
+      "monthly": 1661,
+      "daily": 43,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-12",
+      "total": 50409,
+      "monthly": 1630,
+      "daily": 51,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-11",
+      "total": 50366,
+      "monthly": 1601,
+      "daily": 48,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-10",
+      "total": 50320,
+      "monthly": 1559,
+      "daily": 16,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-09",
+      "total": 50306,
+      "monthly": 1597,
+      "daily": 42,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-08",
+      "total": 50250,
+      "monthly": 1585,
+      "daily": 54,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-07",
+      "total": 50180,
+      "monthly": 1574,
+      "daily": 50,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-06",
+      "total": 50122,
+      "monthly": 1580,
+      "daily": 55,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-05",
+      "total": 50058,
+      "monthly": 1550,
+      "daily": 71,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-04",
+      "total": 49996,
+      "monthly": 1505,
+      "daily": 67,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-03",
+      "total": 49924,
+      "monthly": 1437,
+      "daily": 21,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-02",
+      "total": 49909,
+      "monthly": 1463,
+      "daily": 20,
+      "favers": 41
+    },
+    {
+      "date": "2026-05-01",
+      "total": 49891,
+      "monthly": 1496,
+      "daily": 37,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-30",
+      "total": 49851,
+      "monthly": 1522,
+      "daily": 77,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-29",
+      "total": 49772,
+      "monthly": 1484,
+      "daily": 81,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-28",
+      "total": 49679,
+      "monthly": 1448,
+      "daily": 63,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-27",
+      "total": 49619,
+      "monthly": 1406,
+      "daily": 57,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-26",
+      "total": 49564,
+      "monthly": 1360,
+      "daily": 23,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-25",
+      "total": 49548,
+      "monthly": 1396,
+      "daily": 59,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-24",
+      "total": 49488,
+      "monthly": 1408,
+      "daily": 111,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-23",
+      "total": 49347,
+      "monthly": 1317,
+      "daily": 85,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-22",
+      "total": 49257,
+      "monthly": 1280,
+      "daily": 72,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-21",
+      "total": 49179,
+      "monthly": 1265,
+      "daily": 64,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-20",
+      "total": 49116,
+      "monthly": 1206,
+      "daily": 47,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-19",
+      "total": 49077,
+      "monthly": 1169,
+      "daily": 24,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-18",
+      "total": 49059,
+      "monthly": 1261,
+      "daily": 41,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-17",
+      "total": 49019,
+      "monthly": 1288,
+      "daily": 52,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-16",
+      "total": 48967,
+      "monthly": 1288,
+      "daily": 67,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-15",
+      "total": 48889,
+      "monthly": 1312,
+      "daily": 54,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-14",
+      "total": 48838,
+      "monthly": 1421,
+      "daily": 44,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-13",
+      "total": 48796,
+      "monthly": 1383,
+      "daily": 24,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-12",
+      "total": 48772,
+      "monthly": 1360,
+      "daily": 9,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-11",
+      "total": 48764,
+      "monthly": 1403,
+      "daily": 32,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-10",
+      "total": 48733,
+      "monthly": 1495,
+      "daily": 48,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-09",
+      "total": 48674,
+      "monthly": 1517,
+      "daily": 41,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-08",
+      "total": 48625,
+      "monthly": 1529,
+      "daily": 53,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-07",
+      "total": 48574,
+      "monthly": 1543,
+      "daily": 50,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-06",
+      "total": 48524,
+      "monthly": 1499,
+      "daily": 25,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-05",
+      "total": 48496,
+      "monthly": 1478,
+      "daily": 7,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-04",
+      "total": 48491,
+      "monthly": 1561,
+      "daily": 27,
+      "favers": 41
+    },
+    {
+      "date": "2026-04-03",
+      "total": 48464,
+      "monthly": 1572,
+      "daily": 47,
+      "favers": 40
+    },
+    {
+      "date": "2026-04-02",
+      "total": 48410,
+      "monthly": 1615,
+      "daily": 51,
+      "favers": 40
+    },
+    {
+      "date": "2026-04-01",
+      "total": 48356,
+      "monthly": 1593,
+      "daily": 49,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-31",
+      "total": 48313,
+      "monthly": 1622,
+      "daily": 56,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-30",
+      "total": 48251,
+      "monthly": 1566,
+      "daily": 30,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-29",
+      "total": 48222,
+      "monthly": 1541,
+      "daily": 14,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-28",
+      "total": 48206,
+      "monthly": 1640,
+      "daily": 31,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-27",
+      "total": 48171,
+      "monthly": 1640,
+      "daily": 58,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-26",
+      "total": 48100,
+      "monthly": 1653,
+      "daily": 47,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-25",
+      "total": 48052,
+      "monthly": 1720,
+      "daily": 51,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-24",
+      "total": 47980,
+      "monthly": 1700,
+      "daily": 37,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-23",
+      "total": 47945,
+      "monthly": 1709,
+      "daily": 33,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-22",
+      "total": 47914,
+      "monthly": 1706,
+      "daily": 5,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-21",
+      "total": 47909,
+      "monthly": 1745,
+      "daily": 63,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-20",
+      "total": 47812,
+      "monthly": 1693,
+      "daily": 52,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-19",
+      "total": 47752,
+      "monthly": 1686,
+      "daily": 50,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-18",
+      "total": 47690,
+      "monthly": 1689,
+      "daily": 66,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-17",
+      "total": 47623,
+      "monthly": 1686,
+      "daily": 133,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-16",
+      "total": 47445,
+      "monthly": 1524,
+      "daily": 30,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-15",
+      "total": 47417,
+      "monthly": 1503,
+      "daily": 5,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-14",
+      "total": 47413,
+      "monthly": 1680,
+      "daily": 30,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-13",
+      "total": 47375,
+      "monthly": 1816,
+      "daily": 83,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-12",
+      "total": 47294,
+      "monthly": 1818,
+      "daily": 101,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-11",
+      "total": 47179,
+      "monthly": 1818,
+      "daily": 56,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-10",
+      "total": 47110,
+      "monthly": 1889,
+      "daily": 50,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-09",
+      "total": 47056,
+      "monthly": 1840,
+      "daily": 28,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-08",
+      "total": 47028,
+      "monthly": 1826,
+      "daily": 7,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-07",
+      "total": 47021,
+      "monthly": 1903,
+      "daily": 53,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-06",
+      "total": 46975,
+      "monthly": 1948,
+      "daily": 66,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-05",
+      "total": 46901,
+      "monthly": 1946,
+      "daily": 63,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-04",
+      "total": 46815,
+      "monthly": 1913,
+      "daily": 38,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-03",
+      "total": 46773,
+      "monthly": 1942,
+      "daily": 50,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-02",
+      "total": 46744,
+      "monthly": 1930,
+      "daily": 55,
+      "favers": 40
+    },
+    {
+      "date": "2026-03-01",
+      "total": 46691,
+      "monthly": 1891,
+      "daily": 7,
+      "favers": 40
+    }
+  ],
+  "monthly_history": {
+    "collected_at": "2026-10-05T19:13:49Z",
+    "source": "packagist stats/all.json average=daily, summed per calendar month",
+    "months": [
+      {
+        "month": "2021-12",
+        "downloads": 2,
+        "first_day": "2021-12-29",
+        "last_day": "2021-12-31"
+      },
+      {
+        "month": "2022-01",
+        "downloads": 15,
+        "first_day": "2022-01-01",
+        "last_day": "2022-01-31"
+      },
+      {
+        "month": "2022-02",
+        "downloads": 30,
+        "first_day": "2022-02-01",
+        "last_day": "2022-02-28"
+      },
+      {
+        "month": "2022-03",
+        "downloads": 73,
+        "first_day": "2022-03-01",
+        "last_day": "2022-03-31"
+      },
+      {
+        "month": "2022-04",
+        "downloads": 97,
+        "first_day": "2022-04-01",
+        "last_day": "2022-04-30"
+      },
+      {
+        "month": "2022-05",
+        "downloads": 42,
+        "first_day": "2022-05-01",
+        "last_day": "2022-05-31"
+      },
+      {
+        "month": "2022-06",
+        "downloads": 165,
+        "first_day": "2022-06-01",
+        "last_day": "2022-06-30"
+      },
+      {
+        "month": "2022-07",
+        "downloads": 432,
+        "first_day": "2022-07-01",
+        "last_day": "2022-07-31"
+      },
+      {
+        "month": "2022-08",
+        "downloads": 473,
+        "first_day": "2022-08-01",
+        "last_day": "2022-08-31"
+      },
+      {
+        "month": "2022-09",
+        "downloads": 354,
+        "first_day": "2022-09-01",
+        "last_day": "2022-09-30"
+      },
+      {
+        "month": "2022-10",
+        "downloads": 359,
+        "first_day": "2022-10-01",
+        "last_day": "2022-10-31"
+      },
+      {
+        "month": "2022-11",
+        "downloads": 292,
+        "first_day": "2022-11-01",
+        "last_day": "2022-11-30"
+      },
+      {
+        "month": "2022-12",
+        "downloads": 376,
+        "first_day": "2022-12-01",
+        "last_day": "2022-12-31"
+      },
+      {
+        "month": "2023-01",
+        "downloads": 449,
+        "first_day": "2023-01-01",
+        "last_day": "2023-01-31"
+      },
+      {
+        "month": "2023-02",
+        "downloads": 587,
+        "first_day": "2023-02-01",
+        "last_day": "2023-02-28"
+      },
+      {
+        "month": "2023-03",
+        "downloads": 676,
+        "first_day": "2023-03-01",
+        "last_day": "2023-03-31"
+      },
+      {
+        "month": "2023-04",
+        "downloads": 589,
+        "first_day": "2023-04-01",
+        "last_day": "2023-04-30"
+      },
+      {
+        "month": "2023-05",
+        "downloads": 654,
+        "first_day": "2023-05-01",
+        "last_day": "2023-05-31"
+      },
+      {
+        "month": "2023-06",
+        "downloads": 658,
+        "first_day": "2023-06-01",
+        "last_day": "2023-06-30"
+      },
+      {
+        "month": "2023-07",
+        "downloads": 718,
+        "first_day": "2023-07-01",
+        "last_day": "2023-07-31"
+      },
+      {
+        "month": "2023-08",
+        "downloads": 781,
+        "first_day": "2023-08-01",
+        "last_day": "2023-08-31"
+      },
+      {
+        "month": "2023-09",
+        "downloads": 493,
+        "first_day": "2023-09-01",
+        "last_day": "2023-09-30"
+      },
+      {
+        "month": "2023-10",
+        "downloads": 635,
+        "first_day": "2023-10-01",
+        "last_day": "2023-10-31"
+      },
+      {
+        "month": "2023-11",
+        "downloads": 376,
+        "first_day": "2023-11-01",
+        "last_day": "2023-11-30"
+      },
+      {
+        "month": "2023-12",
+        "downloads": 352,
+        "first_day": "2023-12-01",
+        "last_day": "2023-12-31"
+      },
+      {
+        "month": "2024-01",
+        "downloads": 309,
+        "first_day": "2024-01-01",
+        "last_day": "2024-01-31"
+      },
+      {
+        "month": "2024-02",
+        "downloads": 391,
+        "first_day": "2024-02-01",
+        "last_day": "2024-02-29"
+      },
+      {
+        "month": "2024-03",
+        "downloads": 657,
+        "first_day": "2024-03-01",
+        "last_day": "2024-03-31"
+      },
+      {
+        "month": "2024-04",
+        "downloads": 519,
+        "first_day": "2024-04-01",
+        "last_day": "2024-04-30"
+      },
+      {
+        "month": "2024-05",
+        "downloads": 788,
+        "first_day": "2024-05-01",
+        "last_day": "2024-05-31"
+      },
+      {
+        "month": "2024-06",
+        "downloads": 696,
+        "first_day": "2024-06-01",
+        "last_day": "2024-06-30"
+      },
+      {
+        "month": "2024-07",
+        "downloads": 803,
+        "first_day": "2024-07-01",
+        "last_day": "2024-07-31"
+      },
+      {
+        "month": "2024-08",
+        "downloads": 669,
+        "first_day": "2024-08-01",
+        "last_day": "2024-08-31"
+      },
+      {
+        "month": "2024-09",
+        "downloads": 1106,
+        "first_day": "2024-09-01",
+        "last_day": "2024-09-30"
+      },
+      {
+        "month": "2024-10",
+        "downloads": 1500,
+        "first_day": "2024-10-01",
+        "last_day": "2024-10-31"
+      },
+      {
+        "month": "2024-11",
+        "downloads": 1256,
+        "first_day": "2024-11-01",
+        "last_day": "2024-11-30"
+      },
+      {
+        "month": "2024-12",
+        "downloads": 1215,
+        "first_day": "2024-12-01",
+        "last_day": "2024-12-31"
+      },
+      {
+        "month": "2025-01",
+        "downloads": 1070,
+        "first_day": "2025-01-01",
+        "last_day": "2025-01-31"
+      },
+      {
+        "month": "2025-02",
+        "downloads": 1553,
+        "first_day": "2025-02-01",
+        "last_day": "2025-02-28"
+      },
+      {
+        "month": "2025-03",
+        "downloads": 1816,
+        "first_day": "2025-03-01",
+        "last_day": "2025-03-31"
+      },
+      {
+        "month": "2025-04",
+        "downloads": 1818,
+        "first_day": "2025-04-01",
+        "last_day": "2025-04-30"
+      },
+      {
+        "month": "2025-05",
+        "downloads": 1516,
+        "first_day": "2025-05-01",
+        "last_day": "2025-05-31"
+      },
+      {
+        "month": "2025-06",
+        "downloads": 2166,
+        "first_day": "2025-06-01",
+        "last_day": "2025-06-30"
+      },
+      {
+        "month": "2025-07",
+        "downloads": 1708,
+        "first_day": "2025-07-01",
+        "last_day": "2025-07-31"
+      },
+      {
+        "month": "2025-08",
+        "downloads": 1863,
+        "first_day": "2025-08-01",
+        "last_day": "2025-08-31"
+      },
+      {
+        "month": "2025-09",
+        "downloads": 3430,
+        "first_day": "2025-09-01",
+        "last_day": "2025-09-30"
+      },
+      {
+        "month": "2025-10",
+        "downloads": 2630,
+        "first_day": "2025-10-01",
+        "last_day": "2025-10-31"
+      },
+      {
+        "month": "2025-11",
+        "downloads": 2213,
+        "first_day": "2025-11-01",
+        "last_day": "2025-11-30"
+      },
+      {
+        "month": "2025-12",
+        "downloads": 1680,
+        "first_day": "2025-12-01",
+        "last_day": "2025-12-31"
+      },
+      {
+        "month": "2026-01",
+        "downloads": 1764,
+        "first_day": "2026-01-01",
+        "last_day": "2026-01-31"
+      },
+      {
+        "month": "2026-02",
+        "downloads": 1871,
+        "first_day": "2026-02-01",
+        "last_day": "2026-02-28"
+      },
+      {
+        "month": "2026-03",
+        "downloads": 1644,
+        "first_day": "2026-03-01",
+        "last_day": "2026-03-31"
+      },
+      {
+        "month": "2026-04",
+        "downloads": 1553,
+        "first_day": "2026-04-01",
+        "last_day": "2026-04-30"
+      },
+      {
+        "month": "2026-05",
+        "downloads": 2136,
+        "first_day": "2026-05-01",
+        "last_day": "2026-05-31"
+      },
+      {
+        "month": "2026-06",
+        "downloads": 2275,
+        "first_day": "2026-06-01",
+        "last_day": "2026-06-30"
+      },
+      {
+        "month": "2026-07",
+        "downloads": 3107,
+        "first_day": "2026-07-01",
+        "last_day": "2026-07-31"
+      },
+      {
+        "month": "2026-08",
+        "downloads": 2634,
+        "first_day": "2026-08-01",
+        "last_day": "2026-08-31"
+      },
+      {
+        "month": "2026-09",
+        "downloads": 2984,
+        "first_day": "2026-09-01",
+        "last_day": "2026-09-30"
+      },
+      {
+        "month": "2026-10",
+        "downloads": 426,
+        "first_day": "2026-10-01",
+        "last_day": "2026-10-03"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+This 2026-Q4 snapshot freezes the SDK dashboard inputs byte for byte in `inputs/`, with SHA-256 hashes in `summary.json`. The JSON and CSV contain the same headline values computed at 2026-10-05T20:24:47.759499Z from source tree `4e1813b6376ab25e05bd6a2db2194ea38a171a47`. The quarter labels the capture; rolling windows retain their dashboard meanings.
+
+Methodology: [dashboard definitions at the producing commit](https://github.com/Soneso/soneso-sdk-stats/blob/4e1813b6376ab25e05bd6a2db2194ea38a171a47/docs/index.html#L296), definition version `dashboard-v1-response-v3`. This directory is immutable: an existing quarter cannot be regenerated or overwritten.
