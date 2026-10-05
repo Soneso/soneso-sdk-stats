@@ -1,13 +1,18 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-10-04T15:02:19Z",
+  "collected_at": "2026-10-05T18:58:15Z",
   "summary": {
     "last_14_days": {
-      "count": 804,
-      "uniques": 242
+      "count": 792,
+      "uniques": 255
     }
   },
   "daily": [
+    {
+      "date": "2026-10-04",
+      "count": 19,
+      "uniques": 18
+    },
     {
       "date": "2026-10-03",
       "count": 31,
