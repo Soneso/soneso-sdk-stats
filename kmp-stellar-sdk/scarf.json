@@ -1,57 +1,57 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-11",
-    "downloads_90d": 30003,
-    "unique_sources_90d": 2300,
-    "window_start": "2026-07-14",
-    "window_end": "2026-10-12"
+    "as_of": "2026-10-12",
+    "downloads_90d": 29739,
+    "unique_sources_90d": 2256,
+    "window_start": "2026-07-15",
+    "window_end": "2026-10-13"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 4152,
-      "unique_origins": 355
+      "downloads": 4118,
+      "unique_origins": 347
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4129,
-      "unique_origins": 414
+      "downloads": 4104,
+      "unique_origins": 404
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 4089,
-      "unique_origins": 898
+      "downloads": 4051,
+      "unique_origins": 890
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3874,
-      "unique_origins": 317
+      "downloads": 3853,
+      "unique_origins": 310
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3455,
-      "unique_origins": 408
+      "downloads": 3435,
+      "unique_origins": 400
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3230,
-      "unique_origins": 441
+      "downloads": 3204,
+      "unique_origins": 429
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2700,
-      "unique_origins": 341
+      "downloads": 2678,
+      "unique_origins": 329
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2682,
-      "unique_origins": 333
+      "downloads": 2646,
+      "unique_origins": 327
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1692,
-      "unique_origins": 278
+      "downloads": 1650,
+      "unique_origins": 270
     }
   ],
   "daily": [
