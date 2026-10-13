@@ -6,15 +6,15 @@
     "label": "iOS",
     "repository_url": "https://github.com/Soneso/stellar-ios-mac-sdk"
   },
-  "as_of": "2026-10-12T20:04:06.098022Z",
+  "as_of": "2026-10-13T17:52:37.801069Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-10-12T20:04:06.124234Z",
-    "as_of": "2026-10-12T20:04:06.098022Z",
-    "build_commit": "cbd2313fe443da8d4f9a53280d9497eec17b1a24",
+    "generated_at": "2026-10-13T17:52:37.853210Z",
+    "as_of": "2026-10-13T17:52:37.801069Z",
+    "build_commit": "4d548d7f34e502b002c0b5fd0178925d791988ae",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/cbd2313fe443da8d4f9a53280d9497eec17b1a24/docs/index.html#L296",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/4d548d7f34e502b002c0b5fd0178925d791988ae/docs/index.html#L296",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
@@ -23,10 +23,10 @@
       "unit": "days",
       "sample_size": 20,
       "window": "365d",
-      "window_end": "2026-10-12",
+      "window_end": "2026-10-13",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:51:47Z",
+      "observed_at": "2026-10-13T17:38:53Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -38,14 +38,14 @@
       ]
     },
     "release.days_since_last": {
-      "value": 15.0,
+      "value": 15.9,
       "unit": "days",
       "sample_size": null,
       "window": "since_last_release",
-      "window_end": "2026-10-12",
+      "window_end": "2026-10-13",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:51:47Z",
+      "observed_at": "2026-10-13T17:38:53Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -61,10 +61,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12",
+      "window_end": "2026-10-13",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:51:47Z",
+      "observed_at": "2026-10-13T17:38:53Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -80,10 +80,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12",
+      "window_end": "2026-10-13",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:51:47Z",
+      "observed_at": "2026-10-13T17:38:53Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -95,14 +95,14 @@
       ]
     },
     "issues.open_count": {
-      "value": 1,
+      "value": 0,
       "unit": "count",
       "sample_size": null,
       "window": "open_snapshot",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -114,14 +114,14 @@
       ]
     },
     "issues.open_median_age_days": {
-      "value": 0.3,
+      "value": null,
       "unit": "days",
-      "sample_size": 1,
+      "sample_size": 0,
       "window": "open_snapshot",
       "window_end": null,
-      "coverage": "complete",
-      "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "coverage": "not_applicable",
+      "reason": "No open items.",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -137,10 +137,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -156,10 +156,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -175,10 +175,10 @@
       "unit": "hours",
       "sample_size": 4,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -190,14 +190,14 @@
       ]
     },
     "prs.open_count": {
-      "value": 1,
+      "value": 0,
       "unit": "count",
       "sample_size": null,
       "window": "open_snapshot",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -209,14 +209,14 @@
       ]
     },
     "prs.open_median_age_days": {
-      "value": 0.0,
+      "value": null,
       "unit": "days",
-      "sample_size": 1,
+      "sample_size": 0,
       "window": "open_snapshot",
       "window_end": null,
-      "coverage": "complete",
-      "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "coverage": "not_applicable",
+      "reason": "No open items.",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -232,10 +232,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -251,10 +251,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -270,10 +270,10 @@
       "unit": "hours",
       "sample_size": 2,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -285,14 +285,14 @@
       ]
     },
     "maintainer_prs.created_365d": {
-      "value": 53,
+      "value": 55,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -304,14 +304,14 @@
       ]
     },
     "maintainer_prs.closed_365d": {
-      "value": 52,
+      "value": 55,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -327,10 +327,10 @@
       "unit": "count",
       "sample_size": 2,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -351,10 +351,10 @@
       "unit": "count",
       "sample_size": 2,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -375,10 +375,10 @@
       "unit": "hours",
       "sample_size": 2,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -399,10 +399,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -423,10 +423,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -447,10 +447,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -471,10 +471,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/issues/235",
@@ -495,10 +495,10 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -517,10 +517,10 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -539,10 +539,10 @@
       "unit": "hours",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -561,10 +561,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -583,10 +583,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -605,10 +605,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -627,10 +627,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -649,10 +649,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -671,10 +671,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -693,10 +693,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12T19:53:21Z",
+      "window_end": "2026-10-13T17:40:35Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:53:21Z",
+      "observed_at": "2026-10-13T17:40:35Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/pull/229",
@@ -711,14 +711,14 @@
       ]
     },
     "clones.count_90d": {
-      "value": 24142,
+      "value": 24227,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-12",
+      "window_end": "2026-10-13",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:31:43Z",
+      "observed_at": "2026-10-13T17:16:05Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -730,14 +730,14 @@
       ]
     },
     "clones.uniques_14d": {
-      "value": 379,
+      "value": 372,
       "unit": "count",
       "sample_size": null,
       "window": "14d",
-      "window_end": "2026-10-12T19:31:43Z",
+      "window_end": "2026-10-13T17:16:05Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:31:43Z",
+      "observed_at": "2026-10-13T17:16:05Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -845,7 +845,7 @@
       "window_end": "2026-09-27T21:03:49Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
@@ -860,7 +860,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -876,8 +876,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -898,7 +903,7 @@
       "window_end": "2026-09-27T21:03:49Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
@@ -913,7 +918,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -929,8 +934,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -948,10 +958,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
@@ -966,7 +976,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -982,8 +992,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1004,11 +1019,12 @@
       "window_end": "2026-09-27T21:03:49Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v28.0.1",
+        "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1",
         "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.0"
       ],
       "percentile": null,
@@ -1019,7 +1035,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1035,8 +1051,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1057,11 +1078,12 @@
       "window_end": "2026-09-27T21:03:49Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v28.0.1",
+        "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1",
         "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.0"
       ],
       "percentile": null,
@@ -1072,7 +1094,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1088,8 +1110,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1103,18 +1130,19 @@
       ]
     },
     "compatibility.rpc.newer_stable_releases": {
-      "value": 1,
+      "value": 2,
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v28.0.1",
+        "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1",
         "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.0"
       ],
       "percentile": null,
@@ -1125,7 +1153,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1141,8 +1169,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1163,7 +1196,7 @@
       "window_end": "2026-09-27T21:03:49Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/tree/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep"
@@ -1176,7 +1209,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1192,8 +1225,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1214,7 +1252,7 @@
       "window_end": "2026-09-27T21:03:49Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/tree/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep"
@@ -1227,7 +1265,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1243,8 +1281,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1262,48 +1305,48 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0001.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0001.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0002.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0002.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0006.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0006.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0007_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0007.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0007.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0008.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0008.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0009.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0009.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0010.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0010.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0011_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0011.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0011.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0012.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0012.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0024.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0024.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0030.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0030.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0038.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0038.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0045.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0045.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0046.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0046.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0047.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0047.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0048.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0048.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0051.md",
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0051.md",
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0053.md"
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0053.md"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
@@ -1313,7 +1356,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1329,8 +1372,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1348,10 +1396,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1362,7 +1410,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1378,8 +1426,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1397,10 +1450,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1411,7 +1464,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1427,8 +1480,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1446,10 +1504,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1460,7 +1518,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1476,8 +1534,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1495,14 +1558,14 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar-ios-mac-sdk/blob/b5dac0a6e8ff312d597c9a3b4269b03131d66e0d/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-protocol/blob/a5508c44633620742bb69f508c5887e3fbce22d0/ecosystem/sep-0005.md"
+        "https://github.com/stellar/stellar-protocol/blob/7a59fafa2e2a3efc3119a4b42cae7d15aa37e330/ecosystem/sep-0005.md"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
@@ -1512,7 +1575,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1528,8 +1591,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1547,10 +1615,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-12T19:59:28Z",
+      "window_end": "2026-10-13T17:47:34Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:59:28Z",
+      "observed_at": "2026-10-13T17:47:34Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1561,7 +1629,7 @@
         "tag": "3.12.0",
         "commit": "b5dac0a6e8ff312d597c9a3b4269b03131d66e0d",
         "published_at": "2026-09-27T21:03:49Z",
-        "stellar_protocol_commit": "a5508c44633620742bb69f508c5887e3fbce22d0",
+        "stellar_protocol_commit": "7a59fafa2e2a3efc3119a4b42cae7d15aa37e330",
         "horizon": {
           "version": "v28.0.1",
           "state": "newer_available",
@@ -1577,8 +1645,13 @@
         "rpc": {
           "version": "v28.0.1",
           "state": "newer_available",
-          "current": "v29.0.0",
+          "current": "v29.0.1",
           "newer": [
+            {
+              "tag": "v29.0.1",
+              "published_at": "2026-10-12T20:14:27Z",
+              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v29.0.1"
+            },
             {
               "tag": "v29.0.0",
               "published_at": "2026-10-01T20:15:08Z",
@@ -1666,7 +1739,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:50:35Z",
+      "observed_at": "2026-10-13T17:37:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1685,7 +1758,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:50:35Z",
+      "observed_at": "2026-10-13T17:37:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1704,7 +1777,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:51:47Z",
+      "observed_at": "2026-10-13T17:38:53Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1726,7 +1799,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-12T19:51:47Z",
+      "observed_at": "2026-10-13T17:38:53Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
