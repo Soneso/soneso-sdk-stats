@@ -1,57 +1,57 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-12",
-    "downloads_90d": 29739,
-    "unique_sources_90d": 2256,
-    "window_start": "2026-07-15",
-    "window_end": "2026-10-13"
+    "as_of": "2026-10-13",
+    "downloads_90d": 29504,
+    "unique_sources_90d": 2236,
+    "window_start": "2026-07-16",
+    "window_end": "2026-10-14"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 4118,
-      "unique_origins": 347
+      "downloads": 4070,
+      "unique_origins": 344
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4104,
-      "unique_origins": 404
+      "downloads": 4066,
+      "unique_origins": 402
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 4051,
-      "unique_origins": 890
+      "downloads": 4013,
+      "unique_origins": 885
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3853,
-      "unique_origins": 310
+      "downloads": 3836,
+      "unique_origins": 307
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3435,
-      "unique_origins": 400
+      "downloads": 3414,
+      "unique_origins": 393
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3204,
-      "unique_origins": 429
+      "downloads": 3184,
+      "unique_origins": 423
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2678,
-      "unique_origins": 329
-    },
-    {
-      "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2646,
+      "downloads": 2659,
       "unique_origins": 327
     },
     {
+      "name": "com.soneso.stellar/stellar-sdk-jvm",
+      "downloads": 2627,
+      "unique_origins": 325
+    },
+    {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1650,
-      "unique_origins": 270
+      "downloads": 1635,
+      "unique_origins": 269
     }
   ],
   "daily": [
