@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-10-13T17:38:53Z",
+    "collected_at": "2026-10-14T15:12:21Z",
     "summary": {
-      "total_releases": 89,
-      "latest_release": "1.15.0",
-      "latest_release_date": "2026-09-27",
-      "releases_last_90d": 4,
-      "releases_last_365d": 18,
+      "total_releases": 90,
+      "latest_release": "1.16.0",
+      "latest_release_date": "2026-10-14",
+      "releases_last_90d": 5,
+      "releases_last_365d": 19,
       "avg_days_between_releases": 19.7
     },
     "all": [
+      {
+        "tag": "1.16.0",
+        "name": "v1.16.0 - Muxed contract addresses and Soroban auth fixes",
+        "published_at": "2026-10-14T00:03:55Z",
+        "prerelease": false
+      },
       {
         "tag": "1.15.0",
         "name": "v1.15.0 SEP-29 memo checks and XDR decoding hardening",
@@ -548,16 +554,16 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-10-13T17:38:53Z",
+    "collected_at": "2026-10-14T15:12:21Z",
     "weekly": [
       {
         "week_start": "2026-10-11",
-        "total": 5,
+        "total": 13,
         "days": [
           0,
           3,
-          2,
-          0,
+          9,
+          1,
           0,
           0,
           0
