@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-10-15T15:06:04Z",
+    "collected_at": "2026-10-16T14:54:18Z",
     "summary": {
-      "total_releases": 151,
-      "latest_release": "3.12.0",
-      "latest_release_date": "2026-09-27",
-      "releases_last_90d": 6,
-      "releases_last_365d": 20,
+      "total_releases": 152,
+      "latest_release": "3.13.0",
+      "latest_release_date": "2026-10-16",
+      "releases_last_90d": 7,
+      "releases_last_365d": 21,
       "avg_days_between_releases": 20.9
     },
     "all": [
+      {
+        "tag": "3.13.0",
+        "name": "v3.13.0 - Muxed contract addresses and Soroban auth fixes",
+        "published_at": "2026-10-16T14:02:29Z",
+        "prerelease": false
+      },
       {
         "tag": "3.12.0",
         "name": "v3.12.0 - SEP-29 on fee bumps and XDR decoding hardening",
@@ -920,18 +926,18 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-10-15T15:06:04Z",
+    "collected_at": "2026-10-16T14:54:18Z",
     "weekly": [
       {
         "week_start": "2026-10-11",
-        "total": 4,
+        "total": 10,
         "days": [
           0,
           3,
           1,
           0,
           0,
-          0,
+          6,
           0
         ]
       },
