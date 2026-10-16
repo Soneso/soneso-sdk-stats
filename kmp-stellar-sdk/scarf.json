@@ -1,56 +1,56 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-15",
-    "downloads_90d": 29502,
-    "unique_sources_90d": 2241,
-    "window_start": "2026-07-18",
-    "window_end": "2026-10-16"
+    "as_of": "2026-10-16",
+    "downloads_90d": 29519,
+    "unique_sources_90d": 2245,
+    "window_start": "2026-07-19",
+    "window_end": "2026-10-17"
   },
   "packages_90d": [
     {
-      "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 4070,
-      "unique_origins": 344
+      "name": "com.soneso.stellar/stellar-sdk-iosarm64",
+      "downloads": 4160,
+      "unique_origins": 431
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 4063,
-      "unique_origins": 895
+      "downloads": 4057,
+      "unique_origins": 894
     },
     {
-      "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4046,
-      "unique_origins": 402
+      "name": "com.soneso.stellar/stellar-sdk",
+      "downloads": 3993,
+      "unique_origins": 344
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3826,
+      "downloads": 3825,
       "unique_origins": 307
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3401,
-      "unique_origins": 390
+      "downloads": 3399,
+      "unique_origins": 389
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3171,
-      "unique_origins": 422
+      "downloads": 3168,
+      "unique_origins": 421
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2695,
+      "downloads": 2691,
       "unique_origins": 339
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2647,
-      "unique_origins": 325
+      "downloads": 2645,
+      "unique_origins": 323
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1583,
+      "downloads": 1581,
       "unique_origins": 266
     }
   ],
@@ -61,19 +61,19 @@
     },
     {
       "date": "2026-10-11",
-      "downloads": 13
+      "downloads": 20
     },
     {
       "date": "2026-10-10",
-      "downloads": 14
+      "downloads": 27
     },
     {
       "date": "2026-10-09",
-      "downloads": 21
+      "downloads": 30
     },
     {
       "date": "2026-10-08",
-      "downloads": 26
+      "downloads": 48
     },
     {
       "date": "2026-10-07",
@@ -81,15 +81,15 @@
     },
     {
       "date": "2026-10-06",
-      "downloads": 89
+      "downloads": 128
     },
     {
       "date": "2026-10-05",
-      "downloads": 552
+      "downloads": 568
     },
     {
       "date": "2026-10-04",
-      "downloads": 52
+      "downloads": 56
     },
     {
       "date": "2026-10-03",
@@ -97,7 +97,7 @@
     },
     {
       "date": "2026-10-02",
-      "downloads": 91
+      "downloads": 99
     },
     {
       "date": "2026-10-01",
