@@ -1,57 +1,57 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-17",
-    "downloads_90d": 29494,
-    "unique_sources_90d": 2239,
-    "window_start": "2026-07-20",
-    "window_end": "2026-10-18"
+    "as_of": "2026-10-18",
+    "downloads_90d": 28396,
+    "unique_sources_90d": 2224,
+    "window_start": "2026-07-21",
+    "window_end": "2026-10-19"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4156,
-      "unique_origins": 430
+      "downloads": 4130,
+      "unique_origins": 420
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 4055,
-      "unique_origins": 891
+      "downloads": 4042,
+      "unique_origins": 889
     },
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 3993,
-      "unique_origins": 344
-    },
-    {
-      "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3825,
-      "unique_origins": 307
+      "downloads": 3633,
+      "unique_origins": 334
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3397,
-      "unique_origins": 387
+      "downloads": 3383,
+      "unique_origins": 382
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-macosx64",
+      "downloads": 3311,
+      "unique_origins": 304
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3166,
-      "unique_origins": 421
+      "downloads": 3134,
+      "unique_origins": 415
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2683,
-      "unique_origins": 336
+      "downloads": 2669,
+      "unique_origins": 332
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2640,
-      "unique_origins": 323
+      "downloads": 2624,
+      "unique_origins": 319
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1579,
-      "unique_origins": 265
+      "downloads": 1470,
+      "unique_origins": 258
     }
   ],
   "daily": [
