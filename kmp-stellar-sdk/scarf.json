@@ -1,60 +1,64 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-19",
-    "downloads_90d": 27852,
-    "unique_sources_90d": 2212,
-    "window_start": "2026-07-22",
-    "window_end": "2026-10-20"
+    "as_of": "2026-10-20",
+    "downloads_90d": 27191,
+    "unique_sources_90d": 2206,
+    "window_start": "2026-07-23",
+    "window_end": "2026-10-21"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4107,
+      "downloads": 4102,
       "unique_origins": 418
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 3953,
+      "downloads": 3754,
       "unique_origins": 888
     },
     {
-      "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 3607,
-      "unique_origins": 331
+      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
+      "downloads": 3360,
+      "unique_origins": 381
     },
     {
-      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3383,
-      "unique_origins": 382
+      "name": "com.soneso.stellar/stellar-sdk",
+      "downloads": 3347,
+      "unique_origins": 329
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3259,
+      "downloads": 3253,
       "unique_origins": 302
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 2965,
+      "downloads": 2957,
       "unique_origins": 411
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2609,
-      "unique_origins": 329
+      "downloads": 2541,
+      "unique_origins": 328
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2530,
+      "downloads": 2484,
       "unique_origins": 314
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1439,
-      "unique_origins": 253
+      "downloads": 1393,
+      "unique_origins": 251
     }
   ],
   "daily": [
+    {
+      "date": "2026-10-13",
+      "downloads": 0
+    },
     {
       "date": "2026-10-12",
       "downloads": 8
@@ -121,7 +125,7 @@
     },
     {
       "date": "2026-09-26",
-      "downloads": 244
+      "downloads": 211
     },
     {
       "date": "2026-09-25",
