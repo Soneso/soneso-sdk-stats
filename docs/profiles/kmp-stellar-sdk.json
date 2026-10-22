@@ -6,15 +6,15 @@
     "label": "KMP",
     "repository_url": "https://github.com/Soneso/kmp-stellar-sdk"
   },
-  "as_of": "2026-10-21T15:46:52.183073Z",
+  "as_of": "2026-10-22T15:45:08.049768Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-10-21T15:46:52.236330Z",
-    "as_of": "2026-10-21T15:46:52.183073Z",
-    "build_commit": "8fe729cbdc50ace5a1176c48247fb3c142a24d81",
+    "generated_at": "2026-10-22T15:45:08.085647Z",
+    "as_of": "2026-10-22T15:45:08.049768Z",
+    "build_commit": "9b572114264300e79debbf0cb88d3e0da86012c6",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/8fe729cbdc50ace5a1176c48247fb3c142a24d81/docs/index.html#L296",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/9b572114264300e79debbf0cb88d3e0da86012c6/docs/index.html#L296",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
@@ -23,10 +23,10 @@
       "unit": "days",
       "sample_size": 29,
       "window": "365d",
-      "window_end": "2026-10-21",
+      "window_end": "2026-10-22",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:20:11Z",
+      "observed_at": "2026-10-22T15:20:54Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -38,14 +38,14 @@
       ]
     },
     "release.days_since_last": {
-      "value": 6.3,
+      "value": 7.3,
       "unit": "days",
       "sample_size": null,
       "window": "since_last_release",
-      "window_end": "2026-10-21",
+      "window_end": "2026-10-22",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:20:11Z",
+      "observed_at": "2026-10-22T15:20:54Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -61,10 +61,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21",
+      "window_end": "2026-10-22",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:20:11Z",
+      "observed_at": "2026-10-22T15:20:54Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -80,10 +80,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21",
+      "window_end": "2026-10-22",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:20:11Z",
+      "observed_at": "2026-10-22T15:20:54Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -95,14 +95,14 @@
       ]
     },
     "issues.open_count": {
-      "value": 0,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "open_snapshot",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -114,14 +114,14 @@
       ]
     },
     "issues.open_median_age_days": {
-      "value": null,
+      "value": 0.8,
       "unit": "days",
-      "sample_size": 0,
+      "sample_size": 1,
       "window": "open_snapshot",
       "window_end": null,
-      "coverage": "not_applicable",
-      "reason": "No open items.",
-      "observed_at": "2026-10-21T15:25:38Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -137,10 +137,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -152,14 +152,14 @@
       ]
     },
     "issues.closed_365d": {
-      "value": 2,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -171,14 +171,14 @@
       ]
     },
     "issues.median_close_hours": {
-      "value": 23.0,
+      "value": 33.0,
       "unit": "hours",
-      "sample_size": 2,
+      "sample_size": 1,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -197,7 +197,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -216,7 +216,7 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "No open items.",
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -228,14 +228,14 @@
       ]
     },
     "prs.created_365d": {
-      "value": 4,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -247,14 +247,14 @@
       ]
     },
     "prs.closed_365d": {
-      "value": 4,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -266,14 +266,14 @@
       ]
     },
     "prs.median_close_hours": {
-      "value": 10.5,
+      "value": 20.2,
       "unit": "hours",
-      "sample_size": 4,
+      "sample_size": 1,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -285,14 +285,14 @@
       ]
     },
     "maintainer_prs.created_365d": {
-      "value": 66,
+      "value": 57,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -304,14 +304,14 @@
       ]
     },
     "maintainer_prs.closed_365d": {
-      "value": 66,
+      "value": 57,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -327,12 +327,15 @@
       "unit": "count",
       "sample_size": 0,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -346,12 +349,15 @@
       "unit": "count",
       "sample_size": 0,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -365,12 +371,15 @@
       "unit": "hours",
       "sample_size": 0,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "not_applicable",
       "reason": "No answered eligible items.",
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -384,12 +393,15 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -399,16 +411,19 @@
       ]
     },
     "issues.pending_90d": {
-      "value": 0,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -422,12 +437,15 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -441,12 +459,15 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
-      "evidence_urls": [],
+      "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
+      ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
@@ -460,10 +481,10 @@
       "unit": "count",
       "sample_size": 0,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -479,10 +500,10 @@
       "unit": "count",
       "sample_size": 0,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -498,10 +519,10 @@
       "unit": "hours",
       "sample_size": 0,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "not_applicable",
       "reason": "No answered eligible items.",
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -517,10 +538,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -536,10 +557,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -555,10 +576,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -574,10 +595,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -593,10 +614,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -612,10 +633,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -631,10 +652,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-10-21T15:25:38Z",
+      "window_end": "2026-10-22T15:24:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:25:38Z",
+      "observed_at": "2026-10-22T15:24:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -646,14 +667,14 @@
       ]
     },
     "scarf.downloads_90d": {
-      "value": 25659,
+      "value": 24040,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21",
+      "observed_at": "2026-10-22",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -665,14 +686,14 @@
       ]
     },
     "scarf.unique_sources_90d": {
-      "value": 2198,
+      "value": 2184,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21",
+      "observed_at": "2026-10-22",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -779,13 +800,12 @@
       "window": "latest_release",
       "window_end": "2026-10-15T09:11:40Z",
       "coverage": "complete",
-      "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "reason": "no stable release in list",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
+        "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
@@ -798,15 +818,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -832,13 +846,12 @@
       "window": "latest_release",
       "window_end": "2026-10-15T09:11:40Z",
       "coverage": "complete",
-      "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "reason": "no stable release in list",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
+        "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
@@ -851,15 +864,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -879,19 +886,18 @@
       ]
     },
     "compatibility.horizon.newer_stable_releases": {
-      "value": 1,
+      "value": null,
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
-      "coverage": "complete",
-      "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
+      "coverage": "incomplete",
+      "reason": "no stable release in list",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
+        "https://github.com/stellar/stellar-horizon/releases/tag/v29.0.0"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
@@ -904,15 +910,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -939,7 +939,7 @@
       "window_end": "2026-10-15T09:11:40Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
@@ -957,15 +957,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -992,7 +986,7 @@
       "window_end": "2026-10-15T09:11:40Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
@@ -1010,15 +1004,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1042,10 +1030,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
@@ -1063,15 +1051,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1098,7 +1080,7 @@
       "window_end": "2026-10-15T09:11:40Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/tree/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/sep"
@@ -1114,15 +1096,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1149,7 +1125,7 @@
       "window_end": "2026-10-15T09:11:40Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/tree/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/sep"
@@ -1165,15 +1141,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1197,10 +1167,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
@@ -1251,15 +1221,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1283,10 +1247,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
@@ -1303,15 +1267,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1335,10 +1293,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1352,15 +1310,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1384,10 +1336,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1401,15 +1353,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1433,10 +1379,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/blob/c75601b41b394cdcead424ad33aa42e22558bbb1/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
@@ -1453,15 +1399,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1485,10 +1425,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-10-21T15:35:59Z",
+      "window_end": "2026-10-22T15:38:31Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:35:59Z",
+      "observed_at": "2026-10-22T15:38:31Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1502,15 +1442,9 @@
         "stellar_protocol_commit": "50882f89eb1bc8d99acd6fae9585ae36f44e0afc",
         "horizon": {
           "version": "v29.0.0",
-          "state": "newer_available",
-          "current": "v30.0.0",
-          "newer": [
-            {
-              "tag": "v30.0.0",
-              "published_at": "2026-10-21T08:38:20Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0"
-            }
-          ]
+          "state": "unknown",
+          "current": null,
+          "newer": []
         },
         "rpc": {
           "version": "v29.0.1",
@@ -1563,7 +1497,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:19:18Z",
+      "observed_at": "2026-10-22T15:20:16Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1582,7 +1516,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:19:18Z",
+      "observed_at": "2026-10-22T15:20:16Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1601,7 +1535,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:20:11Z",
+      "observed_at": "2026-10-22T15:20:54Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1623,7 +1557,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-10-21T15:20:11Z",
+      "observed_at": "2026-10-22T15:20:54Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1659,7 +1593,7 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "Not tracked for Gradle/Maven.",
-      "observed_at": "2026-10-21",
+      "observed_at": "2026-10-22",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
