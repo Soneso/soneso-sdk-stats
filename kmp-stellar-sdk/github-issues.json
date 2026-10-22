@@ -1,27 +1,27 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-10-21",
-    "collected_at": "2026-10-21T15:25:38Z",
+    "as_of": "2026-10-22",
+    "collected_at": "2026-10-22T15:24:18Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 2,
-    "community_issues_closed_365d": 2,
-    "community_issue_median_close_hours": 23.0,
-    "community_prs_created_365d": 4,
-    "community_prs_closed_365d": 4,
-    "community_pr_median_close_hours": 10.5,
-    "maintainer_prs_created_365d": 66,
-    "maintainer_prs_closed_365d": 66,
+    "community_issues_closed_365d": 1,
+    "community_issue_median_close_hours": 33.0,
+    "community_prs_created_365d": 1,
+    "community_prs_closed_365d": 1,
+    "community_pr_median_close_hours": 20.2,
+    "maintainer_prs_created_365d": 57,
+    "maintainer_prs_closed_365d": 57,
     "bot_prs_created_365d": 27,
     "response_coverage": "complete",
-    "response_collected_at": "2026-10-21T15:25:38Z",
-    "community_issues_response_cohort_90d": 0,
+    "response_collected_at": "2026-10-22T15:24:18Z",
+    "community_issues_response_cohort_90d": 1,
     "community_issues_response_eligible_90d": 0,
     "community_issues_answered_within_48h_90d": 0,
     "community_issues_median_first_response_hours": null,
     "community_issues_unanswered_90d": 0,
-    "community_issues_pending_90d": 0,
+    "community_issues_pending_90d": 1,
     "community_issues_unknown_attribution_90d": 0,
     "community_issues_unknown_clock_90d": 0,
     "community_prs_response_cohort_90d": 0,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-10-21T15:25:38Z",
-    "open_issues": 0,
+    "observed_at": "2026-10-22T15:24:18Z",
+    "open_issues": 1,
     "open_prs": 0,
-    "issue_median_age_days": null,
+    "issue_median_age_days": 0.8,
     "pr_median_age_days": null
   },
   "history": [
+    {
+      "as_of": "2026-10-22",
+      "collected_at": "2026-10-22T15:24:18Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 2,
+      "community_issues_closed_365d": 1,
+      "community_issue_median_close_hours": 33.0,
+      "community_prs_created_365d": 1,
+      "community_prs_closed_365d": 1,
+      "community_pr_median_close_hours": 20.2,
+      "maintainer_prs_created_365d": 57,
+      "maintainer_prs_closed_365d": 57,
+      "bot_prs_created_365d": 27,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-10-22T15:24:18Z",
+      "community_issues_response_cohort_90d": 1,
+      "community_issues_response_eligible_90d": 0,
+      "community_issues_answered_within_48h_90d": 0,
+      "community_issues_median_first_response_hours": null,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 1,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 0,
+      "community_prs_response_eligible_90d": 0,
+      "community_prs_answered_within_48h_90d": 0,
+      "community_prs_median_first_response_hours": null,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 0,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-10-22",
+      "open_scan": {
+        "observed_at": "2026-10-22T15:24:18Z",
+        "open_issues": 1,
+        "open_prs": 0,
+        "issue_median_age_days": 0.8,
+        "pr_median_age_days": null
+      }
+    },
     {
       "as_of": "2026-10-21",
       "collected_at": "2026-10-21T15:25:38Z",
@@ -1410,6 +1454,59 @@
     }
   ],
   "issues": [
+    {
+      "number": 115,
+      "title": "Reject non-contract ids as invoke target and data owner",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T10:49:55Z",
+      "closed_at": "2026-10-22T11:16:34Z",
+      "updated_at": "2026-10-22T11:16:36Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/115",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": []
+    },
+    {
+      "number": 114,
+      "title": "SDK Updates for Protocol 30 Compatibility",
+      "type": "issue",
+      "state": "open",
+      "author": "Ryang-21",
+      "author_association": "NONE",
+      "created_at": "2026-10-21T19:58:45Z",
+      "closed_at": null,
+      "updated_at": "2026-10-21T20:05:46Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [],
+      "response": {
+        "at": "2026-10-21T20:05:27Z",
+        "actor": "christian-rogobete",
+        "kind": "comment",
+        "url": "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071",
+        "hours": 0.11166666666666666,
+        "definition_version": 3
+      },
+      "response_definition_version": 3,
+      "response_collection": "complete",
+      "attribution": "known",
+      "unknown_response": null,
+      "response_clock": {
+        "at": "2026-10-21T19:58:45Z",
+        "kind": "creation",
+        "status": "known"
+      },
+      "disposition": null,
+      "response_status": "pending"
+    },
     {
       "number": 113,
       "title": "Add the muxed destination to contract credited effects",
@@ -3198,7 +3295,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.6,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 14,
@@ -3215,7 +3313,8 @@
       "first_response_at": "2026-04-03T14:09:42Z",
       "first_response_hours": 9.0,
       "time_to_close_hours": 13.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 13,
@@ -3232,7 +3331,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 12,
@@ -3249,7 +3349,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 11,
@@ -3266,7 +3367,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 3.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 10,
@@ -3283,7 +3385,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.8,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 9,
@@ -3300,7 +3403,8 @@
       "first_response_at": "2026-02-11T13:58:23Z",
       "first_response_hours": 4.0,
       "time_to_close_hours": 4.1,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 8,
@@ -3317,7 +3421,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.5,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 7,
@@ -3334,7 +3439,8 @@
       "first_response_at": "2026-02-03T12:18:10Z",
       "first_response_hours": 0.5,
       "time_to_close_hours": 0.9,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 6,
@@ -3351,7 +3457,8 @@
       "first_response_at": "2026-05-26T13:04:20Z",
       "first_response_hours": 2786.3,
       "time_to_close_hours": 0.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 5,
@@ -3368,7 +3475,8 @@
       "first_response_at": "2026-01-30T10:15:21Z",
       "first_response_hours": 21.1,
       "time_to_close_hours": 21.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 4,
@@ -3385,7 +3493,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 96.0,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 3,
@@ -3402,7 +3511,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.4,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 2,
@@ -3419,7 +3529,8 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 84.4,
-      "labels": []
+      "labels": [],
+      "removed": true
     },
     {
       "number": 1,
@@ -3439,7 +3550,8 @@
       "labels": [
         "enhancement",
         "platform: web"
-      ]
+      ],
+      "removed": true
     }
   ]
 }
