@@ -1,27 +1,27 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-10-22",
-    "collected_at": "2026-10-22T15:24:18Z",
+    "as_of": "2026-10-23",
+    "collected_at": "2026-10-23T15:14:14Z",
     "definition_version": 3,
     "coverage": "complete",
-    "community_issues_created_365d": 0,
-    "community_issues_closed_365d": 0,
-    "community_issue_median_close_hours": null,
-    "community_prs_created_365d": 0,
-    "community_prs_closed_365d": 0,
-    "community_pr_median_close_hours": null,
-    "maintainer_prs_created_365d": 0,
-    "maintainer_prs_closed_365d": 0,
-    "bot_prs_created_365d": 0,
+    "community_issues_created_365d": 5,
+    "community_issues_closed_365d": 4,
+    "community_issue_median_close_hours": 65.2,
+    "community_prs_created_365d": 2,
+    "community_prs_closed_365d": 2,
+    "community_pr_median_close_hours": 16.3,
+    "maintainer_prs_created_365d": 71,
+    "maintainer_prs_closed_365d": 71,
+    "bot_prs_created_365d": 27,
     "response_coverage": "complete",
-    "response_collected_at": "2026-10-22T15:24:18Z",
-    "community_issues_response_cohort_90d": 0,
-    "community_issues_response_eligible_90d": 0,
-    "community_issues_answered_within_48h_90d": 0,
-    "community_issues_median_first_response_hours": null,
+    "response_collected_at": "2026-10-23T15:14:14Z",
+    "community_issues_response_cohort_90d": 3,
+    "community_issues_response_eligible_90d": 2,
+    "community_issues_answered_within_48h_90d": 2,
+    "community_issues_median_first_response_hours": 1.5,
     "community_issues_unanswered_90d": 0,
-    "community_issues_pending_90d": 0,
+    "community_issues_pending_90d": 1,
     "community_issues_unknown_attribution_90d": 0,
     "community_issues_unknown_clock_90d": 0,
     "community_prs_response_cohort_90d": 0,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-10-22T15:24:18Z",
+    "observed_at": "2026-10-23T15:14:14Z",
     "open_issues": 1,
     "open_prs": 0,
-    "issue_median_age_days": 0.9,
+    "issue_median_age_days": 1.9,
     "pr_median_age_days": null
   },
   "history": [
+    {
+      "as_of": "2026-10-23",
+      "collected_at": "2026-10-23T15:14:14Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 5,
+      "community_issues_closed_365d": 4,
+      "community_issue_median_close_hours": 65.2,
+      "community_prs_created_365d": 2,
+      "community_prs_closed_365d": 2,
+      "community_pr_median_close_hours": 16.3,
+      "maintainer_prs_created_365d": 71,
+      "maintainer_prs_closed_365d": 71,
+      "bot_prs_created_365d": 27,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-10-23T15:14:14Z",
+      "community_issues_response_cohort_90d": 3,
+      "community_issues_response_eligible_90d": 2,
+      "community_issues_answered_within_48h_90d": 2,
+      "community_issues_median_first_response_hours": 1.5,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 1,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 0,
+      "community_prs_response_eligible_90d": 0,
+      "community_prs_answered_within_48h_90d": 0,
+      "community_prs_median_first_response_hours": null,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 0,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-10-23",
+      "open_scan": {
+        "observed_at": "2026-10-23T15:14:14Z",
+        "open_issues": 1,
+        "open_prs": 0,
+        "issue_median_age_days": 1.9,
+        "pr_median_age_days": null
+      }
+    },
     {
       "as_of": "2026-10-22",
       "collected_at": "2026-10-22T15:24:18Z",
@@ -1455,6 +1499,203 @@
   ],
   "issues": [
     {
+      "number": 247,
+      "title": "Read getEvents indexes from the keys RPC sends",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T18:09:19Z",
+      "closed_at": "2026-10-22T18:17:36Z",
+      "updated_at": "2026-10-22T18:17:40Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/247",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
+    {
+      "number": 246,
+      "title": "EventInfo reports null operation and transaction indexes for every getEvents event",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T18:09:02Z",
+      "closed_at": "2026-10-22T18:17:37Z",
+      "updated_at": "2026-10-22T18:17:37Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/246",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": [
+        "hardening-2026q4"
+      ]
+    },
+    {
+      "number": 245,
+      "title": "Handle undecodable and pre-signed SEP-7 links",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T16:46:47Z",
+      "closed_at": "2026-10-22T17:23:39Z",
+      "updated_at": "2026-10-22T17:23:42Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/245",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.6,
+      "labels": []
+    },
+    {
+      "number": 244,
+      "title": "isValidSep7Url throws on a truncated envelope, and addSignature misses a leading signature parameter",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T16:46:20Z",
+      "closed_at": "2026-10-22T17:23:40Z",
+      "updated_at": "2026-10-22T17:23:40Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/244",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.6,
+      "labels": [
+        "hardening-2026q4"
+      ]
+    },
+    {
+      "number": 243,
+      "title": "Accept the memo id 0",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T16:28:57Z",
+      "closed_at": "2026-10-22T16:45:15Z",
+      "updated_at": "2026-10-22T16:45:19Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/243",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.3,
+      "labels": []
+    },
+    {
+      "number": 242,
+      "title": "MemoId throws for a memo id of zero, also when decoding valid transactions",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T16:28:25Z",
+      "closed_at": "2026-10-22T16:45:17Z",
+      "updated_at": "2026-10-22T16:45:17Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/242",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.3,
+      "labels": [
+        "hardening-2026q4"
+      ]
+    },
+    {
+      "number": 241,
+      "title": "Parse Horizon pages in minified web release builds",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T16:19:45Z",
+      "closed_at": "2026-10-22T16:27:14Z",
+      "updated_at": "2026-10-22T16:27:17Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/241",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
+    {
+      "number": 240,
+      "title": "Horizon list queries return no page in minified web release builds",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T16:19:12Z",
+      "closed_at": "2026-10-22T16:27:15Z",
+      "updated_at": "2026-10-22T16:27:15Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/240",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": [
+        "hardening-2026q4"
+      ]
+    },
+    {
+      "number": 239,
+      "title": "Reject non-contract ids as invoke target and data owner",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-10-22T10:49:49Z",
+      "closed_at": "2026-10-22T11:15:47Z",
+      "updated_at": "2026-10-22T11:15:49Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/239",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.4,
+      "labels": []
+    },
+    {
+      "number": 238,
+      "title": "SDK Updates for Protocol 30 Compatibility",
+      "type": "issue",
+      "state": "open",
+      "author": "Ryang-21",
+      "author_association": "NONE",
+      "created_at": "2026-10-21T16:45:07Z",
+      "closed_at": null,
+      "updated_at": "2026-10-21T19:52:43Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [],
+      "response": {
+        "at": "2026-10-21T19:51:20Z",
+        "actor": "christian-rogobete",
+        "kind": "comment",
+        "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/238#issuecomment-6325111010",
+        "hours": 3.1036111111111113,
+        "definition_version": 3
+      },
+      "response_definition_version": 3,
+      "response_collection": "complete",
+      "attribution": "known",
+      "unknown_response": null,
+      "response_clock": {
+        "at": "2026-10-21T16:45:07Z",
+        "kind": "creation",
+        "status": "known"
+      },
+      "disposition": null,
+      "response_status": "pending"
+    },
+    {
       "number": 237,
       "title": "Add the muxed destination to contract credited effects",
       "type": "pr",
@@ -1469,8 +1710,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 236,
@@ -1487,8 +1727,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 235,
@@ -1505,8 +1744,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 234,
@@ -1525,8 +1763,7 @@
       "time_to_close_hours": 1.7,
       "labels": [
         "hardening-2026q4"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 233,
@@ -1545,8 +1782,7 @@
       "time_to_close_hours": 0.0,
       "labels": [
         "hardening-2026q4"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 232,
@@ -1565,8 +1801,7 @@
       "time_to_close_hours": 0.0,
       "labels": [
         "hardening-2026q4"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 231,
@@ -1585,8 +1820,7 @@
       "time_to_close_hours": 0.0,
       "labels": [
         "hardening-2026q4"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 230,
@@ -1603,8 +1837,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 229,
@@ -1621,8 +1854,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 228,
@@ -1639,8 +1871,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 227,
@@ -1657,8 +1888,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 226,
@@ -1677,8 +1907,7 @@
       "time_to_close_hours": 8.2,
       "labels": [
         "sep-51-reference-release"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 225,
@@ -1695,8 +1924,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.6,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 224,
@@ -1713,8 +1941,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 223,
@@ -1731,8 +1958,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 1.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 222,
@@ -1751,8 +1977,7 @@
       "time_to_close_hours": 19.9,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 221,
@@ -1772,8 +1997,7 @@
       "labels": [
         "dependencies",
         "dart"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 220,
@@ -1793,8 +2017,7 @@
       "labels": [
         "dependencies",
         "java"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 219,
@@ -1811,8 +2034,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 218,
@@ -1832,8 +2054,7 @@
       "labels": [
         "dependencies",
         "dart"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 217,
@@ -1850,8 +2071,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.6,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 216,
@@ -1868,8 +2088,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 1.7,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 215,
@@ -1889,8 +2108,7 @@
       "labels": [
         "dependencies",
         "java"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 214,
@@ -1910,8 +2128,7 @@
       "labels": [
         "dependencies",
         "java"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 213,
@@ -1931,8 +2148,7 @@
       "labels": [
         "dependencies",
         "java"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 212,
@@ -1952,8 +2168,7 @@
       "labels": [
         "dependencies",
         "dart"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 211,
@@ -1973,8 +2188,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 210,
@@ -1994,8 +2208,7 @@
       "labels": [
         "dependencies",
         "ruby"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 209,
@@ -2015,8 +2228,7 @@
       "labels": [
         "dependencies",
         "ruby"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 208,
@@ -2033,8 +2245,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 207,
@@ -2051,8 +2262,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 2.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 206,
@@ -2069,8 +2279,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 1.8,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 205,
@@ -2087,8 +2296,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 204,
@@ -2105,8 +2313,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 203,
@@ -2125,8 +2332,7 @@
       "time_to_close_hours": 20.8,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 202,
@@ -2145,8 +2351,7 @@
       "time_to_close_hours": 21.8,
       "labels": [
         "sep-51-reference-release"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 201,
@@ -2166,8 +2371,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 200,
@@ -2184,8 +2388,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 199,
@@ -2202,8 +2405,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 198,
@@ -2220,8 +2422,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 197,
@@ -2238,8 +2439,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 196,
@@ -2256,8 +2456,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 3.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 195,
@@ -2274,8 +2473,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.7,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 194,
@@ -2292,8 +2490,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 193,
@@ -2310,8 +2507,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 192,
@@ -2328,8 +2524,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 191,
@@ -2346,8 +2541,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 12.5,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 190,
@@ -2364,8 +2558,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 12.5,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 189,
@@ -2382,8 +2575,7 @@
       "first_response_at": "2026-09-15T15:01:51Z",
       "first_response_hours": 0.1,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 188,
@@ -2400,8 +2592,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 15.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 187,
@@ -2418,8 +2609,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 186,
@@ -2436,8 +2626,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 6.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 185,
@@ -2456,8 +2645,7 @@
       "time_to_close_hours": 31.4,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 184,
@@ -2474,8 +2662,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 12.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 183,
@@ -2492,8 +2679,7 @@
       "first_response_at": "2026-09-04T09:30:18Z",
       "first_response_hours": 0.0,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 182,
@@ -2513,8 +2699,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 181,
@@ -2531,8 +2716,7 @@
       "first_response_at": "2026-09-01T07:56:29Z",
       "first_response_hours": 3.1,
       "time_to_close_hours": 4.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 180,
@@ -2549,8 +2733,7 @@
       "first_response_at": "2026-09-01T07:56:12Z",
       "first_response_hours": 3.1,
       "time_to_close_hours": 4.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 179,
@@ -2567,8 +2750,7 @@
       "first_response_at": "2026-08-24T20:15:25Z",
       "first_response_hours": 0.8,
       "time_to_close_hours": 4.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 178,
@@ -2585,8 +2767,7 @@
       "first_response_at": "2026-08-23T21:01:53Z",
       "first_response_hours": 0.6,
       "time_to_close_hours": 13.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 177,
@@ -2603,8 +2784,7 @@
       "first_response_at": "2026-08-21T22:03:55Z",
       "first_response_hours": 0.4,
       "time_to_close_hours": 1.6,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 176,
@@ -2640,8 +2820,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "answered",
-      "removed": true
+      "response_status": "answered"
     },
     {
       "number": 175,
@@ -2658,8 +2837,7 @@
       "first_response_at": "2026-08-19T15:03:45Z",
       "first_response_hours": 1.7,
       "time_to_close_hours": 1.7,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 174,
@@ -2676,8 +2854,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.7,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 173,
@@ -2694,8 +2871,7 @@
       "first_response_at": "2026-08-17T19:05:24Z",
       "first_response_hours": 3.7,
       "time_to_close_hours": 19.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 172,
@@ -2731,8 +2907,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "answered",
-      "removed": true
+      "response_status": "answered"
     },
     {
       "number": 171,
@@ -2749,8 +2924,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 22.8,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 170,
@@ -2770,8 +2944,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 169,
@@ -2791,8 +2964,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 168,
@@ -2812,8 +2984,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 167,
@@ -2830,8 +3001,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 12.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 166,
@@ -2850,8 +3020,7 @@
       "time_to_close_hours": 15.4,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 165,
@@ -2870,8 +3039,7 @@
       "time_to_close_hours": 75.7,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 164,
@@ -2890,8 +3058,7 @@
       "time_to_close_hours": 241.6,
       "labels": [
         "help wanted"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 162,
@@ -2908,8 +3075,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 21.6,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 161,
@@ -2926,8 +3092,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 21.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 160,
@@ -2946,8 +3111,7 @@
       "time_to_close_hours": 23.1,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 159,
@@ -2964,8 +3128,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.8,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 158,
@@ -2982,8 +3145,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.6,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 157,
@@ -3000,8 +3162,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 10.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 156,
@@ -3021,8 +3182,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 155,
@@ -3042,8 +3202,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 154,
@@ -3063,8 +3222,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 153,
@@ -3084,8 +3242,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 152,
@@ -3102,8 +3259,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 151,
@@ -3120,8 +3276,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.1,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 150,
@@ -3138,8 +3293,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 97.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 149,
@@ -3156,8 +3310,7 @@
       "first_response_at": "2026-06-11T18:44:07Z",
       "first_response_hours": 0.2,
       "time_to_close_hours": 172.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 148,
@@ -3174,8 +3327,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 13.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 147,
@@ -3194,8 +3346,7 @@
       "time_to_close_hours": 412.4,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 146,
@@ -3215,8 +3366,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 145,
@@ -3236,8 +3386,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 144,
@@ -3257,8 +3406,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 143,
@@ -3278,8 +3426,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 142,
@@ -3299,8 +3446,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 141,
@@ -3320,8 +3466,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 140,
@@ -3338,8 +3483,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.5,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 139,
@@ -3356,8 +3500,7 @@
       "first_response_at": "2026-04-10T21:59:40Z",
       "first_response_hours": 3.0,
       "time_to_close_hours": 3.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 138,
@@ -3376,8 +3519,7 @@
       "time_to_close_hours": 1.8,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 137,
@@ -3397,8 +3539,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 136,
@@ -3418,8 +3559,7 @@
       "labels": [
         "dependencies",
         "github_actions"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 135,
@@ -3438,8 +3578,7 @@
       "time_to_close_hours": 74.8,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 134,
@@ -3456,8 +3595,7 @@
       "first_response_at": "2026-03-12T13:08:54Z",
       "first_response_hours": 15.7,
       "time_to_close_hours": 16.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 133,
@@ -3474,8 +3612,7 @@
       "first_response_at": "2026-03-11T16:02:53Z",
       "first_response_hours": 1.6,
       "time_to_close_hours": 1.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 132,
@@ -3494,8 +3631,7 @@
       "time_to_close_hours": 3.6,
       "labels": [
         "xdr-update"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 131,
@@ -3512,8 +3648,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 40.7,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 130,
@@ -3530,8 +3665,7 @@
       "first_response_at": "2026-03-04T15:20:14Z",
       "first_response_hours": 1.3,
       "time_to_close_hours": 32.3,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 129,
@@ -3548,8 +3682,7 @@
       "first_response_at": "2026-02-23T04:48:51Z",
       "first_response_hours": 8.0,
       "time_to_close_hours": 14.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 128,
@@ -3568,8 +3701,7 @@
       "time_to_close_hours": 103.5,
       "labels": [
         "bug"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 127,
@@ -3588,8 +3720,7 @@
       "time_to_close_hours": 241.7,
       "labels": [
         "bug"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 126,
@@ -3606,8 +3737,7 @@
       "first_response_at": "2026-02-03T05:33:00Z",
       "first_response_hours": 17.5,
       "time_to_close_hours": 28.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 125,
@@ -3626,8 +3756,7 @@
       "time_to_close_hours": 32.3,
       "labels": [
         "enhancement"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 124,
@@ -3644,8 +3773,7 @@
       "first_response_at": "2026-01-30T06:36:16Z",
       "first_response_hours": 42.1,
       "time_to_close_hours": 45.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 123,
@@ -3662,8 +3790,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 17.5,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 122,
@@ -3683,8 +3810,7 @@
       "labels": [
         "enhancement",
         "feedback"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 121,
@@ -3701,8 +3827,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 75.2,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 120,
@@ -3721,8 +3846,7 @@
       "time_to_close_hours": 265.3,
       "labels": [
         "enhancement"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 119,
@@ -3739,8 +3863,7 @@
       "first_response_at": "2025-11-21T16:31:22Z",
       "first_response_hours": 0.4,
       "time_to_close_hours": 0.4,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 118,
@@ -3757,8 +3880,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.5,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 117,
@@ -3775,8 +3897,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 21.5,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 116,
@@ -3793,8 +3914,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 18.9,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 115,
@@ -3814,8 +3934,7 @@
       "labels": [
         "documentation",
         "enhancement"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 114,
@@ -3836,8 +3955,7 @@
         "enhancement",
         "code-quality",
         "refactoring"
-      ],
-      "removed": true
+      ]
     },
     {
       "number": 112,
@@ -3899,8 +4017,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 82,
@@ -3917,8 +4034,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     },
     {
       "number": 49,
@@ -3935,8 +4051,7 @@
       "first_response_at": null,
       "first_response_hours": null,
       "time_to_close_hours": 0.0,
-      "labels": [],
-      "removed": true
+      "labels": []
     }
   ]
 }
