@@ -48,6 +48,12 @@ ACTIVE_SDKS = [s for s in SDKS if s["key"] in ENABLED_SDKS]
 # Download histories are deliberately exempt: long history is their value.
 CUTOFF_DAYS = 365
 
+# Scarf documents about one week of Maven Central ingest lag. When the newest
+# delivered day lies more than this many days before the build date, the
+# 90-day totals are undercounted and the KMP usage card shows a notice instead
+# of totals and chart.
+SCARF_DATA_GAP_DAYS = 10
+
 NOW = datetime.now(timezone.utc)
 TODAY = NOW.date()
 
@@ -487,10 +493,15 @@ def extract_pubdev():
 
 def extract_scarf():
     """Load scarf.json defensively: a shape-corrupt file degrades to empty
-    Scarf data instead of aborting the whole dashboard build."""
+    Scarf data instead of aborting the whole dashboard build.
+
+    data_through is the newest day Scarf has delivered. gap is true while the
+    totals are valid and no day is delivered or the newest is more than
+    SCARF_DATA_GAP_DAYS old. Without valid totals the stored file is unusable,
+    a local collection failure, so the card keeps its n/a values."""
     data = load_json(ROOT / "kmp-stellar-sdk" / "scarf.json")
     if not isinstance(data, dict):
-        return {"latest": {}, "daily": []}
+        return {"latest": {}, "daily": [], "data_through": None, "gap": False}
     latest = data.get("latest")
     if not (isinstance(latest, dict)
             and is_num(latest.get("downloads_90d"))
@@ -504,7 +515,15 @@ def extract_scarf():
         if isinstance(e, dict) and isinstance(e.get("date"), str)
         and is_num(e.get("downloads"))
     ]
-    return {"latest": latest, "daily": daily}
+    if valid_verified_date(latest.get("data_through")):
+        data_through = date.fromisoformat(latest["data_through"])
+    else:
+        # Files without the field carry zero-filled days that Scarf had not
+        # delivered yet, so only a day with downloads proves delivery.
+        data_through = max((date.fromisoformat(e["date"]) for e in daily
+                            if e["downloads"] > 0 and valid_verified_date(e["date"])), default=None)
+    gap = bool(latest) and (data_through is None or (TODAY - data_through).days > SCARF_DATA_GAP_DAYS)
+    return {"latest": latest, "daily": daily, "data_through": data_through, "gap": gap}
 
 
 def valid_evidence_url(url):
@@ -586,7 +605,7 @@ def build_data():
         sdk_data["release_stats"] = compute_release_stats(sdk_data["activity"]["releases_all"])
         sdk_data["packagist"] = extract_packagist() if sdk["key"] == "php" else {"latest": {}, "monthly_history": None, "collected_at": None}
         sdk_data["pubdev"] = extract_pubdev() if sdk["key"] == "flutter" else {"latest": {}, "series": [], "daily_30d": [], "collected_at": None, "snapshot_observed_at": None}
-        sdk_data["scarf"] = extract_scarf() if sdk["key"] == "kmp" else {"latest": {}, "daily": []}
+        sdk_data["scarf"] = extract_scarf() if sdk["key"] == "kmp" else {"latest": {}, "daily": [], "data_through": None, "gap": False}
         all_data.append(sdk_data)
 
     chart_data = {
@@ -628,7 +647,7 @@ def build_data():
         ]
 
     kmp_data = next((sd for sd in all_data if sd["sdk"]["key"] == "kmp"), None)
-    if kmp_data:
+    if kmp_data and not kmp_data["scarf"]["gap"]:
         chart_data["scarf_daily"] = [
             {"date": e["date"], "downloads": e["downloads"]}
             for e in kmp_data["scarf"]["daily"]
@@ -1383,14 +1402,35 @@ def build_usage_cards(all_data, signals=None):
         )
         cards.append(usage_card("Packagist Monthly Downloads (PHP)", headline, "chart-packagist"))
     if "kmp" in ENABLED_SDKS:
-        latest = by_key["kmp"]["scarf"]["latest"]
-        for key in ("downloads_90d", "unique_sources_90d"):
-            signals["kmp"].add("scarf." + key, latest.get(key), "90d", latest.get("as_of"))
-        headline = (
-            f'Downloads (last 90 days): {format_number(latest.get("downloads_90d"))}'
-            f' &middot; unique sources (last 90 days): {format_number(latest.get("unique_sources_90d"))}'
-        )
-        cards.append(usage_card("Maven Central Daily Downloads (KMP, via Scarf)", headline, "chart-scarf"))
+        scarf = by_key["kmp"]["scarf"]
+        latest = scarf["latest"]
+        title = "Maven Central Daily Downloads (KMP, via Scarf)"
+        if scarf["gap"]:
+            through = scarf["data_through"].isoformat() if scarf["data_through"] else None
+            reason = ((f"Scarf delivered no Maven Central download data after {through}" if through else
+                       "Scarf has delivered no Maven Central download data yet")
+                      + "; the 90-day totals are undercounted and not published.")
+            for key in ("downloads_90d", "unique_sources_90d"):
+                signals["kmp"].add("scarf." + key, None, "90d", latest.get("as_of"),
+                                   reason=reason, coverage="incomplete")
+            as_of = latest.get("as_of")
+            checked = f", checked {esc(as_of)}" if valid_verified_date(as_of) else ""
+            last = f"The last delivered day is {through}{checked}." if through else f"No day has been delivered yet{checked}."
+            cards.append(
+                '<div class="card">\n'
+                f'    <h2>{title}</h2>\n'
+                '    <p class="muted">Scarf is delivering no Maven Central download data for this SDK. '
+                f'{last} The daily chart and the 90-day totals return when delivery resumes.</p>\n'
+                '  </div>'
+            )
+        else:
+            for key in ("downloads_90d", "unique_sources_90d"):
+                signals["kmp"].add("scarf." + key, latest.get(key), "90d", latest.get("as_of"))
+            headline = (
+                f'Downloads (last 90 days): {format_number(latest.get("downloads_90d"))}'
+                f' &middot; unique sources (last 90 days): {format_number(latest.get("unique_sources_90d"))}'
+            )
+            cards.append(usage_card(title, headline, "chart-scarf"))
     if len(cards) > 1:
         inner = "\n  ".join(cards)
         return f'<div class="two-col">\n  {inner}\n</div>'
@@ -1621,7 +1661,7 @@ def build_freshness_section(all_data):
       <li>Response evidence expands below each SDK card. Closed, answered v3 records are cached while their source update time is unchanged; open, unanswered, unknown, changed, or legacy records are collected again. A response-fetch failure makes the response section incomplete and preserves its last successful timestamp; the closure and backlog metrics remain independently covered.</li>
       <li>Differences from the <a href="https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80">maintenance-signals proposal</a>: this dashboard uses 48h instead of the proposed seven days, counts qualifying PR discussion and review comments as well as submitted reviews, and explicitly handles draft readiness as above. It uses counts, without percentile ranks or a comparison pool. Author exclusions remain OWNER/MEMBER and bots; there is no declared-maintainer login override. Coverage is complete/incomplete, missing data is n/a, and retained values older than 48h are marked STALE in the freshness table; host-repository and external-tracker exemptions are not configured for these four repositories.</li>
       <li>Protocol Delivery: maintainer-verified entries only. A supporting release is the first stable GitHub release whose notes explicitly announce the usable protocol API, not preliminary XDR adoption. Shipping uses the GitHub publication date as a proxy, not registry publication or testnet activation. Lag is publication minus mainnet activation in UTC calendar days; early, same-day, and later delivery are descriptive, with no judgment coloring. Each row links the release, CAP, and activation evidence. An upgrade that changes no XDR and no Horizon or RPC API is listed as "no SDK change required" with a link to its release notes and carries no lag.</li>
-      <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial; the last full month in the headline is the latest month reported from its 1st to its last day); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count.</li>
+      <li>Downloads: pub.dev values are pub.dev-reported rolling 7-day totals as observed at collection (not calendar weeks); Packagist values are calendar-month sums of Packagist's daily download counts (current month partial; the last full month in the headline is the latest month reported from its 1st to its last day); KMP values are Maven Central artifact downloads reported via Scarf over the stated windows (about one week of ingest lag); iOS shows git clone traffic, the retrieval path SPM and CocoaPods installs use, with the same CI/bot noise as any registry download count. When Scarf has delivered no day for more than {SCARF_DATA_GAP_DAYS} days, the KMP card states the last delivered day instead of totals and the two Scarf signals export as incomplete.</li>
       <li>Production users and community feedback are curated examples with public evidence links, verified on the stated date; never a census. GitHub star counts in the users table are maintainer-set snapshots for open-source user projects, linked to the project repository and dated in the curated file; closed-source or off-GitHub projects show a dash. Community feedback links to the public PG Award proposal threads where users and community members posted their comments; the counts cover maintainer-verified comments. The dependents number is GitHub's dependents-graph count; it is shown only where the graph can attribute dependents to the repository (pub.dev and Composer manifests). SPM manifests are not parsed by the graph, and Maven/Gradle coordinates are not mapped back to source repositories, so iOS and KMP read not tracked instead of a false zero.</li>
     </ul>
   </details>

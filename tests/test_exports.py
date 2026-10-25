@@ -21,6 +21,15 @@ from dashboard.snapshot import create_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 NOW = datetime(2026, 9, 22, 12, 38, 36, tzinfo=timezone.utc)
+SCARF_TITLE = "<h2>Maven Central Daily Downloads (KMP, via Scarf)</h2>"
+SCARF_LATEST = {"as_of": "2026-09-22", "downloads_90d": 21561, "unique_sources_90d": 2157}
+SCARF_HEADLINE = ('\n    <div class="usage-headline">Downloads (last 90 days): 21,561 &middot; unique sources (last 90 days): 2,157</div>'
+                  '\n    <div id="chart-scarf" class="chart"></div>')
+
+
+def scarf_notice(last):
+    return ('\n    <p class="muted">Scarf is delivering no Maven Central download data for this SDK. '
+            f'{last} The daily chart and the 90-day totals return when delivery resumes.</p>')
 
 
 def tree_bytes(root):
@@ -233,6 +242,13 @@ class ExportTests(unittest.TestCase):
             self.assertEqual(metrics["issues.response_eligible_90d"]["observed_at"], source["summary"]["response_collected_at"])
         self.assertIsNone(profiles["kmp"]["signals"]["reach.dependents"]["value"])
         self.assertEqual(profiles["kmp"]["signals"]["reach.dependents"]["coverage"], "not_applicable")
+        # Ledger drafts (verified is not an ISO date) render no row and export no signal.
+        delivery = page.split("<h2>Protocol Delivery</h2>", 1)[1].split('<div class="card"', 1)[0]
+        for index, entry in enumerate(json.loads((ROOT / "curated" / "protocol-delivery.json").read_text())["upgrades"]):
+            if not build.valid_verified_date(entry.get("verified")):
+                self.assertNotIn(build.esc(entry["name"]), delivery)
+                for profile in profiles.values():
+                    self.assertFalse([key for key in profile["signals"] if key.startswith(f"protocol.{index}.")])
 
     def test_packagist_last_full_month_at_a_month_start(self):
         months = json.loads((ROOT / "stellar-php-sdk" / "packagist.json").read_text())["monthly_history"]["months"]
@@ -464,6 +480,85 @@ class ExportTests(unittest.TestCase):
             self.assertEqual(metric["evidence_urls"], ["https://example.org/activation", "https://example.org/notes"])
             self.assertIs(metric["protocol"]["sdk_change_required"], False)
             self.assertIsNone(metric["protocol"]["release_tag"])
+
+    def scarf_page(self, latest, daily):
+        """Render with a scarf.json fixture (None for latest: load_json returns None) and return the
+        KMP card body, its two signals, DATA.scarf_daily and the page."""
+        fixture = None if latest is None else {"schema_version": 1, "latest": latest, "packages_90d": [], "daily": daily}
+        original = build.load_json
+        with patch.object(build, "load_json", lambda path: fixture if path.name == "scarf.json" else original(path)):
+            page, profiles = self.generate()
+        self.assertEqual(page.count(SCARF_TITLE), 1)
+        card = page.split(SCARF_TITLE, 1)[1].split("\n  </div>", 1)[0]
+        chart = json.loads(re.search(r"const DATA = (.*);\n", page)[1])["scarf_daily"]
+        signals = [profiles["kmp"]["signals"]["scarf." + key] for key in ("downloads_90d", "unique_sources_90d")]
+        return card, signals, chart, page
+
+    def assert_scarf_gap(self, card, signals, chart, page, last, reason):
+        self.assertEqual(card, scarf_notice(last))
+        self.assertNotIn('id="chart-scarf"', page)
+        self.assertNotIn("Downloads (last 90 days)", page)
+        self.assertEqual(chart, [])
+        for signal in signals:
+            self.assertEqual((signal["value"], signal["coverage"], signal["window"], signal["reason"]),
+                             (None, "incomplete", "90d", reason))
+
+    def assert_scarf_totals(self, card, signals, chart, daily):
+        self.assertEqual(card, SCARF_HEADLINE)
+        self.assertEqual(chart, daily)
+        self.assertEqual([(s["value"], s["coverage"], s["window"], s["observed_at"]) for s in signals],
+                         [(21561, "complete", "90d", "2026-09-22"), (2157, "complete", "90d", "2026-09-22")])
+
+    def test_scarf_gap_after_ten_days_replaces_totals_with_notice(self):
+        daily = [{"date": d, "downloads": n} for d, n in
+                 (("2026-09-14", 0), ("2026-09-13", 0), ("2026-09-12", 0), ("2026-09-11", 8), ("2026-09-10", 20))]
+        card, signals, chart, page = self.scarf_page({**SCARF_LATEST, "data_through": "2026-09-11"}, daily)
+        self.assert_scarf_gap(card, signals, chart, page, "The last delivered day is 2026-09-11, checked 2026-09-22.",
+                              "Scarf delivered no Maven Central download data after 2026-09-11; "
+                              "the 90-day totals are undercounted and not published.")
+        self.assertEqual([s["observed_at"] for s in signals], ["2026-09-22", "2026-09-22"])
+        self.assertIn("When Scarf has delivered no day for more than 10 days, the KMP card states the last delivered day", page)
+        self.assert_scarf_totals(*self.scarf_page({**SCARF_LATEST, "data_through": "2026-09-12"}, daily)[:3], daily)
+
+    def test_scarf_gap_fallback_uses_the_newest_day_with_downloads(self):
+        for newest, gap in (("2026-09-09", True), ("2026-09-19", False)):
+            with self.subTest(newest=newest):
+                daily = ([{"date": f"2026-09-{d}", "downloads": 0} for d in range(21, int(newest[-2:]), -1)]
+                         + [{"date": newest, "downloads": 5}, {"date": "2026-09-01", "downloads": 7}])
+                result = self.scarf_page(dict(SCARF_LATEST), daily)
+                if gap:
+                    self.assert_scarf_gap(*result, f"The last delivered day is {newest}, checked 2026-09-22.",
+                                          f"Scarf delivered no Maven Central download data after {newest}; "
+                                          "the 90-day totals are undercounted and not published.")
+                else:
+                    self.assert_scarf_totals(*result[:3], daily)
+
+    def test_scarf_gap_without_any_delivered_day(self):
+        reason = "Scarf has delivered no Maven Central download data yet; the 90-day totals are undercounted and not published."
+        without_as_of = {key: value for key, value in SCARF_LATEST.items() if key != "as_of"}
+        for latest, last in (({**SCARF_LATEST, "data_through": None}, "No day has been delivered yet, checked 2026-09-22."),
+                             (without_as_of, "No day has been delivered yet.")):
+            with self.subTest(latest=latest):
+                self.assert_scarf_gap(*self.scarf_page(latest, []), last, reason)
+        # A non-ISO data_through counts as missing, so the newest day with downloads decides.
+        daily = [{"date": "2026-09-12", "downloads": 0}, {"date": "2026-09-09", "downloads": 3}]
+        self.assert_scarf_gap(*self.scarf_page({**SCARF_LATEST, "data_through": "12.10.2026"}, daily),
+                              "The last delivered day is 2026-09-09, checked 2026-09-22.",
+                              "Scarf delivered no Maven Central download data after 2026-09-09; "
+                              "the 90-day totals are undercounted and not published.")
+
+    def test_scarf_local_file_failure_keeps_the_na_card(self):
+        invalid_totals = {**SCARF_LATEST, "downloads_90d": "21561", "data_through": "2026-09-01"}
+        for latest in (None, invalid_totals):
+            with self.subTest(latest=latest):
+                card, signals, chart, page = self.scarf_page(latest, [])
+                self.assertEqual(card, '\n    <div class="usage-headline">Downloads (last 90 days): n/a &middot; '
+                                       'unique sources (last 90 days): n/a</div>\n    <div id="chart-scarf" class="chart"></div>')
+                self.assertNotIn("Scarf is delivering no", page)
+                self.assertEqual(chart, [])
+                for signal in signals:
+                    self.assertEqual((signal["value"], signal["coverage"], signal["reason"]),
+                                     (None, "incomplete", "Missing, malformed, or incomplete source data."))
 
     def test_serialization_failure_does_not_publish_partial_outputs(self):
         self.generate()
