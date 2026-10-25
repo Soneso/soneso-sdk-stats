@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-10-24",
+    "as_of": "2026-10-25",
     "repos": [
       {
         "owner": "cypherstack",
@@ -36,7 +36,7 @@
       {
         "owner": "Soneso",
         "repo": "stellar_wallet_flutter_sdk",
-        "stars": 6,
+        "stars": 7,
         "forks": 2
       },
       {
@@ -226,7 +226,7 @@
       {
         "owner": "Soneso",
         "repo": "stellar_wallet_flutter_sdk",
-        "stars": 6,
+        "stars": 7,
         "forks": 2
       },
       {
@@ -252,6 +252,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-10-25",
+      "dependent_repos": 87,
+      "dependent_packages": 7
+    },
     {
       "date": "2026-10-24",
       "dependent_repos": 87,
