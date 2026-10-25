@@ -6,15 +6,15 @@
     "label": "iOS",
     "repository_url": "https://github.com/Soneso/stellar-ios-mac-sdk"
   },
-  "as_of": "2026-10-25T14:42:28.889659Z",
+  "as_of": "2026-10-25T21:07:41.282588Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-10-25T14:42:28.936479Z",
-    "as_of": "2026-10-25T14:42:28.889659Z",
-    "build_commit": "594da2adb1d8c83c004a621702a390701a6b4c98",
+    "generated_at": "2026-10-25T21:07:41.338065Z",
+    "as_of": "2026-10-25T21:07:41.282588Z",
+    "build_commit": "6e3b81a7ef9224761f88a9d5e2883e5eb98899ba",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/594da2adb1d8c83c004a621702a390701a6b4c98/docs/index.html#L296",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/6e3b81a7ef9224761f88a9d5e2883e5eb98899ba/docs/index.html#L296",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
@@ -38,7 +38,7 @@
       ]
     },
     "release.days_since_last": {
-      "value": 0.6,
+      "value": 0.9,
       "unit": "days",
       "sample_size": null,
       "window": "since_last_release",
