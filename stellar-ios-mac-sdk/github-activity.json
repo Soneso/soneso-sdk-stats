@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-10-24T14:01:50Z",
+    "collected_at": "2026-10-25T14:25:49Z",
     "summary": {
-      "total_releases": 152,
-      "latest_release": "3.13.0",
-      "latest_release_date": "2026-10-16",
-      "releases_last_90d": 6,
-      "releases_last_365d": 20,
-      "avg_days_between_releases": 20.9
+      "total_releases": 153,
+      "latest_release": "3.14.0",
+      "latest_release_date": "2026-10-25",
+      "releases_last_90d": 7,
+      "releases_last_365d": 21,
+      "avg_days_between_releases": 20.8
     },
     "all": [
+      {
+        "tag": "3.14.0",
+        "name": "v3.14.0 - Protocol 30 Horizon effect fields and muxed contract guards",
+        "published_at": "2026-10-25T00:10:42Z",
+        "prerelease": false
+      },
       {
         "tag": "3.13.0",
         "name": "v3.13.0 - Muxed contract addresses and Soroban auth fixes",
@@ -926,11 +932,24 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-10-24T14:01:50Z",
+    "collected_at": "2026-10-25T14:25:49Z",
     "weekly": [
       {
+        "week_start": "2026-10-25",
+        "total": 2,
+        "days": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
         "week_start": "2026-10-18",
-        "total": 10,
+        "total": 11,
         "days": [
           0,
           0,
@@ -938,7 +957,7 @@
           2,
           5,
           0,
-          3
+          4
         ]
       },
       {
