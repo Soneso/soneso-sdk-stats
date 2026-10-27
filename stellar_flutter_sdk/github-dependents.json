@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-10-26",
+    "as_of": "2026-10-27",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
         "stars": 469,
-        "forks": 128
+        "forks": 129
       },
       {
         "owner": "brij-digital",
@@ -115,6 +115,12 @@
         "owner": "robvanmieghem",
         "repo": "planet",
         "stars": 1,
+        "forks": 0
+      },
+      {
+        "owner": "Imdavyking",
+        "repo": "econova_wallet",
+        "stars": 0,
         "forks": 0
       },
       {
@@ -252,6 +258,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-10-27",
+      "dependent_repos": 87,
+      "dependent_packages": 7
+    },
     {
       "date": "2026-10-26",
       "dependent_repos": 87,
