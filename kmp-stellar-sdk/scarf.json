@@ -1,80 +1,112 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-27",
-    "data_through": "2026-10-12",
-    "downloads_90d": 19998,
-    "unique_sources_90d": 2147,
-    "window_start": "2026-07-30",
-    "window_end": "2026-10-28"
+    "as_of": "2026-10-28",
+    "data_through": "2026-10-20",
+    "downloads_90d": 21666,
+    "unique_sources_90d": 2293,
+    "window_start": "2026-07-31",
+    "window_end": "2026-10-29"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 3142,
-      "unique_origins": 392
+      "downloads": 3561,
+      "unique_origins": 419
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 2585,
-      "unique_origins": 860
-    },
-    {
-      "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 2472,
-      "unique_origins": 280
-    },
-    {
-      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 2452,
-      "unique_origins": 361
+      "downloads": 2869,
+      "unique_origins": 888
     },
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 2451,
-      "unique_origins": 310
+      "downloads": 2623,
+      "unique_origins": 361
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 2296,
-      "unique_origins": 386
+      "downloads": 2549,
+      "unique_origins": 416
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
+      "downloads": 2508,
+      "unique_origins": 380
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-macosx64",
+      "downloads": 2505,
+      "unique_origins": 309
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 1752,
-      "unique_origins": 303
+      "downloads": 2008,
+      "unique_origins": 346
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 1749,
-      "unique_origins": 296
+      "downloads": 1782,
+      "unique_origins": 309
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1099,
-      "unique_origins": 232
+      "downloads": 1261,
+      "unique_origins": 253
     }
   ],
   "daily": [
     {
+      "date": "2026-10-20",
+      "downloads": 10
+    },
+    {
+      "date": "2026-10-19",
+      "downloads": 16
+    },
+    {
+      "date": "2026-10-18",
+      "downloads": 28
+    },
+    {
+      "date": "2026-10-17",
+      "downloads": 23
+    },
+    {
+      "date": "2026-10-16",
+      "downloads": 584
+    },
+    {
+      "date": "2026-10-15",
+      "downloads": 105
+    },
+    {
+      "date": "2026-10-14",
+      "downloads": 132
+    },
+    {
+      "date": "2026-10-13",
+      "downloads": 115
+    },
+    {
       "date": "2026-10-12",
-      "downloads": 8
+      "downloads": 647
     },
     {
       "date": "2026-10-11",
-      "downloads": 20
+      "downloads": 68
     },
     {
       "date": "2026-10-10",
-      "downloads": 27
+      "downloads": 79
     },
     {
       "date": "2026-10-09",
-      "downloads": 30
+      "downloads": 103
     },
     {
       "date": "2026-10-08",
-      "downloads": 62
+      "downloads": 135
     },
     {
       "date": "2026-10-07",
