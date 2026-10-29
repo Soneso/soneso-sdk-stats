@@ -1,13 +1,20 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-10-28T16:33:52Z",
+  "collected_at": "2026-10-29T16:51:44Z",
   "latest": {
-    "total": 66842,
-    "monthly": 4248,
-    "daily": 253,
+    "total": 66895,
+    "monthly": 4224,
+    "daily": 105,
     "favers": 42
   },
   "daily": [
+    {
+      "date": "2026-10-29",
+      "total": 66895,
+      "monthly": 4224,
+      "daily": 105,
+      "favers": 42
+    },
     {
       "date": "2026-10-28",
       "total": 66842,
@@ -1704,7 +1711,7 @@
     }
   ],
   "monthly_history": {
-    "collected_at": "2026-10-28T16:33:52Z",
+    "collected_at": "2026-10-29T16:51:44Z",
     "source": "packagist stats/all.json average=daily, summed per calendar month",
     "months": [
       {
@@ -2057,9 +2064,9 @@
       },
       {
         "month": "2026-10",
-        "downloads": 3403,
+        "downloads": 3650,
         "first_day": "2026-10-01",
-        "last_day": "2026-10-26"
+        "last_day": "2026-10-27"
       }
     ]
   }
