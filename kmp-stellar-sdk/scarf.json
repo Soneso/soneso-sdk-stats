@@ -1,33 +1,38 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-10-30",
+    "as_of": "2026-10-31",
     "data_through": "2026-10-28",
-    "downloads_90d": 24790,
-    "unique_sources_90d": 2464,
-    "window_start": "2026-08-02",
-    "window_end": "2026-10-31"
+    "downloads_90d": 24874,
+    "unique_sources_90d": 2476,
+    "window_start": "2026-08-03",
+    "window_end": "2026-11-01"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 3728,
-      "unique_origins": 438
+      "downloads": 3747,
+      "unique_origins": 440
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 3071,
-      "unique_origins": 909
+      "downloads": 3088,
+      "unique_origins": 911
     },
     {
       "name": "com.soneso.stellar/stellar-sdk",
       "downloads": 3014,
-      "unique_origins": 419
+      "unique_origins": 422
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 2956,
-      "unique_origins": 334
+      "downloads": 2968,
+      "unique_origins": 336
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
+      "downloads": 2907,
+      "unique_origins": 477
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
@@ -35,30 +40,25 @@
       "unique_origins": 402
     },
     {
-      "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 2897,
-      "unique_origins": 476
-    },
-    {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2387,
-      "unique_origins": 361
+      "downloads": 2398,
+      "unique_origins": 363
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2265,
-      "unique_origins": 345
+      "downloads": 2271,
+      "unique_origins": 347
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1568,
+      "downloads": 1577,
       "unique_origins": 293
     }
   ],
   "daily": [
     {
       "date": "2026-10-28",
-      "downloads": 9
+      "downloads": 123
     },
     {
       "date": "2026-10-27",
