@@ -1,61 +1,69 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-11-01",
-    "data_through": "2026-10-29",
-    "downloads_90d": 25014,
-    "unique_sources_90d": 2485,
-    "window_start": "2026-08-04",
-    "window_end": "2026-11-02"
+    "as_of": "2026-11-02",
+    "data_through": "2026-10-31",
+    "downloads_90d": 25068,
+    "unique_sources_90d": 2504,
+    "window_start": "2026-08-05",
+    "window_end": "2026-11-03"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 3757,
-      "unique_origins": 441
+      "downloads": 3758,
+      "unique_origins": 431
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 3100,
-      "unique_origins": 914
+      "downloads": 3115,
+      "unique_origins": 920
     },
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 3027,
-      "unique_origins": 422
+      "downloads": 3036,
+      "unique_origins": 426
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 2979,
-      "unique_origins": 339
-    },
-    {
-      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 2915,
-      "unique_origins": 403
+      "downloads": 2994,
+      "unique_origins": 344
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 2915,
-      "unique_origins": 479
+      "downloads": 2926,
+      "unique_origins": 488
+    },
+    {
+      "name": "com.soneso.stellar/stellar-sdk-macosarm64",
+      "downloads": 2925,
+      "unique_origins": 404
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2421,
-      "unique_origins": 367
+      "downloads": 2413,
+      "unique_origins": 368
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2298,
-      "unique_origins": 359
+      "downloads": 2295,
+      "unique_origins": 360
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1602,
-      "unique_origins": 298
+      "downloads": 1606,
+      "unique_origins": 301
     }
   ],
   "daily": [
+    {
+      "date": "2026-10-31",
+      "downloads": 12
+    },
+    {
+      "date": "2026-10-30",
+      "downloads": 103
+    },
     {
       "date": "2026-10-29",
       "downloads": 165
