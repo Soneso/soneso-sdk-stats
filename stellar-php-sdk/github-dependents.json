@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-11-03",
+    "as_of": "2026-11-04",
     "repos": [
       {
         "owner": "Argo-Navis-Dev",
@@ -86,12 +86,6 @@
         "repo": "anchors-prueba",
         "stars": 0,
         "forks": 0
-      },
-      {
-        "owner": "zainh332",
-        "repo": "tokenglade",
-        "stars": 0,
-        "forks": 0
       }
     ],
     "packages": [
@@ -112,6 +106,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-11-04",
+      "dependent_repos": 32,
+      "dependent_packages": 2
+    },
     {
       "date": "2026-11-03",
       "dependent_repos": 32,
