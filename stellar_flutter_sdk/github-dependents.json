@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-11-07",
+    "as_of": "2026-11-08",
     "repos": [
       {
         "owner": "cypherstack",
@@ -38,6 +38,12 @@
         "repo": "flutter_basic_pay",
         "stars": 5,
         "forks": 0
+      },
+      {
+        "owner": "Zer0-Knowledge-Hack",
+        "repo": "puls3",
+        "stars": 5,
+        "forks": 2
       },
       {
         "owner": "bantublockchain",
@@ -132,6 +138,12 @@
       {
         "owner": "Sideband34",
         "repo": "Sideband-mobile",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "owner": "Unbound224",
+        "repo": "Unbound-mobile",
         "stars": 0,
         "forks": 0
       },
@@ -258,6 +270,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-11-08",
+      "dependent_repos": 90,
+      "dependent_packages": 7
+    },
     {
       "date": "2026-11-07",
       "dependent_repos": 88,
