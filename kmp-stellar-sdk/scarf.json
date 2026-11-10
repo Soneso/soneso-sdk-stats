@@ -1,64 +1,64 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-11-09",
+    "as_of": "2026-11-10",
     "data_through": "2026-11-07",
-    "downloads_90d": 27336,
-    "unique_sources_90d": 2545,
-    "window_start": "2026-08-12",
-    "window_end": "2026-11-10"
+    "downloads_90d": 27425,
+    "unique_sources_90d": 2530,
+    "window_start": "2026-08-13",
+    "window_end": "2026-11-11"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4176,
-      "unique_origins": 420
+      "downloads": 4194,
+      "unique_origins": 413
     },
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 3499,
-      "unique_origins": 460
+      "downloads": 3513,
+      "unique_origins": 450
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3244,
-      "unique_origins": 353
+      "downloads": 3233,
+      "unique_origins": 347
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3196,
-      "unique_origins": 489
+      "downloads": 3216,
+      "unique_origins": 485
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 3131,
-      "unique_origins": 929
+      "downloads": 3154,
+      "unique_origins": 928
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3103,
-      "unique_origins": 394
+      "downloads": 3084,
+      "unique_origins": 381
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2933,
-      "unique_origins": 368
+      "downloads": 2957,
+      "unique_origins": 369
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2394,
-      "unique_origins": 371
+      "downloads": 2410,
+      "unique_origins": 366
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1660,
-      "unique_origins": 299
+      "downloads": 1664,
+      "unique_origins": 296
     }
   ],
   "daily": [
     {
       "date": "2026-11-07",
-      "downloads": 69
+      "downloads": 288
     },
     {
       "date": "2026-11-06",
