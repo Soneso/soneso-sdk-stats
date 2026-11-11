@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-11-10",
-    "collected_at": "2026-11-10T17:59:55Z",
+    "as_of": "2026-11-11",
+    "collected_at": "2026-11-11T17:57:02Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 3,
@@ -11,11 +11,11 @@
     "community_prs_created_365d": 5,
     "community_prs_closed_365d": 5,
     "community_pr_median_close_hours": 3.9,
-    "maintainer_prs_created_365d": 78,
-    "maintainer_prs_closed_365d": 78,
-    "bot_prs_created_365d": 30,
+    "maintainer_prs_created_365d": 79,
+    "maintainer_prs_closed_365d": 79,
+    "bot_prs_created_365d": 34,
     "response_coverage": "complete",
-    "response_collected_at": "2026-11-10T17:59:55Z",
+    "response_collected_at": "2026-11-11T17:57:02Z",
     "community_issues_response_cohort_90d": 1,
     "community_issues_response_eligible_90d": 1,
     "community_issues_answered_within_48h_90d": 1,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-11-10T17:59:55Z",
+    "observed_at": "2026-11-11T17:57:02Z",
     "open_issues": 0,
-    "open_prs": 0,
+    "open_prs": 4,
     "issue_median_age_days": null,
-    "pr_median_age_days": null
+    "pr_median_age_days": 0.1
   },
   "history": [
+    {
+      "as_of": "2026-11-11",
+      "collected_at": "2026-11-11T17:57:02Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 3,
+      "community_issues_closed_365d": 3,
+      "community_issue_median_close_hours": 33.0,
+      "community_prs_created_365d": 5,
+      "community_prs_closed_365d": 5,
+      "community_pr_median_close_hours": 3.9,
+      "maintainer_prs_created_365d": 79,
+      "maintainer_prs_closed_365d": 79,
+      "bot_prs_created_365d": 34,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-11-11T17:57:02Z",
+      "community_issues_response_cohort_90d": 1,
+      "community_issues_response_eligible_90d": 1,
+      "community_issues_answered_within_48h_90d": 1,
+      "community_issues_median_first_response_hours": 0.1,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 0,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 1,
+      "community_prs_response_eligible_90d": 1,
+      "community_prs_answered_within_48h_90d": 1,
+      "community_prs_median_first_response_hours": 3.9,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 1,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-11-11",
+      "open_scan": {
+        "observed_at": "2026-11-11T17:57:02Z",
+        "open_issues": 0,
+        "open_prs": 4,
+        "issue_median_age_days": null,
+        "pr_median_age_days": 0.1
+      }
+    },
     {
       "as_of": "2026-11-10",
       "collected_at": "2026-11-10T17:59:55Z",
@@ -2290,6 +2334,122 @@
     }
   ],
   "issues": [
+    {
+      "number": 145,
+      "title": "chore(deps): bump the gradle group with 7 updates",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-11-11T14:41:14Z",
+      "closed_at": null,
+      "updated_at": "2026-11-11T14:41:19Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/145",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "java"
+      ]
+    },
+    {
+      "number": 144,
+      "title": "chore(deps): bump minitest from 6.0.6 to 6.1.0 in /tools/xdrgen-kt in the bundler group",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-11-11T14:39:27Z",
+      "closed_at": null,
+      "updated_at": "2026-11-11T14:50:42Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/144",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "ruby"
+      ]
+    },
+    {
+      "number": 143,
+      "title": "chore(deps): bump actions/setup-java from 6.1.0 to 6.2.0",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-11-11T14:39:26Z",
+      "closed_at": null,
+      "updated_at": "2026-11-11T14:44:42Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/143",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 142,
+      "title": "chore(deps): bump ruby/setup-ruby from 1.335.0 to 1.338.0",
+      "type": "pr",
+      "state": "open",
+      "author": "dependabot[bot]",
+      "author_association": "CONTRIBUTOR",
+      "created_at": "2026-11-11T14:39:22Z",
+      "closed_at": null,
+      "updated_at": "2026-11-11T14:45:16Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/142",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": null,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ]
+    },
+    {
+      "number": 141,
+      "title": "Build the Android target with Android Gradle Plugin 9",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-11T14:27:08Z",
+      "closed_at": "2026-11-11T14:38:34Z",
+      "updated_at": "2026-11-11T14:38:36Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/141",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": []
+    },
+    {
+      "number": 140,
+      "title": "Build the Android target with Android Gradle Plugin 9",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-11T09:41:55Z",
+      "closed_at": "2026-11-11T14:38:36Z",
+      "updated_at": "2026-11-11T14:38:36Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/issues/140",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 4.9,
+      "labels": [
+        "enhancement"
+      ]
+    },
     {
       "number": 139,
       "title": "Check enum and error-code integer ranges in ContractSpec",
@@ -4826,7 +4986,8 @@
       "labels": [
         "enhancement",
         "platform: web"
-      ]
+      ],
+      "removed": true
     }
   ]
 }
