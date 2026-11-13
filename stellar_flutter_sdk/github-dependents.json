@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-11-12",
+    "as_of": "2026-11-13",
     "repos": [
       {
         "owner": "cypherstack",
         "repo": "stack_wallet",
-        "stars": 468,
+        "stars": 469,
         "forks": 128
       },
       {
@@ -208,6 +208,12 @@
         "forks": 0
       },
       {
+        "owner": "pgm-testing",
+        "repo": "sbom-demo-flutter",
+        "stars": 0,
+        "forks": 0
+      },
+      {
         "owner": "rinat-enikeev",
         "repo": "sfsdk_web_issue",
         "stars": 0,
@@ -264,6 +270,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-11-13",
+      "dependent_repos": 91,
+      "dependent_packages": 7
+    },
     {
       "date": "2026-11-12",
       "dependent_repos": 90,
