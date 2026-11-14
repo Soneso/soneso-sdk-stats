@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-11-13T17:50:57Z",
+    "collected_at": "2026-11-14T16:37:50Z",
     "summary": {
       "total_releases": 153,
       "latest_release": "3.14.0",
@@ -932,19 +932,19 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-11-13T17:50:57Z",
+    "collected_at": "2026-11-14T16:37:50Z",
     "weekly": [
       {
         "week_start": "2026-11-08",
-        "total": 3,
+        "total": 8,
         "days": [
           0,
           0,
           0,
           1,
           1,
-          1,
-          0
+          5,
+          1
         ]
       },
       {

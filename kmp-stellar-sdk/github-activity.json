@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-11-13T17:50:57Z",
+    "collected_at": "2026-11-14T16:37:50Z",
     "summary": {
-      "total_releases": 31,
-      "latest_release": "v1.16.0",
-      "latest_release_date": "2026-10-24",
-      "releases_last_90d": 5,
-      "releases_last_365d": 28,
-      "avg_days_between_releases": 12.2
+      "total_releases": 32,
+      "latest_release": "v1.17.0",
+      "latest_release_date": "2026-11-14",
+      "releases_last_90d": 6,
+      "releases_last_365d": 29,
+      "avg_days_between_releases": 12.4
     },
     "all": [
+      {
+        "tag": "v1.17.0",
+        "name": "v1.17.0 - stellar-rpc 30.0.1 support",
+        "published_at": "2026-11-14T12:04:09Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.16.0",
         "name": "v1.16.0 - Protocol 30 Horizon effect fields and muxed contract guards",
@@ -200,19 +206,19 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-11-13T17:50:57Z",
+    "collected_at": "2026-11-14T16:37:50Z",
     "weekly": [
       {
         "week_start": "2026-11-08",
-        "total": 9,
+        "total": 17,
         "days": [
           0,
           0,
           0,
           5,
           4,
-          0,
-          0
+          3,
+          5
         ]
       },
       {
