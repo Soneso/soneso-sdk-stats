@@ -6,27 +6,27 @@
     "label": "KMP",
     "repository_url": "https://github.com/Soneso/kmp-stellar-sdk"
   },
-  "as_of": "2026-11-13T18:18:36.993331Z",
+  "as_of": "2026-11-14T16:48:04.149922Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-11-13T18:18:37.039330Z",
-    "as_of": "2026-11-13T18:18:36.993331Z",
-    "build_commit": "e283a5d311c74e854588619b7b34271e828e2590",
+    "generated_at": "2026-11-14T16:48:04.190038Z",
+    "as_of": "2026-11-14T16:48:04.149922Z",
+    "build_commit": "40b62fe0731620080f06bc1f81e354688b613e3a",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/e283a5d311c74e854588619b7b34271e828e2590/docs/index.html#L296",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/40b62fe0731620080f06bc1f81e354688b613e3a/docs/index.html#L296",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
     "release.median_gap_days_365d": {
-      "value": 10.6,
+      "value": 11.9,
       "unit": "days",
       "sample_size": 28,
       "window": "365d",
-      "window_end": "2026-11-13",
+      "window_end": "2026-11-14",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:50:57Z",
+      "observed_at": "2026-11-14T16:37:50Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -38,14 +38,14 @@
       ]
     },
     "release.days_since_last": {
-      "value": 20.0,
+      "value": 0.2,
       "unit": "days",
       "sample_size": null,
       "window": "since_last_release",
-      "window_end": "2026-11-13",
+      "window_end": "2026-11-14",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:50:57Z",
+      "observed_at": "2026-11-14T16:37:50Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -57,14 +57,14 @@
       ]
     },
     "release.count_90d": {
-      "value": 5,
+      "value": 6,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13",
+      "window_end": "2026-11-14",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:50:57Z",
+      "observed_at": "2026-11-14T16:37:50Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -80,10 +80,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13",
+      "window_end": "2026-11-14",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:50:57Z",
+      "observed_at": "2026-11-14T16:37:50Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -95,14 +95,14 @@
       ]
     },
     "issues.open_count": {
-      "value": 0,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "open_snapshot",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -114,14 +114,14 @@
       ]
     },
     "issues.open_median_age_days": {
-      "value": null,
+      "value": 0.8,
       "unit": "days",
-      "sample_size": 0,
+      "sample_size": 1,
       "window": "open_snapshot",
       "window_end": null,
-      "coverage": "not_applicable",
-      "reason": "No open items.",
-      "observed_at": "2026-11-13T17:54:54Z",
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -133,14 +133,14 @@
       ]
     },
     "issues.created_365d": {
-      "value": 3,
+      "value": 4,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -156,10 +156,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -175,10 +175,10 @@
       "unit": "hours",
       "sample_size": 3,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -197,7 +197,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -216,7 +216,7 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "No open items.",
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -232,10 +232,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -251,10 +251,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -270,10 +270,10 @@
       "unit": "hours",
       "sample_size": 5,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -285,14 +285,14 @@
       ]
     },
     "maintainer_prs.created_365d": {
-      "value": 82,
+      "value": 88,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -304,14 +304,14 @@
       ]
     },
     "maintainer_prs.closed_365d": {
-      "value": 82,
+      "value": 88,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -327,12 +327,14 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -349,12 +351,14 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -371,12 +375,14 @@
       "unit": "hours",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -393,12 +399,14 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -411,16 +419,18 @@
       ]
     },
     "issues.pending_90d": {
-      "value": 0,
+      "value": 1,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -437,12 +447,14 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -459,12 +471,14 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153",
+        "https://github.com/Soneso/kmp-stellar-sdk/issues/153#issuecomment-6869232785",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114",
         "https://github.com/Soneso/kmp-stellar-sdk/issues/114#issuecomment-6325387071"
       ],
@@ -481,10 +495,10 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -503,10 +517,10 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -525,10 +539,10 @@
       "unit": "hours",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -547,10 +561,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -569,10 +583,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -591,10 +605,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -613,10 +627,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -635,10 +649,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -657,10 +671,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -679,10 +693,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-13T17:54:54Z",
+      "window_end": "2026-11-14T16:38:48Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:54:54Z",
+      "observed_at": "2026-11-14T16:38:48Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/kmp-stellar-sdk/pull/135",
@@ -697,14 +711,14 @@
       ]
     },
     "scarf.downloads_90d": {
-      "value": 27610,
+      "value": 27857,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13",
+      "observed_at": "2026-11-14",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -716,14 +730,14 @@
       ]
     },
     "scarf.unique_sources_90d": {
-      "value": 2471,
+      "value": 2486,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13",
+      "observed_at": "2026-11-14",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -828,14 +842,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-24T19:17:08Z",
+      "window_end": "2026-11-14T12:04:09Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -843,33 +856,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -881,14 +882,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-24T19:17:08Z",
+      "window_end": "2026-11-14T12:04:09Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -896,33 +896,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -930,18 +918,17 @@
       ]
     },
     "compatibility.horizon.newer_stable_releases": {
-      "value": 1,
+      "value": 0,
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -949,33 +936,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -987,14 +962,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-24T19:17:08Z",
+      "window_end": "2026-11-14T12:04:09Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.0",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -1002,33 +976,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1040,14 +1002,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-24T19:17:08Z",
+      "window_end": "2026-11-14T12:04:09Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.0",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -1055,33 +1016,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1089,18 +1038,17 @@
       ]
     },
     "compatibility.rpc.newer_stable_releases": {
-      "value": 1,
+      "value": 0,
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.0",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -1108,33 +1056,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1146,46 +1082,34 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-24T19:17:08Z",
+      "window_end": "2026-11-14T12:04:09Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/tree/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep"
+        "https://github.com/Soneso/kmp-stellar-sdk/tree/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1197,46 +1121,34 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-24T19:17:08Z",
+      "window_end": "2026-11-14T12:04:09Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/tree/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep"
+        "https://github.com/Soneso/kmp-stellar-sdk/tree/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1248,49 +1160,49 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0001.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0002.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0006.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0008.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0009.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0010.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0012.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0023.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0024.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0029.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0030.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0031_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0031_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0031.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0038.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0045.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0046.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0047.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0048.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0051.md",
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0053.md"
       ],
       "percentile": null,
@@ -1298,33 +1210,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1336,10 +1236,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1347,33 +1247,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1385,10 +1273,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1396,33 +1284,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1434,10 +1310,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1445,33 +1321,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1483,13 +1347,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/kmp-stellar-sdk/blob/cb2375f39a8f6445a8b490c6972166c379745777/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/kmp-stellar-sdk/blob/047ede356b716559658d1c09a99b74f3dadc018d/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0005.md"
       ],
       "percentile": null,
@@ -1497,33 +1361,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1535,10 +1387,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-13T18:02:24Z",
+      "window_end": "2026-11-14T16:43:18Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T18:02:24Z",
+      "observed_at": "2026-11-14T16:43:18Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1546,33 +1398,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "v1.16.0",
-        "commit": "cb2375f39a8f6445a8b490c6972166c379745777",
-        "published_at": "2026-10-24T19:17:08Z",
+        "tag": "v1.17.0",
+        "commit": "047ede356b716559658d1c09a99b74f3dadc018d",
+        "published_at": "2026-11-14T12:04:09Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1613,7 +1453,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:49:17Z",
+      "observed_at": "2026-11-14T16:37:31Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1632,7 +1472,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:49:17Z",
+      "observed_at": "2026-11-14T16:37:31Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1644,14 +1484,14 @@
       ]
     },
     "release.all_time_count": {
-      "value": 31,
+      "value": 32,
       "unit": "count",
       "sample_size": null,
       "window": "lifetime",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:50:57Z",
+      "observed_at": "2026-11-14T16:37:50Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1664,8 +1504,8 @@
     },
     "release.latest_stable": {
       "value": {
-        "tag": "v1.16.0",
-        "date": "2026-10-24"
+        "tag": "v1.17.0",
+        "date": "2026-11-14"
       },
       "unit": "release",
       "sample_size": null,
@@ -1673,7 +1513,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-13T17:50:57Z",
+      "observed_at": "2026-11-14T16:37:50Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1709,7 +1549,7 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "Not tracked for Gradle/Maven.",
-      "observed_at": "2026-11-13",
+      "observed_at": "2026-11-14",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
