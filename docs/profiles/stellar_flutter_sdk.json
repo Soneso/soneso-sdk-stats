@@ -6,27 +6,27 @@
     "label": "Flutter",
     "repository_url": "https://github.com/Soneso/stellar_flutter_sdk"
   },
-  "as_of": "2026-11-14T16:48:04.149922Z",
+  "as_of": "2026-11-15T17:31:52.752953Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-11-14T16:48:04.190038Z",
-    "as_of": "2026-11-14T16:48:04.149922Z",
-    "build_commit": "40b62fe0731620080f06bc1f81e354688b613e3a",
+    "generated_at": "2026-11-15T17:31:52.807877Z",
+    "as_of": "2026-11-15T17:31:52.752953Z",
+    "build_commit": "4d6ea5e708f4d7ba10c1a64010a96d30785c6084",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/40b62fe0731620080f06bc1f81e354688b613e3a/docs/index.html#L296",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/4d6ea5e708f4d7ba10c1a64010a96d30785c6084/docs/index.html#L297",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
     "release.median_gap_days_365d": {
-      "value": 17.0,
+      "value": 17.5,
       "unit": "days",
-      "sample_size": 21,
+      "sample_size": 22,
       "window": "365d",
-      "window_end": "2026-11-14",
+      "window_end": "2026-11-15",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:50Z",
+      "observed_at": "2026-11-15T17:15:15Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -38,14 +38,14 @@
       ]
     },
     "release.days_since_last": {
-      "value": 20.3,
+      "value": 0.9,
       "unit": "days",
       "sample_size": null,
       "window": "since_last_release",
-      "window_end": "2026-11-14",
+      "window_end": "2026-11-15",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:50Z",
+      "observed_at": "2026-11-15T17:15:15Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -57,14 +57,14 @@
       ]
     },
     "release.count_90d": {
-      "value": 5,
+      "value": 6,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14",
+      "window_end": "2026-11-15",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:50Z",
+      "observed_at": "2026-11-15T17:15:15Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -76,14 +76,14 @@
       ]
     },
     "release.count_365d": {
-      "value": 21,
+      "value": 22,
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14",
+      "window_end": "2026-11-15",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:50Z",
+      "observed_at": "2026-11-15T17:15:15Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -102,7 +102,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -121,7 +121,7 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "No open items.",
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -137,10 +137,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -156,10 +156,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -175,10 +175,10 @@
       "unit": "hours",
       "sample_size": 5,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -197,7 +197,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -216,7 +216,7 @@
       "window_end": null,
       "coverage": "not_applicable",
       "reason": "No open items.",
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -232,10 +232,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -251,10 +251,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -270,10 +270,10 @@
       "unit": "hours",
       "sample_size": 3,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -289,10 +289,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -308,10 +308,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -327,10 +327,10 @@
       "unit": "count",
       "sample_size": 2,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -351,10 +351,10 @@
       "unit": "count",
       "sample_size": 2,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -375,10 +375,10 @@
       "unit": "hours",
       "sample_size": 2,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -399,10 +399,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -423,10 +423,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -447,10 +447,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -471,10 +471,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/issues/238",
@@ -495,10 +495,10 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -517,10 +517,10 @@
       "unit": "count",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -539,10 +539,10 @@
       "unit": "hours",
       "sample_size": 1,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -561,10 +561,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -583,10 +583,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -605,10 +605,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -627,10 +627,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -649,10 +649,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -671,10 +671,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -693,10 +693,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-14T16:38:48Z",
+      "window_end": "2026-11-15T17:17:07Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:38:48Z",
+      "observed_at": "2026-11-15T17:17:07Z",
       "freshness": "fresh",
       "evidence_urls": [
         "https://github.com/Soneso/stellar_flutter_sdk/pull/257",
@@ -711,14 +711,14 @@
       ]
     },
     "pubdev.download_count_52w": {
-      "value": 20601,
+      "value": 20697,
       "unit": "count",
       "sample_size": null,
       "window": "52w",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:32:32Z",
+      "observed_at": "2026-11-15T16:59:13Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -730,14 +730,14 @@
       ]
     },
     "pubdev.download_count_30d": {
-      "value": 2860,
+      "value": 2895,
       "unit": "count",
       "sample_size": null,
       "window": "30d",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:32:32Z",
+      "observed_at": "2026-11-15T16:59:13Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -842,14 +842,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-25T09:13:40Z",
+      "window_end": "2026-11-14T20:03:27Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -857,33 +856,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -895,14 +882,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-25T09:13:40Z",
+      "window_end": "2026-11-14T20:03:27Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -910,33 +896,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -944,18 +918,17 @@
       ]
     },
     "compatibility.horizon.newer_stable_releases": {
-      "value": 1,
+      "value": 0,
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.0",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -963,33 +936,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1001,14 +962,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-25T09:13:40Z",
+      "window_end": "2026-11-14T20:03:27Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.0",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -1016,33 +976,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1054,14 +1002,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-25T09:13:40Z",
+      "window_end": "2026-11-14T20:03:27Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.0",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -1069,33 +1016,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1103,18 +1038,17 @@
       ]
     },
     "compatibility.rpc.newer_stable_releases": {
-      "value": 1,
+      "value": 0,
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-        "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.0",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
       ],
       "percentile": null,
@@ -1122,33 +1056,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1160,46 +1082,34 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-25T09:13:40Z",
+      "window_end": "2026-11-14T20:03:27Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/tree/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep"
+        "https://github.com/Soneso/stellar_flutter_sdk/tree/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1211,46 +1121,34 @@
       "unit": "count",
       "sample_size": null,
       "window": "latest_release",
-      "window_end": "2026-10-25T09:13:40Z",
+      "window_end": "2026-11-14T20:03:27Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/tree/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep"
+        "https://github.com/Soneso/stellar_flutter_sdk/tree/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep"
       ],
       "percentile": null,
       "percentile_reason": "No comparison pool is maintained.",
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1262,51 +1160,51 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0001.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0002.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0006.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0007_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0007_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0007.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0008.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0009.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0010.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0011_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0011_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0011.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0012.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0023.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0024.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0029.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0030.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0038.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0045.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0046.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0047.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0048.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0051.md",
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0053.md"
       ],
       "percentile": null,
@@ -1314,33 +1212,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1352,10 +1238,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1363,33 +1249,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1401,10 +1275,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1412,33 +1286,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1450,10 +1312,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1461,33 +1323,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1499,13 +1349,13 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [
-        "https://github.com/Soneso/stellar_flutter_sdk/blob/232705106f8c1d6a64f3871e93fe985580a039b9/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
+        "https://github.com/Soneso/stellar_flutter_sdk/blob/09e8e858ed91633dbd2c8fcf2c9294fd61a732fb/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
         "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0005.md"
       ],
       "percentile": null,
@@ -1513,33 +1363,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1551,10 +1389,10 @@
       "unit": "count",
       "sample_size": null,
       "window": "snapshot",
-      "window_end": "2026-11-14T16:43:18Z",
+      "window_end": "2026-11-15T17:23:20Z",
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:43:18Z",
+      "observed_at": "2026-11-15T17:23:20Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1562,33 +1400,21 @@
       "pool_size": null,
       "pool_size_reason": "No comparison pool is maintained.",
       "compatibility": {
-        "tag": "3.10.0",
-        "commit": "232705106f8c1d6a64f3871e93fe985580a039b9",
-        "published_at": "2026-10-25T09:13:40Z",
+        "tag": "3.11.0",
+        "commit": "09e8e858ed91633dbd2c8fcf2c9294fd61a732fb",
+        "published_at": "2026-11-14T20:03:27Z",
         "stellar_protocol_commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
         "horizon": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:23Z",
-              "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         },
         "rpc": {
-          "version": "v30.0.0",
-          "state": "newer_available",
+          "version": "v30.0.1",
+          "state": "current",
           "current": "v30.0.1",
-          "newer": [
-            {
-              "tag": "v30.0.1",
-              "published_at": "2026-11-12T17:06:18Z",
-              "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1"
-            }
-          ]
+          "newer": []
         }
       },
       "source_files": [
@@ -1692,7 +1518,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:31Z",
+      "observed_at": "2026-11-15T17:14:29Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1711,7 +1537,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:31Z",
+      "observed_at": "2026-11-15T17:14:29Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1723,14 +1549,14 @@
       ]
     },
     "release.all_time_count": {
-      "value": 118,
+      "value": 119,
       "unit": "count",
       "sample_size": null,
       "window": "lifetime",
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:50Z",
+      "observed_at": "2026-11-15T17:15:15Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1743,8 +1569,8 @@
     },
     "release.latest_stable": {
       "value": {
-        "tag": "3.10.0",
-        "date": "2026-10-25"
+        "tag": "3.11.0",
+        "date": "2026-11-14"
       },
       "unit": "release",
       "sample_size": null,
@@ -1752,7 +1578,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14T16:37:50Z",
+      "observed_at": "2026-11-15T17:15:15Z",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
@@ -1788,7 +1614,7 @@
       "window_end": null,
       "coverage": "complete",
       "reason": null,
-      "observed_at": "2026-11-14",
+      "observed_at": "2026-11-15",
       "freshness": "fresh",
       "evidence_urls": [],
       "percentile": null,
