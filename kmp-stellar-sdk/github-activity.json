@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-11-15T17:15:15Z",
+    "collected_at": "2026-11-16T20:32:32Z",
     "summary": {
-      "total_releases": 32,
-      "latest_release": "v1.17.0",
-      "latest_release_date": "2026-11-14",
-      "releases_last_90d": 6,
-      "releases_last_365d": 28,
-      "avg_days_between_releases": 12.4
+      "total_releases": 33,
+      "latest_release": "v1.18.0",
+      "latest_release_date": "2026-11-16",
+      "releases_last_90d": 7,
+      "releases_last_365d": 29,
+      "avg_days_between_releases": 12.1
     },
     "all": [
+      {
+        "tag": "v1.18.0",
+        "name": "v1.18.0 - OpenZeppelin stellar-accounts 0.8 support",
+        "published_at": "2026-11-16T00:00:24Z",
+        "prerelease": false
+      },
       {
         "tag": "v1.17.0",
         "name": "v1.17.0 - stellar-rpc 30.0.1 support",
@@ -206,14 +212,14 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-11-15T17:15:15Z",
+    "collected_at": "2026-11-16T20:32:32Z",
     "weekly": [
       {
         "week_start": "2026-11-15",
-        "total": 0,
+        "total": 8,
         "days": [
-          0,
-          0,
+          3,
+          5,
           0,
           0,
           0,
