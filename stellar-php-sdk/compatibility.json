@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-11-15T17:23:20Z",
+  "collected_at": "2026-11-16T20:39:57Z",
   "source": {
     "tag": "1.18.0",
     "sdk_version": "1.18.0",
@@ -36,8 +36,8 @@
         "status": "Active",
         "updated": "2025-01-16",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0001.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0001.md"
       }
     },
     {
@@ -67,8 +67,8 @@
         "status": "Final",
         "updated": "2019-10-10",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0002.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0002.md"
       }
     },
     {
@@ -98,8 +98,8 @@
         "status": "Final",
         "updated": "2020-06-16",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0005.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0005.md"
       }
     },
     {
@@ -129,8 +129,8 @@
         "status": "Active (Interactive components are deprecated in favor of SEP-24)",
         "updated": "2025-09-10",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0006.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0006.md"
       }
     },
     {
@@ -160,8 +160,8 @@
         "status": "Active",
         "updated": "2020-07-29",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0007.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0007.md"
       }
     },
     {
@@ -191,8 +191,8 @@
         "status": "Active",
         "updated": "2022-02-21",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0008.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0008.md"
       }
     },
     {
@@ -222,8 +222,8 @@
         "status": "Active",
         "updated": "2024-04-22",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0009.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0009.md"
       }
     },
     {
@@ -253,8 +253,8 @@
         "status": "Active",
         "updated": "2024-03-20",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0010.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0010.md"
       }
     },
     {
@@ -284,8 +284,8 @@
         "status": "Active",
         "updated": "2021-10-09",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0011.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0011.md"
       }
     },
     {
@@ -315,8 +315,8 @@
         "status": "Active",
         "updated": "2024-07-23",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0012.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0012.md"
       }
     },
     {
@@ -346,8 +346,8 @@
         "status": "Active",
         "updated": "2026-09-18",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0023.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0023.md"
       }
     },
     {
@@ -377,8 +377,8 @@
         "status": "Active",
         "updated": "2025-09-10",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0024.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0024.md"
       }
     },
     {
@@ -408,8 +408,8 @@
         "status": "Active",
         "updated": "2020-05-04",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0029.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0029.md"
       }
     },
     {
@@ -439,8 +439,8 @@
         "status": "Draft",
         "updated": "2021-05-04",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0030.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0030.md"
       }
     },
     {
@@ -470,8 +470,8 @@
         "status": "Active",
         "updated": "2024-11-05",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0031.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0031.md"
       }
     },
     {
@@ -501,8 +501,8 @@
         "status": "Draft",
         "updated": null,
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0035.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0035.md"
       }
     },
     {
@@ -532,8 +532,8 @@
         "status": "Draft",
         "updated": "2025-02-26",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0038.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0038.md"
       }
     },
     {
@@ -563,8 +563,8 @@
         "status": "Draft",
         "updated": "2025-12-16",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0045.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0045.md"
       }
     },
     {
@@ -594,8 +594,8 @@
         "status": "Active",
         "updated": "2025-04-16",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0046.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0046.md"
       }
     },
     {
@@ -625,8 +625,8 @@
         "status": "Draft",
         "updated": "2025-02-14",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0047.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0047.md"
       }
     },
     {
@@ -656,8 +656,8 @@
         "status": "Active",
         "updated": "2025-04-16",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0048.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0048.md"
       }
     },
     {
@@ -678,17 +678,17 @@
       "file": "compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
       "url": "https://github.com/Soneso/stellar-php-sdk/blob/0f2e4d00b21ff0a71bf22b5be3002034a369d963/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
-      "state": "current",
+      "state": "version_differs",
       "reason": null,
       "layout": "php",
       "upstream": {
         "found": true,
-        "version": "2.0.1",
+        "version": "2.1.0",
         "status": "Draft",
-        "updated": "2025-05-13",
+        "updated": "2026-11-16",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0051.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0051.md"
       }
     },
     {
@@ -718,8 +718,8 @@
         "status": "Final",
         "updated": "2026-06-18",
         "reason": null,
-        "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-        "url": "https://github.com/stellar/stellar-protocol/blob/ced008c3727005ca4a775f430fe6fe346c30f58f/ecosystem/sep-0053.md"
+        "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+        "url": "https://github.com/stellar/stellar-protocol/blob/379a0b55423d406c20e5378639521930e3ffd935/ecosystem/sep-0053.md"
       }
     }
   ],
@@ -730,19 +730,19 @@
       "current": "v30.0.1",
       "published_at": "2026-11-12T17:06:23Z",
       "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1",
-      "checked_at": "2026-11-15T17:23:20Z"
+      "checked_at": "2026-11-16T20:39:57Z"
     },
     "rpc": {
       "list_complete": true,
       "current": "v30.0.1",
       "published_at": "2026-11-12T17:06:18Z",
       "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1",
-      "checked_at": "2026-11-15T17:23:20Z"
+      "checked_at": "2026-11-16T20:39:57Z"
     },
     "stellar_protocol": {
-      "commit": "ced008c3727005ca4a775f430fe6fe346c30f58f",
-      "commit_date": "2026-11-04",
-      "checked_at": "2026-11-15T17:23:20Z"
+      "commit": "379a0b55423d406c20e5378639521930e3ffd935",
+      "commit_date": "2026-11-16",
+      "checked_at": "2026-11-16T20:39:57Z"
     }
   },
   "horizon": {
@@ -792,8 +792,10 @@
   "summary": {
     "sep_matrices": 23,
     "sep_at_full": 23,
-    "sep_current": 21,
-    "sep_version_differs": [],
+    "sep_current": 20,
+    "sep_version_differs": [
+      51
+    ],
     "sep_updated_date_not_later": 0,
     "sep_updated_date_later": [],
     "sep_no_version_field": [
@@ -804,6 +806,23 @@
     "complete": true
   },
   "history": [
+    {
+      "date": "2026-11-16",
+      "tag": "1.18.0",
+      "sdk_version_matches_tag": true,
+      "horizon_version": "v30.0.1",
+      "horizon_total": 50,
+      "horizon_full": 50,
+      "horizon_newer": 0,
+      "rpc_version": "v30.0.1",
+      "rpc_total": 12,
+      "rpc_full": 12,
+      "rpc_newer": 0,
+      "sep_matrices": 23,
+      "sep_at_full": 23,
+      "sep_current": 20,
+      "sep_updated_date_not_later": 0
+    },
     {
       "date": "2026-11-15",
       "tag": "1.18.0",
