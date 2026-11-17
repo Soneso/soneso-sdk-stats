@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "dependents_list": {
-    "as_of": "2026-11-16",
+    "as_of": "2026-11-17",
     "repos": [
       {
         "owner": "cypherstack",
@@ -22,6 +22,12 @@
         "forks": 5
       },
       {
+        "owner": "Zer0-Knowledge-Hack",
+        "repo": "puls3",
+        "stars": 9,
+        "forks": 6
+      },
+      {
         "owner": "threefoldtech",
         "repo": "grid_connect",
         "stars": 9,
@@ -38,12 +44,6 @@
         "repo": "flutter_basic_pay",
         "stars": 5,
         "forks": 0
-      },
-      {
-        "owner": "Zer0-Knowledge-Hack",
-        "repo": "puls3",
-        "stars": 5,
-        "forks": 2
       },
       {
         "owner": "bantublockchain",
@@ -139,7 +139,7 @@
         "owner": "Sideband34",
         "repo": "Sideband-mobile",
         "stars": 0,
-        "forks": 0
+        "forks": 1
       },
       {
         "owner": "Unbound224",
@@ -270,6 +270,11 @@
     ]
   },
   "daily": [
+    {
+      "date": "2026-11-17",
+      "dependent_repos": 91,
+      "dependent_packages": 7
+    },
     {
       "date": "2026-11-16",
       "dependent_repos": 91,
