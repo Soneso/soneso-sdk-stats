@@ -1,58 +1,58 @@
 {
   "schema_version": 1,
   "latest": {
-    "as_of": "2026-11-17",
+    "as_of": "2026-11-18",
     "data_through": "2026-11-12",
-    "downloads_90d": 27229,
-    "unique_sources_90d": 2467,
-    "window_start": "2026-08-20",
-    "window_end": "2026-11-18"
+    "downloads_90d": 27109,
+    "unique_sources_90d": 2429,
+    "window_start": "2026-08-21",
+    "window_end": "2026-11-19"
   },
   "packages_90d": [
     {
       "name": "com.soneso.stellar/stellar-sdk-iosarm64",
-      "downloads": 4133,
-      "unique_origins": 390
+      "downloads": 4114,
+      "unique_origins": 381
     },
     {
       "name": "com.soneso.stellar/stellar-sdk",
-      "downloads": 3515,
-      "unique_origins": 446
+      "downloads": 3504,
+      "unique_origins": 442
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosx64",
-      "downloads": 3170,
-      "unique_origins": 338
+      "downloads": 3160,
+      "unique_origins": 335
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iossimulatorarm64",
-      "downloads": 3143,
-      "unique_origins": 454
+      "downloads": 3125,
+      "unique_origins": 448
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-macosarm64",
-      "downloads": 3124,
-      "unique_origins": 366
+      "downloads": 3101,
+      "unique_origins": 351
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-js",
-      "downloads": 3024,
-      "unique_origins": 939
+      "downloads": 3014,
+      "unique_origins": 936
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-jvm",
-      "downloads": 2985,
-      "unique_origins": 372
+      "downloads": 2974,
+      "unique_origins": 368
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-iosx64",
-      "downloads": 2434,
-      "unique_origins": 357
+      "downloads": 2417,
+      "unique_origins": 348
     },
     {
       "name": "com.soneso.stellar/stellar-sdk-android",
-      "downloads": 1701,
-      "unique_origins": 310
+      "downloads": 1700,
+      "unique_origins": 309
     }
   ],
   "daily": [
