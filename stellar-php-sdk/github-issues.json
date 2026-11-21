@@ -1,27 +1,27 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-11-20",
-    "collected_at": "2026-11-20T18:40:20Z",
+    "as_of": "2026-11-21",
+    "collected_at": "2026-11-21T17:40:20Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 18,
-    "community_issues_closed_365d": 17,
-    "community_issue_median_close_hours": 7.2,
+    "community_issues_closed_365d": 18,
+    "community_issue_median_close_hours": 10.3,
     "community_prs_created_365d": 3,
     "community_prs_closed_365d": 3,
     "community_pr_median_close_hours": 13.2,
-    "maintainer_prs_created_365d": 106,
-    "maintainer_prs_closed_365d": 106,
+    "maintainer_prs_created_365d": 107,
+    "maintainer_prs_closed_365d": 107,
     "bot_prs_created_365d": 25,
     "response_coverage": "complete",
-    "response_collected_at": "2026-11-20T18:40:20Z",
+    "response_collected_at": "2026-11-21T17:40:20Z",
     "community_issues_response_cohort_90d": 14,
-    "community_issues_response_eligible_90d": 6,
-    "community_issues_answered_within_48h_90d": 6,
-    "community_issues_median_first_response_hours": 0.9,
+    "community_issues_response_eligible_90d": 13,
+    "community_issues_answered_within_48h_90d": 13,
+    "community_issues_median_first_response_hours": 2.4,
     "community_issues_unanswered_90d": 0,
-    "community_issues_pending_90d": 8,
+    "community_issues_pending_90d": 1,
     "community_issues_unknown_attribution_90d": 0,
     "community_issues_unknown_clock_90d": 0,
     "community_prs_response_cohort_90d": 2,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-11-20T18:40:20Z",
-    "open_issues": 1,
+    "observed_at": "2026-11-21T17:40:20Z",
+    "open_issues": 0,
     "open_prs": 0,
-    "issue_median_age_days": 1.2,
+    "issue_median_age_days": null,
     "pr_median_age_days": null
   },
   "history": [
+    {
+      "as_of": "2026-11-21",
+      "collected_at": "2026-11-21T17:40:20Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 18,
+      "community_issues_closed_365d": 18,
+      "community_issue_median_close_hours": 10.3,
+      "community_prs_created_365d": 3,
+      "community_prs_closed_365d": 3,
+      "community_pr_median_close_hours": 13.2,
+      "maintainer_prs_created_365d": 107,
+      "maintainer_prs_closed_365d": 107,
+      "bot_prs_created_365d": 25,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-11-21T17:40:20Z",
+      "community_issues_response_cohort_90d": 14,
+      "community_issues_response_eligible_90d": 13,
+      "community_issues_answered_within_48h_90d": 13,
+      "community_issues_median_first_response_hours": 2.4,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 1,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 2,
+      "community_prs_response_eligible_90d": 2,
+      "community_prs_answered_within_48h_90d": 2,
+      "community_prs_median_first_response_hours": 6.7,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 2,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-11-21",
+      "open_scan": {
+        "observed_at": "2026-11-21T17:40:20Z",
+        "open_issues": 0,
+        "open_prs": 0,
+        "issue_median_age_days": null,
+        "pr_median_age_days": null
+      }
+    },
     {
       "as_of": "2026-11-20",
       "collected_at": "2026-11-20T18:40:20Z",
@@ -2731,6 +2775,23 @@
   ],
   "issues": [
     {
+      "number": 256,
+      "title": "Write ledger key members in XDR-JSON and TxRep",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-20T18:51:55Z",
+      "closed_at": "2026-11-20T18:57:50Z",
+      "updated_at": "2026-11-20T18:57:53Z",
+      "url": "https://github.com/Soneso/stellar-php-sdk/pull/256",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
+    {
       "number": 255,
       "title": "Write and read XDR-JSON as deep as binary XDR",
       "type": "pr",
@@ -2921,7 +2982,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 246,
@@ -2993,7 +3054,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 243,
@@ -3031,7 +3092,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 242,
@@ -3069,7 +3130,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 241,
@@ -3107,23 +3168,23 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 240,
       "title": "A claimable balance ledger key renders without its balance_id member in XDR-JSON",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "ErenTopaal",
       "author_association": "NONE",
       "created_at": "2026-11-19T14:46:59Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T18:00:45Z",
+      "closed_at": "2026-11-20T18:57:51Z",
+      "updated_at": "2026-11-20T18:57:51Z",
       "url": "https://github.com/Soneso/stellar-php-sdk/issues/240",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 28.2,
       "labels": [
         "bug"
       ],
@@ -3145,7 +3206,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 239,
@@ -3183,7 +3244,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 238,

@@ -1,27 +1,27 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-11-20",
-    "collected_at": "2026-11-20T18:40:20Z",
+    "as_of": "2026-11-21",
+    "collected_at": "2026-11-21T17:40:20Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 17,
-    "community_issues_closed_365d": 12,
-    "community_issue_median_close_hours": 10.2,
-    "community_prs_created_365d": 3,
-    "community_prs_closed_365d": 3,
-    "community_pr_median_close_hours": 4.6,
-    "maintainer_prs_created_365d": 101,
-    "maintainer_prs_closed_365d": 101,
+    "community_issues_closed_365d": 16,
+    "community_issue_median_close_hours": 24.9,
+    "community_prs_created_365d": 2,
+    "community_prs_closed_365d": 2,
+    "community_pr_median_close_hours": 18.4,
+    "maintainer_prs_created_365d": 104,
+    "maintainer_prs_closed_365d": 104,
     "bot_prs_created_365d": 28,
     "response_coverage": "complete",
-    "response_collected_at": "2026-11-20T18:40:20Z",
+    "response_collected_at": "2026-11-21T17:40:20Z",
     "community_issues_response_cohort_90d": 13,
-    "community_issues_response_eligible_90d": 1,
-    "community_issues_answered_within_48h_90d": 1,
-    "community_issues_median_first_response_hours": 3.1,
+    "community_issues_response_eligible_90d": 9,
+    "community_issues_answered_within_48h_90d": 9,
+    "community_issues_median_first_response_hours": 3.0,
     "community_issues_unanswered_90d": 0,
-    "community_issues_pending_90d": 12,
+    "community_issues_pending_90d": 4,
     "community_issues_unknown_attribution_90d": 0,
     "community_issues_unknown_clock_90d": 0,
     "community_prs_response_cohort_90d": 1,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-11-20T18:40:20Z",
-    "open_issues": 5,
+    "observed_at": "2026-11-21T17:40:20Z",
+    "open_issues": 1,
     "open_prs": 0,
-    "issue_median_age_days": 1.2,
+    "issue_median_age_days": 2.1,
     "pr_median_age_days": null
   },
   "history": [
+    {
+      "as_of": "2026-11-21",
+      "collected_at": "2026-11-21T17:40:20Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 17,
+      "community_issues_closed_365d": 16,
+      "community_issue_median_close_hours": 24.9,
+      "community_prs_created_365d": 2,
+      "community_prs_closed_365d": 2,
+      "community_pr_median_close_hours": 18.4,
+      "maintainer_prs_created_365d": 104,
+      "maintainer_prs_closed_365d": 104,
+      "bot_prs_created_365d": 28,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-11-21T17:40:20Z",
+      "community_issues_response_cohort_90d": 13,
+      "community_issues_response_eligible_90d": 9,
+      "community_issues_answered_within_48h_90d": 9,
+      "community_issues_median_first_response_hours": 3.0,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 4,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 1,
+      "community_prs_response_eligible_90d": 1,
+      "community_prs_answered_within_48h_90d": 1,
+      "community_prs_median_first_response_hours": 4.6,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 1,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-11-21",
+      "open_scan": {
+        "observed_at": "2026-11-21T17:40:20Z",
+        "open_issues": 1,
+        "open_prs": 0,
+        "issue_median_age_days": 2.1,
+        "pr_median_age_days": null
+      }
+    },
     {
       "as_of": "2026-11-20",
       "collected_at": "2026-11-20T18:40:20Z",
@@ -2731,6 +2775,76 @@
   ],
   "issues": [
     {
+      "number": 311,
+      "title": "Parse contract byte code to its full spec or an error",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-21T15:11:49Z",
+      "closed_at": "2026-11-21T15:22:44Z",
+      "updated_at": "2026-11-21T15:22:46Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/311",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": []
+    },
+    {
+      "number": 310,
+      "title": "Parsing contract byte code returns a shortened spec without an error",
+      "type": "issue",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-21T15:11:02Z",
+      "closed_at": "2026-11-21T15:22:45Z",
+      "updated_at": "2026-11-21T15:22:45Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/310",
+      "draft": null,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "number": 309,
+      "title": "Read and write offer ids as int64 in XDR-JSON and TxRep",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-20T22:35:14Z",
+      "closed_at": "2026-11-20T22:42:01Z",
+      "updated_at": "2026-11-20T22:42:04Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/309",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.1,
+      "labels": []
+    },
+    {
+      "number": 308,
+      "title": "Keep the preconditions of a transaction read from XDR exact",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-20T19:55:52Z",
+      "closed_at": "2026-11-20T20:05:06Z",
+      "updated_at": "2026-11-20T20:05:09Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/308",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": []
+    },
+    {
       "number": 307,
       "title": "Read and write only XDR the network accepts",
       "type": "pr",
@@ -2933,17 +3047,17 @@
       "number": 299,
       "title": "A PRECOND_V2 with only time bounds set is re-encoded as PRECOND_TIME, so the transaction hash is wrong",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "zachsplat",
       "author_association": "NONE",
       "created_at": "2026-11-19T18:02:15Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T19:07:24Z",
+      "closed_at": "2026-11-20T20:05:08Z",
+      "updated_at": "2026-11-20T20:05:08Z",
       "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/299",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 26.0,
       "labels": [
         "bug"
       ],
@@ -3001,7 +3115,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 297,
@@ -3039,7 +3153,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 296,
@@ -3077,23 +3191,23 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 295,
       "title": "Question: offer ids are generated as XdrUint64, so a negative offer id has another XDR-JSON value",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "ErenTopaal",
       "author_association": "NONE",
       "created_at": "2026-11-19T14:47:04Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T18:01:06Z",
+      "closed_at": "2026-11-20T22:42:05Z",
+      "updated_at": "2026-11-20T22:42:05Z",
       "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/295",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 31.9,
       "labels": [
         "bug"
       ],
@@ -3115,23 +3229,23 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 294,
       "title": "setOfferId takes hex, signed, padded and out-of-range text as an offer id",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "ErenTopaal",
       "author_association": "NONE",
       "created_at": "2026-11-19T14:47:02Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T18:01:04Z",
+      "closed_at": "2026-11-20T22:42:03Z",
+      "updated_at": "2026-11-20T22:42:03Z",
       "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/294",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 31.9,
       "labels": [
         "bug"
       ],
@@ -3153,23 +3267,23 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 293,
       "title": "A transaction with max_time 2^64-1 gets the wrong hash",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "ErenTopaal",
       "author_association": "NONE",
       "created_at": "2026-11-19T14:47:00Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T18:01:02Z",
+      "closed_at": "2026-11-20T20:05:10Z",
+      "updated_at": "2026-11-20T20:05:10Z",
       "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/293",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 29.3,
       "labels": [
         "bug"
       ],
@@ -3191,7 +3305,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 292,
@@ -3229,7 +3343,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 291,
@@ -3267,7 +3381,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 290,
