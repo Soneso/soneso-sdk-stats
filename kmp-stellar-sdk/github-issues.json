@@ -1,13 +1,13 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-11-21",
-    "collected_at": "2026-11-21T17:40:20Z",
+    "as_of": "2026-11-22",
+    "collected_at": "2026-11-22T17:59:11Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 13,
-    "community_issues_closed_365d": 12,
-    "community_issue_median_close_hours": 29.2,
+    "community_issues_closed_365d": 13,
+    "community_issue_median_close_hours": 29.3,
     "community_prs_created_365d": 6,
     "community_prs_closed_365d": 6,
     "community_pr_median_close_hours": 3.8,
@@ -15,21 +15,21 @@
     "maintainer_prs_closed_365d": 101,
     "bot_prs_created_365d": 34,
     "response_coverage": "complete",
-    "response_collected_at": "2026-11-21T17:40:20Z",
+    "response_collected_at": "2026-11-22T17:59:11Z",
     "community_issues_response_cohort_90d": 11,
-    "community_issues_response_eligible_90d": 8,
-    "community_issues_answered_within_48h_90d": 8,
-    "community_issues_median_first_response_hours": 3.6,
+    "community_issues_response_eligible_90d": 11,
+    "community_issues_answered_within_48h_90d": 11,
+    "community_issues_median_first_response_hours": 3.7,
     "community_issues_unanswered_90d": 0,
-    "community_issues_pending_90d": 3,
+    "community_issues_pending_90d": 0,
     "community_issues_unknown_attribution_90d": 0,
     "community_issues_unknown_clock_90d": 0,
     "community_prs_response_cohort_90d": 2,
-    "community_prs_response_eligible_90d": 1,
-    "community_prs_answered_within_48h_90d": 1,
-    "community_prs_median_first_response_hours": 3.9,
+    "community_prs_response_eligible_90d": 2,
+    "community_prs_answered_within_48h_90d": 2,
+    "community_prs_median_first_response_hours": 3.8,
     "community_prs_unanswered_90d": 0,
-    "community_prs_pending_90d": 1,
+    "community_prs_pending_90d": 0,
     "community_prs_unknown_attribution_90d": 0,
     "community_prs_unknown_clock_90d": 0,
     "community_prs_merged_90d": 2,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-11-21T17:40:20Z",
-    "open_issues": 1,
+    "observed_at": "2026-11-22T17:59:11Z",
+    "open_issues": 0,
     "open_prs": 0,
-    "issue_median_age_days": 2.1,
+    "issue_median_age_days": null,
     "pr_median_age_days": null
   },
   "history": [
+    {
+      "as_of": "2026-11-22",
+      "collected_at": "2026-11-22T17:59:11Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 13,
+      "community_issues_closed_365d": 13,
+      "community_issue_median_close_hours": 29.3,
+      "community_prs_created_365d": 6,
+      "community_prs_closed_365d": 6,
+      "community_pr_median_close_hours": 3.8,
+      "maintainer_prs_created_365d": 101,
+      "maintainer_prs_closed_365d": 101,
+      "bot_prs_created_365d": 34,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-11-22T17:59:11Z",
+      "community_issues_response_cohort_90d": 11,
+      "community_issues_response_eligible_90d": 11,
+      "community_issues_answered_within_48h_90d": 11,
+      "community_issues_median_first_response_hours": 3.7,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 0,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 2,
+      "community_prs_response_eligible_90d": 2,
+      "community_prs_answered_within_48h_90d": 2,
+      "community_prs_median_first_response_hours": 3.8,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 2,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-11-22",
+      "open_scan": {
+        "observed_at": "2026-11-22T17:59:11Z",
+        "open_issues": 0,
+        "open_prs": 0,
+        "issue_median_age_days": null,
+        "pr_median_age_days": null
+      }
+    },
     {
       "as_of": "2026-11-21",
       "collected_at": "2026-11-21T17:40:20Z",
@@ -2775,6 +2819,23 @@
   ],
   "issues": [
     {
+      "number": 186,
+      "title": "Read transactions from XDR with strings that are not UTF-8",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-21T20:37:13Z",
+      "closed_at": "2026-11-21T20:47:53Z",
+      "updated_at": "2026-11-21T20:47:56Z",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/pull/186",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": []
+    },
+    {
       "number": 185,
       "title": "Read transactions from XDR with full-range bounds and offer ids",
       "type": "pr",
@@ -2929,7 +2990,7 @@
         "status": "known"
       },
       "disposition": "merged",
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 177,
@@ -2967,7 +3028,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 176,
@@ -3005,7 +3066,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 175,
@@ -3043,7 +3104,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 174,
@@ -3102,17 +3163,17 @@
       "number": 172,
       "title": "Text memos, symbols and strings that are not UTF-8 change when decoded, and so does the hash",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "ErenTopaal",
       "author_association": "NONE",
       "created_at": "2026-11-19T14:47:08Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T18:33:14Z",
+      "closed_at": "2026-11-21T20:47:55Z",
+      "updated_at": "2026-11-21T20:47:55Z",
       "url": "https://github.com/Soneso/kmp-stellar-sdk/issues/172",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 54.0,
       "labels": [
         "bug"
       ],

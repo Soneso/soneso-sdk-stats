@@ -1,27 +1,27 @@
 {
   "schema_version": 3,
   "summary": {
-    "as_of": "2026-11-21",
-    "collected_at": "2026-11-21T17:40:20Z",
+    "as_of": "2026-11-22",
+    "collected_at": "2026-11-22T17:59:11Z",
     "definition_version": 3,
     "coverage": "complete",
     "community_issues_created_365d": 17,
-    "community_issues_closed_365d": 16,
-    "community_issue_median_close_hours": 24.9,
+    "community_issues_closed_365d": 17,
+    "community_issue_median_close_hours": 26.0,
     "community_prs_created_365d": 2,
     "community_prs_closed_365d": 2,
     "community_pr_median_close_hours": 18.4,
-    "maintainer_prs_created_365d": 104,
-    "maintainer_prs_closed_365d": 104,
+    "maintainer_prs_created_365d": 105,
+    "maintainer_prs_closed_365d": 105,
     "bot_prs_created_365d": 28,
     "response_coverage": "complete",
-    "response_collected_at": "2026-11-21T17:40:20Z",
+    "response_collected_at": "2026-11-22T17:59:11Z",
     "community_issues_response_cohort_90d": 13,
-    "community_issues_response_eligible_90d": 9,
-    "community_issues_answered_within_48h_90d": 9,
-    "community_issues_median_first_response_hours": 3.0,
+    "community_issues_response_eligible_90d": 13,
+    "community_issues_answered_within_48h_90d": 13,
+    "community_issues_median_first_response_hours": 2.9,
     "community_issues_unanswered_90d": 0,
-    "community_issues_pending_90d": 4,
+    "community_issues_pending_90d": 0,
     "community_issues_unknown_attribution_90d": 0,
     "community_issues_unknown_clock_90d": 0,
     "community_prs_response_cohort_90d": 1,
@@ -37,13 +37,57 @@
     "community_prs_still_open_90d": 0
   },
   "open_scan": {
-    "observed_at": "2026-11-21T17:40:20Z",
-    "open_issues": 1,
+    "observed_at": "2026-11-22T17:59:11Z",
+    "open_issues": 0,
     "open_prs": 0,
-    "issue_median_age_days": 2.1,
+    "issue_median_age_days": null,
     "pr_median_age_days": null
   },
   "history": [
+    {
+      "as_of": "2026-11-22",
+      "collected_at": "2026-11-22T17:59:11Z",
+      "definition_version": 3,
+      "coverage": "complete",
+      "community_issues_created_365d": 17,
+      "community_issues_closed_365d": 17,
+      "community_issue_median_close_hours": 26.0,
+      "community_prs_created_365d": 2,
+      "community_prs_closed_365d": 2,
+      "community_pr_median_close_hours": 18.4,
+      "maintainer_prs_created_365d": 105,
+      "maintainer_prs_closed_365d": 105,
+      "bot_prs_created_365d": 28,
+      "response_coverage": "complete",
+      "response_collected_at": "2026-11-22T17:59:11Z",
+      "community_issues_response_cohort_90d": 13,
+      "community_issues_response_eligible_90d": 13,
+      "community_issues_answered_within_48h_90d": 13,
+      "community_issues_median_first_response_hours": 2.9,
+      "community_issues_unanswered_90d": 0,
+      "community_issues_pending_90d": 0,
+      "community_issues_unknown_attribution_90d": 0,
+      "community_issues_unknown_clock_90d": 0,
+      "community_prs_response_cohort_90d": 1,
+      "community_prs_response_eligible_90d": 1,
+      "community_prs_answered_within_48h_90d": 1,
+      "community_prs_median_first_response_hours": 4.6,
+      "community_prs_unanswered_90d": 0,
+      "community_prs_pending_90d": 0,
+      "community_prs_unknown_attribution_90d": 0,
+      "community_prs_unknown_clock_90d": 0,
+      "community_prs_merged_90d": 1,
+      "community_prs_closed_without_merge_90d": 0,
+      "community_prs_still_open_90d": 0,
+      "date": "2026-11-22",
+      "open_scan": {
+        "observed_at": "2026-11-22T17:59:11Z",
+        "open_issues": 0,
+        "open_prs": 0,
+        "issue_median_age_days": null,
+        "pr_median_age_days": null
+      }
+    },
     {
       "as_of": "2026-11-21",
       "collected_at": "2026-11-21T17:40:20Z",
@@ -2775,6 +2819,23 @@
   ],
   "issues": [
     {
+      "number": 312,
+      "title": "Read transactions from XDR with strings that are not UTF-8",
+      "type": "pr",
+      "state": "closed",
+      "author": "christian-rogobete",
+      "author_association": "MEMBER",
+      "created_at": "2026-11-21T18:07:53Z",
+      "closed_at": "2026-11-21T18:20:49Z",
+      "updated_at": "2026-11-21T18:20:52Z",
+      "url": "https://github.com/Soneso/stellar_flutter_sdk/pull/312",
+      "draft": false,
+      "first_response_at": null,
+      "first_response_hours": null,
+      "time_to_close_hours": 0.2,
+      "labels": []
+    },
+    {
       "number": 311,
       "title": "Parse contract byte code to its full spec or an error",
       "type": "pr",
@@ -2914,7 +2975,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 304,
@@ -3003,7 +3064,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 300,
@@ -3041,7 +3102,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 299,
@@ -3079,7 +3140,7 @@
         "status": "known"
       },
       "disposition": null,
-      "response_status": "pending"
+      "response_status": "answered"
     },
     {
       "number": 298,
@@ -3121,17 +3182,17 @@
       "number": 297,
       "title": "A text memo, symbol or string that is not UTF-8 makes the whole envelope undecodable",
       "type": "issue",
-      "state": "open",
+      "state": "closed",
       "author": "ErenTopaal",
       "author_association": "NONE",
       "created_at": "2026-11-19T14:47:07Z",
-      "closed_at": null,
-      "updated_at": "2026-11-19T18:00:38Z",
+      "closed_at": "2026-11-21T18:20:51Z",
+      "updated_at": "2026-11-21T18:20:51Z",
       "url": "https://github.com/Soneso/stellar_flutter_sdk/issues/297",
       "draft": null,
       "first_response_at": null,
       "first_response_hours": null,
-      "time_to_close_hours": null,
+      "time_to_close_hours": 51.6,
       "labels": [
         "bug"
       ],
