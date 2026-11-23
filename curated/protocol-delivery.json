@@ -111,11 +111,11 @@
           "url": "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0088.md"
         }
       ],
-      "mainnet_activation_date": null,
-      "activation_url": null,
-      "activation_predecessor_url": null,
-      "verified": null,
-      "note": "Draft, not rendered until verified. Mainnet activation is pending. The upgrade vote is scheduled for 2026-11-23 17:00 UTC (SDF upgrade guide https://stellar.org/blog/developers/bell-protocol-30-upgrade-guide). Supporting release means the first stable release explicitly announcing the usable protocol API, not preliminary XDR adoption. The October 2026 releases that adopted the Protocol 30 XDR without announcing protocol support (iOS 3.13.0, Flutter 3.9.0, PHP 1.16.0, KMP v1.15.0) do not qualify. Activation evidence and the verified date follow activation.",
+      "mainnet_activation_date": "2026-11-23",
+      "activation_url": "https://horizon.stellar.org/ledgers/65633432",
+      "activation_predecessor_url": "https://horizon.stellar.org/ledgers/65633431",
+      "verified": "2026-11-23",
+      "note": "Verified 2026-11-23. Supporting release means the first stable release explicitly announcing the usable protocol API, not preliminary XDR adoption. The October 2026 releases that adopted the Protocol 30 XDR without announcing protocol support (iOS 3.13.0, Flutter 3.9.0, PHP 1.16.0, KMP v1.15.0) do not qualify. Activation evidence is mainnet ledger data: ledger 65633432 closed at 2026-11-23T17:00:06Z with protocol_version 30; predecessor 65633431 has version 29.",
       "releases": {
         "ios": {
           "tag": "3.14.0",

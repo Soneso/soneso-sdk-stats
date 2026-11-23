@@ -242,13 +242,18 @@ class ExportTests(unittest.TestCase):
             self.assertEqual(metrics["issues.response_eligible_90d"]["observed_at"], source["summary"]["response_collected_at"])
         self.assertIsNone(profiles["kmp"]["signals"]["reach.dependents"]["value"])
         self.assertEqual(profiles["kmp"]["signals"]["reach.dependents"]["coverage"], "not_applicable")
-        # Ledger drafts (verified is not an ISO date) render no row and export no signal.
+        # Ledger drafts (verified is not an ISO date) render no row and export no signal;
+        # verified entries render one row per SDK and export their lag signal.
         delivery = page.split("<h2>Protocol Delivery</h2>", 1)[1].split('<div class="card"', 1)[0]
         for index, entry in enumerate(json.loads((ROOT / "curated" / "protocol-delivery.json").read_text())["upgrades"]):
             if not build.valid_verified_date(entry.get("verified")):
                 self.assertNotIn(build.esc(entry["name"]), delivery)
                 for profile in profiles.values():
                     self.assertFalse([key for key in profile["signals"] if key.startswith(f"protocol.{index}.")])
+            else:
+                self.assertEqual(delivery.count("<tr><td>" + build.esc(entry["name"]) + "<br>"), len(build.ACTIVE_SDKS))
+                for profile in profiles.values():
+                    self.assertIn(f"protocol.{index}.lag_days", profile["signals"])
 
     def test_packagist_last_full_month_at_a_month_start(self):
         months = json.loads((ROOT / "stellar-php-sdk" / "packagist.json").read_text())["monthly_history"]["months"]
@@ -449,10 +454,15 @@ class ExportTests(unittest.TestCase):
                  "caps": [{"name": "CAP", "url": "https://example.org/cap"}],
                  "releases": {"ios": {"tag": "v1", "published_at": "2026-09-22T00:30:00+02:00",
                                       "url": "https://example.org/release"}}}
-        fixture = {"upgrades": [entry, {**entry, "verified": None}]}
+        # A draft: complete evidence, but verified is not an ISO date.
+        fixture = {"upgrades": [entry, {**entry, "name": "Protocol draft", "verified": None}]}
         with patch.object(build, "load_json", lambda path: fixture if path.name == "protocol-delivery.json" else original(path)):
             page, profiles = self.generate()
         self.assertIn("shipped 1 day before activation", page)
+        # The verified entry renders one row per SDK; the draft renders none and exports no signal.
+        delivery = page.split("<h2>Protocol Delivery</h2>", 1)[1].split('<div class="card"', 1)[0]
+        self.assertEqual(delivery.count("<tr><td>Protocol test<br>"), len(build.ACTIVE_SDKS))
+        self.assertNotIn("Protocol draft", page)
         for key, profile in profiles.items():
             m = profile["signals"]
             self.assertNotIn("protocol.1.lag_days", m)
