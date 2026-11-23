@@ -6,15 +6,15 @@
     "label": "iOS",
     "repository_url": "https://github.com/Soneso/stellar-ios-mac-sdk"
   },
-  "as_of": "2026-11-22T18:09:55.951731Z",
+  "as_of": "2026-11-23T20:03:16.851338Z",
   "methodology": {
     "definition_version": "dashboard-v1-response-v3",
-    "generated_at": "2026-11-22T18:09:56.011175Z",
-    "as_of": "2026-11-22T18:09:55.951731Z",
-    "build_commit": "a1ada051960f4539f40bc8e1aaf6e9cf1bd9e621",
+    "generated_at": "2026-11-23T20:03:16.900818Z",
+    "as_of": "2026-11-23T20:03:16.851338Z",
+    "build_commit": "ed5b48ee85a2143d4a50aeee09616aab0b22b420",
     "working_tree_dirty": false,
     "dashboard_url": "https://soneso.github.io/soneso-sdk-stats/#definitions",
-    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/a1ada051960f4539f40bc8e1aaf6e9cf1bd9e621/docs/index.html#L301",
+    "definitions_at_commit": "https://github.com/Soneso/soneso-sdk-stats/blob/ed5b48ee85a2143d4a50aeee09616aab0b22b420/docs/index.html#L296",
     "proposal_url": "https://github.com/SCF-Public-Goods-Maintenance/pg-atlas-backend/issues/80"
   },
   "signals": {
@@ -23,7 +23,7 @@
       "unit": "days",
       "sample_size": 22,
       "window": "365d",
-      "window_end": "2026-11-22",
+      "window_end": "2026-11-23",
       "coverage": "complete",
       "reason": null,
       "observed_at": "2026-11-22T17:53:26Z",
@@ -38,11 +38,11 @@
       ]
     },
     "release.days_since_last": {
-      "value": 5.8,
+      "value": 6.9,
       "unit": "days",
       "sample_size": null,
       "window": "since_last_release",
-      "window_end": "2026-11-22",
+      "window_end": "2026-11-23",
       "coverage": "complete",
       "reason": null,
       "observed_at": "2026-11-22T17:53:26Z",
@@ -57,11 +57,11 @@
       ]
     },
     "release.count_90d": {
-      "value": 7,
+      "value": 6,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-22",
+      "window_end": "2026-11-23",
       "coverage": "complete",
       "reason": null,
       "observed_at": "2026-11-22T17:53:26Z",
@@ -80,7 +80,7 @@
       "unit": "count",
       "sample_size": null,
       "window": "365d",
-      "window_end": "2026-11-22",
+      "window_end": "2026-11-23",
       "coverage": "complete",
       "reason": null,
       "observed_at": "2026-11-22T17:53:26Z",
@@ -739,11 +739,11 @@
       ]
     },
     "clones.count_90d": {
-      "value": 12381,
+      "value": 12236,
       "unit": "count",
       "sample_size": null,
       "window": "90d",
-      "window_end": "2026-11-22",
+      "window_end": "2026-11-23",
       "coverage": "complete",
       "reason": null,
       "observed_at": "2026-11-22T17:30:52Z",
@@ -860,6 +860,38 @@
         "sdk_change_required": false,
         "release_tag": null,
         "release_date": null
+      },
+      "source_files": [
+        "curated/protocol-delivery.json"
+      ]
+    },
+    "protocol.3.lag_days": {
+      "value": -29,
+      "unit": "days",
+      "sample_size": null,
+      "window": "mainnet_activation",
+      "window_end": null,
+      "coverage": "complete",
+      "reason": null,
+      "observed_at": "2026-11-23",
+      "freshness": "not_applicable",
+      "evidence_urls": [
+        "https://horizon.stellar.org/ledgers/65633432",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0084.md",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0087.md",
+        "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0088.md",
+        "https://github.com/Soneso/stellar-ios-mac-sdk/releases/tag/3.14.0"
+      ],
+      "percentile": null,
+      "percentile_reason": "No comparison pool is maintained.",
+      "pool_size": null,
+      "pool_size_reason": "No comparison pool is maintained.",
+      "protocol": {
+        "name": "Protocol 30",
+        "mainnet_activation_date": "2026-11-23",
+        "sdk_change_required": true,
+        "release_tag": "3.14.0",
+        "release_date": "2026-10-25"
       },
       "source_files": [
         "curated/protocol-delivery.json"
