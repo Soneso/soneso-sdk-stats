@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-11-25T20:09:58Z",
+  "collected_at": "2026-11-26T19:48:47Z",
   "source": {
-    "tag": "v1.18.0",
-    "sdk_version": "1.18.0",
-    "commit": "f6da8aa51f865ffa179dbf338a49031ec15b3e3b",
-    "published_at": "2026-11-16T00:00:24Z",
-    "url": "https://github.com/Soneso/kmp-stellar-sdk/releases/tag/v1.18.0"
+    "tag": "v1.19.0",
+    "sdk_version": "1.19.0",
+    "commit": "2bfc516a995cc1136df31838a10c8b00293a7549",
+    "published_at": "2026-11-26T11:25:21Z",
+    "url": "https://github.com/Soneso/kmp-stellar-sdk/releases/tag/v1.19.0"
   },
   "seps": [
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:19",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:01",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 1,
       "title": "Stellar Info File",
@@ -25,7 +25,7 @@
       "total": 71,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0001_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -36,15 +36,15 @@
         "status": "Active",
         "updated": "2025-01-16",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0001.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0001.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:20",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:01",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 2,
       "title": "Federation protocol",
@@ -56,7 +56,7 @@
       "total": 10,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0002_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -67,15 +67,15 @@
         "status": "Final",
         "updated": "2019-10-10",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0002.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0002.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:20",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:02",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 5,
       "title": "Key Derivation Methods for Stellar Keys",
@@ -87,7 +87,7 @@
       "total": 31,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0005_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "no_version_field",
       "reason": null,
@@ -98,15 +98,15 @@
         "status": "Final",
         "updated": "2020-06-16",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0005.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0005.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:21",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:03",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 6,
       "title": "Deposit and Withdrawal API",
@@ -118,7 +118,7 @@
       "total": 73,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0006_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -129,15 +129,15 @@
         "status": "Active (Interactive components are deprecated in favor of SEP-24)",
         "updated": "2025-09-10",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0006.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0006.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:21",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:03",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 8,
       "title": "Regulated Assets",
@@ -149,7 +149,7 @@
       "total": 32,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0008_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -160,15 +160,15 @@
         "status": "Active",
         "updated": "2022-02-21",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0008.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0008.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:22",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:04",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 9,
       "title": "Standard KYC Fields",
@@ -180,7 +180,7 @@
       "total": 76,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0009_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -191,15 +191,15 @@
         "status": "Active",
         "updated": "2024-04-22",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0009.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0009.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:22",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:04",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 10,
       "title": "Stellar Web Authentication",
@@ -211,7 +211,7 @@
       "total": 24,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0010_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -222,15 +222,15 @@
         "status": "Active",
         "updated": "2024-03-20",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0010.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0010.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:22",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:05",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 12,
       "title": "KYC API",
@@ -242,7 +242,7 @@
       "total": 21,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0012_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -253,15 +253,15 @@
         "status": "Active",
         "updated": "2024-07-23",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0012.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0012.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:23",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:05",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 23,
       "title": "Strkeys",
@@ -273,7 +273,7 @@
       "total": 40,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0023_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -284,15 +284,15 @@
         "status": "Active",
         "updated": "2026-09-18",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0023.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0023.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:23",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:05",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 24,
       "title": "Hosted Deposit and Withdrawal",
@@ -304,7 +304,7 @@
       "total": 28,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0024_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -315,15 +315,15 @@
         "status": "Active",
         "updated": "2025-09-10",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0024.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0024.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:25",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:06",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 29,
       "title": "Account Memo Requirements",
@@ -335,7 +335,7 @@
       "total": 13,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0029_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -346,15 +346,15 @@
         "status": "Active",
         "updated": "2020-05-04",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0029.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0029.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:25",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:06",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 30,
       "title": "Account Recovery: multi-party recovery of Stellar accounts",
@@ -366,7 +366,7 @@
       "total": 35,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0030_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -377,15 +377,15 @@
         "status": "Draft",
         "updated": "2021-05-04",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0030.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0030.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:26",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:07",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 31,
       "title": "Cross-Border Payments API",
@@ -397,7 +397,7 @@
       "total": 71,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0031_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0031_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0031_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -408,19 +408,19 @@
         "status": "Active",
         "updated": "2024-11-05",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0031.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0031.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:26",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:07",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 38,
       "title": "Anchor RFQ API",
-      "sep_version": "2.5.0",
+      "sep_version": "2.5.1",
       "sep_status": "Draft",
       "sdk_verdict": null,
       "implemented": 69,
@@ -428,9 +428,9 @@
       "total": 69,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0038_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
-      "state": "version_differs",
+      "state": "current",
       "reason": null,
       "layout": "ios",
       "upstream": {
@@ -439,15 +439,15 @@
         "status": "Draft",
         "updated": "2026-08-29",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0038.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0038.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:27",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:08",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 45,
       "title": "Stellar Web Authentication for Contract Accounts",
@@ -459,7 +459,7 @@
       "total": 19,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0045_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -470,15 +470,15 @@
         "status": "Draft",
         "updated": "2025-12-16",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0045.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0045.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:27",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:09",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 46,
       "title": "Contract Meta",
@@ -490,7 +490,7 @@
       "total": 9,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0046_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -501,15 +501,15 @@
         "status": "Active",
         "updated": "2025-04-16",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0046.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0046.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:28",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:09",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 47,
       "title": "Contract Interface Discovery",
@@ -521,7 +521,7 @@
       "total": 9,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0047_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -532,15 +532,15 @@
         "status": "Draft",
         "updated": "2025-02-14",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0047.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0047.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:28",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:10",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 48,
       "title": "Contract Interface Specification",
@@ -552,7 +552,7 @@
       "total": 31,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0048_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -563,29 +563,29 @@
         "status": "Active",
         "updated": "2025-04-16",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0048.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0048.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:29",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:10",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 51,
       "title": "XDR-JSON",
-      "sep_version": "2.0.1",
+      "sep_version": "2.1.0",
       "sep_status": "Draft",
       "sdk_verdict": null,
-      "implemented": 37,
+      "implemented": 38,
       "not_implemented": 0,
-      "total": 37,
+      "total": 38,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0051_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
-      "state": "version_differs",
+      "state": "current",
       "reason": null,
       "layout": "ios",
       "upstream": {
@@ -594,15 +594,15 @@
         "status": "Draft",
         "updated": "2026-11-16",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0051.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0051.md"
       }
     },
     {
-      "sdk_version": "1.18.0",
+      "sdk_version": "1.19.0",
       "sdk_version_matches_tag": true,
-      "generated": "2026-11-15 23:21:29",
-      "generated_date": "2026-11-15",
+      "generated": "2026-11-26 00:03:10",
+      "generated_date": "2026-11-26",
       "percent_printed": 100.0,
       "number": 53,
       "title": "Sign and Verify Messages",
@@ -614,7 +614,7 @@
       "total": 8,
       "server_only_excluded": 0,
       "file": "compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
-      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
+      "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/sep/SEP-0053_COMPATIBILITY_MATRIX.md",
       "coverage": "complete",
       "state": "current",
       "reason": null,
@@ -625,8 +625,8 @@
         "status": "Final",
         "updated": "2026-06-18",
         "reason": null,
-        "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-        "url": "https://github.com/stellar/stellar-protocol/blob/7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d/ecosystem/sep-0053.md"
+        "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+        "url": "https://github.com/stellar/stellar-protocol/blob/cd1b371e51182cb56ccdcf1ba7e5772aef496100/ecosystem/sep-0053.md"
       }
     }
   ],
@@ -637,26 +637,26 @@
       "current": "v30.0.1",
       "published_at": "2026-11-12T17:06:23Z",
       "url": "https://github.com/stellar/stellar-horizon/releases/tag/v30.0.1",
-      "checked_at": "2026-11-25T20:09:58Z"
+      "checked_at": "2026-11-26T19:48:47Z"
     },
     "rpc": {
       "list_complete": true,
       "current": "v30.0.1",
       "published_at": "2026-11-12T17:06:18Z",
       "url": "https://github.com/stellar/stellar-rpc/releases/tag/v30.0.1",
-      "checked_at": "2026-11-25T20:09:58Z"
+      "checked_at": "2026-11-26T19:48:47Z"
     },
     "stellar_protocol": {
-      "commit": "7a502f4a4ebdc9b6a8c2abf2509e74f8a385b77d",
-      "commit_date": "2026-11-18",
-      "checked_at": "2026-11-25T20:09:58Z"
+      "commit": "cd1b371e51182cb56ccdcf1ba7e5772aef496100",
+      "commit_date": "2026-11-26",
+      "checked_at": "2026-11-26T19:48:47Z"
     }
   },
   "horizon": {
-    "sdk_version": "1.18.0",
+    "sdk_version": "1.19.0",
     "sdk_version_matches_tag": true,
-    "generated": "2026-11-15 23:21:09",
-    "generated_date": "2026-11-15",
+    "generated": "2026-11-26 00:02:52",
+    "generated_date": "2026-11-26",
     "percent_printed": 100.0,
     "version": "v30.0.1",
     "released": "2026-11-12",
@@ -669,16 +669,16 @@
     "newer_stable_releases": 0,
     "newer": [],
     "file": "compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
-    "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
+    "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/horizon/HORIZON_COMPATIBILITY_MATRIX.md",
     "coverage": "complete",
     "state": "current",
     "reason": null
   },
   "rpc": {
-    "sdk_version": "1.18.0",
+    "sdk_version": "1.19.0",
     "sdk_version_matches_tag": true,
-    "generated": "2026-11-15 23:21:18",
-    "generated_date": "2026-11-15",
+    "generated": "2026-11-26 00:03:00",
+    "generated_date": "2026-11-26",
     "percent_printed": 100.0,
     "version": "v30.0.1",
     "released": "2026-11-12",
@@ -691,7 +691,7 @@
     "newer_stable_releases": 0,
     "newer": [],
     "file": "compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
-    "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/f6da8aa51f865ffa179dbf338a49031ec15b3e3b/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
+    "url": "https://github.com/Soneso/kmp-stellar-sdk/blob/2bfc516a995cc1136df31838a10c8b00293a7549/compatibility/rpc/RPC_COMPATIBILITY_MATRIX.md",
     "coverage": "complete",
     "state": "current",
     "reason": null
@@ -699,11 +699,8 @@
   "summary": {
     "sep_matrices": 20,
     "sep_at_full": 20,
-    "sep_current": 17,
-    "sep_version_differs": [
-      38,
-      51
-    ],
+    "sep_current": 19,
+    "sep_version_differs": [],
     "sep_updated_date_not_later": 0,
     "sep_updated_date_later": [],
     "sep_no_version_field": [
@@ -713,6 +710,23 @@
     "complete": true
   },
   "history": [
+    {
+      "date": "2026-11-26",
+      "tag": "v1.19.0",
+      "sdk_version_matches_tag": true,
+      "horizon_version": "v30.0.1",
+      "horizon_total": 50,
+      "horizon_full": 50,
+      "horizon_newer": 0,
+      "rpc_version": "v30.0.1",
+      "rpc_total": 12,
+      "rpc_full": 12,
+      "rpc_newer": 0,
+      "sep_matrices": 20,
+      "sep_at_full": 20,
+      "sep_current": 19,
+      "sep_updated_date_not_later": 0
+    },
     {
       "date": "2026-11-25",
       "tag": "v1.18.0",
