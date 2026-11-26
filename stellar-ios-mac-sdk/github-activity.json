@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-11-25T19:58:16Z",
+    "collected_at": "2026-11-26T19:42:03Z",
     "summary": {
-      "total_releases": 155,
-      "latest_release": "3.16.0",
-      "latest_release_date": "2026-11-16",
-      "releases_last_90d": 6,
-      "releases_last_365d": 22,
-      "avg_days_between_releases": 20.7
+      "total_releases": 156,
+      "latest_release": "3.17.0",
+      "latest_release_date": "2026-11-26",
+      "releases_last_90d": 7,
+      "releases_last_365d": 23,
+      "avg_days_between_releases": 20.6
     },
     "all": [
+      {
+        "tag": "3.17.0",
+        "name": "v3.17.0 - Stellar Asset Contract client and exact XDR round trips",
+        "published_at": "2026-11-26T18:23:25Z",
+        "prerelease": false
+      },
       {
         "tag": "3.16.0",
         "name": "v3.16.0 - OpenZeppelin stellar-accounts 0.8 support",
@@ -944,17 +950,17 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-11-25T19:58:16Z",
+    "collected_at": "2026-11-26T19:42:03Z",
     "weekly": [
       {
         "week_start": "2026-11-22",
-        "total": 12,
+        "total": 17,
         "days": [
-          5,
+          6,
           4,
           3,
           0,
-          0,
+          4,
           0,
           0
         ]

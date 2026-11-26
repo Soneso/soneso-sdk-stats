@@ -1,16 +1,22 @@
 {
   "schema_version": 1,
   "releases": {
-    "collected_at": "2026-11-25T19:58:16Z",
+    "collected_at": "2026-11-26T19:42:03Z",
     "summary": {
-      "total_releases": 92,
-      "latest_release": "1.18.0",
-      "latest_release_date": "2026-11-14",
-      "releases_last_90d": 5,
-      "releases_last_365d": 19,
-      "avg_days_between_releases": 19.6
+      "total_releases": 93,
+      "latest_release": "1.19.0",
+      "latest_release_date": "2026-11-26",
+      "releases_last_90d": 6,
+      "releases_last_365d": 20,
+      "avg_days_between_releases": 19.5
     },
     "all": [
+      {
+        "tag": "1.19.0",
+        "name": "v1.19.0 - SEP-10 and SEP-45 client hardening and exact XDR round trips",
+        "published_at": "2026-11-26T16:24:18Z",
+        "prerelease": false
+      },
       {
         "tag": "1.18.0",
         "name": "v1.18.0 - stellar-rpc 30.0.1 support and Stellar Asset Contract client",
@@ -566,17 +572,17 @@
     ]
   },
   "commits": {
-    "collected_at": "2026-11-25T19:58:16Z",
+    "collected_at": "2026-11-26T19:42:03Z",
     "weekly": [
       {
         "week_start": "2026-11-22",
-        "total": 21,
+        "total": 25,
         "days": [
           6,
           0,
           15,
-          0,
-          0,
+          2,
+          2,
           0,
           0
         ]
